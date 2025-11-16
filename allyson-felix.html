@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Allyson Felix - The story of how America's most decorated track athlete nearly died in childbirth, then revolutionized maternal rights in sports">
+    <title>Allyson Felix - Running for Two | Athletic Players</title>
+    <style>
+        :root {
+            --primary-color: #e63946;
+            --secondary-color: #1d3557;
+            --accent-color: #f4a261;
+            --text-dark: #2b2d42;
+            --text-light: #8d99ae;
+            --background: #f8f9fa;
+            --background-subtle: #edf2f4;
+            --white: #ffffff;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+            --shadow-lg: 0 8px 24px rgba(0,0,0,0.15);
+            --shadow-xl: 0 16px 48px rgba(0,0,0,0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background: var(--background);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+            padding: 6rem 2rem 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://source.unsplash.com/1600x900/?allyson,felix,track,running,sprinting,athlete') center/cover;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: var(--white);
+            text-decoration: none;
+            margin-bottom: 2rem;
+            font-weight: 600;
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+
+        .back-link:hover {
+            opacity: 1;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+            font-weight: 300;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 2rem;
+            max-width: 800px;
+            margin: 3rem auto 0;
+        }
+
+        .hero-stat {
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .hero-stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.25rem;
+        }
+
+        .hero-stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+
+        /* Content */
+        .content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            font-weight: 800;
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .story-text {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .story-text.lead {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: var(--secondary-color);
+            line-height: 1.6;
+        }
+
+        .story-text strong {
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        /* Quote Box */
+        .quote-box {
+            background: linear-gradient(135deg, var(--background-subtle) 0%, var(--white) 100%);
+            border-left: 5px solid var(--primary-color);
+            padding: 2.5rem;
+            margin: 3rem 0;
+            border-radius: 0 12px 12px 0;
+            box-shadow: var(--shadow-md);
+        }
+
+        .quote-text {
+            font-size: 1.4rem;
+            font-style: italic;
+            color: var(--secondary-color);
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+        .quote-author {
+            margin-top: 1rem;
+            font-size: 1rem;
+            color: var(--text-light);
+            font-style: normal;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 3rem;
+            margin: 3rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--primary-color), var(--accent-color));
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2.5rem;
+            padding-left: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -3.5rem;
+            top: 0.5rem;
+            width: 16px;
+            height: 16px;
+            background: var(--primary-color);
+            border: 3px solid var(--white);
+            border-radius: 50%;
+            box-shadow: var(--shadow-md);
+        }
+
+        .timeline-year {
+            font-weight: 800;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-event {
+            font-size: 1.05rem;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        .stat-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+            text-align: center;
+            border-top: 4px solid var(--primary-color);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: var(--text-light);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Impact Cards */
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .impact-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+        }
+
+        .impact-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .impact-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .impact-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .impact-description {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Image Section */
+        .image-section {
+            margin: 4rem 0;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .image-section img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 4rem 1.5rem 3rem;
+            }
+
+            .content {
+                padding: 3rem 1.5rem;
+            }
+
+            .hero-stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .timeline {
+                padding-left: 2rem;
+            }
+
+            .timeline-item {
+                padding-left: 1.5rem;
+            }
+
+            .quote-box {
+                padding: 1.5rem;
+            }
+
+            .quote-text {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .impact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-content">
+            <a href="index.html" class="back-link">← Back to Athletes</a>
+            <h1 class="hero-title">Allyson Felix</h1>
+            <p class="hero-subtitle">Running for Two: How America's Greatest Track Athlete Changed the Game</p>
+
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="hero-stat-number">11</div>
+                    <div class="hero-stat-label">Olympic Medals</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">7</div>
+                    <div class="hero-stat-label">Olympic Golds</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">19</div>
+                    <div class="hero-stat-label">World Championships</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">1</div>
+                    <div class="hero-stat-label">Revolution Started</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="content">
+        <section class="section">
+            <h2 class="section-title">The Race of Her Life</h2>
+            <p class="story-text lead">At 32 weeks pregnant, Allyson Felix—the most decorated American track athlete in Olympic history—lay in a hospital bed fighting for her life and her daughter's. The woman who had run faster than almost anyone on Earth couldn't outrun what was happening to her body.</p>
+
+            <p class="story-text">November 2018 started like any other month of her pregnancy. Allyson was preparing for the arrival of her first child while contemplating her return to the track. She had already won six Olympic gold medals and thirteen World Championship titles. At 32 years old, she knew the road back would be hard, but she was built for hard.</p>
+
+            <p class="story-text">Then came the severe headaches. The blurred vision. The swelling that wouldn't go down. Her blood pressure readings climbed to dangerous levels. <strong>Severe preeclampsia</strong>—a life-threatening condition that kills hundreds of mothers in the United States every year, disproportionately affecting Black women like Allyson.</p>
+
+            <p class="story-text">"I felt a constant sense of worry," Allyson later revealed. "My pregnancy was considered high-risk, and things were not going as planned." What she didn't know yet was just how not-planned things would become.</p>
+        </section>
+
+        <div class="quote-box">
+            <p class="quote-text">My doctor said we needed to deliver right away. It was the only way to save both of us. I had never been so scared in my life.</p>
+            <p class="quote-author">— Allyson Felix</p>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">32 Weeks: An Emergency Decision</h2>
+            <p class="story-text">On November 28, 2018, doctors made the call. The baby had to come out—eight weeks early. Allyson was rushed into an <strong>emergency C-section</strong>, her husband Kenneth Ferguson by her side, both of them terrified but trying to stay strong.</p>
+
+            <p class="story-text">Their daughter Camryn was born weighing just 3 pounds, 7 ounces. She was immediately taken to the <strong>Neonatal Intensive Care Unit (NICU)</strong>, her tiny body hooked up to monitors and machines. For any mother, seeing your newborn daughter fighting for every breath is unbearable. For Allyson, a woman who had spent her entire life in control of her body, her training, her races—this was a powerlessness she'd never experienced.</p>
+
+            <p class="story-text">"I felt like my body had failed me," she said. "I'd spent my whole career asking my body to do extraordinary things, and when it mattered most, it couldn't do the most natural thing in the world."</p>
+
+            <p class="story-text">Camryn spent weeks in the NICU. Allyson spent those weeks pumping breast milk every three hours, holding her daughter's impossibly small hand through the incubator, praying, and slowly healing from major surgery. The woman who had sprinted around tracks in front of millions was now measuring victories in ounces gained and monitors successfully removed.</p>
+        </section>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-year">1985</div>
+                <div class="timeline-event">Born in Los Angeles, California. Younger sister of sprinter Wil Felix.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2003</div>
+                <div class="timeline-event">Won World Championship gold in 200m at age 18, becoming youngest ever champion.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2004</div>
+                <div class="timeline-event">First Olympics in Athens—won silver in 200m, the start of an legendary Olympic career.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2012</div>
+                <div class="timeline-event">Three gold medals at London Olympics, cementing status as track royalty.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2016</div>
+                <div class="timeline-event">Two golds and one silver at Rio Olympics, became most decorated US track athlete.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">Nov 2018</div>
+                <div class="timeline-event">Emergency C-section at 32 weeks due to severe preeclampsia. Daughter Camryn born.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">May 2019</div>
+                <div class="timeline-event">Published New York Times op-ed exposing Nike's refusal to protect pregnant athletes.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2019</div>
+                <div class="timeline-event">Left Nike after 18 years, signed with Athleta who guaranteed maternity protections.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2021</div>
+                <div class="timeline-event">Won bronze in 400m at Tokyo Olympics at age 35, becoming oldest US track medalist.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2021</div>
+                <div class="timeline-event">Launched Saysh, her own footwear brand designed by women, for women.</div>
+            </div>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">The Battle with Nike</h2>
+            <p class="story-text">While Camryn was still in the NICU, Allyson faced another fight—one that would change the entire landscape of women's sports.</p>
+
+            <p class="story-text">She had been with <strong>Nike</strong> since she was a teenager, one of their most successful and marketable athletes. Her contract was up for renewal. Given her status as the most decorated US track athlete in history, she expected a fair negotiation.</p>
+
+            <p class="story-text">What she got was a slap in the face.</p>
+
+            <p class="story-text">Nike wanted to pay her <strong>70% less</strong> than her previous contract. The reason? She'd had a baby. She'd taken time off. She was 33 years old. Never mind that she was planning to compete at the highest level. Never mind her track record—literally and figuratively. Never mind that male athletes routinely get paid through injuries, suspensions, and personal breaks.</p>
+
+            <p class="story-text">Worse, Nike <strong>refused to guarantee</strong> that her pay wouldn't be reduced if she got pregnant again or if her performance was affected by maternity. In the contract language, pregnancy was treated the same as an injury or an athlete's failure to perform.</p>
+        </section>
+
+        <div class="quote-box">
+            <p class="quote-text">I asked Nike to contractually guarantee that I wouldn't be punished if I didn't perform at my best in the months surrounding childbirth. I wanted to set a new standard. If I, one of Nike's most widely marketed athletes, couldn't secure these protections, who could?</p>
+            <p class="quote-author">— Allyson Felix, New York Times (2019)</p>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">Going Public: The Op-Ed Heard Around the World</h2>
+            <p class="story-text">In May 2019, Allyson did something that terrified her. She published an op-ed in <strong>The New York Times</strong> titled "My Own Nike Pregnancy Story." In it, she exposed everything—the pay cut, the refusal to protect pregnant athletes, the systemic devaluation of mothers in sports.</p>
+
+            <p class="story-text">"I've been one of Nike's most widely marketed athletes," she wrote. "If I can't secure maternity protections, who can?"</p>
+
+            <p class="story-text">The response was seismic. Other female athletes came forward with their own stories. <strong>Alysia Montaño</strong> revealed she'd lost nearly all her sponsorship money while pregnant. <strong>Kara Goucher</strong> shared similar experiences. The floodgates opened.</p>
+
+            <p class="story-text">What Allyson exposed wasn't just Nike's policy—it was an entire industry that treated pregnancy as a liability instead of a normal part of life. An industry that claimed to celebrate female athletes but punished them for becoming mothers.</p>
+
+            <p class="story-text">Within months of her op-ed, Nike changed its maternity policy, guaranteeing 18 months of protection for pregnant athletes. Other brands followed. Allyson had done what she always did—she'd run ahead of everyone else, blazing a trail for those who would come after.</p>
+        </section>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">11</div>
+                <div class="stat-label">Olympic Medals</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">19</div>
+                <div class="stat-label">World Championships</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">5</div>
+                <div class="stat-label">Olympic Games</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">18</div>
+                <div class="stat-label">World Records (relays)</div>
+            </div>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">The Comeback: Tokyo 2021</h2>
+            <p class="story-text">After leaving Nike, Allyson signed with <strong>Athleta</strong>, a brand that not only guaranteed maternity protections but celebrated her activism. But the real test was still ahead: Could she make it back to the Olympics?</p>
+
+            <p class="story-text">The road to Tokyo was brutal. At 35 years old, competing against athletes more than a decade younger, training while being a mother to a toddler, carrying the weight of her advocacy—it would have been easy to walk away. She'd already proven everything.</p>
+
+            <p class="story-text">But Allyson Felix didn't become the greatest by taking the easy path.</p>
+
+            <p class="story-text">At the Tokyo Olympics in 2021, running in shoes from her own brand <strong>Saysh</strong> (which she'd launched earlier that year), Allyson won <strong>bronze in the 400m</strong>. At 35, she became the oldest American woman to medal in an individual track event. She added a gold in the 4x400m relay, bringing her total to <strong>11 Olympic medals</strong>—the most of any American track and field athlete in history, surpassing Carl Lewis.</p>
+
+            <p class="story-text">As she stood on the podium with Camryn watching, the moment was about more than medals. It was vindication. It was proof that mothers don't have to choose between their careers and their families. It was a middle finger to everyone who thought her best days were behind her because she'd had a baby.</p>
+        </section>
+
+        <div class="quote-box">
+            <p class="quote-text">I have so much more perspective now. This medal is not just for me. It's for Camryn, to show her that you can be a mom and still chase your dreams. It's for every woman who's been told she's past her prime.</p>
+            <p class="quote-author">— Allyson Felix, Tokyo 2021</p>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">Saysh: Building Her Own Empire</h2>
+            <p class="story-text">In 2021, Allyson launched <strong>Saysh</strong>, a lifestyle brand centered around footwear designed by women, for women. The name itself was a statement—encouraging women to "say" what they need, what they want, what they deserve.</p>
+
+            <p class="story-text">She competed at the Tokyo Olympics in Saysh spikes—making her one of the few athletes in history to medal in shoes from their own brand. It wasn't just about business; it was about control, autonomy, and creating the change she wanted to see.</p>
+
+            <p class="story-text">Saysh is designed with women's biomechanics in mind, not just smaller versions of men's shoes. It's designed for women who are athletes, mothers, professionals, all of the above. It's everything Nike wasn't willing to do for her—so she did it herself.</p>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Legacy: The Voice for Mothers</h2>
+            <p class="story-text">Allyson's impact extends far beyond the track. She became a fierce advocate for <strong>Black maternal health</strong>, speaking openly about how Black women in America are <strong>3-4 times more likely</strong> to die from pregnancy-related complications than white women—regardless of education or income level.</p>
+
+            <p class="story-text">Her near-death experience with preeclampsia wasn't just her story—it was the story of thousands of Black mothers who aren't believed when they say something is wrong, who don't receive adequate prenatal care, who are dismissed and undervalued by a healthcare system built on racial bias.</p>
+
+            <p class="story-text">She partnered with organizations fighting for maternal health equity. She spoke at conferences, testified about athlete rights, and used her platform to amplify voices that had been silenced for too long.</p>
+
+            <p class="story-text">In 2022, she announced her retirement from professional track and field. Her final race was at the 2022 World Championships, where she ran the anchor leg of the 4x400m mixed relay. She didn't medal, but it didn't matter. She'd already won the race that mattered most.</p>
+        </section>
+
+        <div class="impact-grid">
+            <div class="impact-card">
+                <span class="impact-icon">👟</span>
+                <h3 class="impact-title">Changed Sports Industry</h3>
+                <p class="impact-description">Forced Nike and other brands to adopt maternity protections for sponsored athletes, changing contracts across the entire industry.</p>
+            </div>
+            <div class="impact-card">
+                <span class="impact-icon">🤰</span>
+                <h3 class="impact-title">Maternal Health Advocate</h3>
+                <p class="impact-description">Brought national attention to Black maternal health crisis, speaking openly about her life-threatening preeclampsia experience.</p>
+            </div>
+            <div class="impact-card">
+                <span class="impact-icon">🏆</span>
+                <h3 class="impact-title">Most Decorated US Athlete</h3>
+                <p class="impact-description">11 Olympic medals make her the most decorated American track and field athlete in history, surpassing Carl Lewis.</p>
+            </div>
+            <div class="impact-card">
+                <span class="impact-icon">💪</span>
+                <h3 class="impact-title">Entrepreneurial Pioneer</h3>
+                <p class="impact-description">Founded Saysh, a footwear brand designed by women for women, and competed at Olympics in her own shoes.</p>
+            </div>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">The Woman Who Wouldn't Slow Down</h2>
+            <p class="story-text">Allyson Felix's story isn't just about running fast. It's about running toward justice when it would have been easier to stay quiet. It's about risking everything—her Nike contract, her reputation, her comeback—to fight for mothers she would never meet.</p>
+
+            <p class="story-text">From the little girl running on the track at Los Angeles Baptist High School to the woman standing on the podium at five Olympic Games, Allyson redefined what it means to be a champion. Not just through medals, but through courage.</p>
+
+            <p class="story-text">She proved that mothers aren't liabilities—they're superheroes. She proved that advocacy doesn't mean the end of your athletic career; it can fuel it. She proved that when corporations won't do the right thing, athletes can force them to.</p>
+
+            <p class="story-text">Today, when a young female athlete signs a sponsorship deal with maternity protections built in, that's Allyson's legacy. When a mother returns to her sport without fear of losing her income, that's Allyson's legacy. When a Black woman's concerns about her pregnancy are taken seriously, that's the world Allyson fought for.</p>
+
+            <p class="story-text">She didn't just break records. She broke barriers. She didn't just win races. She changed the game.</p>
+        </section>
+
+        <div class="quote-box">
+            <p class="quote-text">I want Camryn to grow up in a world where she never has to choose between being a mother and pursuing her dreams. Where her body is respected, her voice is heard, and her worth isn't determined by whether she's profitable to someone else. That's what I'm running for now.</p>
+            <p class="quote-author">— Allyson Felix</p>
+        </div>
+
+        <section class="section">
+            <p class="story-text" style="text-align: center; font-size: 1.2rem; color: var(--text-light); margin-top: 4rem;">
+                <strong>Allyson Felix:</strong> 11 Olympic medals. 19 World Championship medals. Mother. Activist. Revolutionary. The fastest woman who refused to stay in her lane.
+            </p>
+        </section>
+    </div>
+</body>
+</html>

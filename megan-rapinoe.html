@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Megan Rapinoe - The story of how a soccer superstar took on the President, fought for equal pay, and changed women's sports forever">
+    <title>Megan Rapinoe - The Unapologetic Warrior | Athletic Players</title>
+    <style>
+        :root {
+            --primary-color: #e63946;
+            --secondary-color: #1d3557;
+            --accent-color: #f4a261;
+            --text-dark: #2b2d42;
+            --text-light: #8d99ae;
+            --background: #f8f9fa;
+            --background-subtle: #edf2f4;
+            --white: #ffffff;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+            --shadow-lg: 0 8px 24px rgba(0,0,0,0.15);
+            --shadow-xl: 0 16px 48px rgba(0,0,0,0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background: var(--background);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+            padding: 6rem 2rem 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://source.unsplash.com/1600x900/?megan,rapinoe,soccer,football,celebration,athlete') center/cover;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: var(--white);
+            text-decoration: none;
+            margin-bottom: 2rem;
+            font-weight: 600;
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+
+        .back-link:hover {
+            opacity: 1;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+            font-weight: 300;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 2rem;
+            max-width: 800px;
+            margin: 3rem auto 0;
+        }
+
+        .hero-stat {
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .hero-stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.25rem;
+        }
+
+        .hero-stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+
+        /* Content */
+        .content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            font-weight: 800;
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .story-text {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .story-text.lead {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: var(--secondary-color);
+            line-height: 1.6;
+        }
+
+        .story-text strong {
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        /* Quote Box */
+        .quote-box {
+            background: linear-gradient(135deg, var(--background-subtle) 0%, var(--white) 100%);
+            border-left: 5px solid var(--primary-color);
+            padding: 2.5rem;
+            margin: 3rem 0;
+            border-radius: 0 12px 12px 0;
+            box-shadow: var(--shadow-md);
+        }
+
+        .quote-text {
+            font-size: 1.4rem;
+            font-style: italic;
+            color: var(--secondary-color);
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+        .quote-author {
+            margin-top: 1rem;
+            font-size: 1rem;
+            color: var(--text-light);
+            font-style: normal;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 3rem;
+            margin: 3rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--primary-color), var(--accent-color));
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2.5rem;
+            padding-left: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -3.5rem;
+            top: 0.5rem;
+            width: 16px;
+            height: 16px;
+            background: var(--primary-color);
+            border: 3px solid var(--white);
+            border-radius: 50%;
+            box-shadow: var(--shadow-md);
+        }
+
+        .timeline-year {
+            font-weight: 800;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-event {
+            font-size: 1.05rem;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        .stat-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+            text-align: center;
+            border-top: 4px solid var(--primary-color);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: var(--text-light);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Impact Cards */
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .impact-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+        }
+
+        .impact-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .impact-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .impact-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .impact-description {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 4rem 1.5rem 3rem;
+            }
+
+            .content {
+                padding: 3rem 1.5rem;
+            }
+
+            .hero-stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .timeline {
+                padding-left: 2rem;
+            }
+
+            .timeline-item {
+                padding-left: 1.5rem;
+            }
+
+            .quote-box {
+                padding: 1.5rem;
+            }
+
+            .quote-text {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .impact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-content">
+            <a href="index.html" class="back-link">← Back to Athletes</a>
+            <h1 class="hero-title">Megan Rapinoe</h1>
+            <p class="hero-subtitle">The Unapologetic Warrior Who Took On a President and Won</p>
+
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="hero-stat-number">2</div>
+                    <div class="hero-stat-label">World Cup Titles</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">1</div>
+                    <div class="hero-stat-label">Olympic Gold</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">6</div>
+                    <div class="hero-stat-label">Year Equal Pay Fight</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">∞</div>
+                    <div class="hero-stat-label">Barriers Broken</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="content">
+        <section class="section">
+            <h2 class="section-title">"I'm Not Going to the F***ing White House"</h2>
+            <p class="story-text lead">June 2019. The Women's World Cup was heating up, and a reporter asked Megan Rapinoe if she would visit the White House if the US won. Her response was immediate, unflinching, and would ignite a firestorm: "I'm not going to the f***ing White House."</p>
+
+            <p class="story-text">President Donald Trump fired back on Twitter, saying she should "WIN first before she TALKS!" and that she should "never disrespect our Country, the White House, or our Flag."</p>
+
+            <p class="story-text">Megan's response? She scored <strong>six goals</strong> in the tournament, won the <strong>Golden Boot</strong> (top scorer) and the <strong>Golden Ball</strong> (best player), and led the US to their second consecutive World Cup title.</p>
+
+            <p class="story-text">After the final, she stood on the podium with her arms outstretched—that iconic pose—purple hair blazing, a smirk on her face that said everything. She'd won. And she'd done it her way: loud, proud, and unapologetically herself.</p>
+
+            <p class="story-text">This wasn't just about soccer. This was about a gay woman refusing to be silenced by the most powerful man in the world. This was about an athlete using her platform not to "stick to sports" but to stand for something bigger.</p>
+        </section>
+
+        <div class="quote-box">
+            <p class="quote-text">I'll do me. You do you. And we'll talk about everything. We'll talk about our LGBTQ+ pride, we'll talk about equal pay, we'll talk about why I won't visit the White House. I'm not going to hide from any of it.</p>
+            <p class="quote-author">— Megan Rapinoe, 2019</p>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">Redding Roots: Where It All Started</h2>
+            <p class="story-text">Megan Anna Rapinoe was born on July 5, 1985, in Redding, California—a small, conservative city in Northern California. She was one of six kids, including her fraternal twin sister <strong>Rachael</strong>. The two were inseparable, both playing soccer from the time they could walk.</p>
+
+            <p class="story-text">But their childhood wasn't easy. Their older brother Brian struggled with drug addiction, spending years in and out of prison. Rachael, Megan's twin, would later battle her own addiction issues. Growing up watching people she loved fight these demons shaped Megan's understanding of struggle, resilience, and the systems that fail people.</p>
+
+            <p class="story-text">"We didn't grow up with money," Megan later said. "We grew up watching my brother fight addiction. We grew up in a place where being different wasn't celebrated. But soccer—soccer was where we could be free."</p>
+
+            <p class="story-text">Megan and Rachael were phenoms. They played on the same club team, dominated high school soccer, and both earned scholarships to the University of Portland. They were a package deal—at least, that's what everyone thought.</p>
+        </section>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-year">1985</div>
+                <div class="timeline-event">Born in Redding, California. Twin sister Rachael born minutes later.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2005</div>
+                <div class="timeline-event">Led University of Portland to NCAA semifinals. Suffered first major ACL injury.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2006</div>
+                <div class="timeline-event">Made US Women's National Team debut at age 21.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2012</div>
+                <div class="timeline-event">Won Olympic gold in London. Came out publicly as gay.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2015</div>
+                <div class="timeline-event">Won first World Cup title in Canada.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2016</div>
+                <div class="timeline-event">Kneeled during national anthem in solidarity with Colin Kaepernick.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2019</div>
+                <div class="timeline-event">Co-captain of USWNT equal pay lawsuit against US Soccer. Won second World Cup, Golden Boot, and Golden Ball.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2022</div>
+                <div class="timeline-event">Historic equal pay agreement reached with US Soccer—first in US sports history.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2023</div>
+                <div class="timeline-event">Retired from professional soccer after 17-year career.</div>
+            </div>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">The ACL Injury That Changed Everything</h2>
+            <p class="story-text">In 2005, during her sophomore year at Portland, Megan tore her <strong>ACL</strong>. It was devastating. She'd watched her sister Rachael suffer the same injury a year earlier. ACL tears can end careers, especially for players who rely on speed and agility.</p>
+
+            <p class="story-text">Then, in 2007, Megan tore her ACL <strong>again</strong>—in the same knee. Two ACL surgeries before age 22. Many athletes never come back from one. Megan came back from two.</p>
+
+            <p class="story-text">The injuries taught her something crucial: nothing is guaranteed. Your body can betray you at any moment. So when you have the platform, when you have the opportunity—you use it. You don't waste time being who others want you to be.</p>
+
+            <p class="story-text">After her second ACL tear, Megan came back stronger, faster, and more determined than ever. She made the US Women's National Team in 2006 and never looked back.</p>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Coming Out: 2012 Olympics</h2>
+            <p class="story-text">In 2012, Megan helped lead the US to <strong>Olympic gold</strong> in London. It was a triumphant moment—her first major international title. And shortly after, she did something that terrified her: she came out as gay.</p>
+
+            <p class="story-text">She came out publicly in an interview with <strong>Out Magazine</strong>, becoming one of the first prominent openly gay athletes in American team sports. This was 2012—before marriage equality, before mainstream acceptance, in a soccer culture that wasn't always welcoming.</p>
+
+            <p class="story-text">"I feel like sports in general are still homophobic, in the sense that not a lot of people are out," she said. "I feel everyone is really craving [for athletes] to come out. People want—they need—to see that there are people like me playing soccer for the good old U.S. of A."</p>
+
+            <p class="story-text">For young LGBTQ+ athletes watching, Megan became a beacon. She wasn't hiding. She wasn't apologizing. She was winning gold medals and living her truth. She proved you could be gay and be a champion—and you didn't have to choose between the two.</p>
+        </section>
+
+        <div class="quote-box">
+            <p class="quote-text">I couldn't have been more grateful to have a platform to talk about the things that are so important to me. Being gay is part of who I am. It's not all of who I am, but it's a part. And I'm not going to hide it.</p>
+            <p class="quote-author">— Megan Rapinoe, Out Magazine (2012)</p>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">Taking a Knee: 2016</h2>
+            <p class="story-text">In 2016, NFL quarterback <strong>Colin Kaepernick</strong> began kneeling during the national anthem to protest police brutality and racial injustice. He was vilified, called un-American, and ultimately blackballed from the NFL.</p>
+
+            <p class="story-text">Megan was one of the first white athletes to join him.</p>
+
+            <p class="story-text">During a US Women's National Team match in September 2016, Megan <strong>kneeled during the anthem</strong>. She was the first high-profile white athlete and the first woman to do so.</p>
+
+            <p class="story-text">"Being a gay American, I know what it means to look at the flag and not have it protect all of your liberties," she explained. "I have great pride in my country and our ideals, but I know there are people who don't have that experience. We need to have a reckoning."</p>
+
+            <p class="story-text">The backlash was swift. US Soccer changed its rules, requiring players to stand during the anthem. Megan complied—not because she agreed, but because she chose her battles strategically. She'd find other ways to fight. And she did.</p>
+        </section>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">2</div>
+                <div class="stat-label">World Cup Titles</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">199</div>
+                <div class="stat-label">USWNT Caps</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">63</div>
+                <div class="stat-label">International Goals</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">1</div>
+                <div class="stat-label">Ballon d'Or (2019)</div>
+            </div>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">The Equal Pay Battle</h2>
+            <p class="story-text">Here's the thing about the US Women's National Team: they've won <strong>four World Cups</strong> and <strong>four Olympic gold medals</strong>. They're the most successful soccer team in American history—men's or women's. They generate more revenue than the men's team. They have higher TV ratings. They sell more jerseys.</p>
+
+            <p class="story-text">And yet, for years, they were paid a fraction of what the men's team made.</p>
+
+            <p class="story-text">In 2016, five USWNT players filed an Equal Employment Opportunity Commission complaint against US Soccer for wage discrimination. The response from US Soccer? <strong>Women's soccer is a different job that requires a lower level of skill.</strong></p>
+
+            <p class="story-text">Let that sink in. The federation representing the most dominant team in the sport claimed that women's soccer required "less skill" than men's.</p>
+
+            <p class="story-text">In March 2019, on International Women's Day, <strong>28 players</strong>—including Megan—filed a <strong>gender discrimination lawsuit</strong> against US Soccer, seeking $66 million in damages and equal pay moving forward.</p>
+
+            <p class="story-text">Megan became the face of the fight. She gave speeches, did interviews, testified before Congress. All while preparing for the 2019 World Cup.</p>
+        </section>
+
+        <div class="quote-box">
+            <p class="quote-text">We're done with the 'Are we worth it? Should we have equal pay? Is the market the same?' Yada, yada, yada. We're done with all of that. It's time to move that conversation forward to: What are we going to do about it?</p>
+            <p class="quote-author">— Megan Rapinoe, 2019</p>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">2019 World Cup: The Victory Lap</h2>
+            <p class="story-text">The 2019 Women's World Cup in France was Megan's masterpiece.</p>
+
+            <p class="story-text">She was 33 years old, battling injuries, dealing with the lawsuit, and feuding with the President of the United States. Most athletes would have crumbled. Megan thrived.</p>
+
+            <p class="story-text">She scored crucial goals in the knockout rounds. She took penalties with ice in her veins. She celebrated with arms outstretched—a pose that became iconic. And when she scored, she didn't just celebrate. She sent a message.</p>
+
+            <p class="story-text">After scoring against France in the quarterfinals, she stood still, arms spread wide, smirking—as if to say, "Yeah, I did that. And I'll do it again."</p>
+
+            <p class="story-text">The US won the tournament. Megan won the <strong>Golden Boot</strong> (top scorer with 6 goals) and the <strong>Golden Ball</strong> (best player). She stood on the podium in Lyon, confetti falling, and you could see it in her eyes: vindication.</p>
+
+            <p class="story-text">She'd won on the field. Now it was time to win off it.</p>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">The Equal Pay Victory: 2022</h2>
+            <p class="story-text">After years of legal battles, negotiations, and public pressure, in February 2022, <strong>US Soccer and the USWNT reached a historic equal pay agreement</strong>.</p>
+
+            <p class="story-text">The deal included:</p>
+            <p class="story-text"><strong>• Identical pay structures for men and women</strong><br>
+            <strong>• Equal World Cup bonuses</strong><br>
+            <strong>• Revenue sharing from World Cup prize money</strong><br>
+            <strong>• $24 million in back pay for the women</strong></p>
+
+            <p class="story-text">It was the <strong>first equal pay agreement in US sports history</strong>. And it happened because Megan and her teammates refused to shut up and play.</p>
+
+            <p class="story-text">"This is just a huge win in ensuring that we not only right the wrongs of the past, but set the next generation up for something that we only dreamed of," Megan said.</p>
+
+            <p class="story-text">The impact rippled globally. Other countries began examining their own pay structures. Women athletes around the world cited the USWNT's fight as inspiration for their own battles.</p>
+
+            <p class="story-text">Megan didn't just change American soccer. She changed the conversation about what female athletes are worth.</p>
+        </section>
+
+        <div class="quote-box">
+            <p class="quote-text">We just knew we had something really special and we were willing to do whatever it took. We knew this was bigger than us. This was for every little girl who picks up a ball, every woman who's ever been told she's not worth as much as a man.</p>
+            <p class="quote-author">— Megan Rapinoe on the equal pay victory</p>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">Sue Bird: Love Is a Battlefield</h2>
+            <p class="story-text">Throughout her battles, Megan had a partner fighting alongside her: <strong>Sue Bird</strong>, the legendary WNBA point guard for the Seattle Storm.</p>
+
+            <p class="story-text">They met at the 2016 Olympics. Both were already legends in their sports. Both were openly gay. Both were activists. They started dating, and what began as a connection between two athletes became one of the most powerful partnerships in sports.</p>
+
+            <p class="story-text">Together, they became the first openly gay couple to appear on the cover of <strong>ESPN The Magazine's Body Issue</strong>. They used their platforms to advocate for LGBTQ+ rights, pay equity, and social justice.</p>
+
+            <p class="story-text">In 2020, they got engaged. They announced it on Instagram with a photo of Sue's proposal, Megan saying yes with tears in her eyes.</p>
+
+            <p class="story-text">They represent something powerful: two women at the top of their professions, unapologetically in love, using their voices to change the world. They didn't just break barriers—they obliterated them.</p>
+        </section>
+
+        <div class="impact-grid">
+            <div class="impact-card">
+                <span class="impact-icon">💰</span>
+                <h3 class="impact-title">Equal Pay Pioneer</h3>
+                <p class="impact-description">Led six-year fight that resulted in first equal pay agreement in US sports history, fundamentally changing how women athletes are valued.</p>
+            </div>
+            <div class="impact-card">
+                <span class="impact-icon">🏳️‍🌈</span>
+                <h3 class="impact-title">LGBTQ+ Icon</h3>
+                <p class="impact-description">One of the first prominent openly gay athletes in team sports. Used platform to advocate for LGBTQ+ rights and visibility.</p>
+            </div>
+            <div class="impact-card">
+                <span class="impact-icon">✊</span>
+                <h3 class="impact-title">Social Justice Warrior</h3>
+                <p class="impact-description">Kneeled for racial justice, spoke out against injustice, refused to be silenced—even by the President. Never backed down.</p>
+            </div>
+            <div class="impact-card">
+                <span class="impact-icon">⚽</span>
+                <h3 class="impact-title">Two-Time World Cup Champion</h3>
+                <p class="impact-description">Won 2015 and 2019 World Cups, Olympic gold in 2012, Ballon d'Or in 2019. One of the greatest players in US soccer history.</p>
+            </div>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">Retirement: The Final Stand</h2>
+            <p class="story-text">In 2023, at age 38, Megan announced her retirement. Her final match was at Lumen Field in Seattle—Sue Bird's home court—in front of over 34,000 fans who came to say goodbye to a legend.</p>
+
+            <p class="story-text">She didn't go out on top. She didn't win a final World Cup. But that was never the point.</p>
+
+            <p class="story-text">Megan's legacy isn't just the goals she scored or the trophies she won. It's the doors she kicked open. It's the conversations she forced. It's the little girl watching who now knows she doesn't have to hide who she is to be a champion.</p>
+
+            <p class="story-text">She proved that athletes don't have to "stick to sports." That using your platform matters. That fighting for what's right is worth the backlash, the hate, the criticism.</p>
+
+            <p class="story-text">She showed that you can be gay, loud, purple-haired, and unapologetically yourself—and still be one of the greatest to ever play the game.</p>
+        </section>
+
+        <div class="quote-box">
+            <p class="quote-text">I've never been interested in just being a soccer player. I've always wanted to be a person who happens to play soccer and uses that platform to make the world a little bit better. That's what I'm most proud of.</p>
+            <p class="quote-author">— Megan Rapinoe</p>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">The Unapologetic Legacy</h2>
+            <p class="story-text">When you ask young girls today who their heroes are, many will say Megan Rapinoe. Not just because she won World Cups, but because she showed them what courage looks like.</p>
+
+            <p class="story-text">Courage isn't just scoring penalty kicks in front of millions. It's standing up when everyone tells you to sit down. It's fighting for six years for equal pay when you could have just cashed your checks and stayed quiet. It's kneeling during the anthem when you know half the country will hate you for it.</p>
+
+            <p class="story-text">Megan never played it safe. She could have. She was talented enough to coast on skill alone, to avoid controversy, to be the kind of athlete who just smiles and waves.</p>
+
+            <p class="story-text">But that's not who she is.</p>
+
+            <p class="story-text">She's the woman with purple hair and a megaphone who refused to shut up. The one who took on US Soccer and won. The one who looked the President in the eye and said "No." The one who proved that being yourself—loudly, proudly, unapologetically—is the most powerful thing you can do.</p>
+
+            <p class="story-text">Soccer was just the stage. Justice was the game. And Megan Rapinoe played to win.</p>
+        </section>
+
+        <div class="quote-box">
+            <p class="quote-text">I'll never just stick to sports. I'm going to use this platform to talk about things that matter, to fight for people who don't have a voice, to make this world better. That's what being a champion really means.</p>
+            <p class="quote-author">— Megan Rapinoe</p>
+        </div>
+
+        <section class="section">
+            <p class="story-text" style="text-align: center; font-size: 1.2rem; color: var(--text-light); margin-top: 4rem;">
+                <strong>Megan Rapinoe:</strong> 2 World Cups. 1 Olympic gold. 1 Ballon d'Or. Equal pay pioneer. LGBTQ+ icon. The unapologetic warrior who changed the game forever.
+            </p>
+        </section>
+    </div>
+</body>
+</html>
