@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Billie Jean King - Tennis revolutionary who fought for equality. Won Battle of the Sexes against Bobby Riggs. Founded WTA. LGBTQ+ pioneer threatened with outing. Changed sports forever.">
+    <title>Billie Jean King - The Revolutionary Who Changed Everything | Athletic Players</title>
+    <style>
+        :root {
+            --primary-color: #2ecc71;
+            --secondary-color: #27ae60;
+            --accent-color: #f39c12;
+            --text-dark: #2c3e50;
+            --text-light: #ecf0f1;
+            --bg-light: #ffffff;
+            --bg-dark: #34495e;
+            --gradient-primary: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+            --gradient-accent: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+            --shadow: 0 10px 30px rgba(0,0,0,0.1);
+            --shadow-hover: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--bg-light);
+        }
+
+        /* Header/Navigation */
+        header {
+            background: var(--gradient-primary);
+            padding: 1rem 0;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--text-light);
+            text-decoration: none;
+        }
+
+        .nav-link {
+            color: var(--text-light);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .nav-link:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://source.unsplash.com/1600x900/?tennis,court,champion,victory,female,power') center/cover;
+            color: var(--text-light);
+            padding: 6rem 2rem;
+            text-align: center;
+            animation: fadeIn 1s ease-in;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 1rem;
+            animation: slideInDown 0.8s ease-out;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+            margin-bottom: 2rem;
+            font-weight: 300;
+            animation: slideInUp 0.8s ease-out;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--accent-color);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Main Content */
+        .content {
+            max-width: 900px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--gradient-accent);
+        }
+
+        .section h3 {
+            font-size: 1.8rem;
+            margin: 2rem 0 1rem;
+            color: var(--secondary-color);
+        }
+
+        .section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: #444;
+        }
+
+        /* Quote Box */
+        .quote-box {
+            background: var(--gradient-primary);
+            color: var(--text-light);
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            border-left: 5px solid var(--accent-color);
+            box-shadow: var(--shadow);
+        }
+
+        .quote-box blockquote {
+            font-size: 1.3rem;
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .quote-author {
+            text-align: right;
+            font-weight: bold;
+            opacity: 0.9;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--gradient-primary);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 100px;
+            margin-bottom: 3rem;
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: 35px;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: var(--gradient-accent);
+            border: 4px solid var(--bg-light);
+            box-shadow: var(--shadow);
+        }
+
+        .timeline-date {
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        /* Image Grid */
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .image-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .image-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .image-caption {
+            padding: 1rem;
+            background: var(--bg-dark);
+            color: var(--text-light);
+            text-align: center;
+        }
+
+        /* Impact Grid */
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .impact-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: var(--text-light);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .impact-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .impact-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .impact-card h3 {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .stats-card {
+            background: var(--gradient-primary);
+            color: var(--text-light);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        .stats-card-number {
+            font-size: 3rem;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-dark);
+            color: var(--text-light);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 4rem 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .content {
+                margin: 2rem auto;
+                padding: 0 1rem;
+            }
+
+            .section h2 {
+                font-size: 2rem;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                padding-left: 60px;
+            }
+
+            .timeline-marker {
+                left: 5px;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-stats {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .section h2 {
+                font-size: 1.5rem;
+            }
+
+            .section p {
+                font-size: 1rem;
+            }
+
+            .quote-box blockquote {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">Athletic Players</a>
+            <a href="index.html" class="nav-link">← Back to All Athletes</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Billie Jean King</h1>
+            <p class="hero-subtitle">The Revolutionary Who Changed Everything</p>
+            <p style="font-size: 1.2rem; margin-top: 1rem;">Beat Bobby Riggs. Built the WTA. Fought for equality. Survived being outed. Changed sports forever.</p>
+
+            <div class="hero-stats">
+                <div class="stat-card">
+                    <span class="stat-number">39</span>
+                    <span class="stat-label">Grand Slam Titles</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">1973</span>
+                    <span class="stat-label">Battle of the Sexes</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">WTA</span>
+                    <span class="stat-label">Founded</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">∞</span>
+                    <span class="stat-label">Lives Changed</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="content">
+        <section class="section">
+            <h2>The Match That Changed the World</h2>
+            <p>September 20, 1973. Houston Astrodome. 90 million people watching worldwide—the largest audience in tennis history. 29-year-old Billie Jean King walked onto the court carried by four muscular men dressed as ancient slaves, like Cleopatra entering Rome. Her opponent, 55-year-old Bobby Riggs, arrived in a rickshaw pulled by models he called "Bobby's Bosom Buddies."</p>
+
+            <p>It looked like a circus. It was designed to look like a circus. Bobby Riggs had spent months turning this tennis match into a media spectacle, declaring that women's tennis was inferior, that even an old man like him could beat the best woman in the world, that women belonged in the kitchen and the bedroom, not on the tennis court.</p>
+
+            <p>And Billie Jean King was about to make him eat every word.</p>
+
+            <p>But this wasn't just a tennis match. This was the Battle of the Sexes—and it was about so much more than sports. It was about whether women deserved equal pay. Whether women could compete with men. Whether women had value beyond being wives and mothers. Whether feminism was legitimate or just a joke.</p>
+
+            <p>The entire women's liberation movement was riding on Billie Jean's shoulders. If she lost, it would set women's rights back decades. The pressure was crushing.</p>
+
+            <p>"I thought about all the women who were going to be watching," Billie Jean later said. "I thought about my mother who had to quit playing tennis when she got married because that's what women did. I thought about every girl who was told she couldn't do something because she was a girl. And I knew I couldn't lose. I just couldn't."</p>
+
+            <h3>The Match</h3>
+            <p>Bobby Riggs had already beaten Margaret Court—the world's #1 ranked woman—three months earlier on Mother's Day, in a match he mockingly called the "Mother's Day Massacre." Court had crumbled under the pressure and the taunts. Riggs won 6-2, 6-1, and spent the next three months bragging about it.</p>
+
+            <p>Billie Jean knew she couldn't let that happen. She studied Riggs's game obsessively. She watched film. She developed a strategy: keep him moving, tire out his 55-year-old legs, don't let him control the tempo, don't let him get in her head.</p>
+
+            <p>The match started at 8pm. From the first serve, Billie Jean was in control. She moved Riggs side to side, forcing him to run. She came to the net aggressively. She varied her shots. She dominated.</p>
+
+            <p>Riggs, who had been so cocky and loud for months, grew quieter with each game. His shots began falling short. His legs cramped. The smile faded from his face.</p>
+
+            <p>Billie Jean won 6-4, 6-3, 6-3. It wasn't even close.</p>
+
+            <p>When the final point was struck, Billie Jean threw her racket in the air and jumped for joy. She had done it. She had beaten Bobby Riggs. She had proven that women could compete. She had carried the weight of an entire movement on her back—and she had won.</p>
+
+            <p>The match became the most-watched tennis match in history. It made front-page news around the world. President Richard Nixon called her. Gloria Steinem called her a hero. The New York Times called it "a historic moment for women's rights."</p>
+
+            <p>But for Billie Jean, the victory was bittersweet. Because while the world was celebrating her triumph, she was hiding a secret that threatened to destroy everything she had built.</p>
+        </section>
+
+        <div class="quote-box">
+            <blockquote>"I knew if I lost, it would set the women's movement back 50 years. That's a lot of pressure."</blockquote>
+            <p class="quote-author">— Billie Jean King, on the Battle of the Sexes</p>
+        </div>
+
+        <section class="section">
+            <h2>The Secret That Could Destroy Her</h2>
+
+            <h3>Living a Lie</h3>
+            <p>In 1973, when Billie Jean King defeated Bobby Riggs, she was married to Larry King. They had been married since 1965. To the outside world, they were the perfect couple—supportive, loving, partners in tennis and in life.</p>
+
+            <p>But Billie Jean was gay. She had known since she was young, but in the 1960s and 70s, being openly gay wasn't just taboo—it could end your career, destroy your endorsements, and make you a pariah. So she married Larry, a kind man who loved her, and she tried to be the person everyone expected her to be.</p>
+
+            <p>It was suffocating.</p>
+
+            <p>In 1971, Billie Jean met Marilyn Barnett, a hairdresser. They began a secret relationship. For Billie Jean, it was the first time she felt like she could be herself. But the relationship had to remain absolutely hidden. If anyone found out, Billie Jean's career would be over.</p>
+
+            <p>She lived in constant fear. Every interview, every public appearance, every conversation—she had to be careful, had to hide, had to lie. She loved Marilyn, but loving her meant risking everything.</p>
+
+            <p>The relationship lasted several years, but eventually ended. Billie Jean tried to move on, tried to focus on tennis and activism. But in 1981, her worst nightmare came true.</p>
+
+            <h3>The Lawsuit That Outed Her</h3>
+            <p>Marilyn Barnett filed a "palimony" lawsuit against Billie Jean, claiming they had been in a romantic relationship and demanding financial support and ownership of a house in Malibu.</p>
+
+            <p>The lawsuit immediately became front-page news. Billie Jean King—the woman who had beaten Bobby Riggs, who had founded the Women's Tennis Association, who was the face of women's sports—was being outed as gay in the most public, humiliating way possible.</p>
+
+            <p>Billie Jean was devastated. She later described it as "the worst moment of my life." She held a press conference where she admitted to the affair but called it a "mistake" and emphasized that she was "not a lesbian." She felt she had no choice—admitting she was gay in 1981 would have ended everything.</p>
+
+            <p>Even with that denial, the damage was catastrophic. Within 24 hours, she lost all of her endorsement deals. Every single one. Companies like Wimbledon, Avon, and others dropped her immediately. She lost over $2 million in endorsements—the equivalent of over $6 million today.</p>
+
+            <p>Newspapers ran cruel headlines. Comedians made jokes. Fans turned on her. Death threats poured in. Her phone rang constantly with reporters and angry strangers. She couldn't leave her house without being hounded.</p>
+
+            <p>Billie Jean fell into a deep depression. She seriously considered suicide. "I thought about ending my life," she later admitted. "I felt like I had let everyone down. All the girls who looked up to me, all the women I had fought for—I felt like I had destroyed everything."</p>
+
+            <h3>The Cost of Silence</h3>
+            <p>Billie Jean stayed married to Larry King until 1987, even though the marriage had effectively ended years earlier. She later said she stayed because she didn't know how to leave, didn't know how to be openly gay, didn't know if she could survive being her authentic self.</p>
+
+            <p>It wasn't until the late 1990s—nearly 20 years after being outed—that Billie Jean began to openly acknowledge her sexuality. In 1998, she met Ilana Kloss, a former tennis player, and they began a relationship. They've been together ever since, though they didn't publicly acknowledge their relationship for years.</p>
+
+            <p>In 2009, President Barack Obama honored Billie Jean with the Presidential Medal of Freedom. At the ceremony, he publicly acknowledged Ilana as Billie Jean's partner—the first time a sitting U.S. president had publicly acknowledged a same-sex relationship at an official White House event.</p>
+
+            <p>Billie Jean cried. After decades of hiding, lying, and suffering, she was finally being celebrated for who she truly was.</p>
+        </section>
+
+        <div class="quote-box">
+            <blockquote>"I wanted to tell the truth, but I was afraid of losing everything. So I lied. And lying is worse than anything anyone could do to you."</blockquote>
+            <p class="quote-author">— Billie Jean King</p>
+        </div>
+
+        <section class="section">
+            <h2>The Early Years: Fighting From the Start</h2>
+
+            <h3>The Girl Who Didn't Fit In</h3>
+            <p>Billie Jean Moffitt was born on November 22, 1943, in Long Beach, California. Her father was a firefighter. Her mother was a homemaker. They were a solidly middle-class family—not rich, but comfortable.</p>
+
+            <p>Billie Jean was a tomboy from the start. She wanted to play baseball and football with the boys. She hated wearing dresses. She had more energy than her parents knew what to do with.</p>
+
+            <p>When she was 10, her mother suggested she try tennis. The local tennis club had a free program. Billie Jean picked up a racket and immediately fell in love. She was fast, aggressive, competitive—everything tennis rewarded.</p>
+
+            <p>But she faced discrimination from the beginning. The Southern California tennis scene in the 1950s was dominated by wealthy white country clubs. Billie Jean's family wasn't wealthy. She didn't have the right clothes, the right equipment, the right background.</p>
+
+            <p>When she showed up for a group photo at a junior tournament, the organizer pulled her aside and told her she couldn't be in the picture because she was wearing shorts instead of a tennis skirt. Billie Jean was humiliated—but the incident fueled her determination to change the sport.</p>
+
+            <h3>Rising Through the Ranks</h3>
+            <p>Despite the discrimination, Billie Jean was too talented to ignore. She won her first tournament at age 14. At 17, she won her first Wimbledon doubles title. By her early 20s, she was one of the best players in the world.</p>
+
+            <p>But women's tennis in the 1960s was a joke compared to men's tennis. Prize money was a fraction of what men earned. Women had to fight for court time. Tournaments treated women's matches as second-class entertainment.</p>
+
+            <p>At the 1968 Italian Open, Billie Jean won the women's singles title and received $600. The men's champion received $3,500 for the same event. Billie Jean was furious. She started asking questions: Why were women paid less? Why were their matches scheduled at worse times? Why weren't they taken seriously?</p>
+
+            <p>The answer she kept getting was: because women's tennis isn't as good, doesn't draw crowds, doesn't deserve equal treatment.</p>
+
+            <p>Billie Jean decided to prove them wrong.</p>
+        </section>
+
+        <div class="timeline">
+            <h2>Timeline of a Revolution</h2>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-date">1943</div>
+                <div class="timeline-content">
+                    <h3>Born to Fight</h3>
+                    <p>Born Billie Jean Moffitt on November 22 in Long Beach, California. Father was a firefighter, mother a homemaker. Grew up as a tomboy in a middle-class family, constantly told to "act like a lady."</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-date">1961</div>
+                <div class="timeline-content">
+                    <h3>First Wimbledon Title</h3>
+                    <p>Won first Wimbledon doubles title at age 17 with Karen Hantze. Youngest pair to win Wimbledon doubles. Began to see the massive pay gap between men and women in tennis.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-date">1970</div>
+                <div class="timeline-content">
+                    <h3>The Original 9</h3>
+                    <p>Led rebellion against USLTA's inequality. Signed symbolic $1 contract with Gladys Heldman to form women's professional tour. "The Original 9" risked being banned from all tournaments. Created foundation for women's professional tennis.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-date">1971</div>
+                <div class="timeline-content">
+                    <h3>First Female Athlete to Earn $100,000</h3>
+                    <p>Became first female athlete in any sport to earn over $100,000 in prize money in a single year. Proved women's sports could be profitable. Started relationship with Marilyn Barnett—a secret she would hide for a decade.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-date">1973</div>
+                <div class="timeline-content">
+                    <h3>Battle of the Sexes Victory</h3>
+                    <p>Defeated Bobby Riggs 6-4, 6-3, 6-3 in front of 90 million viewers worldwide. Largest audience in tennis history. Proved women could compete under pressure. Became symbol of women's liberation movement.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-date">1973</div>
+                <div class="timeline-content">
+                    <h3>Founded the WTA</h3>
+                    <p>Co-founded the Women's Tennis Association (WTA), the governing body for women's professional tennis. Fought for equal prize money, better working conditions, and respect for women athletes. Changed professional sports forever.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-date">1981</div>
+                <div class="timeline-content">
+                    <h3>Forced Out of the Closet</h3>
+                    <p>Marilyn Barnett filed palimony lawsuit, publicly outing Billie Jean's same-sex relationship. Lost all endorsements within 24 hours—over $2 million. Fell into deep depression, considered suicide. Denied being gay, saying affair was a "mistake."</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-date">2009</div>
+                <div class="timeline-content">
+                    <h3>Presidential Medal of Freedom</h3>
+                    <p>President Obama awarded Billie Jean the Presidential Medal of Freedom. Publicly acknowledged Ilana Kloss as her partner—first time sitting president acknowledged same-sex relationship at White House ceremony. Finally celebrated for who she truly was.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-date">2020</div>
+                <div class="timeline-content">
+                    <h3>Still Fighting at 77</h3>
+                    <p>At age 77, still advocates for equality in sports and society. Co-founded Billie Jean King Leadership Initiative. Fights for LGBTQ+ rights, equal pay, and women's empowerment. Continues to speak truth to power.</p>
+                </div>
+            </div>
+        </div>
+
+        <section class="section">
+            <h2>Building a Revolution: The WTA</h2>
+
+            <h3>The Original 9</h3>
+            <p>In 1970, the Pacific Southwest Championships in Los Angeles offered a prize purse of $12,500 for men and $1,500 for women—an 8-to-1 ratio. Billie Jean and eight other top women players—Rosie Casals, Nancy Richey, Peaches Bartkowicz, Kristy Pigeon, Judy Dalton, Valerie Ziegenfuss, Kerry Melville Reid, and Julie Heldman—had had enough.</p>
+
+            <p>They met in secret with Gladys Heldman, a tennis promoter and publisher of World Tennis Magazine. Heldman proposed creating a separate women's tour. It was an insane risk. The United States Lawn Tennis Association (USLTA) threatened to ban any woman who participated. Being banned would mean no Wimbledon, no US Open, no major tournaments—career suicide.</p>
+
+            <p>But Billie Jean and the Original 9 decided to take the risk. Each woman signed a symbolic $1 contract with Virginia Slims cigarettes (yes, the irony of women's liberation being sponsored by cigarettes was not lost on anyone). They launched the Virginia Slims Tour.</p>
+
+            <p>The USLTA was furious and threatened suspensions. But the women held firm. And something amazing happened: fans showed up. Women's tennis matches started selling out. Sponsorships rolled in. Media coverage increased.</p>
+
+            <p>The women proved that people would pay to watch women's sports—if given the chance.</p>
+
+            <h3>Creating the WTA</h3>
+            <p>In 1973, Billie Jean co-founded the Women's Tennis Association (WTA) as the governing body for women's professional tennis. The WTA set standards for tournaments, negotiated prize money, and gave women players a unified voice.</p>
+
+            <p>It was the first time women athletes in any sport had their own professional organization controlled by the athletes themselves.</p>
+
+            <p>The WTA revolutionized women's sports. Within a decade, prize money increased dramatically. Women's tennis became one of the most popular sports in the world. Female tennis players became household names and millionaires.</p>
+
+            <p>Today, the WTA oversees tournaments in dozens of countries with total prize money exceeding $180 million annually. The four Grand Slam tournaments—Wimbledon, US Open, Australian Open, and French Open—all offer equal prize money for men and women.</p>
+
+            <p>That equality exists because Billie Jean King fought for it.</p>
+
+            <h3>The Fight for Equal Prize Money</h3>
+            <p>Getting equal prize money took decades. The US Open achieved pay equity in 1973—the first major tournament to do so. But Wimbledon, the most prestigious tournament in tennis, refused.</p>
+
+            <p>For over 30 years, Wimbledon paid men more than women. The argument was always the same: men play best-of-five sets, women play best-of-three, so men deserve more money.</p>
+
+            <p>Billie Jean countered: "We fill the same seats. We sell the same tickets. We generate the same revenue. Why should we be paid less?"</p>
+
+            <p>In 2007—34 years after Billie Jean's Battle of the Sexes victory—Wimbledon finally agreed to equal prize money. Venus Williams, who had been vocal in the fight, won that year's women's title and received the same prize money as the men's champion for the first time in Wimbledon's 130-year history.</p>
+
+            <p>Venus thanked Billie Jean in her victory speech. "None of this would be possible without Billie Jean King," Venus said. "She paved the way for all of us."</p>
+        </section>
+
+        <div class="stats-grid">
+            <div class="stats-card">
+                <span class="stats-card-number">39</span>
+                <p>Grand Slam Titles (Singles/Doubles/Mixed)</p>
+            </div>
+            <div class="stats-card">
+                <span class="stats-card-number">12</span>
+                <p>Singles Grand Slams</p>
+            </div>
+            <div class="stats-card">
+                <span class="stats-card-number">20</span>
+                <p>Wimbledon Titles</p>
+            </div>
+            <div class="stats-card">
+                <span class="stats-card-number">1973</span>
+                <p>Founded WTA</p>
+            </div>
+        </div>
+
+        <section class="section">
+            <h2>The Adversity No One Talks About</h2>
+
+            <h3>The Abortion That Saved Her Career</h3>
+            <p>In 1971, at age 27, Billie Jean discovered she was pregnant. Abortion was still illegal in most of the United States. But Billie Jean knew she couldn't have a baby—not then, not while she was fighting to build women's professional tennis, not while she was the face of the movement.</p>
+
+            <p>She had an illegal abortion in California. It was terrifying, dangerous, and traumatic. She couldn't tell anyone. She couldn't take time off. She had to pretend nothing had happened and get back on the court.</p>
+
+            <p>She kept this secret for decades. When she finally revealed it in 2007, she said: "I couldn't have a baby and keep playing tennis at the level I needed to. I had to make a choice. And I knew if I had that baby, everything I was fighting for—everything WE were fighting for—would fall apart."</p>
+
+            <p>The revelation was controversial, but Billie Jean didn't regret speaking out. "Women need to know they're not alone," she said. "We make impossible choices every day. That's the reality."</p>
+
+            <h3>The Health Battles</h3>
+            <p>Throughout her career, Billie Jean battled severe knee problems. She had five knee surgeries between 1968 and 1977. Each time, doctors told her she might never play again. Each time, she fought back through brutal rehabilitation.</p>
+
+            <p>She played in pain constantly. But she couldn't afford to stop—stopping would mean giving up the fight for equality, giving other people ammunition to say women weren't tough enough.</p>
+
+            <p>In 2014, Billie Jean revealed she had been diagnosed with acid reflux, which caused severe pain and difficulty eating. The condition went undiagnosed for years because doctors dismissed her symptoms as anxiety or stress.</p>
+
+            <p>"Being a woman means doctors don't always take you seriously," she said. "They assume you're being dramatic."</p>
+
+            <h3>The Loneliness of Being First</h3>
+            <p>Billie Jean has spoken candidly about the loneliness of being a pioneer. "Everyone thinks being first is glamorous," she said. "But being first means you're alone. You don't have anyone to ask for advice. You don't have a playbook. You're making it up as you go."</p>
+
+            <p>She carried the weight of an entire movement on her shoulders. Every match, every interview, every decision—it all mattered. One wrong move could set women's sports back decades.</p>
+
+            <p>The pressure caused anxiety attacks, insomnia, and depression. But she couldn't show weakness. She had to be strong, confident, unbreakable—even when she felt like she was falling apart.</p>
+
+            <p>"I cried a lot," she admitted. "Alone, in hotel rooms, where no one could see. Because if they saw me cry, they would say I was too emotional, too weak, too female to lead."</p>
+        </section>
+
+        <div class="impact-grid">
+            <div class="impact-card">
+                <div class="impact-icon">🎾</div>
+                <h3>Founded Women's Professional Tennis</h3>
+                <p>Co-founded WTA in 1973. Led "Original 9" rebellion. Created first women's sports organization controlled by athletes. Changed professional sports forever.</p>
+            </div>
+            <div class="impact-card">
+                <div class="impact-icon">⚖️</div>
+                <h3>Champion for Equality</h3>
+                <p>Fought for equal prize money for 30+ years. US Open achieved parity in 1973, Wimbledon in 2007. Today all four Grand Slams offer equal pay because of her advocacy.</p>
+            </div>
+            <div class="impact-card">
+                <div class="impact-icon">🏳️‍🌈</div>
+                <h3>LGBTQ+ Icon</h3>
+                <p>Forced out of closet in 1981, lost all endorsements. Fought back by living authentically. Became champion for LGBTQ+ rights. Received Presidential Medal of Freedom with partner acknowledged publicly.</p>
+            </div>
+            <div class="impact-card">
+                <div class="impact-icon">📚</div>
+                <h3>Mentor and Advocate</h3>
+                <p>Founded Billie Jean King Leadership Initiative. Mentored generations of athletes. Speaks globally on equality, inclusion, and fighting for what's right. Still advocating at age 81.</p>
+            </div>
+        </div>
+
+        <section class="section">
+            <h2>Legacy and Impact</h2>
+
+            <h3>Changing Culture, Not Just Sports</h3>
+            <p>Billie Jean King didn't just change tennis—she changed culture. The Battle of the Sexes wasn't about whether a woman could beat a man at tennis. It was about whether women deserved to be taken seriously, whether they could handle pressure, whether they had value beyond being decorative.</p>
+
+            <p>When Billie Jean won, she proved that women could compete, could lead, could thrive under the brightest spotlight. That victory had ripple effects far beyond sports.</p>
+
+            <p>Title IX—the federal law prohibiting sex discrimination in education and athletics—was passed in 1972, one year before the Battle of the Sexes. But it was Billie Jean's victory that gave the law teeth, that showed the world what women could accomplish when given the opportunity.</p>
+
+            <p>Today, millions of girls play sports because Title IX exists. And Title IX exists in its powerful form because Billie Jean King proved women's sports mattered.</p>
+
+            <h3>The Athletes She Inspired</h3>
+            <p>Serena Williams called Billie Jean "the reason I'm playing tennis." Venus Williams said, "Without Billie Jean King, there would be no me." Martina Navratilova, who dominated tennis in the 1980s, said Billie Jean "showed me I could be myself—gay, athletic, powerful—and still be celebrated."</p>
+
+            <p>But Billie Jean's impact extends beyond tennis. Soccer star Abby Wambach credits Billie Jean with inspiring the equal pay fight in women's soccer. Basketball legend Lisa Leslie said Billie Jean "taught us to demand respect, not beg for it." MMA fighter Amanda Nunes said Billie Jean proved women could be both tough and feminine.</p>
+
+            <p>Every woman athlete competing today stands on Billie Jean King's shoulders.</p>
+
+            <h3>Still Fighting at 81</h3>
+            <p>Billie Jean King is 81 years old. She could have retired decades ago, could have faded into comfortable legend status, could have stopped fighting.</p>
+
+            <p>But she hasn't. She still shows up. She still speaks out. She still fights for equality.</p>
+
+            <p>When the U.S. Women's National Soccer Team sued for equal pay, Billie Jean was there, advising them, supporting them, using her platform to amplify their cause. When they won in 2022, Billie Jean celebrated like it was her own victory.</p>
+
+            <p>When WNBA players fought for better pay and working conditions, Billie Jean backed them publicly. When women athletes spoke out about abuse and harassment, Billie Jean stood with them.</p>
+
+            <p>She founded the Billie Jean King Leadership Initiative, which trains the next generation of leaders in diversity, inclusion, and equality. She travels the world giving speeches about fighting for what's right, even when it's hard.</p>
+
+            <p>"I'll never stop fighting," she says. "Because the fight is never over. Every generation has to fight for equality all over again. That's just the truth."</p>
+        </section>
+
+        <div class="quote-box">
+            <blockquote>"Everyone thinks women should be grateful for how far we've come. But we shouldn't be grateful for crumbs. We should demand the whole damn cake."</blockquote>
+            <p class="quote-author">— Billie Jean King</p>
+        </div>
+
+        <section class="section">
+            <h2>Why She Matters Today</h2>
+
+            <p>In 2025, women's sports are more popular than ever. Women's tennis Grand Slams offer equal prize money. Female athletes earn millions in endorsements. The WNBA is thriving. Women's soccer, basketball, and other sports are breaking viewership records.</p>
+
+            <p>But none of that would exist without Billie Jean King.</p>
+
+            <p>She was the one who said, "We deserve equal pay" when everyone laughed at her. She was the one who risked her career to create the WTA. She was the one who carried the weight of an entire movement on her back and beat Bobby Riggs when the world was watching.</p>
+
+            <p>She was the one who lost everything when she was outed, fell into depression, considered suicide—and then got back up and kept fighting.</p>
+
+            <p>Today, when women athletes fight for equal pay, they're continuing Billie Jean's fight. When LGBTQ+ athletes come out proudly, they're standing on Billie Jean's shoulders. When girls play sports without thinking twice about whether they "belong," they're benefiting from Billie Jean's revolution.</p>
+
+            <p>Billie Jean King didn't just play tennis. She changed the world. And she did it while living a secret that could have destroyed her, while battling injuries that should have ended her career, while carrying pressure that would have crushed most people.</p>
+
+            <p>She won 39 Grand Slam titles. But her greatest victory was proving that women deserve equality—and then spending 60 years making that equality a reality.</p>
+
+            <p>That's why Billie Jean King matters. Not because she won a tennis match in 1973. But because she showed us that one person, fighting for what's right, can change everything.</p>
+        </section>
+
+        <div class="image-grid">
+            <div class="image-card">
+                <img src="https://source.unsplash.com/800x600/?tennis,court,championship,wimbledon,grass" alt="Tennis championship court" loading="lazy">
+                <div class="image-caption">Where Equality Was Won</div>
+            </div>
+            <div class="image-card">
+                <img src="https://source.unsplash.com/800x600/?tennis,racket,trophy,champion,victory" alt="Tennis championship trophy" loading="lazy">
+                <div class="image-caption">39 Grand Slam Titles</div>
+            </div>
+            <div class="image-card">
+                <img src="https://source.unsplash.com/800x600/?equality,justice,rights,movement,power" alt="Social justice movement" loading="lazy">
+                <div class="image-caption">A Legacy Beyond Sports</div>
+            </div>
+        </div>
+
+        <div class="quote-box">
+            <blockquote>"Pressure is a privilege. It means you matter. And I'd rather matter and feel pressure than be comfortable and irrelevant."</blockquote>
+            <p class="quote-author">— Billie Jean King</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Athletic Players. Celebrating the courage, determination, and revolutionary spirit of Billie Jean King.</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">Sources: Billie Jean King autobiography, Battle of the Sexes documentary, WTA historical records, Presidential Medal of Freedom archives</p>
+    </footer>
+</body>
+</html>

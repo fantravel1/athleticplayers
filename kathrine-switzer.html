@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kathrine Switzer - The woman who changed running forever. First woman to officially run Boston Marathon (1967) despite race director physically attacking her. Running pioneer and women's sports revolutionary.">
+    <title>Kathrine Switzer - The Woman Who Changed Running Forever | Athletic Players</title>
+    <style>
+        :root {
+            --primary-color: #e74c3c;
+            --secondary-color: #c0392b;
+            --accent-color: #f39c12;
+            --text-dark: #2c3e50;
+            --text-light: #ecf0f1;
+            --bg-light: #ffffff;
+            --bg-dark: #34495e;
+            --gradient-primary: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            --gradient-accent: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+            --shadow: 0 10px 30px rgba(0,0,0,0.1);
+            --shadow-hover: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--bg-light);
+        }
+
+        /* Header/Navigation */
+        header {
+            background: var(--gradient-primary);
+            padding: 1rem 0;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--text-light);
+            text-decoration: none;
+        }
+
+        .nav-link {
+            color: var(--text-light);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .nav-link:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://source.unsplash.com/1600x900/?woman,marathon,running,determination,boston,race') center/cover;
+            color: var(--text-light);
+            padding: 6rem 2rem;
+            text-align: center;
+            animation: fadeIn 1s ease-in;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 1rem;
+            animation: slideInDown 0.8s ease-out;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+            margin-bottom: 2rem;
+            font-weight: 300;
+            animation: slideInUp 0.8s ease-out;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--accent-color);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Main Content */
+        .content {
+            max-width: 900px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--gradient-accent);
+        }
+
+        .section h3 {
+            font-size: 1.8rem;
+            margin: 2rem 0 1rem;
+            color: var(--secondary-color);
+        }
+
+        .section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: #444;
+        }
+
+        /* Quote Box */
+        .quote-box {
+            background: var(--gradient-primary);
+            color: var(--text-light);
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            border-left: 5px solid var(--accent-color);
+            box-shadow: var(--shadow);
+        }
+
+        .quote-box blockquote {
+            font-size: 1.3rem;
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .quote-author {
+            text-align: right;
+            font-weight: bold;
+            opacity: 0.9;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--gradient-primary);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 100px;
+            margin-bottom: 3rem;
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: 35px;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: var(--gradient-accent);
+            border: 4px solid var(--bg-light);
+            box-shadow: var(--shadow);
+        }
+
+        .timeline-date {
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        /* Image Grid */
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .image-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .image-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .image-caption {
+            padding: 1rem;
+            background: var(--bg-dark);
+            color: var(--text-light);
+            text-align: center;
+        }
+
+        /* Impact Grid */
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .impact-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: var(--text-light);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .impact-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .impact-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .impact-card h3 {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .stats-card {
+            background: var(--gradient-primary);
+            color: var(--text-light);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        .stats-card-number {
+            font-size: 3rem;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-dark);
+            color: var(--text-light);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 4rem 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .content {
+                margin: 2rem auto;
+                padding: 0 1rem;
+            }
+
+            .section h2 {
+                font-size: 2rem;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                padding-left: 60px;
+            }
+
+            .timeline-marker {
+                left: 5px;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-stats {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .section h2 {
+                font-size: 1.5rem;
+            }
+
+            .section p {
+                font-size: 1rem;
+            }
+
+            .quote-box blockquote {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">Athletic Players</a>
+            <a href="index.html" class="nav-link">← Back to All Athletes</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Kathrine Switzer</h1>
+            <p class="hero-subtitle">The Woman Who Changed Running Forever</p>
+            <p style="font-size: 1.2rem; margin-top: 1rem;">First woman to officially run the Boston Marathon. Attacked mid-race. Finished anyway. Changed the world.</p>
+
+            <div class="hero-stats">
+                <div class="stat-card">
+                    <span class="stat-number">261</span>
+                    <span class="stat-label">Historic Bib Number</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">1967</span>
+                    <span class="stat-label">Boston Marathon</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">Years Advocacy</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">∞</span>
+                    <span class="stat-label">Women Inspired</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="content">
+        <section class="section">
+            <h2>The Race That Changed Everything</h2>
+            <p>April 19, 1967. Boston, Massachusetts. 20-year-old Kathrine Switzer stood at the starting line of the Boston Marathon wearing bib number 261. She was about to make history—not because she planned to, but because she dared to run.</p>
+
+            <p>Women were not officially allowed to run marathons in 1967. The longest sanctioned women's race was 1.5 miles. Medical "experts" claimed that running long distances would make women's uteruses fall out, make them grow hair on their chests, or turn them into men. The Amateur Athletic Union (AAU) explicitly banned women from running in races with men.</p>
+
+            <p>But Kathrine didn't know the rule existed. She had been training with her Syracuse University track coach, Arnie Briggs, who told her, "No woman can run the Boston Marathon." Kathrine replied, "Let's prove it then." When she asked to run Boston, Arnie said, "If any woman could do it, you could, but you'd have to prove it to me. If you can show me in practice that you can run the distance, I'll be the first to take you to Boston."</p>
+
+            <p>Kathrine trained through the brutal Syracuse winter, running up to 31 miles in a single session—further than the marathon distance itself. She proved to Arnie she could do it. He kept his word.</p>
+
+            <p>Kathrine registered for the 1967 Boston Marathon using her initials: "K.V. Switzer." Not to hide her gender—she simply always signed her name that way. The registration form didn't ask for gender. She paid her entry fee, got her physical, signed the waiver, and received her official bib number: 261.</p>
+
+            <div class="quote-box">
+                <blockquote>"I felt I was going to do something really important. I had no idea it was going to be THAT important."</blockquote>
+                <p class="quote-author">— Kathrine Switzer, morning of April 19, 1967</p>
+            </div>
+
+            <h3>Mile 2: The Attack</h3>
+            <p>The race started smoothly. Kathrine ran with her boyfriend Tom Miller, Arnie Briggs, and friend John Leonard. Press photographers snapped photos of the novelty—a woman running Boston!—but it seemed friendly enough.</p>
+
+            <p>Then, around mile 2, Kathrine heard heavy footsteps behind her. She turned to see race official Jock Semple running at her, his face contorted with rage.</p>
+
+            <p>"GET THE HELL OUT OF MY RACE AND GIVE ME THOSE NUMBERS!" Semple screamed, grabbing at her sweatshirt and trying to rip the bib number off her back.</p>
+
+            <p>The photos captured what happened next—and those photos would circle the world. Semple's hands on Kathrine's shoulders. Her face shocked, confused, terrified. In that moment, she wasn't a runner. She was prey.</p>
+
+            <p>But then Tom Miller, Kathrine's 235-pound ex-football player boyfriend, threw a cross-body block at Semple that sent the race official flying into the crowd. "Run like hell!" Tom shouted.</p>
+
+            <p>And Kathrine did.</p>
+
+            <h3>The Longest 24 Miles</h3>
+            <p>After the attack, Kathrine was in shock. She later recalled: "I couldn't understand what had just happened. I was crying with anger and fear. I wanted to quit. I wanted to run away and hide."</p>
+
+            <p>Arnie ran beside her. "If you quit now," he said quietly, "nobody's going to believe women can do this. You've got to finish this race."</p>
+
+            <p>Those words changed everything. Kathrine realized this wasn't just about her anymore. This was about every woman who had ever been told she was too weak, too fragile, too feminine to do something difficult. This was about proving that women belonged.</p>
+
+            <p>She wiped her tears. She put her head down. And she ran the remaining 24 miles.</p>
+
+            <p>The wind picked up. Rain began to fall. Kathrine's legs cramped. Her feet blistered. But she kept running. Four hours and twenty minutes after she started, Kathrine Virginia Switzer crossed the finish line of the Boston Marathon—officially, with a bib number, as a registered runner.</p>
+
+            <p>She was the first woman to ever do so.</p>
+        </section>
+
+        <div class="quote-box">
+            <blockquote>"If you're losing faith in human nature, go out and watch a marathon."</blockquote>
+            <p class="quote-author">— Kathrine Switzer</p>
+        </div>
+
+        <section class="section">
+            <h2>The Backlash and the Battle</h2>
+
+            <h3>Banned and Vilified</h3>
+            <p>The photographs of Jock Semple attacking Kathrine went viral before "going viral" existed. They appeared in newspapers around the world. The images were shocking: a race official physically assaulting a young woman for the crime of running.</p>
+
+            <p>But instead of being celebrated, Kathrine was vilified. The AAU immediately banned her from all sanctioned competition. They claimed she had run without a chaperone (which was a rule for women's events, but Boston wasn't officially a women's event). They said she had cheated by running with men. They said she had brought "disrepute" to the sport.</p>
+
+            <p>Jock Semple told reporters, "Women can't run in the marathon because the rules forbid it. Unless we have rules, society will be in chaos." He became even more adamant: women were medically incapable, mentally weak, and had no business in marathoning.</p>
+
+            <p>Major newspapers published editorials arguing that Kathrine was trying to destroy traditional femininity. Letters to the editor called her "unladylike," "immodest," and "attention-seeking." Some said she should be arrested for fraud. Others said she was mentally ill.</p>
+
+            <p>But something else happened too. Women around the world saw those photographs and thought: "If she can do it, why can't I?"</p>
+
+            <h3>A Movement Is Born</h3>
+            <p>In 1968, Kathrine returned to Boston and ran again—even faster, despite being officially banned. By the early 1970s, dozens of women were "unofficially" running Boston and other marathons. They would start before the gun, hide in the bushes, jump into the race from the sidelines—anything to run.</p>
+
+            <p>But Kathrine wanted more than tolerance. She wanted equality. She wanted women to be officially welcomed, not just unofficially tolerated.</p>
+
+            <p>In 1972, Kathrine won the New York City Marathon with a time of 3:07:29. But women still weren't officially allowed in Boston. So Kathrine began organizing.</p>
+
+            <p>She helped create the first women's-only road race in 1972. She worked with the Road Runners Club of America to lobby the Amateur Athletic Union. She met with officials, wrote letters, gave speeches, and appeared on television advocating for women's running.</p>
+
+            <p>In 1972, the Boston Marathon finally—finally—allowed women to officially register. Five years after Kathrine's historic run. But the battle wasn't over.</p>
+
+            <h3>The Olympic Fight</h3>
+            <p>The Olympic Games didn't include a women's marathon. The longest women's Olympic track event was 1,500 meters—less than a mile. Olympic officials claimed women couldn't handle marathon distance. It would be "unseemly." It would cause injuries. It was "too hard."</p>
+
+            <p>Kathrine dedicated the next decade of her life to changing that. She organized the Avon International Running Circuit—a global series of women's races in 27 countries that proved women could run, and run fast. By 1980, women in Kenya, New Zealand, Brazil, and dozens of other countries were running marathons because of Avon's circuit.</p>
+
+            <p>Kathrine testified before the International Olympic Committee. She presented medical evidence debunking the myths about women's bodies. She showed race results proving women's competitiveness. She brought runners from around the world to tell their stories.</p>
+
+            <p>In 1984—17 years after her Boston run—the women's marathon was added to the Olympic Games in Los Angeles. Joan Benoit Samuelson won the first-ever Olympic women's marathon in front of 75,000 cheering fans.</p>
+
+            <p>Kathrine was in the stands, crying.</p>
+        </section>
+
+        <div class="timeline">
+            <h2>Timeline of a Revolution</h2>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-date">1947</div>
+                <div class="timeline-content">
+                    <h3>Born to Run</h3>
+                    <p>Kathrine Virginia Switzer born in Amberg, Germany, where her father was stationed in the U.S. Army. Grew up in Virginia. Her father encouraged her to run, telling her: "Ability is like a muscle—use it or lose it."</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-date">1966</div>
+                <div class="timeline-content">
+                    <h3>The Training Begins</h3>
+                    <p>Enrolled at Syracuse University as a journalism student. Joined the men's cross-country team for training (there was no women's team). Coach Arnie Briggs became her mentor. Trained through brutal Syracuse winters, running up to 31 miles to prove she could handle marathon distance.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-date">April 19, 1967</div>
+                <div class="timeline-content">
+                    <h3>261: The Historic Run</h3>
+                    <p>Ran the Boston Marathon as an officially registered runner (bib #261). Attacked by race official Jock Semple at mile 2 who tried to physically remove her from the race. Finished in 4:20, becoming the first woman to officially complete Boston Marathon. Immediately banned by the AAU.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-date">1972</div>
+                <div class="timeline-content">
+                    <h3>Breaking Barriers</h3>
+                    <p>Won the New York City Marathon (3:07:29). Boston Marathon officially opened to women—five years after Kathrine's historic run. Helped organize first women's-only road races and began advocacy work for Olympic inclusion.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-date">1973-1981</div>
+                <div class="timeline-content">
+                    <h3>The Avon Years</h3>
+                    <p>Created and directed the Avon International Running Circuit—global women's running series spanning 27 countries and 200+ races. Traveled the world proving women could run marathon distance. Organized races in places where women had never been allowed to compete publicly.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-date">1984</div>
+                <div class="timeline-content">
+                    <h3>Olympic Victory</h3>
+                    <p>Women's marathon added to Olympic Games in Los Angeles. Joan Benoit Samuelson won first-ever Olympic women's marathon. Kathrine's 17-year fight for equality succeeded. Jock Semple—the man who attacked her in 1967—apologized and they became friends before his death.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-date">2007</div>
+                <div class="timeline-content">
+                    <h3>Return to Boston</h3>
+                    <p>Ran the Boston Marathon again on the 40th anniversary of her historic 1967 run. Age 60. Wore bib #261. Finished in 4:56. Received standing ovation from crowd of 500,000+ spectators lining the course.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-date">2011</div>
+                <div class="timeline-content">
+                    <h3>261 Fearless</h3>
+                    <p>Founded 261 Fearless, a global nonprofit empowering women through running. Named after her historic bib number. Organization now operates in dozens of countries, creating women's running clubs and events worldwide.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-date">2017</div>
+                <div class="timeline-content">
+                    <h3>50th Anniversary</h3>
+                    <p>Ran the Boston Marathon again at age 70 on the 50th anniversary of her historic run. Bib #261. The number "261" became an official permanent race number retired in her honor—the only such honor in Boston Marathon history.</p>
+                </div>
+            </div>
+        </div>
+
+        <section class="section">
+            <h2>The Real Kathrine Switzer</h2>
+
+            <h3>Before the Legend</h3>
+            <p>Kathrine Virginia Switzer was born on January 5, 1947, in Amberg, Germany, where her father was stationed with the U.S. Army. The family moved to Virginia, where Kathrine grew up as a self-described "athletic tomboy."</p>
+
+            <p>Her father was a major influence. He had been a college athlete and believed firmly that women could be strong and athletic. He encouraged Kathrine to run, play field hockey, and compete. "Ability is like a muscle," he told her. "If you don't use it, you'll lose it."</p>
+
+            <p>But Kathrine also faced the contradictions of 1950s and 60s America. She was told to be "ladylike." She was discouraged from being too competitive. When she ran on her high school field hockey field, male students would yell crude comments. Teachers told her mother that athletic girls would never find husbands.</p>
+
+            <p>Kathrine struggled with these contradictions. She wanted to be strong, but she also wanted to be accepted. She wanted to compete, but she didn't want to be seen as "unfeminine." The marathon changed everything—it forced her to choose.</p>
+
+            <h3>The Cost of History</h3>
+            <p>Making history came at a price. After Boston 1967, Kathrine's relationship with Tom Miller—the boyfriend who had protected her during the race—fell apart. Tom had loved the attention at first, but he became increasingly controlling and jealous. He wanted Kathrine to quit running and focus on being his girlfriend. When she refused, the relationship turned abusive.</p>
+
+            <p>Kathrine later wrote: "Tom wanted me to be grateful. He had 'saved' me during the race, and now I owed him. But I didn't want to be saved. I wanted to be equal."</p>
+
+            <p>The relationship ended, but it taught Kathrine an important lesson: she didn't need a man to protect her. She needed a society that didn't attack her in the first place.</p>
+
+            <h3>The Second Act</h3>
+            <p>While advocating for women's running, Kathrine also built a successful career as a sports journalist and author. She worked as a television commentator for running events, wrote multiple books including her memoir "Marathon Woman," and became one of the most recognizable voices in distance running.</p>
+
+            <p>In the 1970s, she married Philip Schaub, but that marriage also ended. She later found lasting love with Roger Robinson, a renowned running author and runner himself. They met at a running event, bonded over their shared passion, and have been together for decades—true partners in every sense.</p>
+
+            <h3>The Friendship That Shouldn't Have Happened</h3>
+            <p>One of the most remarkable parts of Kathrine's story is what happened with Jock Semple—the man who attacked her in 1967.</p>
+
+            <p>For years, Semple remained defiant. He insisted he had been right to try to remove Kathrine from the race. He claimed he was just enforcing the rules. But as women's running grew, and as Kathrine's advocacy work expanded, Semple began to soften.</p>
+
+            <p>In 1973, Kathrine ran Boston again. After the race, Semple approached her—tears in his eyes. "I'm sorry," he said. "I was wrong."</p>
+
+            <p>The two became unlikely friends. Semple became one of Kathrine's biggest supporters, attending her races and cheering for women runners. When he died in 1988, Kathrine attended his funeral. She later wrote: "Jock was a product of his time, but he was brave enough to change. That's all any of us can ask."</p>
+        </section>
+
+        <div class="quote-box">
+            <blockquote>"All lives have adversity. What matters is how you respond to it. Do you let it stop you, or do you use it to make you stronger?"</blockquote>
+            <p class="quote-author">— Kathrine Switzer</p>
+        </div>
+
+        <section class="section">
+            <h2>The Global Impact</h2>
+
+            <h3>Numbers That Changed the World</h3>
+            <p>In 1967, there were zero women officially registered for the Boston Marathon. Today, women make up 44% of Boston Marathon participants—and more than 50% of finishers in many other major marathons.</p>
+
+            <p>In 1967, there were no women's marathons anywhere in the world. Today, millions of women run marathons every year in every country on Earth.</p>
+
+            <p>The 2023 Boston Marathon had over 14,000 women finishers. The 2023 New York City Marathon had over 26,000 women finishers. The 2023 London Marathon had over 23,000 women finishers.</p>
+
+            <p>Every single one of those women ran because Kathrine Switzer refused to quit in 1967.</p>
+
+            <h3>261 Fearless: The Movement</h3>
+            <p>In 2011, Kathrine founded 261 Fearless, a global nonprofit that uses running to empower women. The organization is named after her historic bib number—261—which has become a symbol of women's courage and determination worldwide.</p>
+
+            <p>261 Fearless operates running clubs in over 30 countries. They've created safe spaces for women to run in places where women's public exercise is discouraged or forbidden. They've organized races in conservative countries where women had never been allowed to compete publicly.</p>
+
+            <p>In Saudi Arabia, where women couldn't legally run in public until 2017, 261 Fearless helped organize the first women's running clubs. In Afghanistan, they supported women runners who risked their lives to train. In India, they created safe running groups for women in cities where public harassment was rampant.</p>
+
+            <p>The organization has empowered hundreds of thousands of women—not just to run, but to claim space, to be visible, to be unapologetic.</p>
+
+            <h3>The Athletes She Inspired</h3>
+            <p>Joan Benoit Samuelson, who won the first Olympic women's marathon in 1984, has said: "I wouldn't have had an Olympic dream without Kathrine."</p>
+
+            <p>Shalane Flanagan, who won the 2017 New York City Marathon, wore a shirt that read "261 Fearless" during her victory lap.</p>
+
+            <p>Des Linden, who won the 2018 Boston Marathon (the first American woman to do so in 33 years), called Kathrine "the reason I even knew I could try."</p>
+
+            <p>Thousands of elite women runners—Olympic medalists, world champions, marathon winners—trace their opportunities directly to Kathrine's 1967 run.</p>
+
+            <h3>Beyond Running</h3>
+            <p>But Kathrine's impact extends far beyond running. Her story has become a symbol of feminist resistance, of refusing to accept unjust rules, of fighting for equality even when the whole world tells you to quit.</p>
+
+            <p>The photo of Jock Semple attacking her has been used in women's studies courses, history textbooks, and museum exhibits worldwide. It's a visual representation of what women face when they dare to enter male-dominated spaces—and what happens when they refuse to leave.</p>
+
+            <p>Kathrine has spoken at the United Nations, Harvard Business School, and countless corporate events about leadership, resilience, and fighting for what's right. Her memoir "Marathon Woman" has been translated into a dozen languages and inspired a generation of activists.</p>
+        </section>
+
+        <div class="stats-grid">
+            <div class="stats-card">
+                <span class="stats-card-number">39</span>
+                <p>Marathons Completed</p>
+            </div>
+            <div class="stats-card">
+                <span class="stats-card-number">27</span>
+                <p>Countries With Avon Races</p>
+            </div>
+            <div class="stats-card">
+                <span class="stats-card-number">1M+</span>
+                <p>Women Impacted by 261 Fearless</p>
+            </div>
+            <div class="stats-card">
+                <span class="stats-card-number">∞</span>
+                <p>Women Inspired Globally</p>
+            </div>
+        </div>
+
+        <section class="section">
+            <h2>The Adversity No One Talks About</h2>
+
+            <h3>The Emotional Toll</h3>
+            <p>People see the iconic photo of Kathrine being attacked and think the adversity was that moment. But the real adversity came after.</p>
+
+            <p>For years, Kathrine was vilified. She received hate mail telling her she was destroying femininity, ruining sports, and setting a bad example for young girls. She was called "unladylike," "unfeminine," "attention-seeking," and worse.</p>
+
+            <p>The AAU ban meant she couldn't compete in official races. Race directors refused her entries. Other runners—male runners she had trained with—shunned her because associating with her could jeopardize their own racing careers.</p>
+
+            <p>Kathrine later admitted she struggled with depression during this period. "I felt so alone," she wrote. "I thought I was fighting for something important, but most people thought I was just causing trouble."</p>
+
+            <p>She questioned herself constantly. Was she being selfish? Was she really helping women, or was she just feeding her own ego? Should she just give up and let someone else fight this battle?</p>
+
+            <h3>The Financial Struggle</h3>
+            <p>Advocacy work didn't pay the bills. For years, Kathrine worked multiple jobs—as a journalist, a television commentator, a coach—to support herself while fighting for women's running.</p>
+
+            <p>The Avon International Running Circuit, which she organized and directed, required constant fundraising, international travel, and political negotiations with sports governing bodies in conservative countries. It was exhausting, financially precarious work.</p>
+
+            <p>There were times Kathrine couldn't afford her rent. Times she had to choose between buying groceries and buying plane tickets to testify before the IOC. Times she wondered if she should just get a "normal" job and give up the fight.</p>
+
+            <p>But she didn't. She couldn't. Too many women were counting on her.</p>
+
+            <h3>The Cost of Being First</h3>
+            <p>Being the first woman to officially run Boston made Kathrine a symbol—but symbols aren't allowed to be human.</p>
+
+            <p>When her first marriage fell apart, critics said it proved women couldn't "have it all." When she struggled with injuries, skeptics said it proved women weren't built for distance running. When she had a slower race, people questioned whether she really belonged.</p>
+
+            <p>Kathrine carried the weight of representing all women. Every time she ran, she wasn't just running for herself—she was running for every woman who wanted to be taken seriously as an athlete. That pressure was crushing.</p>
+
+            <p>She later wrote: "I couldn't have a bad race. I couldn't complain about pain. I couldn't show weakness. Because if I did, they would say, 'See? Women can't do this.' I wasn't allowed to just be a runner. I had to be a perfect runner."</p>
+
+            <h3>The Battle No One Saw</h3>
+            <p>The fight to get the women's marathon into the Olympics took 17 years. Seventeen years of meetings, presentations, lobbying, and advocacy. Seventeen years of hearing "no." Seventeen years of being told women's bodies couldn't handle it, women weren't interested, women's races wouldn't draw crowds.</p>
+
+            <p>Kathrine testified before the International Olympic Committee multiple times. Each time, she was grilled by male officials who questioned her data, her motives, and her credibility. She was patronized, dismissed, and talked over.</p>
+
+            <p>In one particularly brutal meeting, an IOC official told her: "Women's long-distance running is aesthetically unpleasant. Why would we want to showcase women suffering?"</p>
+
+            <p>Kathrine kept fighting. When the women's marathon was finally added to the 1984 Olympics, she was 37 years old—she had spent half her life fighting for that moment.</p>
+        </section>
+
+        <div class="impact-grid">
+            <div class="impact-card">
+                <div class="impact-icon">📚</div>
+                <h3>Author & Educator</h3>
+                <p>Wrote "Marathon Woman" memoir and multiple books on running. Regular speaker on women's empowerment, leadership, and sports history. Taught countless athletes through her writing and coaching.</p>
+            </div>
+            <div class="impact-card">
+                <div class="impact-icon">🌍</div>
+                <h3>Global Organizer</h3>
+                <p>Created Avon International Running Circuit spanning 27 countries. Organized women's races in places where women had never competed publicly. Changed global perceptions of women's athletics.</p>
+            </div>
+            <div class="impact-card">
+                <div class="impact-icon">🏃‍♀️</div>
+                <h3>Olympic Advocate</h3>
+                <p>Fought for 17 years to get women's marathon added to Olympics. Presented medical evidence, organized races, testified before IOC. Victory in 1984 opened doors for generations.</p>
+            </div>
+            <div class="impact-card">
+                <div class="impact-icon">💪</div>
+                <h3>261 Fearless Founder</h3>
+                <p>Founded global nonprofit empowering women through running. Operating in 30+ countries. Created safe spaces for women to run in conservative societies. Impacted over 1 million women worldwide.</p>
+            </div>
+        </div>
+
+        <section class="section">
+            <h2>Legacy and Recognition</h2>
+
+            <h3>Honors and Awards</h3>
+            <p>Kathrine's contributions have been recognized worldwide:</p>
+            <ul style="font-size: 1.1rem; line-height: 1.8; margin-left: 2rem;">
+                <li><strong>Emmy Award</strong> for her work as a sports broadcaster</li>
+                <li><strong>Runner's World Lifetime Achievement Award</strong></li>
+                <li><strong>Inducted into the National Women's Hall of Fame</strong> (2011)</li>
+                <li><strong>Inducted into the RRCA Distance Running Hall of Fame</strong></li>
+                <li><strong>Boston Marathon retired bib #261 in her honor</strong> (2017)—the only permanent number in race history</li>
+                <li><strong>ESPN Named Her One of the Most Influential Women in Sports History</strong></li>
+                <li><strong>Featured in Smithsonian National Museum exhibits</strong> on women's sports history</li>
+            </ul>
+
+            <h3>Still Running at 77</h3>
+            <p>Kathrine is now 77 years old. She still runs. She still travels the world speaking about women's empowerment. She still works with 261 Fearless to create opportunities for women runners in countries where they face discrimination.</p>
+
+            <p>In 2017, at age 70, she ran the Boston Marathon for the 50th anniversary of her historic run. She wore bib #261. She finished in 4:44:31. The crowd of over 500,000 spectators gave her a standing ovation that lasted the entire final mile.</p>
+
+            <p>When she crossed the finish line, she was met by the current generation of elite women marathoners—Olympic champions, world record holders, Boston winners—all there to honor the woman who made their careers possible.</p>
+
+            <h3>The Message She Still Shares</h3>
+            <p>Kathrine's message has never changed: "If you're losing faith in human nature, go out and watch a marathon. People of every race, religion, political belief, gender—out there supporting each other, cheering for strangers, celebrating human achievement. Running is a metaphor for life. You face adversity, you keep going, and you finish what you started."</p>
+
+            <p>She tells young women: "Don't let anyone tell you that you can't do something because of your gender, your background, or your body. The only limits that exist are the ones we accept. If someone tries to rip your bib number off, you keep running."</p>
+
+            <p>And she tells everyone: "It's not about being the best. It's about being brave enough to try."</p>
+        </section>
+
+        <div class="quote-box">
+            <blockquote>"I knew if I quit, nobody would ever believe that women had the capability to run 26-plus miles. If I quit, everyone would say it was a publicity stunt. If I quit, it would set women's sports back, way back, instead of forward. And that's why I kept running."</blockquote>
+            <p class="quote-author">— Kathrine Switzer, reflecting on April 19, 1967</p>
+        </div>
+
+        <section class="section">
+            <h2>Why She Matters Today</h2>
+
+            <p>In 2025, millions of women run marathons without thinking twice about it. They register online, they train with running clubs, they toe the starting line alongside men, and nobody tries to physically remove them from the race.</p>
+
+            <p>But that reality exists only because Kathrine Switzer refused to quit in 1967. It exists because she kept running when a race official attacked her. It exists because she spent 17 years fighting to get women's marathoning into the Olympics. It exists because she dedicated her life to creating opportunities for women she would never meet.</p>
+
+            <p>Today, when a woman is told she doesn't belong in a boardroom, a laboratory, a political office, or any other male-dominated space, she can look at the photo of Kathrine Switzer being attacked at mile 2 of the Boston Marathon—and at the photo of Kathrine crossing the finish line 24 miles later—and know that sometimes the right response to being told you don't belong is to simply refuse to leave.</p>
+
+            <p>Kathrine didn't run for fame. She didn't run for money. She didn't run because it was easy. She ran because she loved running, and she believed that love was enough reason to be allowed to do it.</p>
+
+            <p>She ran because someone had to be first. And being first meant being attacked, vilified, banned, and dismissed. But it also meant opening a door that millions of women would walk through after her.</p>
+
+            <p>261 is just a number. But it's also a promise: that when someone tries to stop you from doing what you love, you keep going. You finish what you started. And you create space for everyone who comes after you.</p>
+
+            <p>That's Kathrine Switzer's legacy. Not just that she ran 26.2 miles. But that she ran them when the whole world was trying to stop her—and she won.</p>
+        </section>
+
+        <div class="image-grid">
+            <div class="image-card">
+                <img src="https://source.unsplash.com/800x600/?boston,marathon,historic,running,city" alt="Boston Marathon course" loading="lazy">
+                <div class="image-caption">The Boston Marathon Course - Site of History</div>
+            </div>
+            <div class="image-card">
+                <img src="https://source.unsplash.com/800x600/?woman,runner,determination,strength,finish,line" alt="Marathon finish line" loading="lazy">
+                <div class="image-caption">Every Finish Line Honors Her Legacy</div>
+            </div>
+            <div class="image-card">
+                <img src="https://source.unsplash.com/800x600/?running,shoes,marathon,preparation,training" alt="Running preparation" loading="lazy">
+                <div class="image-caption">261 Fearless - The Movement Continues</div>
+            </div>
+        </div>
+
+        <div class="quote-box">
+            <blockquote>"Fear is a choice. Courage is a decision. Kathrine Switzer taught us that 261 isn't just a number—it's a reminder that one person's courage can change the world."</blockquote>
+            <p class="quote-author">— Joan Benoit Samuelson, Olympic Marathon Champion</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Athletic Players. Celebrating the courage, determination, and legacy of Kathrine Switzer.</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">Sources: "Marathon Woman" by Kathrine Switzer, Boston Athletic Association archives, Olympic historical records, 261 Fearless organization</p>
+    </footer>
+</body>
+</html>
