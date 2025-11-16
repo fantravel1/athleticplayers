@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nadia Comăneci - The Perfect 10</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #8B4789;
+            --secondary-color: #C77EC9;
+            --accent-color: #FFD700;
+            --text-dark: #1a1a1a;
+            --text-light: #ffffff;
+            --background: #f8f9fa;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--background);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #8B4789 0%, #C77EC9 50%, #FFD700 100%);
+            color: var(--text-light);
+            padding: 120px 20px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1534258936925-c58bed479fcb?w=1200') center/cover;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            line-height: 1.1;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 60px auto 0;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            display: block;
+            margin-bottom: 10px;
+            color: var(--accent-color);
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .section {
+            margin-bottom: 80px;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            margin: 40px 0 20px;
+            color: var(--primary-color);
+        }
+
+        .lead {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        .quote-box {
+            background: linear-gradient(135deg, #8B4789 0%, #C77EC9 100%);
+            color: var(--text-light);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+            border-left: 5px solid var(--accent-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .quote-text {
+            font-size: 1.4rem;
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .quote-author {
+            font-size: 1.1rem;
+            text-align: right;
+            opacity: 0.9;
+            font-weight: 600;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+            margin: 40px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, var(--primary-color), var(--accent-color));
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+            padding-left: 30px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -46px;
+            top: 5px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: var(--accent-color);
+            border: 3px solid var(--primary-color);
+        }
+
+        .timeline-year {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .timeline-content {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .impact-card {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--primary-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .impact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .impact-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .impact-label {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background: white;
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .back-link:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-2px);
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, rgba(139, 71, 137, 0.1) 0%, rgba(255, 215, 0, 0.1) 100%);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .container {
+                padding: 40px 20px;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .quote-text {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Nadia Comăneci</h1>
+            <p class="subtitle">The Girl Who Achieved the Impossible: The First Perfect 10</p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">10.0</span>
+                    <span class="stat-label">First Perfect Score Ever</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">7</span>
+                    <span class="stat-label">Perfect 10s in Montreal</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">14</span>
+                    <span class="stat-label">Years Old in 1976</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">9</span>
+                    <span class="stat-label">Olympic Medals</span>
+                </div>
+            </div>
+
+            <a href="index.html" class="back-link">← Back to Athletes</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <section class="section">
+            <h2>The Night the Scoreboard Broke</h2>
+
+            <p class="lead">July 18, 1976. Montreal Olympic Stadium. A 14-year-old Romanian girl stepped up to the uneven bars, and what happened next would rewrite the history of gymnastics forever.</p>
+
+            <p>Nadia Comăneci didn't know she was about to do the impossible. In the history of Olympic gymnastics, no one had ever scored a perfect 10.0. The scoring system was designed with the assumption that perfection was unattainable—a theoretical ceiling that existed only in mathematics, not in reality.</p>
+
+            <p>She mounted the uneven bars with a quiet confidence that belied her age. Her routine lasted just 23 seconds. But in those 23 seconds, every movement was executed with such precision, such grace, such technical brilliance that the judges had no choice. For the first time in Olympic history, they had witnessed perfection.</p>
+
+            <p>But when the score flashed on the electronic scoreboard, it read <span class="highlight">1.00</span>. The crowd gasped. Something was wrong. Had the judges made a terrible mistake? Had this beautiful routine really scored a catastrophic 1.0?</p>
+
+            <p>Then the realization rippled through the stadium: the scoreboard hadn't been programmed to display a perfect 10.0. <span class="highlight">Because no one ever thought it was possible.</span> The scoreboard could only display three digits, and everyone had assumed the first digit would always be 0 or 9. A perfect 10 required four digits.</p>
+
+            <p>Nadia Comăneci, a girl from a small Romanian town, had just achieved something so unprecedented that the technology couldn't even process it. And she wasn't done. Before the Montreal Olympics ended, she would score <span class="highlight">seven perfect 10s</span>, win three gold medals, and become the youngest all-around Olympic champion at age 14.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"I didn't know what a perfect 10 meant. I just did what my coach told me to do. When I saw 1.00 on the scoreboard, I was confused. But then everyone started cheering, and I realized something special had happened."</p>
+                <p class="quote-author">— Nadia Comăneci</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Growing Up Behind the Iron Curtain</h2>
+
+            <p class="lead">Nadia Elena Comăneci was born on November 12, 1961, in Onești, Romania—a small industrial town where life under Communist rule was harsh, controlled, and limited.</p>
+
+            <p>Romania in the 1960s and 70s was under the iron grip of Nicolae Ceaușescu, one of the most oppressive dictators in Eastern Europe. Food was rationed. Freedom was curtailed. Citizens lived under constant surveillance. For most children growing up in Romania, the future looked bleak.</p>
+
+            <p>But when Nadia was six years old, legendary gymnastics coach Béla Károlyi came to her kindergarten looking for promising young athletes. According to the famous story, he noticed Nadia and other children doing cartwheels in the schoolyard. He saw something in her—a natural athleticism, a fearlessness, an intensity in her eyes.</p>
+
+            <p>Károlyi invited Nadia to his gymnastics school in Onești. Her training began immediately. At age six, while other children played, Nadia was already training <span class="highlight">four hours a day</span>. By age eight, it was six hours. The training was grueling, demanding, and sometimes brutal by modern standards.</p>
+
+            <p>The Communist Romanian government saw sports as a way to demonstrate the superiority of their system. Young athletes like Nadia weren't just training for themselves—they were training for the glory of Romania, for the Communist Party, for Ceaușescu himself. The pressure was enormous.</p>
+
+            <p>Károlyi's coaching methods were intense. He demanded perfection. He accepted nothing less. He could be harsh, even cruel. But he also saw in Nadia something that no one else did: the potential for absolute perfection.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"In Romania, we didn't have the luxury of choice. Gymnastics chose me. And once you were chosen, you belonged to the state. Your body, your achievements, your life—none of it was truly yours."</p>
+                <p class="quote-author">— Nadia Comăneci</p>
+            </div>
+
+            <p>By age 13, Nadia won her first European Championship, becoming the youngest gymnast to ever win the title. But the 1976 Montreal Olympics would be her moment to shock the world.</p>
+        </section>
+
+        <section class="section">
+            <h2>The Perfect Journey</h2>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">November 12, 1961</div>
+                    <div class="timeline-content">Born in Onești, Romania, to Gheorghe and Ștefania Comăneci</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1967 (Age 6)</div>
+                    <div class="timeline-content">Discovered by coach Béla Károlyi; begins intensive gymnastics training</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1970 (Age 9)</div>
+                    <div class="timeline-content">Wins her first Romanian National Junior Championship</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1975 (Age 13)</div>
+                    <div class="timeline-content">Becomes youngest all-around European Champion in history; wins four gold medals</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">July 18, 1976</div>
+                    <div class="timeline-content"><strong>Montreal Olympics: Scores first perfect 10 in Olympic gymnastics history on uneven bars; eventually scores seven perfect 10s and wins three gold medals (all-around, uneven bars, balance beam) plus one bronze and one silver</strong></div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1979</div>
+                    <div class="timeline-content">Wins World Championship; battles injuries and the pressure of fame under Communist regime</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1980</div>
+                    <div class="timeline-content">Moscow Olympics: Wins two gold medals (balance beam, floor exercise) and two silver medals despite injury</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1981 (Age 20)</div>
+                    <div class="timeline-content">Retires from competitive gymnastics; becomes controlled public figure in Romania</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">November 27, 1989</div>
+                    <div class="timeline-content"><strong>Escapes Communist Romania by walking six hours through the dark to the Hungarian border, risking her life; eventually defects to the United States</strong></div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1996</div>
+                    <div class="timeline-content">Marries American Olympic gymnast Bart Conner; becomes U.S. citizen</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2000</div>
+                    <div class="timeline-content">Named one of the Athletes of the Century by the Laureus World Sports Academy</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">Present</div>
+                    <div class="timeline-content">Gymnastics icon, philanthropist, and advocate; runs gymnastics schools and foundations</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>The Price of Perfection</h2>
+
+            <p class="lead">Overnight, Nadia became the most famous teenager in the world. But fame in Communist Romania was a cage, not a celebration.</p>
+
+            <p>After Montreal, Nadia returned to Romania as a national hero. She was paraded in front of Ceaușescu, used in propaganda, displayed as proof of Communist superiority. She received the "Hero of Socialist Labor" award—the highest honor in Romania. But she couldn't leave the country. She couldn't speak freely. She couldn't control her own life.</p>
+
+            <p>The pressure intensified. Every competition, every public appearance, every training session was scrutinized by the state. Nadia was no longer just a gymnast—she was a symbol, a political tool, a prisoner of her own success.</p>
+
+            <p>She struggled with injuries, including a dangerous blood infection in her wrist that nearly ended her career. She battled depression. The weight expectations crushed her spirit. The Romanian government controlled her movements, her friendships, her image.</p>
+
+            <p>After retiring from gymnastics in 1981, Nadia worked as a coach and choreographer, but she remained under constant surveillance by the Securitate—Romania's brutal secret police. She was forbidden from leaving the country. Her passport was confiscated. She was, in every meaningful sense, a prisoner.</p>
+
+            <p>By 1989, Nadia knew she had to escape. As the Communist regime crumbled across Eastern Europe, she saw her chance. On November 27, 1989, just weeks before the Romanian Revolution, <span class="highlight">Nadia fled Romania</span> with the help of a small group of compatriots.</p>
+
+            <p>She walked for six hours in the freezing darkness toward the Hungarian border. If caught, she would have been arrested, possibly tortured, certainly imprisoned. Every step was a risk. But after decades of living in a cage, she was willing to risk everything for freedom.</p>
+
+            <p>She made it across the border. From Hungary, she traveled to Austria, then to the United States, where she defected and requested political asylum. She was finally free.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"I had achieved perfection in gymnastics, but I had never been free. In Romania, I was a trophy, not a person. When I crossed that border in the dark, I finally became myself."</p>
+                <p class="quote-author">— Nadia Comăneci</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>A New Life, A Lasting Legacy</h2>
+
+            <p class="lead">In America, Nadia built a new life. In 1996, she married Bart Conner, an American Olympic gymnast who had won gold in 1984. Together, they opened a gymnastics school in Oklahoma and became advocates for the sport.</p>
+
+            <p>She became a U.S. citizen. She became a mother. She became, finally, just Nadia—not a state symbol, not a propaganda tool, but a person in control of her own destiny.</p>
+
+            <p>But her legacy in gymnastics remains untouchable. Before Nadia, a perfect 10 was theoretical. After Nadia, it became the standard. She didn't just achieve perfection—she redefined what was possible.</p>
+
+            <p>Gymnasts around the world grew up watching grainy footage of that 14-year-old girl on the uneven bars in Montreal, seeing the scoreboard flash 1.00, and understanding that they were witnessing history. Nadia proved that perfection wasn't just a mathematical concept—it was achievable, real, and human.</p>
+
+            <p>Her influence extends far beyond gymnastics. She showed the world that a girl from a small town in a repressive country could achieve the impossible. She showed that perfection comes not from privilege or power, but from dedication, sacrifice, and an unwavering belief in yourself.</p>
+
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <div class="impact-number">First Ever</div>
+                    <div class="impact-label">Perfect 10.0 score in Olympic gymnastics history</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">9 Medals</div>
+                    <div class="impact-label">Total Olympic medals (5 gold, 3 silver, 1 bronze)</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">2x</div>
+                    <div class="impact-label">Olympic all-around champion (youngest ever at age 14)</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">Redefined</div>
+                    <div class="impact-label">What was considered possible in women's gymnastics</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">Escaped</div>
+                    <div class="impact-label">Communist dictatorship to find freedom in America</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">Icon</div>
+                    <div class="impact-label">Named one of the Athletes of the 20th Century</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>The Girl Who Made the Impossible Real</h2>
+
+            <p class="lead">When people ask Nadia Comăneci what that first perfect 10 felt like, she often says she didn't fully understand it at the time. She was just a 14-year-old girl doing what her coach told her to do.</p>
+
+            <p>But looking back, she understands what it meant. It meant that a girl from Communist Romania, a country where freedom was a dream and oppression was reality, could stand on a global stage and achieve something no one had ever done before.</p>
+
+            <p>It meant that perfection wasn't reserved for the privileged, the powerful, or the free. It could belong to anyone willing to sacrifice everything for it.</p>
+
+            <p>It meant that sometimes, the impossible is just something that hasn't been done yet.</p>
+
+            <p>Today, gymnastics scoring has evolved. The perfect 10 scale was eventually replaced by a more complex open-ended system. But Nadia's seven perfect 10s remain frozen in history—a moment when a teenage girl taught the world that perfection, however fleeting, is real.</p>
+
+            <p>Her story is more than a sports story. It's a story about excellence, about courage, about the human capacity to transcend limitations. It's about a girl who achieved the impossible on the uneven bars, and then did something even more impossible: she escaped tyranny and built a life of freedom.</p>
+
+            <p>The scoreboard may have broken that night in Montreal. But Nadia Comăneci never did.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"I don't know if I'll be remembered for the perfect 10, or for being the youngest Olympic champion, or for escaping Romania. But I hope I'm remembered for showing that you can achieve anything if you're willing to work for it, sacrifice for it, and never give up—even when the whole world says it's impossible."</p>
+                <p class="quote-author">— Nadia Comăneci</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
