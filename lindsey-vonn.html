@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lindsey Vonn - The Most Decorated Female Skier in History</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1565C0;
+            --secondary-color: #C62828;
+            --accent-color: #FFD700;
+            --text-dark: #1a1a1a;
+            --text-light: #ffffff;
+            --background: #f8f9fa;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--background);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #1565C0 0%, #C62828 50%, #FFD700 100%);
+            color: var(--text-light);
+            padding: 120px 20px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=1200') center/cover;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            line-height: 1.1;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 60px auto 0;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            display: block;
+            margin-bottom: 10px;
+            color: var(--accent-color);
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .section {
+            margin-bottom: 80px;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            margin: 40px 0 20px;
+            color: var(--primary-color);
+        }
+
+        .lead {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        .quote-box {
+            background: linear-gradient(135deg, #1565C0 0%, #C62828 100%);
+            color: var(--text-light);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+            border-left: 5px solid var(--accent-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .quote-text {
+            font-size: 1.4rem;
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .quote-author {
+            font-size: 1.1rem;
+            text-align: right;
+            opacity: 0.9;
+            font-weight: 600;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+            margin: 40px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, var(--primary-color), var(--accent-color));
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+            padding-left: 30px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -46px;
+            top: 5px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: var(--accent-color);
+            border: 3px solid var(--primary-color);
+        }
+
+        .timeline-year {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .timeline-content {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .impact-card {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--primary-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .impact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .impact-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .impact-label {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background: white;
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .back-link:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-2px);
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, rgba(21, 101, 192, 0.1) 0%, rgba(255, 215, 0, 0.1) 100%);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .container {
+                padding: 40px 20px;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .quote-text {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Lindsey Vonn</h1>
+            <p class="subtitle">The Warrior Who Skied Through Pain and Redefined Greatness</p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">82</span>
+                    <span class="stat-label">World Cup Victories</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">20</span>
+                    <span class="stat-label">World Cup Crystal Globes</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">4</span>
+                    <span class="stat-label">World Championships</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">1</span>
+                    <span class="stat-label">Olympic Gold Medal</span>
+                </div>
+            </div>
+
+            <a href="index.html" class="back-link">← Back to Athletes</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <section class="section">
+            <h2>The Crash That Should Have Ended It All</h2>
+
+            <p class="lead">February 5, 2013. Schladming, Austria. World Championships. Lindsey Vonn was skiing the super-G at nearly 70 mph when she caught an edge, flew into the air, and crashed violently into the safety netting.</p>
+
+            <p>The impact was catastrophic. Her right knee buckled. Ligaments tore. Bones shattered. She tumbled down the mountain, finally coming to a stop in a heap of twisted metal and broken body parts.</p>
+
+            <p>Medical staff rushed to her side. Cameras captured her screaming in agony. Millions watched in horror as she was loaded onto a stretcher and airlifted off the mountain.</p>
+
+            <p>The diagnosis was devastating: <span class="highlight">torn ACL and MCL, fractured tibial plateau</span>. It was a career-ending injury for most skiers. Doctors said she would be lucky to walk normally again, let alone ski competitively.</p>
+
+            <p>The 2014 Sochi Olympics were just one year away. Lindsey had been the favorite to win multiple medals. Now, it seemed impossible.</p>
+
+            <p>But Lindsey Vonn doesn't believe in impossible.</p>
+
+            <p>She underwent surgery. She attacked rehab with obsessive intensity. She worked through unbearable pain. She pushed her body beyond what doctors thought possible. And 11 months later—<span class="highlight">just 11 months</span> after a career-ending injury—she returned to World Cup racing.</p>
+
+            <p>She didn't just return. She won. Again and again and again.</p>
+
+            <p>That crash in 2013 was just one of many. Over her career, Lindsey would suffer broken bones, torn ligaments, concussions, and surgeries too numerous to count. But every time, she came back stronger.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"Pain is just a signal your body sends to your brain. You can choose to listen to it, or you can choose to ignore it. I chose to ignore it."</p>
+                <p class="quote-author">— Lindsey Vonn</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Built for Speed</h2>
+
+            <p class="lead">Lindsey Caroline Kildow was born on October 18, 1984, in Saint Paul, Minnesota. Her father, Alan Kildow, was an amateur skier who dreamed of Olympic glory but never achieved it. He was determined that his children would succeed where he had failed.</p>
+
+            <p>Lindsey started skiing at age two. By age seven, she was training with a local ski club. By age nine, her father had moved the family to Vail, Colorado, so Lindsey could train at one of the best ski academies in the world.</p>
+
+            <p>The training was intense. Lindsey skied year-round—on snow in the winter, on glaciers in the summer. Her father pushed her relentlessly, demanding perfection, accepting nothing less than total commitment.</p>
+
+            <p>The relationship with her father was complicated. He was her coach, her motivator, and her harshest critic. He believed in her, but his methods were extreme. Years later, Lindsey would acknowledge the toll it took on her mental health.</p>
+
+            <p>But there's no denying it worked. By age 16, Lindsey was competing in the World Cup. By 17, she had earned her first World Cup podium finish. And by 20, she had won her first World Cup race.</p>
+
+            <p>She was fast, fearless, and aggressive. She attacked every course like it owed her money. She skied with a controlled fury that left competitors in awe.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"My dad taught me that second place is just the first loser. I hated that mentality as a kid. But it made me a champion."</p>
+                <p class="quote-author">— Lindsey Vonn</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>The Journey of a Champion</h2>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">October 18, 1984</div>
+                    <div class="timeline-content">Born in Saint Paul, Minnesota; begins skiing at age two</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1999 (Age 14)</div>
+                    <div class="timeline-content">Competes in first international race; shows extraordinary talent</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2002</div>
+                    <div class="timeline-content">Competes in Salt Lake City Olympics at age 17; crashes but gains experience</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2004</div>
+                    <div class="timeline-content">Wins first World Cup race; announces herself as future superstar</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2007-2012</div>
+                    <div class="timeline-content"><strong>Dominates World Cup skiing; wins 4 overall World Cup titles in 5 years</strong></div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2010</div>
+                    <div class="timeline-content">Vancouver Olympics: Wins gold medal in downhill; becomes American hero</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">February 5, 2013</div>
+                    <div class="timeline-content"><strong>Devastating crash in Austria: torn ACL, torn MCL, fractured tibia—career-threatening injury</strong></div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2013-2014</div>
+                    <div class="timeline-content">Miraculous recovery and return to racing; competes in Sochi Olympics despite injury</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2015-2019</div>
+                    <div class="timeline-content">Battles through multiple injuries and surgeries; continues winning despite chronic pain</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">January 2019</div>
+                    <div class="timeline-content"><strong>Wins 82nd World Cup race—breaking record as most successful female alpine skier in history</strong></div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">February 10, 2019</div>
+                    <div class="timeline-content">Announces retirement due to injuries; ends legendary career</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">Present</div>
+                    <div class="timeline-content">Entrepreneur, philanthropist, mental health advocate; most decorated female skier ever</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>The Body That Wouldn't Quit (Even When It Should Have)</h2>
+
+            <p class="lead">If you look at Lindsey Vonn's medical records, it reads like a horror story. Over her 18-year career, she endured injuries that would have ended most athletes' careers multiple times over.</p>
+
+            <p>The list is staggering:</p>
+
+            <p>• Broken right arm (2006)<br>
+            • Concussion (2006)<br>
+            • Sliced thumb tendon (2007)<br>
+            • Sprained right knee (2007)<br>
+            • Broken hand (2010)<br>
+            • Concussion (2011)<br>
+            • <span class="highlight">Torn ACL and MCL in right knee, fractured tibia (2013)</span><br>
+            • Re-injured right knee, another ACL tear (2014)<br>
+            • Fractured ankle (2016)<br>
+            • Broken arm (2016)<br>
+            • Back injury (2017)<br>
+            • <span class="highlight">Multiple knee surgeries totaling eight over her career</span></p>
+
+            <p>She skied for years with chronic pain. She took painkillers just to get through races. She underwent surgery after surgery, rehab after rehab, always pushing to come back faster than doctors thought possible.</p>
+
+            <p>"I probably should have retired five years earlier than I did," she admitted later. "But I couldn't let go. I loved skiing more than I loved my own health."</p>
+
+            <p>The constant injuries took a toll—not just physically, but mentally. Lindsey battled depression, particularly during long rehab periods. She spoke openly about the darkness she felt, the times she questioned whether it was all worth it.</p>
+
+            <p>But she kept going. Because winning was the only thing that made the pain bearable.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"Every morning I woke up in pain. Every night I went to bed in pain. But in those brief moments of flying down a mountain at 80 mph, I felt free. That's what I lived for."</p>
+                <p class="quote-author">— Lindsey Vonn</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Breaking Records and Barriers</h2>
+
+            <p class="lead">Despite the injuries, despite the pain, despite everything, Lindsey Vonn became the greatest female alpine skier in history.</p>
+
+            <p>In January 2019, she won her <span class="highlight">82nd World Cup race</span>—breaking the record for most World Cup victories by a female skier. The record had stood for 35 years.</p>
+
+            <p>She won <span class="highlight">20 World Cup season titles</span>—more than any other female skier. She won Olympic gold in the downhill in Vancouver 2010. She won multiple World Championships. She dominated her sport for over a decade.</p>
+
+            <p>But beyond the statistics, Lindsey changed the perception of female athletes. She was powerful, aggressive, and unapologetically competitive. She trained like a man, competed like a warrior, and refused to be delicate or demure.</p>
+
+            <p>She also became a mainstream celebrity. She appeared on magazine covers, in commercials, and in tabloids. Her relationship with golfer Tiger Woods was front-page news. She used her platform to advocate for women's sports and mental health awareness.</p>
+
+            <p>When she finally retired in February 2019, she did so on her own terms. Her knees were destroyed. Her body was broken. But her spirit was undefeated.</p>
+
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <div class="impact-number">82</div>
+                    <div class="impact-label">World Cup race victories (most by any female skier)</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">137</div>
+                    <div class="impact-label">World Cup podium finishes</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">20</div>
+                    <div class="impact-label">World Cup season titles (Crystal Globes)</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">3</div>
+                    <div class="impact-label">Olympic medals (1 gold, 2 bronze)</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">8</div>
+                    <div class="impact-label">World Championship medals</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">18 Years</div>
+                    <div class="impact-label">At the pinnacle of alpine skiing</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>The Price of Greatness</h2>
+
+            <p class="lead">In interviews after her retirement, Lindsey has been honest about the cost of her success. "I gave everything to skiing," she said. "And skiing took everything from me."</p>
+
+            <p>Her knees are permanently damaged. She walks with pain every day. She's had eight knee surgeries, and doctors say she'll likely need more in the future. Simple activities—walking up stairs, hiking, playing with her dogs—cause discomfort.</p>
+
+            <p>She also battles depression and anxiety, conditions she's spoken about publicly in an effort to destigmatize mental health struggles among athletes.</p>
+
+            <p>"People see the medals and the records," she says. "They don't see the nights I cried myself to sleep wondering if it was worth it. They don't see the mornings I couldn't get out of bed because the pain was too much."</p>
+
+            <p>But she has no regrets. "I made my choice. I chose greatness over health. I chose records over longevity. And I'd make the same choice again."</p>
+
+            <p>Today, Lindsey is focused on life beyond skiing. She runs her own foundation, which provides scholarships to young female athletes. She works as a businesswoman and entrepreneur. She advocates for mental health awareness and body positivity.</p>
+
+            <p>And she inspires millions of people who watched her ski through pain, fight through injury, and refuse to give up—ever.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"I don't know how to quit. I only know how to fight. That's not always healthy. But it's who I am. And it's why I became the best."</p>
+                <p class="quote-author">— Lindsey Vonn</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>The Legacy of a Warrior</h2>
+
+            <p class="lead">Lindsey Vonn's career is a testament to the power of relentless determination. She broke records. She shattered barriers. She redefined what it meant to be a female athlete in a dangerous, male-dominated sport.</p>
+
+            <p>But more than that, she showed the world what it looks like to refuse to quit. To ski through pain. To come back from injuries that would break most people. To chase greatness even when your body is begging you to stop.</p>
+
+            <p>Young skiers today grew up watching Lindsey Vonn fly down mountains at impossible speeds. They saw her crash, get back up, and win again. They saw her dominate. And they learned that greatness requires sacrifice.</p>
+
+            <p>When she announced her retirement, the skiing world mourned. But they also celebrated. Because Lindsey Vonn didn't just win races—she inspired a generation.</p>
+
+            <p>Her knees may be broken. But her legacy is unbreakable.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"I gave skiing everything I had—my body, my mind, my soul. And skiing gave me everything back: a purpose, a legacy, and a life I never dreamed possible. It was a fair trade."</p>
+                <p class="quote-author">— Lindsey Vonn</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
