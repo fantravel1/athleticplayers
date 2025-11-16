@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Misty Copeland - The Ballerina Who Shattered Ballet's Glass Ceiling</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #8B4789;
+            --secondary-color: #C77EC9;
+            --accent-color: #FFD700;
+            --text-dark: #1a1a1a;
+            --text-light: #ffffff;
+            --background: #f8f9fa;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--background);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #8B4789 0%, #C77EC9 50%, #FFD700 100%);
+            color: var(--text-light);
+            padding: 120px 20px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1508807526345-15e9b5f4eaff?w=1200') center/cover;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            line-height: 1.1;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 60px auto 0;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            display: block;
+            margin-bottom: 10px;
+            color: var(--accent-color);
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .section {
+            margin-bottom: 80px;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            margin: 40px 0 20px;
+            color: var(--primary-color);
+        }
+
+        .lead {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        .quote-box {
+            background: linear-gradient(135deg, #8B4789 0%, #C77EC9 100%);
+            color: var(--text-light);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+            border-left: 5px solid var(--accent-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .quote-text {
+            font-size: 1.4rem;
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .quote-author {
+            font-size: 1.1rem;
+            text-align: right;
+            opacity: 0.9;
+            font-weight: 600;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+            margin: 40px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, var(--primary-color), var(--accent-color));
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+            padding-left: 30px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -46px;
+            top: 5px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: var(--accent-color);
+            border: 3px solid var(--primary-color);
+        }
+
+        .timeline-year {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .timeline-content {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .impact-card {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--primary-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .impact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .impact-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .impact-label {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background: white;
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .back-link:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-2px);
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, rgba(139, 71, 137, 0.1) 0%, rgba(255, 215, 0, 0.1) 100%);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .container {
+                padding: 40px 20px;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .quote-text {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Misty Copeland</h1>
+            <p class="subtitle">The Girl from the Motel Who Became Ballet's First Black Principal Dancer</p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">First</span>
+                    <span class="stat-label">Black Female Principal Dancer at ABT</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">13</span>
+                    <span class="stat-label">Years Old When She Started Ballet</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">75</span>
+                    <span class="stat-label">Years ABT Existed Before Her</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">Barrier</span>
+                    <span class="stat-label">Breaker in One of Whitest Art Forms</span>
+                </div>
+            </div>
+
+            <a href="index.html" class="back-link">← Back to Athletes</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <section class="section">
+            <h2>The Phone Call That Changed Everything</h2>
+
+            <p class="lead">June 30, 2015. Misty Copeland's phone rang. It was Kevin McKenzie, the artistic director of American Ballet Theatre. "Misty," he said, "we're promoting you to principal dancer."</p>
+
+            <p>Misty froze. Principal dancer. The highest rank in ballet. The position reserved for the absolute best. The title that, in ABT's 75-year history, <span class="highlight">had never been held by a Black woman</span>.</p>
+
+            <p>She had dreamed of this moment her entire career. But part of her never believed it would actually happen. Because ballet—one of the world's most prestigious art forms—had always been one of its whitest.</p>
+
+            <p>Ballet companies wanted dancers who fit a certain image: pale skin, tiny frames, European features. Black dancers were told they were the "wrong color." That their bodies were "too muscular." That they didn't fit ballet's aesthetic.</p>
+
+            <p>Misty Copeland had heard all of it. She had been told she was too short, too curvy, too Black. She had been rejected, overlooked, and underestimated.</p>
+
+            <p>And now, she was a principal dancer at one of the most prestigious ballet companies in the world.</p>
+
+            <p>When the announcement was made public, the reaction was overwhelming. The New York Times ran a front-page story. President Obama congratulated her. Young Black girls around the world saw her and thought, for the first time, "I can be a ballerina too."</p>
+
+            <p>Misty had shattered ballet's highest glass ceiling. And she had done it on her own terms.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"For the first time in my life, I felt like I belonged. Not in spite of being Black, but as I am. Ballet tried to tell me I didn't fit. I proved them wrong."</p>
+                <p class="quote-author">— Misty Copeland</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>From the Motel to the Stage</h2>
+
+            <p class="lead">Misty Danielle Copeland was born on September 10, 1982, in Kansas City, Missouri. She was the fourth of six children born to her mother, Sylvia DelaCerna, who had been married multiple times and struggled to provide for her large family.</p>
+
+            <p>Misty's childhood was chaotic. The family moved constantly—Kansas City, then San Pedro, California, then various cities across Southern California. Sometimes they lived in apartments. Sometimes they lived in motels. There were periods when they didn't know where they would sleep at night.</p>
+
+            <p>Sylvia worked multiple jobs, but money was always tight. The kids wore hand-me-downs. Meals were often whatever they could afford. Stability was a luxury they couldn't afford.</p>
+
+            <p>For Misty, the instability was terrifying. She was shy, anxious, and desperate for something solid to hold onto. She found that solace in performing—dancing in her living room, putting on shows for her siblings.</p>
+
+            <p>At school, she was quiet and reserved. But on the drill team—a dance squad that performed at football games—she came alive. Her coach, Cynthia Bradley, noticed immediately: this kid had something special.</p>
+
+            <p>When Misty was 13, Cynthia took her to a ballet class at the local Boys & Girls Club. It was Misty's first ballet class ever.</p>
+
+            <p>Most professional ballerinas start training at age 3 or 4. By 13, they've already spent a decade building technique. Misty was <span class="highlight">a decade behind</span>.</p>
+
+            <p>But within months, it was clear: Misty was a prodigy. She absorbed technique faster than anyone had ever seen. She had natural musicality, grace, and an ethereal quality that couldn't be taught.</p>
+
+            <p>Her teacher, Cindy Bradley, became her mentor, her mother figure, and eventually, her legal guardian when family turmoil made it impossible for Misty to live at home.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"I started ballet at 13. Everyone said it was too late. I didn't know any better. So I just worked."</p>
+                <p class="quote-author">— Misty Copeland</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>The Journey of a Trailblazer</h2>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">September 10, 1982</div>
+                    <div class="timeline-content">Born in Kansas City, Missouri; grows up in poverty with single mother</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1995 (Age 13)</div>
+                    <div class="timeline-content">Takes first ballet class at Boys & Girls Club; shows immediate, extraordinary talent</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1998</div>
+                    <div class="timeline-content">Wins Los Angeles Music Center Spotlight Award; recognized as prodigy despite late start</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2000 (Age 17)</div>
+                    <div class="timeline-content">Joins American Ballet Theatre's Studio Company; begins professional career</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2001</div>
+                    <div class="timeline-content">Promoted to corps de ballet at ABT; youngest dancer in company</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2007</div>
+                    <div class="timeline-content">Promoted to soloist; faces ongoing discrimination and body-shaming in ballet world</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2012</div>
+                    <div class="timeline-content">Stars in "Firebird" at ABT; becomes breakout star and public figure</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2014</div>
+                    <div class="timeline-content">Becomes first Black woman to perform lead role in Swan Lake in ABT's history</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">June 30, 2015</div>
+                    <div class="timeline-content"><strong>Promoted to principal dancer—first Black woman in ABT's 75-year history to achieve this rank</strong></div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2015</div>
+                    <div class="timeline-content">Under Armour names her brand ambassador; first ballerina to have major athletic endorsement</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">Present</div>
+                    <div class="timeline-content">Principal dancer at ABT, author, activist for diversity in ballet; global icon</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>"You Have the Wrong Body for Ballet"</h2>
+
+            <p class="lead">As Misty rose through the ranks of professional ballet, she faced a constant, crushing message: your body is wrong.</p>
+
+            <p>Ballet has historically demanded a very specific body type: extremely thin, long-limbed, pale-skinned. Misty had curves. She had muscles. She had brown skin. And the ballet world let her know, again and again, that she didn't fit.</p>
+
+            <p>Directors told her she was "too short" (she's 5'2"). Casting directors said she was "too curvy." Other dancers whispered that she was "too Black" to play classical roles like Odette in Swan Lake.</p>
+
+            <p>For years, Misty struggled with body image. She developed disordered eating patterns, trying desperately to fit the mold ballet demanded. She felt like she was constantly fighting her own body.</p>
+
+            <p>"I starved myself," she later admitted. "I hated my body. I looked at other dancers—thin, white, 'perfect'—and I thought I would never be good enough."</p>
+
+            <p>The racism was sometimes subtle, sometimes overt. She was often the only Black dancer in the company. Costume designers struggled to find tights and shoes in her skin tone. Casting directors passed her over for lead roles, claiming she "didn't look the part."</p>
+
+            <p>When she finally performed as Odette in Swan Lake in 2014—<span class="highlight">the first Black woman to do so in ABT's history</span>—it was revolutionary. Young Black girls saw her and finally had a ballerina who looked like them.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"Ballet tried to make me ashamed of my body. Tried to make me believe that brown skin and curves didn't belong on stage. But I refused to change who I am. And eventually, ballet had to change instead."</p>
+                <p class="quote-author">— Misty Copeland</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Breaking Through, Breaking Down Barriers</h2>
+
+            <p class="lead">Misty's promotion to principal dancer in 2015 was more than a personal achievement. It was a cultural moment that forced the ballet world to confront its racism and exclusivity.</p>
+
+            <p>Suddenly, everyone was talking about diversity in ballet. Companies that had been all-white for decades started recruiting dancers of color. Ballet schools began offering scholarships to students from underrepresented communities.</p>
+
+            <p>Misty became a symbol—not just of Black excellence, but of the possibility that ballet could evolve, could become more inclusive, could make room for bodies and faces that had been excluded for centuries.</p>
+
+            <p>She also became a mainstream celebrity. Under Armour signed her as a brand ambassador—the first time a major athletic brand had partnered with a ballerina. Her Under Armour commercial, featuring her dancing while a voiceover recites all the things she was told she couldn't do, went viral.</p>
+
+            <p>She wrote bestselling memoirs. She appeared on magazine covers. She met President Obama. She became a role model not just for aspiring ballerinas, but for anyone who had ever been told they didn't belong.</p>
+
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <div class="impact-number">First</div>
+                    <div class="impact-label">Black female principal dancer in ABT's 75-year history</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">13</div>
+                    <div class="impact-label">Years old when she started ballet (a decade later than most)</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">First</div>
+                    <div class="impact-label">Black woman to perform Swan Lake lead at ABT</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">Icon</div>
+                    <div class="impact-label">Mainstream celebrity and Under Armour ambassador</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">Author</div>
+                    <div class="impact-label">Bestselling memoirs inspiring millions</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">Barrier Breaker</div>
+                    <div class="impact-label">Opened doors for dancers of color worldwide</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>The Legacy of Belonging</h2>
+
+            <p class="lead">Today, Misty Copeland continues to dance as a principal at American Ballet Theatre. But her impact extends far beyond the stage.</p>
+
+            <p>She runs programs to bring ballet to underserved communities. She mentors young dancers of color. She speaks openly about body image, racism, and the need for greater diversity in the arts.</p>
+
+            <p>And most importantly, she exists. She performs on the world's greatest stages as a Black woman with curves and muscles and brown skin—proving, night after night, that ballet doesn't have just one look.</p>
+
+            <p>Young Black girls see her and dream. They see that ballet is for them too. They see that they don't have to change who they are to belong.</p>
+
+            <p>"I get messages all the time from young dancers," Misty says. "They tell me, 'I saw you and I realized I could do this too.' That's why I keep dancing. That's why I keep fighting. Because representation matters."</p>
+
+            <p>Misty Copeland didn't just break ballet's color barrier. She redefined what a ballerina can look like, who can dream of being one, and what excellence means in an art form that desperately needed to evolve.</p>
+
+            <p>She came from a motel. And she became a principal. That's the American dream. That's the power of refusing to give up. That's Misty Copeland.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"I didn't fit ballet's mold. So I broke the mold. And now, young girls who look like me can see themselves on stage. That's everything."</p>
+                <p class="quote-author">— Misty Copeland</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

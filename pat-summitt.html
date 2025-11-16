@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pat Summitt - The Winningest Coach Who Never Lost Her Fight</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #FF8200;
+            --secondary-color: #58595B;
+            --accent-color: #FFD700;
+            --text-dark: #1a1a1a;
+            --text-light: #ffffff;
+            --background: #f8f9fa;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--background);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #FF8200 0%, #58595B 50%, #FFD700 100%);
+            color: var(--text-light);
+            padding: 120px 20px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1546519638-68e109498ffc?w=1200') center/cover;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            line-height: 1.1;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 60px auto 0;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            display: block;
+            margin-bottom: 10px;
+            color: var(--accent-color);
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .section {
+            margin-bottom: 80px;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            margin: 40px 0 20px;
+            color: var(--primary-color);
+        }
+
+        .lead {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        .quote-box {
+            background: linear-gradient(135deg, #FF8200 0%, #58595B 100%);
+            color: var(--text-light);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+            border-left: 5px solid var(--accent-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .quote-text {
+            font-size: 1.4rem;
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .quote-author {
+            font-size: 1.1rem;
+            text-align: right;
+            opacity: 0.9;
+            font-weight: 600;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+            margin: 40px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, var(--primary-color), var(--accent-color));
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+            padding-left: 30px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -46px;
+            top: 5px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: var(--accent-color);
+            border: 3px solid var(--primary-color);
+        }
+
+        .timeline-year {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .timeline-content {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .impact-card {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--primary-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .impact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .impact-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .impact-label {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background: white;
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .back-link:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-2px);
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, rgba(255, 130, 0, 0.1) 0%, rgba(255, 215, 0, 0.1) 100%);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .container {
+                padding: 40px 20px;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .quote-text {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Pat Summitt</h1>
+            <p class="subtitle">The Winningest Coach in College Basketball History</p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">1,098</span>
+                    <span class="stat-label">Career Wins</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">8</span>
+                    <span class="stat-label">National Championships</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">38</span>
+                    <span class="stat-label">Years, Zero Losing Seasons</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Graduation Rate</span>
+                </div>
+            </div>
+
+            <a href="index.html" class="back-link">← Back to Athletes</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <section class="section">
+            <h2>The Day She Announced the Unthinkable</h2>
+
+            <p class="lead">August 23, 2011. Pat Summitt stood before the cameras and announced something no one wanted to hear: she had been diagnosed with early-onset Alzheimer's disease. She was 59 years old. And the woman who had never backed down from a challenge was facing the cruelest opponent of her life.</p>
+
+            <p>For 37 years, Pat Summitt had been the head coach of the University of Tennessee women's basketball team. She had won <span class="highlight">1,098 games</span>—more than any coach in Division I basketball history, male or female. She had won 8 national championships. She had never had a losing season. Not once in 38 years.</p>
+
+            <p>She was a legend. An icon. The greatest coach women's basketball had ever seen.</p>
+
+            <p>And now, a disease was slowly stealing her mind.</p>
+
+            <p>The diagnosis came after she noticed troubling symptoms—memory lapses, confusion during games, difficulty remembering plays. Doctors confirmed her worst fears: early-onset Alzheimer's, a degenerative brain disease with no cure.</p>
+
+            <p>Most people would have retired immediately. But Pat Summitt wasn't most people.</p>
+
+            <p>"I plan to continue coaching," she announced. "Alzheimer's can have me when I'm dead. But until then, I'm coaching basketball."</p>
+
+            <p>She coached one more season—the 2011-2012 season. She coached through memory loss. She coached through confusion. She coached through the slow deterioration of her mind. And in her final season, her team went 27-9 and reached the Elite Eight.</p>
+
+            <p>When she finally stepped down in April 2012, she left behind a legacy that transcended wins and losses. She had shown the world what courage looked like.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"I've fought battles my whole life. This is just another one. And I'm not going down without a fight."</p>
+                <p class="quote-author">— Pat Summitt</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>From Farm Girl to Legend</h2>
+
+            <p class="lead">Patricia Sue Head was born on June 14, 1952, in Clarksville, Tennessee. She grew up on a dairy farm in rural Henrietta, Tennessee—one of five children in a hardworking farming family.</p>
+
+            <p>Life on the farm was tough. The family woke before dawn to milk cows, feed livestock, and tend crops. There was no time for complaining, no room for weakness. Pat's father, Richard Head, was a stern man who believed in hard work, discipline, and toughness.</p>
+
+            <p>Pat learned those values early. She milked cows before school. She baled hay after school. And when she had free time, she played basketball with her brothers on a dirt court in the barn.</p>
+
+            <p>Basketball became her escape. She was fast, competitive, and fearless. By high school, she was a star player. By college, she was one of the best players in the country.</p>
+
+            <p>She attended the University of Tennessee at Martin, where she played basketball and was co-captain of the 1976 U.S. Olympic team that won silver in Montreal—the first Olympics to feature women's basketball.</p>
+
+            <p>After graduating in 1974, at just <span class="highlight">22 years old</span>, she was offered the head coaching job at the University of Tennessee. The salary was $8,900 per year. She had to wash the team's uniforms herself. The team had no budget for travel, so they drove to games in station wagons.</p>
+
+            <p>But Pat didn't care about the money or the conditions. She cared about winning. And she was going to build a dynasty.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"I didn't grow up with privilege. I grew up with work. And work is what I brought to Tennessee."</p>
+                <p class="quote-author">— Pat Summitt</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>The Journey of Greatness</h2>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">June 14, 1952</div>
+                    <div class="timeline-content">Born in Clarksville, Tennessee; raised on dairy farm in Henrietta</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1974 (Age 22)</div>
+                    <div class="timeline-content">Hired as head coach at University of Tennessee for $8,900/year; begins historic career</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1976</div>
+                    <div class="timeline-content">Co-captains U.S. women's basketball team to Olympic silver medal in Montreal</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1980</div>
+                    <div class="timeline-content">Marries R.B. Summitt; becomes Pat Summitt</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1987</div>
+                    <div class="timeline-content"><strong>Wins first national championship; Tennessee defeats Louisiana Tech 67-44</strong></div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1990-1998</div>
+                    <div class="timeline-content">Wins 7 more national championships; creates Tennessee dynasty</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">February 5, 2009</div>
+                    <div class="timeline-content"><strong>Wins 1,000th career game—first basketball coach ever to reach this milestone</strong></div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">August 23, 2011</div>
+                    <div class="timeline-content"><strong>Announces diagnosis of early-onset Alzheimer's disease at age 59</strong></div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2011-2012 Season</div>
+                    <div class="timeline-content">Coaches final season while battling Alzheimer's; team goes 27-9</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">April 18, 2012</div>
+                    <div class="timeline-content">Announces retirement; steps down as head coach after 38 seasons, 1,098 wins</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">June 28, 2016</div>
+                    <div class="timeline-content">Dies from complications of Alzheimer's disease at age 64; nation mourns a legend</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>The Stare That Could Break You</h2>
+
+            <p class="lead">Pat Summitt was famous for many things, but perhaps most infamous for "The Stare"—a cold, piercing glare that could reduce grown women to tears and make opponents reconsider their life choices.</p>
+
+            <p>Players who experienced The Stare described it as terrifying. "It felt like she could see into your soul and find every weakness," one former player said. "You knew you had disappointed her. And that was worse than any punishment."</p>
+
+            <p>Pat was demanding, relentless, and uncompromising. She expected perfection. She accepted nothing less than total effort. She ran brutal practices that left players exhausted and sometimes in tears.</p>
+
+            <p>But her toughness came from love. She wasn't trying to break her players—she was trying to build them into champions, on and off the court.</p>
+
+            <p>Every single player who played four years under Pat Summitt graduated. <span class="highlight">100% graduation rate.</span> Every. Single. One. That's unheard of in college sports.</p>
+
+            <p>She cared about her players as students, as people, as women navigating the world. She attended their weddings. She visited them in the hospital. She called them on their birthdays decades after they graduated.</p>
+
+            <p>"She was tough because she cared," said Tamika Catchings, one of Pat's star players who went on to WNBA stardom. "She pushed us because she believed in us. And she taught us that we were capable of more than we ever imagined."</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"Here's how I'm going to beat you. I'm going to outwork you. That's it. That's all there is to it."</p>
+                <p class="quote-author">— Pat Summitt</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Building Women's Basketball</h2>
+
+            <p class="lead">When Pat Summitt started coaching in 1974, women's basketball was an afterthought. Games were played in empty gyms. There were no scholarships. No television coverage. No respect.</p>
+
+            <p>Pat changed all of that.</p>
+
+            <p>She demanded equal treatment for her team. She fought for better facilities, better funding, better opportunities. She refused to accept that women's sports should be second-class.</p>
+
+            <p>Under her leadership, Tennessee women's basketball became a powerhouse. Games moved from small gyms to packed arenas. Television networks started broadcasting games. Corporate sponsors took notice.</p>
+
+            <p>Pat's success forced the sports world to pay attention to women's basketball. She proved that if you gave women's sports resources and respect, people would watch. Fans would show up. Revenue would follow.</p>
+
+            <p>By the time she retired, Tennessee women's basketball was selling out 20,000-seat arenas. The program generated millions in revenue. And women's basketball had become a major sport.</p>
+
+            <p>Pat didn't just build a basketball program. She built a movement.</p>
+
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <div class="impact-number">1,098</div>
+                    <div class="impact-label">Career wins (most in D-I basketball history at retirement)</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">8</div>
+                    <div class="impact-label">National championships</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">18</div>
+                    <div class="impact-label">Final Four appearances</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">38</div>
+                    <div class="impact-label">Years without a losing season</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">100%</div>
+                    <div class="impact-label">Graduation rate for 4-year players</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">Legend</div>
+                    <div class="impact-label">Built women's basketball into major sport</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>The Cruelest Opponent</h2>
+
+            <p class="lead">Alzheimer's disease is brutal. It steals your memories, your identity, your ability to recognize the people you love. And for Pat Summitt—a woman whose mind had always been her greatest weapon—it was the cruelest fate imaginable.</p>
+
+            <p>After her diagnosis in 2011, Pat's decline was swift and heartbreaking. She coached one more season, but it was clear she was struggling. She forgot plays. She repeated herself. She needed assistants to help her remember basic game plans.</p>
+
+            <p>When she finally stepped down in 2012, she knew what was coming. The disease would rob her of everything—her memories of championships, of her players, of her family.</p>
+
+            <p>But even as her mind failed, her spirit didn't.</p>
+
+            <p>She founded the Pat Summitt Foundation to raise money for Alzheimer's research. She spoke publicly about her diagnosis to raise awareness. She visited with former players, even as she struggled to remember their names.</p>
+
+            <p>In her final years, she required full-time care. She could no longer speak. She couldn't walk. She didn't recognize her own son.</p>
+
+            <p>On June 28, 2016, Pat Summitt died at age 64. The disease had taken her body, but not her legacy.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"Alzheimer's is stealing her mind, but it can't steal what she built. Her legacy is permanent. Her impact is forever."</p>
+                <p class="quote-author">— Tamika Catchings, former player</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>The Legend That Lives Forever</h2>
+
+            <p class="lead">When Pat Summitt died, the basketball world mourned. President Obama issued a statement. Sports figures from across the globe paid tribute. And thousands of former players shared stories of how Pat had changed their lives.</p>
+
+            <p>Tennessee renamed the court at Thompson-Boling Arena "The Summitt." A statue of Pat stands outside, immortalized in bronze. Her legacy is everywhere you look in Knoxville.</p>
+
+            <p>But her real legacy isn't in statues or arenas. It's in the lives she touched.</p>
+
+            <p>It's in the <span class="highlight">161 players she coached at Tennessee</span>—all of whom graduated if they stayed four years. It's in the countless young coaches she mentored. It's in the women's basketball programs across the country that exist because Pat proved they could thrive.</p>
+
+            <p>It's in every young girl who picks up a basketball and dreams of being great. Because Pat showed them that women can be coaches, leaders, and legends.</p>
+
+            <p>Pat Summitt won 1,098 games. But more importantly, she won the respect of an entire sport. She won the love of her players. And she won the battle to make women's basketball matter.</p>
+
+            <p>Alzheimer's took her mind. But it couldn't take that.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"Left foot, right foot, breathe. That's my motto. When you've lost your memory, when you can't remember the plays you invented, when you can't recognize your own son's face—you just put one foot in front of the other, and you breathe. And you keep fighting. Because that's what champions do."</p>
+                <p class="quote-author">— Pat Summitt</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
