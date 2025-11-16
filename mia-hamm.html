@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mia Hamm - The Woman Who Built Women's Soccer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1E88E5;
+            --secondary-color: #0D47A1;
+            --accent-color: #FFC107;
+            --text-dark: #1a1a1a;
+            --text-light: #ffffff;
+            --background: #f8f9fa;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--background);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #1E88E5 0%, #0D47A1 50%, #FFC107 100%);
+            color: var(--text-light);
+            padding: 120px 20px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1560272564-c83b66b1ad12?w=1200') center/cover;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            line-height: 1.1;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 60px auto 0;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            display: block;
+            margin-bottom: 10px;
+            color: var(--accent-color);
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .section {
+            margin-bottom: 80px;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            margin: 40px 0 20px;
+            color: var(--primary-color);
+        }
+
+        .lead {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        .quote-box {
+            background: linear-gradient(135deg, #1E88E5 0%, #0D47A1 100%);
+            color: var(--text-light);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+            border-left: 5px solid var(--accent-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .quote-text {
+            font-size: 1.4rem;
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .quote-author {
+            font-size: 1.1rem;
+            text-align: right;
+            opacity: 0.9;
+            font-weight: 600;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+            margin: 40px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, var(--primary-color), var(--accent-color));
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+            padding-left: 30px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -46px;
+            top: 5px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: var(--accent-color);
+            border: 3px solid var(--primary-color);
+        }
+
+        .timeline-year {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .timeline-content {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .impact-card {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--primary-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .impact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .impact-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .impact-label {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background: white;
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .back-link:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-2px);
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, rgba(30, 136, 229, 0.1) 0%, rgba(255, 193, 7, 0.1) 100%);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .container {
+                padding: 40px 20px;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .quote-text {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Mia Hamm</h1>
+            <p class="subtitle">The Face That Launched a Million Dreams in Women's Soccer</p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">158</span>
+                    <span class="stat-label">International Goals</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">2</span>
+                    <span class="stat-label">World Cup Championships</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">2</span>
+                    <span class="stat-label">Olympic Gold Medals</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">90,185</span>
+                    <span class="stat-label">Fans at the '99 Final</span>
+                </div>
+            </div>
+
+            <a href="index.html" class="back-link">← Back to Athletes</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <section class="section">
+            <h2>The Day That Changed Everything</h2>
+
+            <p class="lead">July 10, 1999. The Rose Bowl in Pasadena, California. 90,185 fans packed the stadium—the largest crowd to ever watch a women's sporting event. The United States Women's National Team faced China in the World Cup final. And Mia Hamm was about to help create a moment that would change women's sports forever.</p>
+
+            <p>The game was scoreless after regulation. Scoreless after extra time. It all came down to penalty kicks—the cruelest lottery in sports, where years of preparation can be decided in seconds.</p>
+
+            <p>Mia stepped up to take the third penalty for the United States. The weight of a nation rested on her shoulders. She had been the face of women's soccer for a decade. She was the best player in the world. But in this moment, with 90,000 people screaming and millions more watching on television, she was just a woman trying to put a ball in a net.</p>
+
+            <p>She struck it perfectly. Goal. The crowd erupted.</p>
+
+            <p>The shootout continued. Back and forth. Nerves fraying. Hearts pounding. And then Brandi Chastain stepped up for the fifth and final penalty. If she scored, the United States would win the World Cup. If she missed, China would have another chance.</p>
+
+            <p>She scored. And in the most iconic image in women's sports history, Brandi ripped off her jersey and fell to her knees, overcome with joy. The team swarmed her. The crowd went wild. And Mia Hamm, sobbing with relief and triumph, embraced her teammates.</p>
+
+            <p>The United States had won the World Cup. And women's soccer in America—a sport that barely existed a decade earlier—had just become a cultural phenomenon.</p>
+
+            <p><span class="highlight">90,185 people had watched in person. 40 million watched on television.</span> It was the most-watched soccer match—men's or women's—in U.S. television history. And Mia Hamm, the quiet, humble superstar who had carried the team for years, was at the center of it all.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"That day wasn't about me. It was about all of us. It was about every girl who ever wanted to play soccer and was told she couldn't. It was about showing the world that women's sports matter."</p>
+                <p class="quote-author">— Mia Hamm</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>The Girl Who Just Wanted to Play</h2>
+
+            <p class="lead">Mariel Margaret Hamm was born on March 17, 1972, in Selma, Alabama. She was the fourth of six children in a military family that moved constantly—Italy, Texas, California, Virginia. Mia never stayed in one place long enough to put down roots. But wherever the family went, she had soccer.</p>
+
+            <p>Her adoptive brother, Garrett, was her best friend and fiercest competitor. They played soccer together in the backyard, in parks, on military bases. Garrett was older, bigger, stronger—but Mia was faster, more determined, more relentless. She hated losing to him. So she worked harder.</p>
+
+            <p>When Mia was five years old, she joined her first soccer team. She was the only girl. The boys didn't want her there. The coaches didn't know what to do with her. But Mia didn't care. She just wanted to play.</p>
+
+            <p>By the time she was a teenager, it was clear: Mia Hamm was special. She had vision, speed, and an almost supernatural ability to score goals. In 1987, at just <span class="highlight">15 years old</span>, she was called up to the U.S. Women's National Team—the youngest player ever selected.</p>
+
+            <p>But women's soccer in America in the 1980s was a footnote. There were no professional leagues. No endorsement deals. No media coverage. The national team played in front of crowds of a few hundred people—sometimes fewer. Most Americans didn't even know there was a women's national soccer team.</p>
+
+            <p>Mia didn't care. She played because she loved the game. She played because she couldn't imagine doing anything else. And slowly, game by game, tournament by tournament, she became the best player in the world.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"I never dreamed of being famous. I just dreamed of being good. I wanted to be so good that nobody could tell me I didn't belong on the field."</p>
+                <p class="quote-author">— Mia Hamm</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>The Journey of a Pioneer</h2>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">March 17, 1972</div>
+                    <div class="timeline-content">Born in Selma, Alabama; grows up in a military family, moving frequently</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1987 (Age 15)</div>
+                    <div class="timeline-content">Becomes youngest player ever to join the U.S. Women's National Team</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1989-1993</div>
+                    <div class="timeline-content">Plays for University of North Carolina; wins four NCAA championships</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1991</div>
+                    <div class="timeline-content">Wins first World Cup with the U.S. in China; becomes a starter and key player</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1996</div>
+                    <div class="timeline-content">Wins Olympic gold medal in Atlanta—first-ever women's soccer Olympic tournament</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">April 3, 1997</div>
+                    <div class="timeline-content"><strong>Her brother Garrett dies from complications of aplastic anemia at age 28; Mia is devastated but continues playing in his honor</strong></div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1999</div>
+                    <div class="timeline-content">Mia Hamm Foundation established to raise awareness for bone marrow diseases and support women's sports</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">July 10, 1999</div>
+                    <div class="timeline-content"><strong>Wins World Cup in front of record crowd of 90,185 at Rose Bowl; women's soccer explodes in popularity</strong></div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2001-2002</div>
+                    <div class="timeline-content">Named FIFA Women's World Player of the Year two years in a row</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2004</div>
+                    <div class="timeline-content">Wins second Olympic gold medal in Athens; retires after the Olympics with 158 international goals (then a world record)</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2007</div>
+                    <div class="timeline-content">Inducted into National Soccer Hall of Fame</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">Present</div>
+                    <div class="timeline-content">Global ambassador for soccer; philanthropist; advocate for women's sports and healthcare</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>The Hardest Loss</h2>
+
+            <p class="lead">April 3, 1997. Mia Hamm's phone rang in the middle of the night. It was the call she had been dreading for months. Her brother Garrett was gone. He was 28 years old.</p>
+
+            <p>Garrett Hamm had been diagnosed with aplastic anemia—a rare blood disorder where the bone marrow fails to produce enough new blood cells. For years, he had battled the disease, undergoing treatments, searching for a bone marrow donor. But none of the treatments worked. And in 1997, his body finally gave out.</p>
+
+            <p>Garrett was more than Mia's brother. He was her best friend. Her first soccer rival. The person who taught her that losing was unacceptable, and that you had to fight for everything you wanted. When she was young and playing with the boys, Garrett was the one who told her she belonged. When she doubted herself, he believed in her.</p>
+
+            <p>His death shattered her.</p>
+
+            <p>The U.S. Women's National Team had a game scheduled just days after Garrett's death. Mia didn't want to play. She wanted to stay home, to grieve, to collapse under the weight of her loss. But her family told her that Garrett would have wanted her to play. He lived for soccer. He lived to watch her succeed.</p>
+
+            <p>So Mia played. She dedicated every game to Garrett. She wore his memory like armor. And in 1999, she established the <span class="highlight">Mia Hamm Foundation</span> to raise funds for bone marrow disease research and to support opportunities for young women in sports—the two causes her brother would have cared about most.</p>
+
+            <p>Years later, Mia would say that Garrett's death changed her. It taught her that sports, as important as they were to her, were still just games. Life was fragile. Time was precious. And the people you love are all that truly matter.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"Garrett taught me how to compete. He taught me how to win. But when he died, he taught me something more important: that the scoreboard doesn't define you. The love you give and receive—that's what matters."</p>
+                <p class="quote-author">— Mia Hamm</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Building a Movement</h2>
+
+            <p class="lead">Before Mia Hamm, women's soccer in America was invisible. After Mia Hamm, it was unstoppable.</p>
+
+            <p>In the early 1990s, the U.S. Women's National Team played in empty stadiums. Newspapers didn't cover their games. Television networks didn't broadcast them. Young girls who wanted to play soccer had almost no role models, no professional leagues to aspire to, no proof that a career in the sport was even possible.</p>
+
+            <p>But Mia kept playing. And as she racked up goals, championships, and accolades, people started to notice. By the mid-1990s, she was appearing on magazine covers. Nike signed her to an endorsement deal—one of the first major endorsements for a female soccer player. She became, almost accidentally, the face of women's soccer.</p>
+
+            <p>And then came 1999.</p>
+
+            <p>The Women's World Cup was held in the United States for the first time. The organizers hoped for decent crowds—maybe 20,000 or 30,000 per game. What they got was a phenomenon. The final at the Rose Bowl sold out. <span class="highlight">90,185 people showed up</span>—a world record for a women's sporting event that still stands today.</p>
+
+            <p>The broadcast ratings were off the charts. The team became celebrities overnight. Brandi Chastain's jersey-ripping celebration became one of the most iconic images in sports history. And Mia Hamm, the quiet, humble superstar, became a household name.</p>
+
+            <p>After 1999, youth soccer registrations for girls skyrocketed. Professional women's soccer leagues were founded (and sometimes failed, and were founded again). Women's soccer became an Olympic staple. And a generation of young girls grew up believing that they, too, could be athletes, champions, heroes.</p>
+
+            <p>Mia didn't do it alone. She was part of an incredible team—Michelle Akers, Brandi Chastain, Julie Foudy, Kristine Lilly, and so many others. But she was the face. She was the one everyone knew. And she carried that responsibility with grace.</p>
+
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <div class="impact-number">158</div>
+                    <div class="impact-label">International goals (world record when she retired)</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">2</div>
+                    <div class="impact-label">World Cup championships (1991, 1999)</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">2</div>
+                    <div class="impact-label">Olympic gold medals (1996, 2004)</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">276</div>
+                    <div class="impact-label">International appearances for the U.S.</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">90,185</div>
+                    <div class="impact-label">Record crowd at 1999 World Cup final</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">Millions</div>
+                    <div class="impact-label">Young girls inspired to play soccer</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>The Reluctant Icon</h2>
+
+            <p class="lead">Mia Hamm never wanted to be famous. She just wanted to be good at soccer. But fame found her anyway, and she handled it the only way she knew how: with humility, hard work, and an unshakable focus on the team.</p>
+
+            <p>In interviews, Mia was always quick to deflect credit. She talked about her teammates, her coaches, the fans. She rarely talked about herself. She was uncomfortable with the spotlight. She didn't like being singled out as the "face" of women's soccer.</p>
+
+            <p>But she understood the responsibility. She knew that millions of young girls were watching her, looking up to her, dreaming of becoming her. And she took that seriously.</p>
+
+            <p>She signed every autograph. She attended every charity event. She gave every interview. She showed up, again and again, even when she was exhausted, even when she wanted privacy, even when the pressure felt crushing.</p>
+
+            <p>Because she knew that it wasn't about her. It was about the game. It was about opening doors for the next generation. It was about proving that women's sports deserved investment, respect, and attention.</p>
+
+            <p>When she retired in 2004, after 17 years on the national team, she had scored <span class="highlight">158 international goals</span>—more than any soccer player, male or female, in history at that time. She had won two World Cups, two Olympic gold medals, and countless other honors.</p>
+
+            <p>But her greatest achievement wasn't a trophy. It was the movement she helped build. It was the millions of girls who grew up playing soccer because they saw Mia Hamm and thought, "I can do that too."</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"I am a member of a team, and I rely on the team. I defer to it and sacrifice for it, because the team, not the individual, is the ultimate champion."</p>
+                <p class="quote-author">— Mia Hamm</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>A Legacy Beyond the Field</h2>
+
+            <p class="lead">If you ask Mia Hamm what she's most proud of, she won't talk about goals or championships. She'll talk about the Mia Hamm Foundation. She'll talk about the young athletes she's mentored. She'll talk about the bone marrow donors who have saved lives because of the awareness her foundation created.</p>
+
+            <p>After Garrett's death, Mia could have retreated into grief. Instead, she turned her pain into purpose. The Mia Hamm Foundation has raised millions of dollars for bone marrow disease research and transplant programs. It has helped fund youth sports programs for girls who otherwise wouldn't have access. It has saved lives.</p>
+
+            <p>Mia married former baseball star Nomar Garciaparra in 2003. They have three children—twin girls and a boy. She lives a relatively quiet life now, away from the spotlight she never wanted in the first place.</p>
+
+            <p>But her impact is everywhere. Every time you see a girls' soccer team practicing in a park, that's Mia's legacy. Every time you watch the U.S. Women's National Team dominate on the world stage, that's the foundation she helped build. Every time a young girl puts on cleats and dreams of being a champion, that's Mia Hamm's gift to the world.</p>
+
+            <p>Women's soccer in America exists because of players like Mia. It thrives because of the doors she opened, the barriers she broke, the example she set.</p>
+
+            <p>She didn't just play the game. She changed it forever.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"Somewhere behind the athlete you've become, the hours of practice, the coaches who pushed you, the teammates who believed in you, and the fans who cheered for you, is the little girl who fell in love with the game and never looked back. Play for her."</p>
+                <p class="quote-author">— Mia Hamm</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

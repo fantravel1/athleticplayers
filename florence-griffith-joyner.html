@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Florence Griffith-Joyner - The Fastest Woman Who Ever Lived</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #E91E63;
+            --secondary-color: #9C27B0;
+            --accent-color: #FFD700;
+            --text-dark: #1a1a1a;
+            --text-light: #ffffff;
+            --background: #f8f9fa;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--background);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #E91E63 0%, #9C27B0 50%, #FFD700 100%);
+            color: var(--text-light);
+            padding: 120px 20px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=1200') center/cover;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            line-height: 1.1;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 60px auto 0;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            display: block;
+            margin-bottom: 10px;
+            color: var(--accent-color);
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .section {
+            margin-bottom: 80px;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            margin: 40px 0 20px;
+            color: var(--primary-color);
+        }
+
+        .lead {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        .quote-box {
+            background: linear-gradient(135deg, #E91E63 0%, #9C27B0 100%);
+            color: var(--text-light);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+            border-left: 5px solid var(--accent-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .quote-text {
+            font-size: 1.4rem;
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .quote-author {
+            font-size: 1.1rem;
+            text-align: right;
+            opacity: 0.9;
+            font-weight: 600;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+            margin: 40px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, var(--primary-color), var(--accent-color));
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+            padding-left: 30px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -46px;
+            top: 5px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: var(--accent-color);
+            border: 3px solid var(--primary-color);
+        }
+
+        .timeline-year {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .timeline-content {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .impact-card {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--primary-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .impact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .impact-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .impact-label {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background: white;
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .back-link:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-2px);
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, rgba(233, 30, 99, 0.1) 0%, rgba(255, 215, 0, 0.1) 100%);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .container {
+                padding: 40px 20px;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .quote-text {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Florence Griffith-Joyner</h1>
+            <p class="subtitle">The Fastest Woman Who Ever Lived—and the Records That Still Stand</p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">10.49</span>
+                    <span class="stat-label">100m World Record (1988)</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">21.34</span>
+                    <span class="stat-label">200m World Record (1988)</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">3</span>
+                    <span class="stat-label">Olympic Gold Medals</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">37</span>
+                    <span class="stat-label">Years Since Records Were Set</span>
+                </div>
+            </div>
+
+            <a href="index.html" class="back-link">← Back to Athletes</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <section class="section">
+            <h2>The Day She Became Legend</h2>
+
+            <p class="lead">July 16, 1988. Indianapolis Track & Field Championships. Florence Griffith-Joyner stepped into the starting blocks for the 100-meter quarterfinals. What happened in the next 10.49 seconds would rewrite the history of women's sprinting—and it still hasn't been rewritten since.</p>
+
+            <p>The gun fired. Flo-Jo exploded from the blocks like lightning given human form. Her legs moved so fast they blurred. Her signature one-legged suit—bright purple and electric blue—streaked down the track. Her six-inch fingernails, painted in red, white, and blue, cut through the air.</p>
+
+            <p>When she crossed the finish line, the clock read <span class="highlight">10.49 seconds</span>. The crowd went silent. Then pandemonium erupted. Florence Griffith-Joyner had just run faster than any woman in history.</p>
+
+            <p>The previous world record, held by Evelyn Ashford, was 10.76. Flo-Jo had just shattered it by nearly three-tenths of a second—an almost unheard-of margin in elite sprinting. In track and field, world records are typically broken by hundredths of a second. Flo-Jo had obliterated the old record.</p>
+
+            <p>Skeptics immediately questioned the time. Was it wind-aided? Was the timing equipment faulty? The official wind reading was +0.0 m/s—perfectly legal. The timing was triple-checked. The record stood.</p>
+
+            <p>Three days later, she ran even faster in the semifinals: <span class="highlight">10.49 seconds again</span>, this time with a slight tailwind. And later that year at the Seoul Olympics, she set the 200-meter world record at <span class="highlight">21.34 seconds</span>—a time so fast it seemed to belong to another species.</p>
+
+            <p>That was 1988. It's now 2025. <span class="highlight">Thirty-seven years later, both records still stand.</span> No woman has come close. Florence Griffith-Joyner remains, to this day, the fastest woman who has ever lived.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"When I'm running, I don't think about anything. I just run. I feel the wind, I feel my body, I feel free. That's all that matters."</p>
+                <p class="quote-author">— Florence Griffith-Joyner</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>From the Streets of Watts to the World Stage</h2>
+
+            <p class="lead">Florence Delorez Griffith was born on December 21, 1959, in Los Angeles, California. She grew up in the Watts neighborhood—one of the poorest and most dangerous areas of the city.</p>
+
+            <p>Watts in the 1960s and 70s was a place of poverty, gang violence, and limited opportunities. The 1965 Watts Riots had left the community scarred and forgotten. For most kids growing up there, escape seemed impossible.</p>
+
+            <p>But Florence was different. She was the seventh of eleven children, raised by a single mother who worked multiple jobs to keep the family afloat. Money was always tight. Resources were scarce. But Florence had something that couldn't be bought: blazing natural speed.</p>
+
+            <p>At age seven, she started racing in the Sugar Ray Robinson Youth Foundation track meets. She won everything. By age fourteen, she was already being scouted by high schools across Los Angeles. She attended Jordan High School and then California State University, Northridge, where she began training seriously.</p>
+
+            <p>But money was still a problem. Florence had to drop out of college because her family couldn't afford the tuition. She worked as a bank teller during the day and trained at night. Her dreams of Olympic glory seemed to be slipping away.</p>
+
+            <p>Then Bob Kersee, one of the most respected track coaches in America, saw her potential. He offered her a scholarship to UCLA, where she could train full-time. Florence transferred to UCLA in 1980, and her life changed forever.</p>
+
+            <p>At UCLA, she trained alongside some of the best athletes in the country, including Jackie Joyner, who would become one of the greatest heptathletes of all time. Jackie's brother, Al Joyner, was also a track star—a triple jumper who would go on to win Olympic gold in 1984.</p>
+
+            <p>Florence and Al fell in love. They married in 1987. Florence Griffith became Florence Griffith-Joyner—Flo-Jo for short. And together, the Joyners would become one of the most iconic families in track and field history.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"I grew up with nothing. But I never let that define me. I knew I was fast. I knew I had a gift. And I wasn't going to let poverty, or racism, or anything else stop me from using it."</p>
+                <p class="quote-author">— Florence Griffith-Joyner</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>The Journey to Immortality</h2>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">December 21, 1959</div>
+                    <div class="timeline-content">Born in Los Angeles, California; grows up in Watts neighborhood</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1978</div>
+                    <div class="timeline-content">Begins training at California State University, Northridge; drops out due to financial struggles</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1980</div>
+                    <div class="timeline-content">Transfers to UCLA on athletics scholarship under coach Bob Kersee</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1984</div>
+                    <div class="timeline-content">Los Angeles Olympics: Wins silver medal in 200 meters; begins relationship with Al Joyner</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">October 10, 1987</div>
+                    <div class="timeline-content">Marries Al Joyner; becomes Florence Griffith-Joyner</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">July 16, 1988</div>
+                    <div class="timeline-content"><strong>Indianapolis: Sets 100m world record at 10.49 seconds—a record that still stands today</strong></div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">September 1988</div>
+                    <div class="timeline-content"><strong>Seoul Olympics: Wins three gold medals (100m, 200m, 4x100m relay) and one silver (4x400m relay); sets 200m world record at 21.34 seconds</strong></div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1989</div>
+                    <div class="timeline-content">Retires from competitive track at age 29; becomes fashion designer and spokesperson</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1993</div>
+                    <div class="timeline-content">Gives birth to daughter Mary Ruth Joyner</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">September 21, 1998</div>
+                    <div class="timeline-content"><strong>Dies suddenly in her sleep from an epileptic seizure at age 38; the world mourns the loss of a legend</strong></div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">Present Day</div>
+                    <div class="timeline-content">Her world records remain unbroken 37 years later; she is still the fastest woman in history</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Style, Speed, and Suspicion</h2>
+
+            <p class="lead">Flo-Jo didn't just run fast—she ran with style. And that style made her a global icon, a fashion revolutionary, and a lightning rod for controversy.</p>
+
+            <p>Before Flo-Jo, female track athletes wore standard uniforms: plain, functional, forgettable. Flo-Jo changed everything. She designed her own outfits—one-legged bodysuits in electric colors, asymmetrical cuts, bold patterns. She wore makeup while running. She grew her fingernails to six inches and painted them in intricate designs.</p>
+
+            <p>Traditionalists were horrified. How could she take athletics seriously while looking like a fashion model? But Flo-Jo knew exactly what she was doing. She was redefining what a female athlete could be. She was proving that strength and femininity weren't opposites—they were complements.</p>
+
+            <p>"People said I was too glamorous to be a serious athlete," she once said. "I said, why can't I be both?"</p>
+
+            <p>But her unprecedented speed also brought suspicion. How could someone improve so dramatically in such a short time? In 1984, she had won a silver medal with a time of 22.04 in the 200 meters. Four years later, she ran <span class="highlight">21.34</span>. Critics accused her of using performance-enhancing drugs.</p>
+
+            <p>Flo-Jo was tested repeatedly—before competitions, after competitions, randomly throughout the year. <span class="highlight">She never failed a single drug test.</span> Not one. Ever.</p>
+
+            <p>But the accusations persisted. They followed her throughout her career and even after her death. In 1998, just months before she died, allegations resurfaced. Flo-Jo was devastated. She had spent her entire life working for her achievements, and people refused to believe she had earned them honestly.</p>
+
+            <p>"It hurt," her husband Al said later. "It hurt her deeply. She knew the truth. She knew she was clean. But people didn't want to believe a Black woman from Watts could be the fastest person in the world without cheating."</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"I don't have to prove myself to anyone. My records speak for themselves. I know what I did. I know who I am. And I know I did it the right way."</p>
+                <p class="quote-author">— Florence Griffith-Joyner</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>The Tragedy of Perfection</h2>
+
+            <p class="lead">September 21, 1998. Florence Griffith-Joyner went to sleep in her home in Mission Viejo, California. She never woke up. She was 38 years old.</p>
+
+            <p>The autopsy revealed that she had suffered a severe epileptic seizure during the night, causing her to suffocate in her pillow. She had been diagnosed with epilepsy years earlier but had kept it private. She was taking medication, but seizures are unpredictable, uncontrollable, and sometimes fatal.</p>
+
+            <p>The news devastated the sports world. Flo-Jo had retired from competitive running in 1989, at the peak of her powers, to focus on family and fashion. She had become a motivational speaker, a fashion designer, and a mother to her daughter Mary. She had seemed happy, healthy, fulfilled.</p>
+
+            <p>And now she was gone.</p>
+
+            <p>Immediately, the conspiracy theories began. Some claimed her death was connected to performance-enhancing drugs she allegedly took years earlier (despite no evidence). Others suggested foul play. The rumors were cruel, baseless, and deeply hurtful to her family.</p>
+
+            <p>The truth was simpler and more tragic: a brilliant, vibrant woman died too young from a medical condition she couldn't control.</p>
+
+            <p>At her funeral, thousands of people lined the streets. Olympians, celebrities, politicians, and ordinary fans came to pay their respects. Al Joyner carried his daughter Mary, who was just seven years old, through the crowd. Jackie Joyner-Kersee delivered the eulogy, barely able to speak through her tears.</p>
+
+            <p>"She wasn't just fast," Jackie said. "She was magic. She made us believe that anything was possible."</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"When I found her that morning, I knew she was gone. But I also knew that her spirit, her records, her legacy—those would never die. Flo-Jo is still the fastest woman in the world. And she always will be."</p>
+                <p class="quote-author">— Al Joyner, Flo-Jo's husband</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>A Legacy Measured in Seconds</h2>
+
+            <p class="lead">Florence Griffith-Joyner's world records have now stood for 37 years. In that time, thousands of elite female sprinters have tried to break them. None have come close.</p>
+
+            <p>The current fastest women in the world—runners like Shelly-Ann Fraser-Pryce, Elaine Thompson-Herah, Shericka Jackson—are phenomenal athletes. But even at their absolute peak, they run the 100 meters in around 10.6-10.7 seconds. Flo-Jo's record is 10.49.</p>
+
+            <p>In sprinting, a tenth of a second is an eternity. Flo-Jo's records aren't just fast—they're otherworldly.</p>
+
+            <p>Some experts believe her records may never be broken. Others think modern training techniques, nutrition, and technology will eventually produce someone faster. But year after year, Olympic after Olympic, World Championship after World Championship, Flo-Jo's name remains at the top of the record books.</p>
+
+            <p>Her legacy extends far beyond her times. She showed that female athletes could be powerful, glamorous, and unapologetically themselves. She proved that a girl from the streets of Watts could conquer the world. She redefined what was possible for women in sports.</p>
+
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <div class="impact-number">10.49</div>
+                    <div class="impact-label">100m world record (set 1988, still unbroken)</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">21.34</div>
+                    <div class="impact-label">200m world record (set 1988, still unbroken)</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">3 Gold</div>
+                    <div class="impact-label">Olympic gold medals (1988 Seoul)</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">37 Years</div>
+                    <div class="impact-label">And counting—records still stand</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">Zero</div>
+                    <div class="impact-label">Failed drug tests in her entire career</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">Icon</div>
+                    <div class="impact-label">Fashion revolutionary who changed sports culture</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>The Woman Who Ran Like the Wind</h2>
+
+            <p class="lead">If you watch old footage of Florence Griffith-Joyner racing, you'll notice something. She doesn't look like she's running. She looks like she's flying.</p>
+
+            <p>Her stride is impossibly long, impossibly smooth. Her legs cycle so fast they blur. Her face shows no strain, no effort—just pure, effortless speed. It's almost supernatural.</p>
+
+            <p>But beneath that effortless appearance was a lifetime of work. Early mornings on the track. Thousands of hours of training. Sacrifices most people can't imagine. Flo-Jo didn't just happen to be fast. She chose to be fast. She dedicated her life to being the fastest.</p>
+
+            <p>And for a brief, shining moment in 1988, she achieved perfection. She ran faster than any woman had ever run. And then she walked away.</p>
+
+            <p>Many athletes can't let go. They keep competing long past their prime, chasing one more medal, one more victory, one more moment of glory. But Flo-Jo retired at 29, at the absolute peak of her powers. She had nothing left to prove. She had already achieved immortality.</p>
+
+            <p>Her death at 38 was a tragedy. But her records, her style, her spirit—those live on. Every time a young girl steps onto a track, laces up her spikes, and dreams of running faster than the wind, Flo-Jo's legacy continues.</p>
+
+            <p>The world may never see another athlete quite like Florence Griffith-Joyner. She was one of a kind. A champion. A style icon. A revolutionary.</p>
+
+            <p>And still, to this day, the fastest woman who has ever lived.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"I always wanted to be the best. Not the second best. Not almost the best. The best. And for one perfect summer in 1988, I was. Nobody has been faster since. And I don't think anyone will be for a very, very long time."</p>
+                <p class="quote-author">— Florence Griffith-Joyner</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
