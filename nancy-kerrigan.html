@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nancy Kerrigan - The Skater Who Rose From an Attack to Olympic Glory</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1A237E;
+            --secondary-color: #C2185B;
+            --accent-color: #FFD700;
+            --text-dark: #1a1a1a;
+            --text-light: #ffffff;
+            --background: #f8f9fa;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--background);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #1A237E 0%, #C2185B 50%, #FFD700 100%);
+            color: var(--text-light);
+            padding: 120px 20px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1547347298-4074fc3086f0?w=1200') center/cover;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            line-height: 1.1;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 60px auto 0;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            display: block;
+            margin-bottom: 10px;
+            color: var(--accent-color);
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .section {
+            margin-bottom: 80px;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+
+        .lead {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        .quote-box {
+            background: linear-gradient(135deg, #1A237E 0%, #C2185B 100%);
+            color: var(--text-light);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+            border-left: 5px solid var(--accent-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .quote-text {
+            font-size: 1.4rem;
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .quote-author {
+            font-size: 1.1rem;
+            text-align: right;
+            opacity: 0.9;
+            font-weight: 600;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+            margin: 40px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, var(--primary-color), var(--accent-color));
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+            padding-left: 30px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -46px;
+            top: 5px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: var(--accent-color);
+            border: 3px solid var(--primary-color);
+        }
+
+        .timeline-year {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .timeline-content {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .impact-card {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--primary-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .impact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .impact-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .impact-label {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background: white;
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .back-link:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-2px);
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, rgba(26, 35, 126, 0.1) 0%, rgba(255, 215, 0, 0.1) 100%);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .container {
+                padding: 40px 20px;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .quote-text {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Nancy Kerrigan</h1>
+            <p class="subtitle">"Why? Why? Why?"—The Skater Who Survived an Attack and Won Olympic Silver</p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">2</span>
+                    <span class="stat-label">Olympic Medals</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">6</span>
+                    <span class="stat-label">Weeks to Recover</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">1</span>
+                    <span class="stat-label">Brutal Attack</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">Grace</span>
+                    <span class="stat-label">Under Unimaginable Pressure</span>
+                </div>
+            </div>
+
+            <a href="index.html" class="back-link">← Back to Athletes</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <section class="section">
+            <h2>The Attack That Shocked the World</h2>
+
+            <p class="lead">January 6, 1994. Cobo Arena, Detroit, Michigan. Nancy Kerrigan had just finished practice at the U.S. Figure Skating Championships. As she walked off the ice, a man in black rushed up behind her and struck her right knee with a metal baton.</p>
+
+            <p>Nancy collapsed, screaming in pain. "Why? Why? Why?" she cried—a moment captured on camera and replayed endlessly on news channels around the world.</p>
+
+            <p>The attack was shocking, brutal, and deliberate. Someone had tried to destroy Nancy Kerrigan's Olympic dreams. And within days, the world would learn who: <span class="highlight">Tonya Harding's ex-husband and bodyguard</span>, hired to take out Nancy so Tonya could have a better shot at making the Olympic team.</p>
+
+            <p>It became the biggest sports scandal in history. The media went into a frenzy. Nancy's attacker was arrested. Tonya's involvement was investigated. And Nancy—bruised, terrified, and heartbroken—had to decide: would she give up, or would she fight back?</p>
+
+            <p>She chose to fight.</p>
+
+            <p>Six weeks later, Nancy Kerrigan skated at the 1994 Lillehammer Olympics. And she won the silver medal—skating one of the most beautiful performances of her career just weeks after someone had tried to end it.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"They tried to break me. They tried to take everything I'd worked for. But I didn't let them. I skated. And I won."</p>
+                <p class="quote-author">— Nancy Kerrigan</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>The Girl Who Skated for Her Mother</h2>
+
+            <p class="lead">Nancy Ann Kerrigan was born on October 13, 1969, in Stoneham, Massachusetts. She grew up in a working-class family. Her father, Dan, was a welder. Her mother, Brenda, was legally blind due to a rare virus.</p>
+
+            <p>Money was always tight. Figure skating is expensive—lessons, costumes, ice time, travel. The Kerrigan family scraped together every penny to support Nancy's dream.</p>
+
+            <p>Nancy's mother, despite being blind, never missed a practice or competition. She couldn't see Nancy skate, but she could hear the music, hear the crowd, and feel the joy her daughter brought to the ice.</p>
+
+            <p>"I skated for my mother," Nancy said. "She sacrificed everything so I could pursue this dream. I wanted to make her proud."</p>
+
+            <p>Nancy was elegant, graceful, and technically brilliant. By the early 1990s, she was one of the best figure skaters in the world. In 1992, she won the bronze medal at the Albertville Olympics. In 1993, she won the U.S. National Championship.</p>
+
+            <p>The 1994 Olympics in Lillehammer were supposed to be her moment to win gold. And then came the attack.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"My mother couldn't see me skate. But she felt every jump, every spin, every moment. I did it for her."</p>
+                <p class="quote-author">— Nancy Kerrigan</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>The Journey Through Scandal</h2>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">October 13, 1969</div>
+                    <div class="timeline-content">Born in Stoneham, Massachusetts; mother is legally blind but supports her skating</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1987</div>
+                    <div class="timeline-content">Wins first U.S. Figure Skating Championship medal</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1992</div>
+                    <div class="timeline-content">Wins bronze medal at Albertville Olympics; becomes America's skating sweetheart</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1993</div>
+                    <div class="timeline-content">Wins U.S. National Championship; favored for 1994 Olympics</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">January 6, 1994</div>
+                    <div class="timeline-content"><strong>Attacked after practice in Detroit; assailant hired by Tonya Harding's ex-husband strikes her knee with metal baton</strong></div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">January-February 1994</div>
+                    <div class="timeline-content">Scandal dominates headlines; media circus follows Nancy everywhere; Tonya's involvement investigated</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">February 1994</div>
+                    <div class="timeline-content"><strong>Lillehammer Olympics: Nancy wins silver medal, Tonya finishes 8th; Nancy skates beautifully despite injury and pressure</strong></div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1994-1995</div>
+                    <div class="timeline-content">Retires from competitive skating; becomes professional skater and celebrity</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1995</div>
+                    <div class="timeline-content">Marries sports agent Jerry Solomon; starts family</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">Present</div>
+                    <div class="timeline-content">Mother of three, skating commentator; known for grace and resilience through unimaginable adversity</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Skating Through the Media Storm</h2>
+
+            <p class="lead">After the attack, Nancy Kerrigan became the most famous athlete in the world—for all the wrong reasons. The media was relentless. Cameras followed her everywhere. Reporters asked invasive questions. The scandal overshadowed everything.</p>
+
+            <p>At the Olympics, Nancy and Tonya were forced to practice at the same rink. Cameras captured every interaction. The world watched, waiting for drama.</p>
+
+            <p>Nancy handled it with grace. She didn't lash out. She didn't seek revenge. She just focused on skating.</p>
+
+            <p>In the long program final, Nancy skated beautifully. Her performance was elegant, emotional, and technically flawless. The crowd gave her a standing ovation.</p>
+
+            <p>But she finished second to Ukraine's Oksana Baiul, who won by the narrowest margin. Nancy was devastated—not because she lost, but because after everything she'd endured, gold had slipped away.</p>
+
+            <p>Years later, controversy emerged about the judging. Some believed Nancy had been robbed. Others defended Baiul's win. But Nancy moved on. She had her silver medal. She had her dignity. And she had survived.</p>
+
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <div class="impact-number">2</div>
+                    <div class="impact-label">Olympic medals (1 bronze, 1 silver)</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">6 Weeks</div>
+                    <div class="impact-label">From attack to Olympic competition</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">1994</div>
+                    <div class="impact-label">Biggest sports scandal in history</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">Grace</div>
+                    <div class="impact-label">Handled media circus with dignity</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">Resilience</div>
+                    <div class="impact-label">Came back stronger after attack</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">Icon</div>
+                    <div class="impact-label">Symbol of perseverance under pressure</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Life After the Spotlight</h2>
+
+            <p class="lead">Nancy Kerrigan retired from competitive skating after the 1994 Olympics. She had had enough of the media, the pressure, the scandal. She wanted a normal life.</p>
+
+            <p>She married sports agent Jerry Solomon in 1995. They had three children. Nancy focused on family, stepping away from the public eye.</p>
+
+            <p>But the attack followed her forever. Every interview, every public appearance, people wanted to talk about it. "Why? Why? Why?"—those three words became her unwanted legacy.</p>
+
+            <p>Nancy grew resentful of the constant reminders. She wanted to be remembered for her skating, not for being a victim. But the media wouldn't let her move on.</p>
+
+            <p>In recent years, Nancy has become more open about the attack and its aftermath. She's talked about the trauma, the PTSD, the anger. She's also found peace.</p>
+
+            <p>"I don't want to be defined by what happened to me," she said. "But I also understand it's part of my story. And maybe my story helps others who've faced adversity."</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"They tried to break my knee. They tried to break my spirit. They failed. I'm still here. I'm still skating. And I'm still standing."</p>
+                <p class="quote-author">— Nancy Kerrigan</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>The Legacy of Grace</h2>
+
+            <p class="lead">Nancy Kerrigan will forever be remembered for the attack. But she should also be remembered for what came after: resilience, grace, and the refusal to be defined by trauma.</p>
+
+            <p>She didn't win Olympic gold. But she won something more important: she won her dignity. She showed the world how to face unimaginable adversity with strength and composure.</p>
+
+            <p>The attack was meant to destroy her. Instead, it revealed her character. And that character—graceful, strong, unbreakable—is her true legacy.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"I wish I'd won gold. But I'm proud of the silver. Because I earned it through pain, through fear, through everything. That medal represents more than just skating. It represents survival."</p>
+                <p class="quote-author">— Nancy Kerrigan</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

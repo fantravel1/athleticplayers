@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bonnie Blair - The Speed Skating Queen Who Dominated Three Olympics</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1565C0;
+            --secondary-color: #C62828;
+            --accent-color: #FFD700;
+            --text-dark: #1a1a1a;
+            --text-light: #ffffff;
+            --background: #f8f9fa;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--background);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #1565C0 0%, #C62828 50%, #FFD700 100%);
+            color: var(--text-light);
+            padding: 120px 20px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1551524559-8af4e6624178?w=1200') center/cover;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            line-height: 1.1;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 60px auto 0;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            display: block;
+            margin-bottom: 10px;
+            color: var(--accent-color);
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .section {
+            margin-bottom: 80px;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+
+        .lead {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        .quote-box {
+            background: linear-gradient(135deg, #1565C0 0%, #C62828 100%);
+            color: var(--text-light);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+            border-left: 5px solid var(--accent-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .quote-text {
+            font-size: 1.4rem;
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .quote-author {
+            font-size: 1.1rem;
+            text-align: right;
+            opacity: 0.9;
+            font-weight: 600;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 50px;
+            margin: 40px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(180deg, var(--primary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+            padding-left: 30px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -54px;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            background: var(--accent-color);
+            border: 4px solid var(--background);
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px var(--primary-color);
+        }
+
+        .timeline-year {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .timeline-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .impact-card {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--primary-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .impact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .impact-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .impact-label {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background: white;
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .back-link:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-2px);
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, rgba(21, 101, 192, 0.1) 0%, rgba(255, 215, 0, 0.1) 100%);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .container {
+                padding: 40px 20px;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .quote-text {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Bonnie Blair</h1>
+            <p class="subtitle">The Most Decorated Female Winter Olympian in U.S. History</p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">5</span>
+                    <span class="stat-label">Olympic Gold Medals</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">6</span>
+                    <span class="stat-label">Total Olympic Medals</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">3</span>
+                    <span class="stat-label">Consecutive Olympics</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">Queen</span>
+                    <span class="stat-label">Of Speed Skating</span>
+                </div>
+            </div>
+
+            <a href="index.html" class="back-link">← Back to Athletes</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <section class="section">
+            <h2>The Champaign Police Officer's Daughter</h2>
+
+            <p class="lead">Bonnie Blair grew up in Champaign, Illinois—not exactly known as a winter sports capital. But her family was obsessed with speed skating. All five of her older siblings skated competitively. By age two, Bonnie was on the ice too.</p>
+
+            <p>Her father was a civil engineer and Champaign police officer. Her mother managed the household and drove the kids to skating practice before dawn. Money was tight. The family held bake sales and car washes to afford travel to competitions.</p>
+
+            <p>But the Blairs believed in Bonnie. And Bonnie believed in herself.</p>
+
+            <p>At age 15, she competed in her first World Championship. At 19, she made the 1984 Olympic team—finishing 8th in the 500 meters. She was good. But not great. Not yet.</p>
+
+            <p>For the next four years, Bonnie trained obsessively. She moved to Europe to train with the best coaches. She refined her technique. She got faster. Stronger. More focused.</p>
+
+            <p>By the 1988 Calgary Olympics, Bonnie Blair was ready to announce herself to the world.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"Winning is about preparation and focus. Talent helps. But discipline is what separates good from great."</p>
+                <p class="quote-author">— Bonnie Blair</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Calgary 1988: The Breakthrough</h2>
+
+            <p class="lead">The 500-meter speed skating race lasts about 40 seconds. Less than a minute to prove you're the fastest in the world. Less than a minute where a single mistake ends everything.</p>
+
+            <p>On February 22, 1988, Bonnie Blair skated the race of her life. She exploded out of the blocks. She maintained perfect form through every turn. She crossed the finish line in <span class="highlight">39.10 seconds</span>—an Olympic record.</p>
+
+            <p>She had won her first Olympic gold medal.</p>
+
+            <p>Four days later, she won bronze in the 1000 meters. At age 23, Bonnie Blair had become an Olympic champion. And she was just getting started.</p>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">1964</div>
+                    <div class="timeline-content">Born in Cornwall, New York; grows up in Champaign, Illinois</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1984</div>
+                    <div class="timeline-content">First Olympics in Sarajevo—finishes 8th in 500m</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1988</div>
+                    <div class="timeline-content">Calgary Olympics—wins GOLD in 500m, bronze in 1000m</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1992</div>
+                    <div class="timeline-content">Albertville Olympics—wins GOLD in 500m and 1000m</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1994</div>
+                    <div class="timeline-content">Lillehammer Olympics—wins GOLD in 500m and 1000m again</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1995</div>
+                    <div class="timeline-content">Retires as most decorated U.S. female Winter Olympian ever</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1995</div>
+                    <div class="timeline-content">Wins Sullivan Award as America's top amateur athlete</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2004</div>
+                    <div class="timeline-content">Inducted into U.S. Olympic Hall of Fame</div>
+                </div>
+            </timeline>
+        </section>
+
+        <section class="section">
+            <h2>Albertville 1992: Doubling Down</h2>
+
+            <p class="lead">Four years later, Bonnie Blair returned to the Olympics in Albertville, France. She was 27 years old—ancient by speed skating standards. Younger skaters were coming for her crown.</p>
+
+            <p>Bonnie didn't care about age. She cared about winning.</p>
+
+            <p>In the 500 meters, she defended her Olympic title—winning gold again. Two Olympics. Two gold medals in the 500m. Dominant.</p>
+
+            <p>But she wasn't done. Five days later, Bonnie won gold in the 1000 meters—her first Olympic victory at that distance. <span class="highlight">Two golds at one Olympics</span>. Four career golds total. She was becoming a legend.</p>
+
+            <p>Back home in Champaign, the city held a parade in her honor. The police officer's daughter had become America's sweetheart. And she still wasn't finished.</p>
+        </section>
+
+        <section class="section">
+            <h2>Lillehammer 1994: The Perfect Ending</h2>
+
+            <p class="lead">By the 1994 Lillehammer Olympics, Bonnie Blair was 29 years old. Most speed skaters retire before 30. The sport is brutal on the body. The training is relentless. The competition is fierce.</p>
+
+            <p>But Bonnie Blair had one more Olympics left in her.</p>
+
+            <p>She won gold in the 500 meters. Again. That made three consecutive Olympic golds in the same event—a feat that had never been accomplished by an American woman in Winter Olympics history.</p>
+
+            <p>Three days later, she won gold in the 1000 meters. Again. <span class="highlight">Two more golds</span>. That brought her career total to five Olympic gold medals and six total medals.</p>
+
+            <p>She retired immediately after Lillehammer. There was nothing left to prove. She had dominated her sport across three Olympic Games and eight years. She had become the <span class="highlight">most decorated female Winter Olympian in U.S. history</span>—a record that stood for decades.</p>
+
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <div class="impact-number">5</div>
+                    <div class="impact-label">Olympic gold medals</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">6</div>
+                    <div class="impact-label">Total Olympic medals</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">3</div>
+                    <div class="impact-label">Consecutive Olympic 500m golds</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">2</div>
+                    <div class="impact-label">Consecutive Olympic 1000m golds</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">World</div>
+                    <div class="impact-label">Records set in 500m and 1000m</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">Legend</div>
+                    <div class="impact-label">Most decorated U.S. female Winter Olympian for decades</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>The Legacy of Excellence</h2>
+
+            <p class="lead">Bonnie Blair didn't have a dramatic story of overcoming tragedy. She didn't face discrimination or devastating injuries. Her story is different—and just as powerful.</p>
+
+            <p>Bonnie Blair's story is about excellence through consistency. About showing up every single day for years and doing the work. About perfecting your craft until you're the absolute best in the world. About staying at the top for nearly a decade.</p>
+
+            <p>In an era when Olympic athletes were amateurs who struggled financially, Bonnie worked odd jobs to fund her training. She sold Bonnie Blair commemorative buttons. She did appearances. She made it work because she loved speed skating.</p>
+
+            <p>After retirement, Bonnie became a motivational speaker and speed skating commentator. She married fellow speed skater Dave Cruikshank. She raised a family. She stayed connected to the sport she loved.</p>
+
+            <p>Her Olympic records have since been broken by other American women—including Apolo Ohno and others. But her legacy endures. She proved that American women could dominate international winter sports. She showed that consistency and discipline can beat talent alone.</p>
+
+            <p>And she inspired countless young girls in Champaign, Illinois—and across America—to lace up their skates and chase their dreams.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"Winning isn't about being the most talented. It's about outworking everyone else. Every single day."</p>
+                <p class="quote-author">— Bonnie Blair</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

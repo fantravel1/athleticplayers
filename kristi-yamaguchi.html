@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kristi Yamaguchi - The Grace and Grit That Shattered Glass Ceilings</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #D32F2F;
+            --secondary-color: #1976D2;
+            --accent-color: #FFD700;
+            --text-dark: #1a1a1a;
+            --text-light: #ffffff;
+            --background: #f8f9fa;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--background);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #D32F2F 0%, #1976D2 50%, #FFD700 100%);
+            color: var(--text-light);
+            padding: 120px 20px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1547347298-4074fc3086f0?w=1200') center/cover;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            line-height: 1.1;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 60px auto 0;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            display: block;
+            margin-bottom: 10px;
+            color: var(--accent-color);
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .section {
+            margin-bottom: 80px;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+
+        .lead {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        .quote-box {
+            background: linear-gradient(135deg, #D32F2F 0%, #1976D2 100%);
+            color: var(--text-light);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+            border-left: 5px solid var(--accent-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .quote-text {
+            font-size: 1.4rem;
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .quote-author {
+            font-size: 1.1rem;
+            text-align: right;
+            opacity: 0.9;
+            font-weight: 600;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 50px;
+            margin: 40px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(180deg, var(--primary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+            padding-left: 30px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -54px;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            background: var(--accent-color);
+            border: 4px solid var(--background);
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px var(--primary-color);
+        }
+
+        .timeline-year {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .timeline-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .impact-card {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--primary-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .impact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .impact-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .impact-label {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background: white;
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .back-link:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-2px);
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, rgba(211, 47, 47, 0.1) 0%, rgba(255, 215, 0, 0.1) 100%);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .container {
+                padding: 40px 20px;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .quote-text {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Kristi Yamaguchi</h1>
+            <p class="subtitle">The Asian American Trailblazer Who Skated Into History</p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">First</span>
+                    <span class="stat-label">Asian American Olympic Figure Skating Gold</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">2</span>
+                    <span class="stat-label">World Championships</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">Olympic</span>
+                    <span class="stat-label">Gold Medal 1992</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">Trailblazer</span>
+                    <span class="stat-label">For Asian Americans</span>
+                </div>
+            </div>
+
+            <a href="index.html" class="back-link">← Back to Athletes</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <section class="section">
+            <h2>Born Different, Destined for Greatness</h2>
+
+            <p class="lead">Kristi Yamaguchi was born in Hayward, California in 1971 with club feet—a condition where both feet were turned inward. Doctors put her in corrective casts as an infant. Her parents were told she might never walk normally.</p>
+
+            <p>The treatment worked. Kristi learned to walk. But her parents wanted to strengthen her legs further, so they put her in dance classes. Then skating lessons. She took to the ice immediately.</p>
+
+            <p>But Kristi faced another challenge: she was Asian American in a sport dominated by white athletes. Figure skating in the 1980s had never crowned an Asian American Olympic champion. The sport had a reputation for favoring certain "looks"—and Kristi didn't fit the mold.</p>
+
+            <p>Her parents—Jim and Carole Yamaguchi—were Japanese Americans who had been born in internment camps during World War II. They knew about overcoming prejudice. They taught Kristi to focus on what she could control: her skating.</p>
+
+            <p>And Kristi could skate. By her early teens, she was winning national competitions. By her late teens, she was competing internationally. And by 1992, she was ready to change figure skating forever.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"I didn't set out to be a trailblazer. I just wanted to be the best figure skater I could be. But if my success opened doors for others, then that's everything."</p>
+                <p class="quote-author">— Kristi Yamaguchi</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>World Champion at 18</h2>
+
+            <p class="lead">In 1991, at age 19, Kristi Yamaguchi won her first World Figure Skating Championship in Munich, Germany. She beat the best skaters in the world—Tonya Harding, Nancy Kerrigan, Midori Ito. She landed every jump. She nailed every spin. She was flawless.</p>
+
+            <p>The judges had no choice. Kristi Yamaguchi was the <span class="highlight">World Champion</span>.</p>
+
+            <p>But winning Worlds was just the beginning. The real prize was the 1992 Winter Olympics in Albertville, France. That's where legends were made. That's where Kristi wanted to prove she was the best in the world.</p>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">1971</div>
+                    <div class="timeline-content">Born in Hayward, California with club feet requiring corrective treatment</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1988</div>
+                    <div class="timeline-content">Wins U.S. Junior National Championship</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1989</div>
+                    <div class="timeline-content">Wins first U.S. National Championship at age 17</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1991</div>
+                    <div class="timeline-content">Wins World Championship in Munich—first of two consecutive titles</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1992</div>
+                    <div class="timeline-content">Wins OLYMPIC GOLD in Albertville—first Asian American woman to win in figure skating</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1992</div>
+                    <div class="timeline-content">Wins second consecutive World Championship</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1996</div>
+                    <div class="timeline-content">Retires from competitive skating, joins professional tours</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2005</div>
+                    <div class="timeline-content">Inducted into U.S. Olympic Hall of Fame</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2008</div>
+                    <div class="timeline-content">Wins Dancing with the Stars, introduces skating to new audience</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Albertville 1992: Making History</h2>
+
+            <p class="lead">February 21, 1992. The Halle Olympique in Albertville, France. Kristi Yamaguchi stepped onto the ice for the free skate program that would determine the Olympic champion. The pressure was immense. The world was watching.</p>
+
+            <p>Kristi skated to the music from "Malagueña." She opened with a perfect triple lutz. Then a triple flip. Then a triple loop. Every jump landed cleanly. Every spin was centered. Every movement was graceful and precise.</p>
+
+            <p>When she finished her program, the crowd erupted. The judges awarded her marks ranging from 5.7 to 5.9 out of 6.0. She had won.</p>
+
+            <p>Kristi Yamaguchi became the <span class="highlight">first Asian American woman to win Olympic gold in figure skating</span>. She stood on the podium, listened to the national anthem, and made history.</p>
+
+            <p>Back in California, Asian American communities celebrated. Young Asian American girls saw someone who looked like them winning at the highest level. Doors that had been closed suddenly opened.</p>
+
+            <p>One month later, Kristi won her second consecutive World Championship—cementing her status as the best figure skater on the planet.</p>
+        </section>
+
+        <section class="section">
+            <h2>Beyond the Ice</h2>
+
+            <p class="lead">After retiring from competitive skating in 1996, Kristi could have faded from public life. Instead, she became even more influential.</p>
+
+            <p>She toured with professional ice shows for years, performing for millions of fans worldwide. In 2008, she won the sixth season of Dancing with the Stars—introducing a new generation to her grace and athleticism.</p>
+
+            <p>But Kristi's most important work has been off the ice. In 1996, she founded the <span class="highlight">Always Dream Foundation</span>—a nonprofit dedicated to childhood literacy and education. The foundation has provided books and educational resources to hundreds of thousands of children.</p>
+
+            <p>She's also written children's books, encouraging young readers to pursue their dreams despite obstacles. Her books celebrate diversity and perseverance—the same values that guided her skating career.</p>
+
+            <p>Kristi has been a vocal advocate for Asian American representation in sports and media. She's used her platform to challenge stereotypes and celebrate the achievements of Asian American athletes.</p>
+
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <div class="impact-number">First</div>
+                    <div class="impact-label">Asian American Olympic figure skating champion</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">2</div>
+                    <div class="impact-label">World Championship titles</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">Olympic</div>
+                    <div class="impact-label">Gold medal in 1992 Albertville</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">Foundation</div>
+                    <div class="impact-label">Always Dream—promotes childhood literacy</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">Author</div>
+                    <div class="impact-label">Children's books inspiring young readers</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">Trailblazer</div>
+                    <div class="impact-label">Opened doors for Asian Americans in sports</div>
+                </div>
+            </impact-grid>
+        </section>
+
+        <section class="section">
+            <h2>The Legacy of Grace</h2>
+
+            <p class="lead">Kristi Yamaguchi's impact extends far beyond her Olympic gold medal. She changed what was possible for Asian American athletes. She proved that excellence has no ethnicity.</p>
+
+            <p>Before Kristi, Asian American figure skaters struggled to gain recognition. After Kristi, they became champions—Michelle Kwan, Nathan Chen, and others followed in her footsteps.</p>
+
+            <p>But Kristi's legacy isn't just about representation. It's about grace under pressure. It's about overcoming physical challenges—her club feet could have prevented her from ever skating. It's about staying humble despite achieving greatness.</p>
+
+            <p>She never complained about the barriers she faced. She never made excuses. She just skated beautifully and let her performance speak for itself.</p>
+
+            <p>Today, Kristi Yamaguchi is remembered as one of the greatest figure skaters in American history. But she's also remembered as a pioneer who opened doors, a philanthropist who gives back, and a role model who showed young girls—especially Asian American girls—that they could achieve anything.</p>
+
+            <p>She was born with feet that turned inward. She ended up standing on top of the world.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"Figure skating taught me that if you fall, you get back up. Every single time. That's not just true on the ice. It's true in life."</p>
+                <p class="quote-author">— Kristi Yamaguchi</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

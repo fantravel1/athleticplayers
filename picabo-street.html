@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Picabo Street - The Fearless Skier Who Defied Death to Race Again</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #0277BD;
+            --secondary-color: #212121;
+            --accent-color: #FF6F00;
+            --text-dark: #1a1a1a;
+            --text-light: #ffffff;
+            --background: #f8f9fa;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--background);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #0277BD 0%, #212121 50%, #FF6F00 100%);
+            color: var(--text-light);
+            padding: 120px 20px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=1200') center/cover;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            line-height: 1.1;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 60px auto 0;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            display: block;
+            margin-bottom: 10px;
+            color: var(--accent-color);
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .section {
+            margin-bottom: 80px;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+
+        .lead {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        .quote-box {
+            background: linear-gradient(135deg, #0277BD 0%, #212121 100%);
+            color: var(--text-light);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+            border-left: 5px solid var(--accent-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .quote-text {
+            font-size: 1.4rem;
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .quote-author {
+            font-size: 1.1rem;
+            text-align: right;
+            opacity: 0.9;
+            font-weight: 600;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 50px;
+            margin: 40px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(180deg, var(--primary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+            padding-left: 30px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -54px;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            background: var(--accent-color);
+            border: 4px solid var(--background);
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px var(--primary-color);
+        }
+
+        .timeline-year {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .timeline-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .impact-card {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--primary-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .impact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .impact-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .impact-label {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background: white;
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .back-link:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-2px);
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, rgba(2, 119, 189, 0.1) 0%, rgba(255, 111, 0, 0.1) 100%);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .container {
+                padding: 40px 20px;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .quote-text {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Picabo Street</h1>
+            <p class="subtitle">The Speed Demon Who Crashed, Shattered, and Raced Back to Glory</p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">Olympic</span>
+                    <span class="stat-label">Gold Medalist 1998</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">2</span>
+                    <span class="stat-label">Career-Ending Crashes</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">2</span>
+                    <span class="stat-label">Miraculous Comebacks</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">Fearless</span>
+                    <span class="stat-label">Against All Odds</span>
+                </div>
+            </div>
+
+            <a href="index.html" class="back-link">← Back to Athletes</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <section class="section">
+            <h2>The Crash That Should Have Ended Everything</h2>
+
+            <p class="lead">December 4, 1996. Vail, Colorado. Picabo Street was hurtling down the mountain at 65 miles per hour when she lost control. Her body slammed into the snow, then tumbled, then ragdolled down the slope. When she finally stopped, her left knee was destroyed.</p>
+
+            <p>The doctors were blunt: her anterior cruciate ligament was torn. Her medial collateral ligament was shredded. Her femur was fractured. The damage was so severe that even walking normally again was uncertain. Racing down mountains at breakneck speeds? Forget it.</p>
+
+            <p>But Picabo Street had never been good at listening to people who told her what she couldn't do.</p>
+
+            <p>Born in Triumph, Idaho (population: 47), Picabo grew up skiing because there was literally nothing else to do. Her parents were hippies who originally named her "Baby Girl" because they wanted her to choose her own name. At age three, she chose "Picabo" after a nearby town—"Peek-a-boo" in the local Native American language.</p>
+
+            <p>Even as a kid, Picabo was fearless. She skied too fast. She took too many risks. She crashed constantly. But she always got back up.</p>
+
+            <p>By her early twenties, she was one of the best downhill skiers in the world. At the 1994 Winter Olympics in Lillehammer, she won a <span class="highlight">silver medal in downhill</span>. The next year, she won the World Championship. She was on top of the skiing world.</p>
+
+            <p>Then came the crash in Vail. And everything changed.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"I don't know how to quit. I never learned how. So I had two choices: give up, or fight back. And giving up wasn't an option."</p>
+                <p class="quote-author">— Picabo Street</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>The Impossible Comeback</h2>
+
+            <p class="lead">Doctors told Picabo she needed 18 months to recover. The 1998 Winter Olympics in Nagano, Japan were only 14 months away. The math didn't work. It was impossible.</p>
+
+            <p>Picabo didn't care.</p>
+
+            <p>She attacked her rehabilitation with the same intensity she brought to racing. She did physical therapy for hours every day. She pushed through excruciating pain. She trained when doctors told her to rest. She skied when doctors told her to wait.</p>
+
+            <p>Ten months after the crash, she was back on skis. Twelve months after the crash, she was racing again. Fourteen months after the crash, she was at the Olympics.</p>
+
+            <p>On February 14, 1998—Valentine's Day—Picabo Street lined up for the women's super-G at the Nagano Olympics. Her knee was held together with screws and scar tissue. She was competing against skiers who hadn't spent the last year in physical therapy.</p>
+
+            <p>But when the starting gate opened, Picabo Street became the fearless speed demon she'd always been.</p>
+
+            <p>She flew down the mountain. She took every risk. She pushed every turn to the absolute limit. And when she crossed the finish line, she had won <span class="highlight">Olympic gold</span>.</p>
+
+            <p>Doctors called it medically impossible. Picabo called it Tuesday.</p>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">1971</div>
+                    <div class="timeline-content">Born in Triumph, Idaho, originally named "Baby Girl"</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1994</div>
+                    <div class="timeline-content">Wins silver medal in downhill at Lillehammer Olympics</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1995</div>
+                    <div class="timeline-content">Becomes World Champion in downhill skiing</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">Dec 1996</div>
+                    <div class="timeline-content">Devastating crash in Vail destroys left knee—career appears over</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">Feb 1998</div>
+                    <div class="timeline-content">Wins Olympic gold in super-G at Nagano—miraculous comeback complete</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">Dec 1998</div>
+                    <div class="timeline-content">Another horrific crash in Switzerland—shattered left femur, multiple injuries</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2002</div>
+                    <div class="timeline-content">Competes at Salt Lake City Olympics at age 31 after second comeback</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2002</div>
+                    <div class="timeline-content">Retires as one of the most decorated American alpine skiers ever</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>The Second Crash—And the Second Comeback</h2>
+
+            <p class="lead">Most athletes would have retired after winning Olympic gold following a devastating injury. Picabo Street went back to racing.</p>
+
+            <p>In December 1998—just ten months after her Olympic triumph—Picabo crashed again. This time in Crans-Montana, Switzerland. This time even worse.</p>
+
+            <p>She fractured her left femur. She tore muscles in her left leg. She suffered severe bruising throughout her body. The crash was so violent that witnesses thought she might be dead.</p>
+
+            <p>Doctors said her career was definitely over this time. She was 27 years old. She'd already had one miracle comeback. Asking for two was greedy.</p>
+
+            <p>But Picabo Street didn't believe in limits.</p>
+
+            <p>She went through the brutal rehabilitation process again. More surgeries. More physical therapy. More pain. More people telling her to quit.</p>
+
+            <p>And in 2002, at age 31, Picabo Street competed at the Salt Lake City Olympics. She didn't medal this time—her body had been through too much. But she finished the race. She proved she could come back. Again.</p>
+
+            <p>When she finally retired later that year, Picabo Street had nothing left to prove. She had overcome two career-ending injuries. She had won Olympic gold when doctors said it was impossible. She had shown that the human spirit can overcome anything.</p>
+
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <div class="impact-number">Olympic</div>
+                    <div class="impact-label">Gold medal in super-G (1998)</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">Olympic</div>
+                    <div class="impact-label">Silver medal in downhill (1994)</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">World</div>
+                    <div class="impact-label">Champion in downhill (1995, 1996)</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">2</div>
+                    <div class="impact-label">Career-ending crashes survived</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">2</div>
+                    <div class="impact-label">Miraculous comebacks achieved</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">Legend</div>
+                    <div class="impact-label">Proved the impossible was possible</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>The Legacy of Fearlessness</h2>
+
+            <p class="lead">Picabo Street didn't just win medals. She changed what people thought was possible. She showed that devastating injuries don't have to be career-ending. That comebacks aren't just possible—they're achievable if you refuse to quit.</p>
+
+            <p>Her impact on women's alpine skiing in America was enormous. Before Picabo, American women rarely medaled in downhill events. After Picabo, they became regulars on the podium. She showed that American women could compete with—and beat—the dominant Europeans.</p>
+
+            <p>More importantly, she showed young girls that being fearless isn't reckless. It's brave. That taking risks is how you achieve greatness. That falling down doesn't matter as long as you get back up.</p>
+
+            <p>After retirement, Picabo became a motivational speaker and commentator. She was inducted into the National Ski Hall of Fame. She continues to inspire athletes to push beyond their perceived limits.</p>
+
+            <p>Because Picabo Street's story isn't about skiing. It's about refusing to accept defeat. It's about fighting back when everyone tells you to quit. It's about proving that the only limits that matter are the ones you accept.</p>
+
+            <p>And Picabo Street never accepted any limits at all.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"When you crash, you have two choices: stay down or get back up. I always chose to get back up. Every single time."</p>
+                <p class="quote-author">— Picabo Street</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
