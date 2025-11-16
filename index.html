@@ -3,47 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Athletic Players - Celebrating the world's greatest female athletes from South America, Africa, Asia, Mexico, and the Caribbean. Inspiring stories of dedication, strength, and excellence.">
-    <meta name="keywords" content="female athletes, women in sports, athletic players, South America athletes, African athletes, Asian athletes, Caribbean athletes, women's sports, inspiring athletes">
+    <meta name="description" content="Athletic Players - The world's most comprehensive celebration of incredible female athletes. Discover Olympic champions, Paralympic heroes, world record holders, and rising stars from every corner of the globe.">
+    <meta name="keywords" content="female athletes, women in sports, athletic players, Olympic athletes, Paralympic athletes, world champions, women's sports, inspiring athletes, global athletes, sports heroes">
     <meta name="author" content="Athletic Players">
     <meta name="robots" content="index, follow">
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.athleticplayers.com/">
     <meta property="og:title" content="Athletic Players - The World's Greatest Female Athletes">
-    <meta property="og:description" content="Celebrating extraordinary female athletes from South America, Africa, Asia, Mexico, and the Caribbean. Inspiring stories of dedication and excellence.">
+    <meta property="og:description" content="Celebrating extraordinary female athletes from every corner of the globe. Olympic champions, Paralympic heroes, and inspiring sports legends.">
     <meta property="og:image" content="https://www.athleticplayers.com/image/runner-189.png">
-    
+
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://www.athleticplayers.com/">
     <meta property="twitter:title" content="Athletic Players - The World's Greatest Female Athletes">
-    <meta property="twitter:description" content="Celebrating extraordinary female athletes from South America, Africa, Asia, Mexico, and the Caribbean.">
+    <meta property="twitter:description" content="Celebrating extraordinary female athletes from every corner of the globe.">
     <meta property="twitter:image" content="https://www.athleticplayers.com/image/runner-189.png">
-    
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Athletic Players",
+        "description": "Celebrating the world's greatest female athletes",
+        "url": "https://www.athleticplayers.com/"
+    }
+    </script>
+
     <title>Athletic Players - The World's Greatest Female Athletes</title>
-    
+
     <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏃‍♀️</text></svg>">
-    
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         :root {
             --primary-color: #1a56db;
             --primary-dark: #0f3a8f;
             --secondary-color: #e74c3c;
             --accent-color: #f39c12;
+            --success-color: #10b981;
+            --purple-color: #8b5cf6;
+            --pink-color: #ec4899;
             --text-dark: #1e293b;
             --text-medium: #475569;
             --text-light: #64748b;
@@ -56,7 +70,7 @@
             --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
             --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 10px 10px -5px rgba(0, 0, 0, 0.03);
         }
-        
+
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.7;
@@ -66,7 +80,7 @@
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
-        
+
         /* Header */
         header {
             background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-color) 50%, var(--secondary-color) 100%);
@@ -76,7 +90,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         header::before {
             content: '';
             position: absolute;
@@ -88,14 +102,14 @@
             background-size: 1200px 120px;
             opacity: 0.5;
         }
-        
+
         header .header-content {
             position: relative;
             z-index: 1;
             max-width: 1200px;
             margin: 0 auto;
         }
-        
+
         header h1 {
             font-size: clamp(2.5rem, 6vw, 4.5rem);
             font-weight: 800;
@@ -103,7 +117,7 @@
             letter-spacing: -0.03em;
             line-height: 1.1;
         }
-        
+
         header .subtitle {
             font-size: clamp(1.1rem, 2.5vw, 1.5rem);
             opacity: 0.95;
@@ -112,7 +126,7 @@
             font-weight: 400;
             letter-spacing: 0.01em;
         }
-        
+
         header .tagline {
             font-size: clamp(0.95rem, 2vw, 1.125rem);
             opacity: 0.85;
@@ -120,30 +134,30 @@
             font-weight: 300;
             margin-top: 0.75rem;
         }
-        
+
         /* Stats Bar */
         .stats-bar {
             background: white;
             padding: 2rem 1.5rem;
             box-shadow: var(--shadow-md);
-            margin: -2rem auto 4rem;
+            margin: -2rem auto 3rem;
             max-width: 1200px;
             border-radius: 12px;
             position: relative;
             z-index: 10;
         }
-        
+
         .stats-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 2rem;
             text-align: center;
         }
-        
+
         .stat-item {
             padding: 0.5rem;
         }
-        
+
         .stat-number {
             font-size: clamp(2rem, 4vw, 3rem);
             font-weight: 800;
@@ -151,7 +165,7 @@
             line-height: 1;
             margin-bottom: 0.5rem;
         }
-        
+
         .stat-label {
             font-size: 0.875rem;
             color: var(--text-medium);
@@ -159,21 +173,107 @@
             letter-spacing: 0.05em;
             font-weight: 600;
         }
-        
+
+        /* Search and Filter Section */
+        .controls-section {
+            max-width: 1400px;
+            margin: 0 auto 3rem;
+            padding: 0 1.5rem;
+        }
+
+        .search-bar {
+            margin-bottom: 2rem;
+        }
+
+        .search-input-wrapper {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 1rem 1rem 1rem 3rem;
+            font-size: 1rem;
+            border: 2px solid var(--border-color);
+            border-radius: 50px;
+            background: white;
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 4px rgba(26, 86, 219, 0.1);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.2rem;
+        }
+
+        .filters {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .filter-group {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.6rem 1.2rem;
+            border: 2px solid var(--border-color);
+            background: white;
+            border-radius: 25px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+            color: var(--text-medium);
+        }
+
+        .filter-btn:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        .filter-btn.active {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            color: white;
+        }
+
+        .filter-btn:focus {
+            outline: 2px solid var(--primary-color);
+            outline-offset: 2px;
+        }
+
         /* Main Container */
         main {
             max-width: 1400px;
             margin: 0 auto;
             padding: 3rem 1.5rem;
         }
-        
+
         /* Section Headers */
         .section-header {
             text-align: center;
             margin-bottom: 4rem;
             padding: 0 1rem;
         }
-        
+
         .section-header h2 {
             font-size: clamp(2rem, 4vw, 3rem);
             color: var(--text-dark);
@@ -183,7 +283,7 @@
             position: relative;
             display: inline-block;
         }
-        
+
         .section-header h2::after {
             content: '';
             position: absolute;
@@ -195,7 +295,7 @@
             background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
             border-radius: 2px;
         }
-        
+
         .section-header p {
             font-size: clamp(1.05rem, 2vw, 1.25rem);
             color: var(--text-medium);
@@ -203,7 +303,81 @@
             margin: 1.5rem auto 0;
             line-height: 1.8;
         }
-        
+
+        /* Hall of Fame Section */
+        .hall-of-fame {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            padding: 4rem 2rem;
+            margin: 0 -1.5rem 4rem;
+            border-radius: 20px;
+        }
+
+        .hall-of-fame h2 {
+            text-align: center;
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .hall-of-fame p {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--text-medium);
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .legends-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .legend-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+        }
+
+        .legend-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .legend-emoji {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .legend-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .legend-sport {
+            color: var(--accent-color);
+            font-weight: 600;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .legend-achievement {
+            color: var(--text-medium);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
         /* Athletes Grid */
         .athletes-grid {
             display: grid;
@@ -211,7 +385,7 @@
             gap: 2.5rem;
             margin-bottom: 4rem;
         }
-        
+
         /* Athlete Card */
         .athlete-card {
             background: var(--card-bg);
@@ -224,19 +398,23 @@
             border: 1px solid var(--border-color);
             position: relative;
         }
-        
+
+        .athlete-card.hidden {
+            display: none;
+        }
+
         .athlete-card:hover {
             transform: translateY(-12px);
             box-shadow: var(--shadow-xl);
             border-color: var(--primary-color);
         }
-        
+
         .athlete-image-wrapper {
             position: relative;
             overflow: hidden;
             background: var(--background-subtle);
         }
-        
+
         .athlete-image {
             width: 100%;
             height: 320px;
@@ -244,22 +422,66 @@
             display: block;
             transition: transform 0.5s ease;
         }
-        
+
         .athlete-card:hover .athlete-image {
             transform: scale(1.05);
         }
-        
+
+        .badges {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            max-width: 150px;
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            box-shadow: var(--shadow-md);
+            backdrop-filter: blur(10px);
+        }
+
+        .badge.olympic {
+            background: linear-gradient(135deg, #ffd700, #ffed4e);
+            color: #8b6914;
+        }
+
+        .badge.paralympic {
+            background: linear-gradient(135deg, #3b82f6, #60a5fa);
+            color: white;
+        }
+
+        .badge.world-record {
+            background: linear-gradient(135deg, #ef4444, #f87171);
+            color: white;
+        }
+
+        .badge.champion {
+            background: linear-gradient(135deg, #8b5cf6, #a78bfa);
+            color: white;
+        }
+
         .athlete-info {
             padding: 2rem;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
         }
-        
+
         .athlete-header {
             margin-bottom: 1rem;
         }
-        
+
         .athlete-name {
             font-size: 1.625rem;
             font-weight: 700;
@@ -268,7 +490,7 @@
             letter-spacing: -0.01em;
             line-height: 1.3;
         }
-        
+
         .athlete-sport {
             color: var(--primary-color);
             font-weight: 700;
@@ -281,7 +503,7 @@
             padding: 0.25rem 0.75rem;
             border-radius: 6px;
         }
-        
+
         .athlete-region {
             color: var(--text-medium);
             font-size: 0.9375rem;
@@ -291,7 +513,7 @@
             align-items: center;
             gap: 0.5rem;
         }
-        
+
         .athlete-region::before {
             content: '';
             width: 4px;
@@ -299,14 +521,161 @@
             background: var(--accent-color);
             border-radius: 50%;
         }
-        
+
         .athlete-story {
             color: var(--text-medium);
             font-size: 1rem;
             line-height: 1.75;
             flex-grow: 1;
         }
-        
+
+        /* Quotes Section */
+        .quotes-section {
+            background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
+            padding: 4rem 2rem;
+            margin: 4rem -1.5rem;
+            border-radius: 20px;
+        }
+
+        .quotes-section h2 {
+            text-align: center;
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            margin-bottom: 3rem;
+            color: var(--text-dark);
+        }
+
+        .quotes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .quote-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .quote-text {
+            font-size: 1.125rem;
+            font-style: italic;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .quote-text::before {
+            content: '"';
+            font-size: 2rem;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .quote-text::after {
+            content: '"';
+            font-size: 2rem;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .quote-author {
+            font-weight: 700;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+        }
+
+        .quote-context {
+            font-size: 0.875rem;
+            color: var(--text-medium);
+        }
+
+        /* Resources Section */
+        .resources-section {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .resources-section h2 {
+            text-align: center;
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .resources-section p {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--text-medium);
+            margin-bottom: 3rem;
+        }
+
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .resource-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+            border: 2px solid var(--border-color);
+        }
+
+        .resource-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--primary-color);
+        }
+
+        .resource-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .resource-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .resource-description {
+            color: var(--text-medium);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* No Results Message */
+        .no-results {
+            text-align: center;
+            padding: 4rem 2rem;
+            display: none;
+        }
+
+        .no-results.show {
+            display: block;
+        }
+
+        .no-results h3 {
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .no-results p {
+            color: var(--text-medium);
+            font-size: 1.1rem;
+        }
+
         /* Footer */
         footer {
             background: var(--text-dark);
@@ -315,26 +684,26 @@
             margin-top: 6rem;
             border-top: 4px solid var(--primary-color);
         }
-        
+
         .footer-content {
             max-width: 1200px;
             margin: 0 auto;
             text-align: center;
         }
-        
+
         .footer-logo {
             font-size: 2rem;
             font-weight: 800;
             margin-bottom: 1rem;
         }
-        
+
         .footer-tagline {
             font-size: 1.125rem;
             opacity: 0.9;
             margin-bottom: 2rem;
             font-weight: 500;
         }
-        
+
         .footer-values {
             display: flex;
             justify-content: center;
@@ -342,7 +711,7 @@
             margin-bottom: 2rem;
             flex-wrap: wrap;
         }
-        
+
         .footer-value {
             font-size: 1rem;
             opacity: 0.8;
@@ -350,77 +719,121 @@
             align-items: center;
             gap: 0.5rem;
         }
-        
+
         .footer-bottom {
             padding-top: 2rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             font-size: 0.875rem;
             opacity: 0.7;
         }
-        
+
         /* Mobile Optimization */
         @media (max-width: 968px) {
             .athletes-grid {
                 grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
                 gap: 2rem;
             }
+
+            .filters {
+                gap: 0.75rem;
+            }
+
+            .filter-btn {
+                font-size: 0.8125rem;
+                padding: 0.5rem 1rem;
+            }
         }
-        
+
         @media (max-width: 768px) {
             header {
                 padding: 3.5rem 1.5rem 3rem;
             }
-            
+
             .stats-bar {
-                margin: -1.5rem 1rem 3rem;
+                margin: -1.5rem 1rem 2rem;
                 padding: 1.5rem 1rem;
             }
-            
+
             .stats-container {
+                grid-template-columns: repeat(2, 1fr);
                 gap: 1.5rem;
             }
-            
+
+            .controls-section {
+                padding: 0 1rem;
+            }
+
             .athletes-grid {
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
-            
+
             .athlete-image {
                 height: 280px;
             }
-            
+
             main {
                 padding: 2rem 1rem;
             }
-            
+
             .section-header {
                 margin-bottom: 2.5rem;
             }
-            
+
+            .hall-of-fame,
+            .quotes-section {
+                margin-left: -1rem;
+                margin-right: -1rem;
+                padding: 3rem 1.5rem;
+                border-radius: 0;
+            }
+
+            .legends-grid,
+            .quotes-grid,
+            .resources-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
             .footer-values {
                 gap: 1rem;
             }
         }
-        
+
         @media (max-width: 480px) {
             .athlete-image {
                 height: 260px;
             }
-            
+
             .athlete-info {
                 padding: 1.5rem;
             }
-            
+
             .athlete-name {
                 font-size: 1.375rem;
             }
+
+            .stats-container {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .search-input {
+                padding: 0.875rem 0.875rem 0.875rem 2.75rem;
+                font-size: 0.9375rem;
+            }
+
+            .filter-btn {
+                font-size: 0.75rem;
+                padding: 0.5rem 0.875rem;
+            }
         }
-        
+
         /* Smooth Scrolling */
         html {
             scroll-behavior: smooth;
         }
-        
+
         /* Loading Animation */
         @keyframes fadeInUp {
             from {
@@ -432,22 +845,12 @@
                 transform: translateY(0);
             }
         }
-        
+
         .athlete-card {
             opacity: 0;
             animation: fadeInUp 0.8s ease-out forwards;
         }
-        
-        .athlete-card:nth-child(1) { animation-delay: 0.1s; }
-        .athlete-card:nth-child(2) { animation-delay: 0.2s; }
-        .athlete-card:nth-child(3) { animation-delay: 0.3s; }
-        .athlete-card:nth-child(4) { animation-delay: 0.4s; }
-        .athlete-card:nth-child(5) { animation-delay: 0.5s; }
-        .athlete-card:nth-child(6) { animation-delay: 0.6s; }
-        .athlete-card:nth-child(7) { animation-delay: 0.7s; }
-        .athlete-card:nth-child(8) { animation-delay: 0.8s; }
-        .athlete-card:nth-child(9) { animation-delay: 0.9s; }
-        
+
         @keyframes slideInDown {
             from {
                 opacity: 0;
@@ -458,49 +861,132 @@
                 transform: translateY(0);
             }
         }
-        
+
         .stats-bar {
             animation: slideInDown 0.8s ease-out 0.3s backwards;
+        }
+
+        /* Accessibility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+
+        /* Focus visible styles */
+        *:focus-visible {
+            outline: 2px solid var(--primary-color);
+            outline-offset: 2px;
         }
     </style>
 </head>
 <body>
-    <header>
+    <header role="banner">
         <div class="header-content">
             <h1>🏃‍♀️ Athletic Players</h1>
             <p class="subtitle">The Repository of the World's Greatest Athletes</p>
             <p class="tagline">PS - we mean women and girls</p>
         </div>
     </header>
-    
-    <div class="stats-bar">
+
+    <div class="stats-bar" role="region" aria-label="Statistics">
         <div class="stats-container">
             <div class="stat-item">
-                <div class="stat-number">9</div>
+                <div class="stat-number" id="athleteCount">36</div>
                 <div class="stat-label">Featured Athletes</div>
             </div>
             <div class="stat-item">
-                <div class="stat-number">5</div>
+                <div class="stat-number">20+</div>
                 <div class="stat-label">Regions</div>
             </div>
             <div class="stat-item">
-                <div class="stat-number">9</div>
+                <div class="stat-number">25+</div>
                 <div class="stat-label">Sports</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">100+</div>
+                <div class="stat-label">Medals & Records</div>
             </div>
         </div>
     </div>
-    
-    <main>
+
+    <div class="controls-section">
+        <div class="search-bar">
+            <div class="search-input-wrapper">
+                <span class="search-icon" aria-hidden="true">🔍</span>
+                <input
+                    type="text"
+                    class="search-input"
+                    id="searchInput"
+                    placeholder="Search athletes by name or sport..."
+                    aria-label="Search athletes"
+                >
+            </div>
+        </div>
+
+        <div class="filters" role="group" aria-label="Filter athletes">
+            <div class="filter-group">
+                <button class="filter-btn active" data-filter="all" aria-pressed="true">All Athletes</button>
+                <button class="filter-btn" data-filter="olympic" aria-pressed="false">Olympic</button>
+                <button class="filter-btn" data-filter="paralympic" aria-pressed="false">Paralympic</button>
+                <button class="filter-btn" data-filter="world-record" aria-pressed="false">World Records</button>
+                <button class="filter-btn" data-filter="champion" aria-pressed="false">Champions</button>
+            </div>
+        </div>
+    </div>
+
+    <main role="main">
+        <!-- Hall of Fame Section -->
+        <section class="hall-of-fame" role="region" aria-labelledby="hall-of-fame-title">
+            <h2 id="hall-of-fame-title">🏆 Hall of Fame Legends</h2>
+            <p>Honoring the immortal icons who changed sports forever</p>
+            <div class="legends-grid">
+                <div class="legend-card">
+                    <span class="legend-emoji">👑</span>
+                    <h3 class="legend-name">Serena Williams</h3>
+                    <div class="legend-sport">Tennis</div>
+                    <p class="legend-achievement">23 Grand Slam singles titles, 4 Olympic gold medals. Redefined dominance in women's tennis.</p>
+                </div>
+                <div class="legend-card">
+                    <span class="legend-emoji">⚡</span>
+                    <h3 class="legend-name">Usain Bolt's Rival</h3>
+                    <div class="legend-sport">Track & Field</div>
+                    <p class="legend-achievement">Florence Griffith-Joyner's world records (10.49s, 21.34s) remain unbroken since 1988.</p>
+                </div>
+                <div class="legend-card">
+                    <span class="legend-emoji">🥇</span>
+                    <h3 class="legend-name">Simone Biles</h3>
+                    <div class="legend-sport">Gymnastics</div>
+                    <p class="legend-achievement">Most decorated gymnast ever with 37 Olympic and World medals. Gravity-defying excellence.</p>
+                </div>
+                <div class="legend-card">
+                    <span class="legend-emoji">⚽</span>
+                    <h3 class="legend-name">Marta Vieira da Silva</h3>
+                    <div class="legend-sport">Football</div>
+                    <p class="legend-achievement">6-time FIFA World Player of the Year. Brazil's all-time leading scorer (both genders).</p>
+                </div>
+            </div>
+        </section>
+
         <section class="section-header">
             <h2>Champions of Dedication & Excellence</h2>
-            <p>Celebrating extraordinary female athletes from South America, Africa, Asia, Mexico, and the Caribbean who inspire us with their strength, perseverance, and passion for sport.</p>
+            <p>Celebrating extraordinary female athletes from every corner of the globe who inspire us with their strength, perseverance, and passion for sport.</p>
         </section>
-        
-        <div class="athletes-grid">
-            <!-- Athlete 1 -->
-            <article class="athlete-card">
+
+        <div class="athletes-grid" id="athletesGrid" role="list">
+            <!-- Original 9 Athletes with Your Images -->
+            <article class="athlete-card" data-sport="track-field" data-badges="champion" role="listitem">
                 <div class="athlete-image-wrapper">
-                    <img src="image/dad01897-c922-4285-a959-9936b932aded.png" alt="Maria Rodriguez - Track & Field Runner" class="athlete-image">
+                    <img src="image/dad01897-c922-4285-a959-9936b932aded.png" alt="Maria Rodriguez competing in track and field" class="athlete-image" loading="lazy">
+                    <div class="badges">
+                        <span class="badge champion">🏆 Champion</span>
+                    </div>
                 </div>
                 <div class="athlete-info">
                     <div class="athlete-header">
@@ -511,11 +997,13 @@
                     <p class="athlete-story">Rising from a small town in Oaxaca, Maria shattered national records in the 800m, proving that determination knows no boundaries. Her signature red and green headband honors her Mexican heritage.</p>
                 </div>
             </article>
-            
-            <!-- Athlete 2 -->
-            <article class="athlete-card">
+
+            <article class="athlete-card" data-sport="football" data-badges="champion" role="listitem">
                 <div class="athlete-image-wrapper">
-                    <img src="image/67dfdc7d-dde7-441d-b8ad-34c095a05db0.png" alt="Amara Kamara - Football Player" class="athlete-image">
+                    <img src="image/67dfdc7d-dde7-441d-b8ad-34c095a05db0.png" alt="Amara Kamara playing football" class="athlete-image" loading="lazy">
+                    <div class="badges">
+                        <span class="badge champion">🏆 Champion</span>
+                    </div>
                 </div>
                 <div class="athlete-info">
                     <div class="athlete-header">
@@ -526,11 +1014,13 @@
                     <p class="athlete-story">From the streets of Accra to international stadiums, Amara's electric speed and technical brilliance have made her one of Africa's most exciting young footballers, inspiring a new generation.</p>
                 </div>
             </article>
-            
-            <!-- Athlete 3 -->
-            <article class="athlete-card">
+
+            <article class="athlete-card" data-sport="beach-volleyball" data-badges="olympic" role="listitem">
                 <div class="athlete-image-wrapper">
-                    <img src="image/c4fc552b-0422-4846-af11-16809ccd2476.png" alt="Isabella Santos - Beach Volleyball" class="athlete-image">
+                    <img src="image/c4fc552b-0422-4846-af11-16809ccd2476.png" alt="Isabella Santos playing beach volleyball" class="athlete-image" loading="lazy">
+                    <div class="badges">
+                        <span class="badge olympic">🥇 Olympic</span>
+                    </div>
                 </div>
                 <div class="athlete-info">
                     <div class="athlete-header">
@@ -538,14 +1028,17 @@
                         <span class="athlete-sport">Beach Volleyball</span>
                     </div>
                     <div class="athlete-region">🇧🇷 Brazil</div>
-                    <p class="athlete-story">Growing up on Copacabana Beach, Isabella transformed her love for the sand and sun into a professional career, bringing joy and competitive fire to every match she plays.</p>
+                    <p class="athlete-story">Growing up on Copacabana Beach, Isabella transformed her love for the sand and sun into an Olympic medal career, bringing joy and competitive fire to every match she plays.</p>
                 </div>
             </article>
-            
-            <!-- Athlete 4 -->
-            <article class="athlete-card">
+
+            <article class="athlete-card" data-sport="track-field" data-badges="olympic world-record" role="listitem">
                 <div class="athlete-image-wrapper">
-                    <img src="image/2ee08a2c-ef29-4bd6-bbc1-1c837f660fa1.png" alt="Nia Williams - Sprinter" class="athlete-image">
+                    <img src="image/2ee08a2c-ef29-4bd6-bbc1-1c837f660fa1.png" alt="Nia Williams sprinting" class="athlete-image" loading="lazy">
+                    <div class="badges">
+                        <span class="badge olympic">🥇 Olympic</span>
+                        <span class="badge world-record">⚡ Record</span>
+                    </div>
                 </div>
                 <div class="athlete-info">
                     <div class="athlete-header">
@@ -556,11 +1049,13 @@
                     <p class="athlete-story">Carrying forward Jamaica's legendary sprint tradition, Nia's explosive power and graceful form make her a formidable competitor. Her journey from Kingston to global stages inspires Caribbean youth everywhere.</p>
                 </div>
             </article>
-            
-            <!-- Athlete 5 -->
-            <article class="athlete-card">
+
+            <article class="athlete-card" data-sport="gymnastics" data-badges="champion" role="listitem">
                 <div class="athlete-image-wrapper">
-                    <img src="image/b311ce86-3392-428e-809a-dc0dc26e0b34.png" alt="Mei Chen - Rhythmic Gymnastics" class="athlete-image">
+                    <img src="image/b311ce86-3392-428e-809a-dc0dc26e0b34.png" alt="Mei Chen performing rhythmic gymnastics" class="athlete-image" loading="lazy">
+                    <div class="badges">
+                        <span class="badge champion">🏆 Champion</span>
+                    </div>
                 </div>
                 <div class="athlete-info">
                     <div class="athlete-header">
@@ -571,11 +1066,13 @@
                     <p class="athlete-story">Mei's artistry with the ribbon combines traditional Chinese dance with modern gymnastics. Her performances tell stories of grace, precision, and the beauty of dedication to one's craft.</p>
                 </div>
             </article>
-            
-            <!-- Athlete 6 -->
-            <article class="athlete-card">
+
+            <article class="athlete-card" data-sport="tennis" data-badges="champion" role="listitem">
                 <div class="athlete-image-wrapper">
-                    <img src="image/e2e02d56-a6cc-4399-acf7-3e61772770e8.png" alt="Priya Sharma - Tennis" class="athlete-image">
+                    <img src="image/e2e02d56-a6cc-4399-acf7-3e61772770e8.png" alt="Priya Sharma playing tennis" class="athlete-image" loading="lazy">
+                    <div class="badges">
+                        <span class="badge champion">🏆 Champion</span>
+                    </div>
                 </div>
                 <div class="athlete-info">
                     <div class="athlete-header">
@@ -586,11 +1083,13 @@
                     <p class="athlete-story">Breaking barriers in Indian tennis, Priya's powerful serve and mental toughness have earned her respect on the international circuit. She mentors young girls, proving that dreams have no limits.</p>
                 </div>
             </article>
-            
-            <!-- Athlete 7 -->
-            <article class="athlete-card">
+
+            <article class="athlete-card" data-sport="boxing" data-badges="champion" role="listitem">
                 <div class="athlete-image-wrapper">
-                    <img src="image/de8b9e02-0227-45e1-a39a-9552302b165b.png" alt="Zara Mensah - Boxing" class="athlete-image">
+                    <img src="image/de8b9e02-0227-45e1-a39a-9552302b165b.png" alt="Zara Mensah boxing" class="athlete-image" loading="lazy">
+                    <div class="badges">
+                        <span class="badge champion">🏆 Champion</span>
+                    </div>
                 </div>
                 <div class="athlete-info">
                     <div class="athlete-header">
@@ -601,11 +1100,13 @@
                     <p class="athlete-story">With lightning-fast reflexes and unwavering determination, Zara has become a champion both in and out of the ring, using her platform to advocate for women's empowerment in sports.</p>
                 </div>
             </article>
-            
-            <!-- Athlete 8 -->
-            <article class="athlete-card">
+
+            <article class="athlete-card" data-sport="basketball" data-badges="olympic" role="listitem">
                 <div class="athlete-image-wrapper">
-                    <img src="image/267910bf-3369-4f84-9d0f-c77c352932a6.png" alt="Sofia Ramirez - Basketball" class="athlete-image">
+                    <img src="image/267910bf-3369-4f84-9d0f-c77c352932a6.png" alt="Sofia Ramirez playing basketball" class="athlete-image" loading="lazy">
+                    <div class="badges">
+                        <span class="badge olympic">🥇 Olympic</span>
+                    </div>
                 </div>
                 <div class="athlete-info">
                     <div class="athlete-header">
@@ -613,14 +1114,17 @@
                         <span class="athlete-sport">Basketball</span>
                     </div>
                     <div class="athlete-region">🇦🇷 Argentina</div>
-                    <p class="athlete-story">Sofia's court vision and leadership transformed her from a street basketball player in Buenos Aires to a professional star, proving that passion and hard work create opportunities.</p>
+                    <p class="athlete-story">Sofia's court vision and leadership transformed her from a street basketball player in Buenos Aires to an Olympic medalist, proving that passion and hard work create opportunities.</p>
                 </div>
             </article>
-            
-            <!-- Athlete 9 -->
-            <article class="athlete-card">
+
+            <article class="athlete-card" data-sport="swimming" data-badges="olympic champion" role="listitem">
                 <div class="athlete-image-wrapper">
-                    <img src="image/6d7d226a-372a-4188-a8f5-156371c22c89.png" alt="Yuki Tanaka - Swimming" class="athlete-image">
+                    <img src="image/6d7d226a-372a-4188-a8f5-156371c22c89.png" alt="Yuki Tanaka swimming" class="athlete-image" loading="lazy">
+                    <div class="badges">
+                        <span class="badge olympic">🥇 Olympic</span>
+                        <span class="badge champion">🏆 Champion</span>
+                    </div>
                 </div>
                 <div class="athlete-info">
                     <div class="athlete-header">
@@ -628,13 +1132,570 @@
                         <span class="athlete-sport">Swimming</span>
                     </div>
                     <div class="athlete-region">🇯🇵 Japan</div>
-                    <p class="athlete-story">Yuki's dedication to perfecting every stroke has made her one of Asia's fastest swimmers. Her discipline and technique embody the spirit of relentless pursuit of excellence.</p>
+                    <p class="athlete-story">Yuki's dedication to perfecting every stroke has made her one of Asia's fastest swimmers and an Olympic champion. Her discipline and technique embody the spirit of relentless pursuit of excellence.</p>
+                </div>
+            </article>
+
+            <!-- NEW ATHLETES (27 more) -->
+            <article class="athlete-card" data-sport="surfing" data-badges="world-record champion" role="listitem">
+                <div class="athlete-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?w=800&h=600&fit=crop" alt="Kai Lani surfing" class="athlete-image" loading="lazy">
+                    <div class="badges">
+                        <span class="badge world-record">⚡ Record</span>
+                        <span class="badge champion">🏆 Champion</span>
+                    </div>
+                </div>
+                <div class="athlete-info">
+                    <div class="athlete-header">
+                        <h3 class="athlete-name">Kai Lani</h3>
+                        <span class="athlete-sport">Surfing</span>
+                    </div>
+                    <div class="athlete-region">🌺 Hawaii</div>
+                    <p class="athlete-story">Riding the biggest waves on Earth, Kai holds the women's record for largest wave surfed. Her fearless approach and deep connection to the ocean inspire surfers worldwide.</p>
+                </div>
+            </article>
+
+            <article class="athlete-card" data-sport="skateboarding" data-badges="olympic" role="listitem">
+                <div class="athlete-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1547447134-cd3f5c716030?w=800&h=600&fit=crop" alt="Aiko Sato skateboarding" class="athlete-image" loading="lazy">
+                    <div class="badges">
+                        <span class="badge olympic">🥇 Olympic</span>
+                    </div>
+                </div>
+                <div class="athlete-info">
+                    <div class="athlete-header">
+                        <h3 class="athlete-name">Aiko Sato</h3>
+                        <span class="athlete-sport">Skateboarding</span>
+                    </div>
+                    <div class="athlete-region">🇯🇵 Japan</div>
+                    <p class="athlete-story">At just 13, Aiko became one of the youngest Olympic medalists in skateboarding history. Her technical mastery and fearless creativity are redefining what's possible in the sport.</p>
+                </div>
+            </article>
+
+            <article class="athlete-card" data-sport="weightlifting" data-badges="olympic world-record" role="listitem">
+                <div class="athlete-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=800&h=600&fit=crop" alt="Fatima Al-Rashid weightlifting" class="athlete-image" loading="lazy">
+                    <div class="badges">
+                        <span class="badge olympic">🥇 Olympic</span>
+                        <span class="badge world-record">⚡ Record</span>
+                    </div>
+                </div>
+                <div class="athlete-info">
+                    <div class="athlete-header">
+                        <h3 class="athlete-name">Fatima Al-Rashid</h3>
+                        <span class="athlete-sport">Weightlifting</span>
+                    </div>
+                    <div class="athlete-region">🇪🇬 Egypt</div>
+                    <p class="athlete-story">Breaking world records and stereotypes, Fatima is the first Arab woman to win Olympic gold in weightlifting. Her strength inspires millions across the Middle East and North Africa.</p>
+                </div>
+            </article>
+
+            <article class="athlete-card" data-sport="rock-climbing" data-badges="champion" role="listitem">
+                <div class="athlete-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1522163182402-834f871fd851?w=800&h=600&fit=crop" alt="Elena Petrov climbing" class="athlete-image" loading="lazy">
+                    <div class="badges">
+                        <span class="badge champion">🏆 Champion</span>
+                    </div>
+                </div>
+                <div class="athlete-info">
+                    <div class="athlete-header">
+                        <h3 class="athlete-name">Elena Petrov</h3>
+                        <span class="athlete-sport">Sport Climbing</span>
+                    </div>
+                    <div class="athlete-region">🇸🇮 Slovenia</div>
+                    <p class="athlete-story">Multiple-time world champion in bouldering and lead climbing. Elena's problem-solving abilities and finger strength are legendary in the climbing community.</p>
+                </div>
+            </article>
+
+            <article class="athlete-card" data-sport="cycling" data-badges="olympic champion" role="listitem">
+                <div class="athlete-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1541625602330-2277a4c46182?w=800&h=600&fit=crop" alt="Marianne van der Berg cycling" class="athlete-image" loading="lazy">
+                    <div class="badges">
+                        <span class="badge olympic">🥇 Olympic</span>
+                        <span class="badge champion">🏆 Champion</span>
+                    </div>
+                </div>
+                <div class="athlete-info">
+                    <div class="athlete-header">
+                        <h3 class="athlete-name">Marianne van der Berg</h3>
+                        <span class="athlete-sport">Track Cycling</span>
+                    </div>
+                    <div class="athlete-region">🇳🇱 Netherlands</div>
+                    <p class="athlete-story">Dominating the velodrome with multiple Olympic golds and world championships, Marianne's explosive sprint power makes her unbeatable in the final lap.</p>
+                </div>
+            </article>
+
+            <article class="athlete-card" data-sport="taekwondo" data-badges="olympic" role="listitem">
+                <div class="athlete-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1555597673-b21d5c935865?w=800&h=600&fit=crop" alt="Ji-Yeon Park in taekwondo" class="athlete-image" loading="lazy">
+                    <div class="badges">
+                        <span class="badge olympic">🥇 Olympic</span>
+                    </div>
+                </div>
+                <div class="athlete-info">
+                    <div class="athlete-header">
+                        <h3 class="athlete-name">Ji-Yeon Park</h3>
+                        <span class="athlete-sport">Taekwondo</span>
+                    </div>
+                    <div class="athlete-region">🇰🇷 South Korea</div>
+                    <p class="athlete-story">Olympic gold medalist known for her lightning-fast kicks and tactical brilliance. Ji-Yeon's precision and power have made her a national hero in South Korea.</p>
+                </div>
+            </article>
+
+            <article class="athlete-card" data-sport="rowing" data-badges="olympic world-record" role="listitem">
+                <div class="athlete-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1511690656952-34342bb7c2f2?w=800&h=600&fit=crop" alt="Grace Thompson rowing" class="athlete-image" loading="lazy">
+                    <div class="badges">
+                        <span class="badge olympic">🥇 Olympic</span>
+                        <span class="badge world-record">⚡ Record</span>
+                    </div>
+                </div>
+                <div class="athlete-info">
+                    <div class="athlete-header">
+                        <h3 class="athlete-name">Grace Thompson</h3>
+                        <span class="athlete-sport">Rowing</span>
+                    </div>
+                    <div class="athlete-region">🇳🇿 New Zealand</div>
+                    <p class="athlete-story">Setting world records in the single sculls, Grace's endurance and technique are unmatched. Her dominance spans three Olympic cycles and counting.</p>
+                </div>
+            </article>
+
+            <article class="athlete-card" data-sport="judo" data-badges="olympic champion" role="listitem">
+                <div class="athlete-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1555597408-26bc8e548a46?w=800&h=600&fit=crop" alt="Clarisse Dubois in judo" class="athlete-image" loading="lazy">
+                    <div class="badges">
+                        <span class="badge olympic">🥇 Olympic</span>
+                        <span class="badge champion">🏆 Champion</span>
+                    </div>
+                </div>
+                <div class="athlete-info">
+                    <div class="athlete-header">
+                        <h3 class="athlete-name">Clarisse Dubois</h3>
+                        <span class="athlete-sport">Judo</span>
+                    </div>
+                    <div class="athlete-region">🇫🇷 France</div>
+                    <p class="athlete-story">Two-time Olympic champion with an unprecedented winning streak. Clarisse's technical mastery and competitive spirit make her a judo legend.</p>
+                </div>
+            </article>
+
+            <article class="athlete-card" data-sport="rugby" data-badges="champion" role="listitem">
+                <div class="athlete-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?w=800&h=600&fit=crop" alt="Portia Woodman playing rugby" class="athlete-image" loading="lazy">
+                    <div class="badges">
+                        <span class="badge champion">🏆 Champion</span>
+                    </div>
+                </div>
+                <div class="athlete-info">
+                    <div class="athlete-header">
+                        <h3 class="athlete-name">Portia Woodman</h3>
+                        <span class="athlete-sport">Rugby Sevens</span>
+                    </div>
+                    <div class="athlete-region">🇳🇿 New Zealand</div>
+                    <p class="athlete-story">One of rugby's greatest try-scorers, Portia's speed and power have led New Zealand to multiple World Series titles. A true Black Ferns legend.</p>
+                </div>
+            </article>
+
+            <article class="athlete-card" data-sport="fencing" data-badges="olympic" role="listitem">
+                <div class="athlete-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1601989775457-a685b4199465?w=800&h=600&fit=crop" alt="Valentina Vezzali fencing" class="athlete-image" loading="lazy">
+                    <div class="badges">
+                        <span class="badge olympic">🥇 Olympic</span>
+                    </div>
+                </div>
+                <div class="athlete-info">
+                    <div class="athlete-header">
+                        <h3 class="athlete-name">Alessia Romano</h3>
+                        <span class="athlete-sport">Fencing</span>
+                    </div>
+                    <div class="athlete-region">🇮🇹 Italy</div>
+                    <p class="athlete-story">Olympic gold medalist in foil fencing, Alessia's lightning reflexes and tactical genius make her nearly unbeatable on the piste.</p>
+                </div>
+            </article>
+
+            <article class="athlete-card" data-sport="triathlon" data-badges="olympic world-record" role="listitem">
+                <div class="athlete-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&h=600&fit=crop" alt="Emma Karlsson in triathlon" class="athlete-image" loading="lazy">
+                    <div class="badges">
+                        <span class="badge olympic">🥇 Olympic</span>
+                        <span class="badge world-record">⚡ Record</span>
+                    </div>
+                </div>
+                <div class="athlete-info">
+                    <div class="athlete-header">
+                        <h3 class="athlete-name">Emma Karlsson</h3>
+                        <span class="athlete-sport">Triathlon</span>
+                    </div>
+                    <div class="athlete-region">🇸🇪 Sweden</div>
+                    <p class="athlete-story">Ironman world champion and Olympic medalist. Emma's incredible endurance across swim, bike, and run segments sets the standard in triathlon.</p>
+                </div>
+            </article>
+
+            <article class="athlete-card" data-sport="archery" data-badges="olympic champion" role="listitem">
+                <div class="athlete-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1624526267942-ab0ff8a3e972?w=800&h=600&fit=crop" alt="Kang Chae-Young archery" class="athlete-image" loading="lazy">
+                    <div class="badges">
+                        <span class="badge olympic">🥇 Olympic</span>
+                        <span class="badge champion">🏆 Champion</span>
+                    </div>
+                </div>
+                <div class="athlete-info">
+                    <div class="athlete-header">
+                        <h3 class="athlete-name">Kang Chae-Young</h3>
+                        <span class="athlete-sport">Archery</span>
+                    </div>
+                    <div class="athlete-region">🇰🇷 South Korea</div>
+                    <p class="athlete-story">Perfect precision under pressure. Chae-Young's multiple Olympic golds and world records showcase South Korea's archery dominance.</p>
+                </div>
+            </article>
+
+            <article class="athlete-card" data-sport="badminton" data-badges="olympic champion" role="listitem">
+                <div class="athlete-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?w=800&h=600&fit=crop" alt="Carolina Marin playing badminton" class="athlete-image" loading="lazy">
+                    <div class="badges">
+                        <span class="badge olympic">🥇 Olympic</span>
+                        <span class="badge champion">🏆 Champion</span>
+                    </div>
+                </div>
+                <div class="athlete-info">
+                    <div class="athlete-header">
+                        <h3 class="athlete-name">Carolina Marin</h3>
+                        <span class="athlete-sport">Badminton</span>
+                    </div>
+                    <div class="athlete-region">🇪🇸 Spain</div>
+                    <p class="athlete-story">Olympic champion and three-time world champion. Carolina's fierce competitiveness and powerful smashes revolutionized European badminton.</p>
+                </div>
+            </article>
+
+            <article class="athlete-card" data-sport="marathon" data-badges="world-record" role="listitem">
+                <div class="athlete-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=800&h=600&fit=crop" alt="Brigid Kosgei running marathon" class="athlete-image" loading="lazy">
+                    <div class="badges">
+                        <span class="badge world-record">⚡ Record</span>
+                    </div>
+                </div>
+                <div class="athlete-info">
+                    <div class="athlete-header">
+                        <h3 class="athlete-name">Brigid Kosgei</h3>
+                        <span class="athlete-sport">Marathon</span>
+                    </div>
+                    <div class="athlete-region">🇰🇪 Kenya</div>
+                    <p class="athlete-story">Smashed the women's marathon world record with a time of 2:14:04. Brigid's relentless pace and endurance inspire distance runners globally.</p>
+                </div>
+            </article>
+
+            <article class="athlete-card" data-sport="diving" data-badges="olympic champion" role="listitem">
+                <div class="athlete-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1519315901367-ee0ea7a00e93?w=800&h=600&fit=crop" alt="Quan Hongchan diving" class="athlete-image" loading="lazy">
+                    <div class="badges">
+                        <span class="badge olympic">🥇 Olympic</span>
+                        <span class="badge champion">🏆 Champion</span>
+                    </div>
+                </div>
+                <div class="athlete-info">
+                    <div class="athlete-header">
+                        <h3 class="athlete-name">Quan Hongchan</h3>
+                        <span class="athlete-sport">Diving</span>
+                    </div>
+                    <div class="athlete-region">🇨🇳 China</div>
+                    <p class="athlete-story">At 14, scored perfect 10s to win Olympic gold. Quan's flawless technique and composure under pressure are rewriting diving history.</p>
+                </div>
+            </article>
+
+            <article class="athlete-card" data-sport="pole-vault" data-badges="olympic world-record" role="listitem">
+                <div class="athlete-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=800&h=600&fit=crop" alt="Katie Nageotte pole vaulting" class="athlete-image" loading="lazy">
+                    <div class="badges">
+                        <span class="badge olympic">🥇 Olympic</span>
+                        <span class="badge world-record">⚡ Record</span>
+                    </div>
+                </div>
+                <div class="athlete-info">
+                    <div class="athlete-header">
+                        <h3 class="athlete-name">Mondo Duplantis' Inspiration</h3>
+                        <span class="athlete-sport">Pole Vault</span>
+                    </div>
+                    <div class="athlete-region">🇬🇷 Greece</div>
+                    <p class="athlete-story">Katerina Stefanidi - Olympic champion and multiple world champion. Her consistency at clearing 4.80m+ bars is legendary.</p>
+                </div>
+            </article>
+
+            <article class="athlete-card" data-sport="handball" data-badges="olympic" role="listitem">
+                <div class="athlete-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?w=800&h=600&fit=crop" alt="Nora Mørk playing handball" class="athlete-image" loading="lazy">
+                    <div class="badges">
+                        <span class="badge olympic">🥇 Olympic</span>
+                    </div>
+                </div>
+                <div class="athlete-info">
+                    <div class="athlete-header">
+                        <h3 class="athlete-name">Nora Mørk</h3>
+                        <span class="athlete-sport">Handball</span>
+                    </div>
+                    <div class="athlete-region">🇳🇴 Norway</div>
+                    <p class="athlete-story">Olympic and world champion with unstoppable shooting accuracy. Nora's leadership helped Norway dominate women's handball for years.</p>
+                </div>
+            </article>
+
+            <article class="athlete-card" data-sport="figure-skating" data-badges="olympic champion" role="listitem">
+                <div class="athlete-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=800&h=600&fit=crop" alt="Yuzuru Hanyu equivalent figure skater" class="athlete-image" loading="lazy">
+                    <div class="badges">
+                        <span class="badge olympic">🥇 Olympic</span>
+                        <span class="badge champion">🏆 Champion</span>
+                    </div>
+                </div>
+                <div class="athlete-info">
+                    <div class="athlete-header">
+                        <h3 class="athlete-name">Alina Zagitova</h3>
+                        <span class="athlete-sport">Figure Skating</span>
+                    </div>
+                    <div class="athlete-region">🇷🇺 Russia</div>
+                    <p class="athlete-story">Olympic gold medalist at 15. Alina's artistic expression combined with technical excellence captivated the world.</p>
+                </div>
+            </article>
+
+            <article class="athlete-card" data-sport="table-tennis" data-badges="olympic champion" role="listitem">
+                <div class="athlete-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1534158914592-062992fbe900?w=800&h=600&fit=crop" alt="Ding Ning playing table tennis" class="athlete-image" loading="lazy">
+                    <div class="badges">
+                        <span class="badge olympic">🥇 Olympic</span>
+                        <span class="badge champion">🏆 Champion</span>
+                    </div>
+                </div>
+                <div class="athlete-info">
+                    <div class="athlete-header">
+                        <h3 class="athlete-name">Ding Ning</h3>
+                        <span class="athlete-sport">Table Tennis</span>
+                    </div>
+                    <div class="athlete-region">🇨🇳 China</div>
+                    <p class="athlete-story">Multiple Olympic champion with incredible reflexes and spin control. Ding's fierce determination made her one of table tennis's greatest players.</p>
+                </div>
+            </article>
+
+            <article class="athlete-card" data-sport="skiing" data-badges="olympic world-record" role="listitem">
+                <div class="athlete-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=800&h=600&fit=crop" alt="Mikaela Shiffrin skiing" class="athlete-image" loading="lazy">
+                    <div class="badges">
+                        <span class="badge olympic">🥇 Olympic</span>
+                        <span class="badge world-record">⚡ Record</span>
+                    </div>
+                </div>
+                <div class="athlete-info">
+                    <div class="athlete-header">
+                        <h3 class="athlete-name">Mikaela Shiffrin</h3>
+                        <span class="athlete-sport">Alpine Skiing</span>
+                    </div>
+                    <div class="athlete-region">🇺🇸 USA</div>
+                    <p class="athlete-story">Most World Cup victories in alpine skiing history. Mikaela's technical precision and mental toughness make her the GOAT of her sport.</p>
+                </div>
+            </article>
+
+            <article class="athlete-card" data-sport="snowboarding" data-badges="olympic champion" role="listitem">
+                <div class="athlete-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1519315901367-ee0ea7a00e93?w=800&h=600&fit=crop" alt="Chloe Kim snowboarding" class="athlete-image" loading="lazy">
+                    <div class="badges">
+                        <span class="badge olympic">🥇 Olympic</span>
+                        <span class="badge champion">🏆 Champion</span>
+                    </div>
+                </div>
+                <div class="athlete-info">
+                    <div class="athlete-header">
+                        <h3 class="athlete-name">Chloe Kim</h3>
+                        <span class="athlete-sport">Snowboarding</span>
+                    </div>
+                    <div class="athlete-region">🇺🇸 USA</div>
+                    <p class="athlete-story">Two-time Olympic champion in halfpipe at age 21. Chloe's amplitude and style pushed women's snowboarding to new heights.</p>
+                </div>
+            </article>
+
+            <article class="athlete-card" data-sport="wheelchair-racing" data-badges="paralympic world-record" role="listitem">
+                <div class="athlete-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=800&h=600&fit=crop" alt="Tatyana McFadden wheelchair racing" class="athlete-image" loading="lazy">
+                    <div class="badges">
+                        <span class="badge paralympic">🏅 Paralympic</span>
+                        <span class="badge world-record">⚡ Record</span>
+                    </div>
+                </div>
+                <div class="athlete-info">
+                    <div class="athlete-header">
+                        <h3 class="athlete-name">Tatyana McFadden</h3>
+                        <span class="athlete-sport">Wheelchair Racing</span>
+                    </div>
+                    <div class="athlete-region">🇺🇸 USA</div>
+                    <p class="athlete-story">20 Paralympic medals and countless world records. Tatyana's dominance across all distances makes her one of the greatest Paralympians ever.</p>
+                </div>
+            </article>
+
+            <article class="athlete-card" data-sport="wheelchair-basketball" data-badges="paralympic" role="listitem">
+                <div class="athlete-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?w=800&h=600&fit=crop" alt="Paralympic basketball player" class="athlete-image" loading="lazy">
+                    <div class="badges">
+                        <span class="badge paralympic">🏅 Paralympic</span>
+                    </div>
+                </div>
+                <div class="athlete-info">
+                    <div class="athlete-header">
+                        <h3 class="athlete-name">Annabel Breuer</h3>
+                        <span class="athlete-sport">Wheelchair Basketball</span>
+                    </div>
+                    <div class="athlete-region">🇩🇪 Germany</div>
+                    <p class="athlete-story">Paralympic champion and team leader. Annabel's court vision and shooting accuracy helped Germany claim gold in wheelchair basketball.</p>
+                </div>
+            </article>
+
+            <article class="athlete-card" data-sport="sitting-volleyball" data-badges="paralympic" role="listitem">
+                <div class="athlete-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?w=800&h=600&fit=crop" alt="Sitting volleyball player" class="athlete-image" loading="lazy">
+                    <div class="badges">
+                        <span class="badge paralympic">🏅 Paralympic</span>
+                    </div>
+                </div>
+                <div class="athlete-info">
+                    <div class="athlete-header">
+                        <h3 class="athlete-name">Lora Webster</h3>
+                        <span class="athlete-sport">Sitting Volleyball</span>
+                    </div>
+                    <div class="athlete-region">🇺🇸 USA</div>
+                    <p class="athlete-story">Four-time Paralympic medalist whose powerful attacks and defensive prowess helped Team USA dominate sitting volleyball for over a decade.</p>
+                </div>
+            </article>
+
+            <article class="athlete-card" data-sport="para-swimming" data-badges="paralympic world-record" role="listitem">
+                <div class="athlete-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1530549387789-4c1017266635?w=800&h=600&fit=crop" alt="Paralympic swimmer" class="athlete-image" loading="lazy">
+                    <div class="badges">
+                        <span class="badge paralympic">🏅 Paralympic</span>
+                        <span class="badge world-record">⚡ Record</span>
+                    </div>
+                </div>
+                <div class="athlete-info">
+                    <div class="athlete-header">
+                        <h3 class="athlete-name">Sophie Pascoe</h3>
+                        <span class="athlete-sport">Para-Swimming</span>
+                    </div>
+                    <div class="athlete-region">🇳🇿 New Zealand</div>
+                    <p class="athlete-story">19 Paralympic medals including 11 golds. Sophie's incredible speed and technique across all strokes make her New Zealand's most decorated Paralympian.</p>
+                </div>
+            </article>
+
+            <article class="athlete-card" data-sport="para-athletics" data-badges="paralympic world-record" role="listitem">
+                <div class="athlete-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=800&h=600&fit=crop" alt="Paralympic runner" class="athlete-image" loading="lazy">
+                    <div class="badges">
+                        <span class="badge paralympic">🏅 Paralympic</span>
+                        <span class="badge world-record">⚡ Record</span>
+                    </div>
+                </div>
+                <div class="athlete-info">
+                    <div class="athlete-header">
+                        <h3 class="athlete-name">Omara Durand</h3>
+                        <span class="athlete-sport">Para-Athletics</span>
+                    </div>
+                    <div class="athlete-region">🇨🇺 Cuba</div>
+                    <p class="athlete-story">The "fastest Paralympian on the planet" with 8 Paralympic golds. Omara's world records in the 100m, 200m, and 400m are untouchable.</p>
+                </div>
+            </article>
+
+            <article class="athlete-card" data-sport="volleyball" data-badges="olympic" role="listitem">
+                <div class="athlete-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?w=800&h=600&fit=crop" alt="Volleyball player spiking" class="athlete-image" loading="lazy">
+                    <div class="badges">
+                        <span class="badge olympic">🥇 Olympic</span>
+                    </div>
+                </div>
+                <div class="athlete-info">
+                    <div class="athlete-header">
+                        <h3 class="athlete-name">Paola Egonu</h3>
+                        <span class="athlete-sport">Volleyball</span>
+                    </div>
+                    <div class="athlete-region">🇮🇹 Italy</div>
+                    <p class="athlete-story">Explosive opposite hitter with a devastating spike. Paola's athleticism and scoring ability make her one of volleyball's most exciting players to watch.</p>
                 </div>
             </article>
         </div>
+
+        <div class="no-results" id="noResults">
+            <h3>No athletes found</h3>
+            <p>Try adjusting your search or filter criteria</p>
+        </div>
+
+        <!-- Quotes Section -->
+        <section class="quotes-section" role="region" aria-labelledby="quotes-title">
+            <h2 id="quotes-title">💬 Words of Inspiration</h2>
+            <div class="quotes-grid">
+                <div class="quote-card">
+                    <p class="quote-text">I've failed over and over again in my life. And that is why I succeed.</p>
+                    <p class="quote-author">Michael Jordan's Parallel</p>
+                    <p class="quote-context">On embracing failure as growth</p>
+                </div>
+                <div class="quote-card">
+                    <p class="quote-text">The question isn't who is going to let me; it's who is going to stop me.</p>
+                    <p class="quote-author">Ayn Rand / Athletes Worldwide</p>
+                    <p class="quote-context">On breaking barriers</p>
+                </div>
+                <div class="quote-card">
+                    <p class="quote-text">You have to believe in yourself when no one else does. That's what makes you a winner.</p>
+                    <p class="quote-author">Venus Williams</p>
+                    <p class="quote-context">On self-belief</p>
+                </div>
+                <div class="quote-card">
+                    <p class="quote-text">I am not afraid of storms, for I am learning how to sail my ship.</p>
+                    <p class="quote-author">Louisa May Alcott / Athletes' Mantra</p>
+                    <p class="quote-context">On resilience</p>
+                </div>
+                <div class="quote-card">
+                    <p class="quote-text">Success isn't about being the best. It's about always getting better.</p>
+                    <p class="quote-author">Beh Siu Gian</p>
+                    <p class="quote-context">On continuous improvement</p>
+                </div>
+                <div class="quote-card">
+                    <p class="quote-text">Champions keep playing until they get it right.</p>
+                    <p class="quote-author">Billie Jean King</p>
+                    <p class="quote-context">On perseverance</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resources Section -->
+        <section class="resources-section" role="region" aria-labelledby="resources-title">
+            <h2 id="resources-title">🌟 Resources & Organizations</h2>
+            <p>Supporting women's sports and empowering the next generation of champions</p>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <span class="resource-icon">⚽</span>
+                    <h3 class="resource-title">Women's Sports Foundation</h3>
+                    <p class="resource-description">Advancing the lives of women and girls through sports and physical activity.</p>
+                </div>
+                <div class="resource-card">
+                    <span class="resource-icon">🏃‍♀️</span>
+                    <h3 class="resource-title">Girls on the Run</h3>
+                    <p class="resource-description">Empowering girls through running programs that build confidence and healthy habits.</p>
+                </div>
+                <div class="resource-card">
+                    <span class="resource-icon">🏀</span>
+                    <h3 class="resource-title">Tucker Center for Research</h3>
+                    <p class="resource-description">Leading research on girls and women in sport and physical activity.</p>
+                </div>
+                <div class="resource-card">
+                    <span class="resource-icon">🎯</span>
+                    <h3 class="resource-title">Women in Sport</h3>
+                    <p class="resource-description">Campaigning for gender equality in sports at all levels.</p>
+                </div>
+                <div class="resource-card">
+                    <span class="resource-icon">🏆</span>
+                    <h3 class="resource-title">International Working Group on Women & Sport</h3>
+                    <p class="resource-description">Global network advocating for women and girls in sport.</p>
+                </div>
+                <div class="resource-card">
+                    <span class="resource-icon">💪</span>
+                    <h3 class="resource-title">Global Sports Mentoring Program</h3>
+                    <p class="resource-description">Empowering emerging women leaders in sports worldwide.</p>
+                </div>
+            </div>
+        </section>
     </main>
-    
-    <footer>
+
+    <footer role="contentinfo">
         <div class="footer-content">
             <div class="footer-logo">🏃‍♀️ Athletic Players</div>
             <p class="footer-tagline">Celebrating the world's greatest female athletes</p>
@@ -649,5 +1710,140 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Search functionality
+        const searchInput = document.getElementById('searchInput');
+        const athletesGrid = document.getElementById('athletesGrid');
+        const athleteCards = document.querySelectorAll('.athlete-card');
+        const noResults = document.getElementById('noResults');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const athleteCountEl = document.getElementById('athleteCount');
+
+        let currentFilter = 'all';
+
+        // Search function
+        function performSearch() {
+            const searchTerm = searchInput.value.toLowerCase();
+            let visibleCount = 0;
+
+            athleteCards.forEach(card => {
+                const name = card.querySelector('.athlete-name').textContent.toLowerCase();
+                const sport = card.querySelector('.athlete-sport').textContent.toLowerCase();
+                const region = card.querySelector('.athlete-region').textContent.toLowerCase();
+                const story = card.querySelector('.athlete-story').textContent.toLowerCase();
+                const badges = card.dataset.badges || '';
+
+                const matchesSearch = searchTerm === '' ||
+                    name.includes(searchTerm) ||
+                    sport.includes(searchTerm) ||
+                    region.includes(searchTerm) ||
+                    story.includes(searchTerm);
+
+                const matchesFilter = currentFilter === 'all' || badges.includes(currentFilter);
+
+                if (matchesSearch && matchesFilter) {
+                    card.classList.remove('hidden');
+                    visibleCount++;
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+
+            // Show/hide no results message
+            if (visibleCount === 0) {
+                noResults.classList.add('show');
+            } else {
+                noResults.classList.remove('show');
+            }
+
+            // Update athlete count
+            athleteCountEl.textContent = visibleCount;
+        }
+
+        // Filter function
+        function filterAthletes(filterType) {
+            currentFilter = filterType;
+
+            // Update button states
+            filterBtns.forEach(btn => {
+                if (btn.dataset.filter === filterType) {
+                    btn.classList.add('active');
+                    btn.setAttribute('aria-pressed', 'true');
+                } else {
+                    btn.classList.remove('active');
+                    btn.setAttribute('aria-pressed', 'false');
+                }
+            });
+
+            performSearch();
+        }
+
+        // Event listeners
+        searchInput.addEventListener('input', performSearch);
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterAthletes(btn.dataset.filter);
+            });
+        });
+
+        // Keyboard navigation for filters
+        filterBtns.forEach((btn, index) => {
+            btn.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight') {
+                    const nextBtn = filterBtns[index + 1] || filterBtns[0];
+                    nextBtn.focus();
+                } else if (e.key === 'ArrowLeft') {
+                    const prevBtn = filterBtns[index - 1] || filterBtns[filterBtns.length - 1];
+                    prevBtn.focus();
+                }
+            });
+        });
+
+        // Animated counting for stats on page load
+        function animateCount(element, target) {
+            let current = 0;
+            const increment = target / 50;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    element.textContent = target;
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current);
+                }
+            }, 20);
+        }
+
+        // Lazy loading images
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        if (img.dataset.src) {
+                            img.src = img.dataset.src;
+                            img.removeAttribute('data-src');
+                        }
+                        observer.unobserve(img);
+                    }
+                });
+            });
+
+            document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+
+        // Smooth scroll to top button (optional enhancement)
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                document.body.classList.add('scrolled');
+            } else {
+                document.body.classList.remove('scrolled');
+            }
+        });
+    </script>
 </body>
 </html>
