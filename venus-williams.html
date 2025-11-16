@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Venus Williams - 7 Grand Slam champion who refused to quit. Diagnosed with Sjögren's syndrome. Fought for equal pay. Overcame racism from Compton. Sister, pioneer, warrior.">
+    <title>Venus Williams - The Pioneer Who Refused to Quit | Athletic Players</title>
+    <style>
+        :root {
+            --primary-color: #9b59b6;
+            --secondary-color: #8e44ad;
+            --accent-color: #f39c12;
+            --text-dark: #2c3e50;
+            --text-light: #ecf0f1;
+            --bg-light: #ffffff;
+            --bg-dark: #34495e;
+            --gradient-primary: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
+            --gradient-accent: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+            --shadow: 0 10px 30px rgba(0,0,0,0.1);
+            --shadow-hover: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--bg-light);
+        }
+
+        /* Header/Navigation */
+        header {
+            background: var(--gradient-primary);
+            padding: 1rem 0;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--text-light);
+            text-decoration: none;
+        }
+
+        .nav-link {
+            color: var(--text-light);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .nav-link:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://source.unsplash.com/1600x900/?venus,williams,tennis,serve,powerful,champion') center/cover;
+            color: var(--text-light);
+            padding: 6rem 2rem;
+            text-align: center;
+            animation: fadeIn 1s ease-in;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 1rem;
+            animation: slideInDown 0.8s ease-out;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+            margin-bottom: 2rem;
+            font-weight: 300;
+            animation: slideInUp 0.8s ease-out;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--accent-color);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Main Content */
+        .content {
+            max-width: 900px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--gradient-accent);
+        }
+
+        .section h3 {
+            font-size: 1.8rem;
+            margin: 2rem 0 1rem;
+            color: var(--secondary-color);
+        }
+
+        .section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: #444;
+        }
+
+        .section ul {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .section li {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 0.5rem;
+            color: #444;
+        }
+
+        /* Quote Box */
+        .quote-box {
+            background: var(--gradient-primary);
+            color: var(--text-light);
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            border-left: 5px solid var(--accent-color);
+            box-shadow: var(--shadow);
+        }
+
+        .quote-box blockquote {
+            font-size: 1.3rem;
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .quote-author {
+            text-align: right;
+            font-weight: bold;
+            opacity: 0.9;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--gradient-primary);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 100px;
+            margin-bottom: 3rem;
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: 35px;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: var(--gradient-accent);
+            border: 4px solid var(--bg-light);
+            box-shadow: var(--shadow);
+        }
+
+        .timeline-date {
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        /* Image Grid */
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .image-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .image-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .image-caption {
+            padding: 1rem;
+            background: var(--bg-dark);
+            color: var(--text-light);
+            text-align: center;
+        }
+
+        /* Impact Grid */
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .impact-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: var(--text-light);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .impact-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .impact-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .impact-card h3 {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .stats-card {
+            background: var(--gradient-primary);
+            color: var(--text-light);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        .stats-card-number {
+            font-size: 3rem;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-dark);
+            color: var(--text-light);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 4rem 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .content {
+                margin: 2rem auto;
+                padding: 0 1rem;
+            }
+
+            .section h2 {
+                font-size: 2rem;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                padding-left: 60px;
+            }
+
+            .timeline-marker {
+                left: 5px;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-stats {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .section h2 {
+                font-size: 1.5rem;
+            }
+
+            .section p {
+                font-size: 1rem;
+            }
+
+            .quote-box blockquote {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">Athletic Players</a>
+            <a href="index.html" class="nav-link">← Back to All Athletes</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Venus Williams</h1>
+            <p class="hero-subtitle">The Pioneer Who Refused to Quit</p>
+            <p style="font-size: 1.2rem; margin-top: 1rem;">Seven Grand Slams. Autoimmune disease. Equal pay warrior. Compton survivor. Never gave up.</p>
+
+            <div class="hero-stats">
+                <div class="stat-card">
+                    <span class="stat-number">7</span>
+                    <span class="stat-label">Grand Slam Singles</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">49</span>
+                    <span class="stat-label">Career Titles</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">5x</span>
+                    <span class="stat-label">Wimbledon Champion</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">∞</span>
+                    <span class="stat-label">Determination</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="content">
+        <section class="section">
+            <h2>The Disease That Should Have Ended Her</h2>
+            <p>August 2011. Venus Williams was ranked #5 in the world. She had just turned 31. She had won 7 Grand Slam singles titles, 13 Grand Slam doubles titles with her sister Serena, and was still competing at the highest level of tennis.</p>
+
+            <p>Then, suddenly, she couldn't get out of bed.</p>
+
+            <p>It started with exhaustion—crushing, debilitating exhaustion that no amount of sleep could fix. Then came the joint pain, so severe she could barely grip a tennis racket. Her muscles ached constantly. She had trouble breathing. Simple tasks like climbing stairs left her gasping for air.</p>
+
+            <p>Venus thought she had the flu. But the symptoms didn't go away. Weeks passed. Then months. She withdrew from the US Open—something she had never done before. She couldn't train. She couldn't play. She could barely function.</p>
+
+            <p>Doctors ran tests. More tests. Blood work, imaging, specialist consultations. For months, nobody could figure out what was wrong with her. Some doctors suggested it was all in her head, that she was just tired, that she should rest more. Others implied she was faking it for attention.</p>
+
+            <p>Venus knew something was seriously wrong. But she couldn't prove it.</p>
+
+            <p>Finally, in September 2011, she received a diagnosis: <strong>Sjögren's syndrome</strong>—a chronic autoimmune disease that causes the immune system to attack the body's own moisture-producing glands. The disease causes extreme fatigue, joint pain, muscle pain, dry eyes, dry mouth, and difficulty breathing.</p>
+
+            <p>There is no cure. The disease is progressive. And for an elite athlete whose career depends on peak physical performance, the diagnosis was devastating.</p>
+
+            <p>Doctors told Venus her tennis career was over. At age 31, after fighting for everything she had accomplished, her body was betraying her. The disease would only get worse. She should retire, they said. Accept it and move on.</p>
+
+            <p>Venus refused.</p>
+        </section>
+
+        <div class="quote-box">
+            <blockquote>"I've been counted out my entire life. I'm used to it. But I've never quit anything, and I'm not starting now."</blockquote>
+            <p class="quote-author">— Venus Williams, after Sjögren's diagnosis</p>
+        </div>
+
+        <section class="section">
+            <h3>Fighting Back From the Brink</h3>
+            <p>The first year after her diagnosis was hell. Venus tried different medications, changed her diet drastically, worked with specialists to manage her symptoms. Some days she felt okay. Most days she felt like she was underwater—everything was harder, slower, more painful.</p>
+
+            <p>She fell out of the top 100 rankings for the first time in over a decade. In 2012, she played only 13 matches all year—her lowest total since turning professional at age 14. She lost matches she would have won easily in her prime. Commentators wrote her off. Fans assumed she was done.</p>
+
+            <p>But Venus kept showing up. She modified her training to account for her disease. She learned to listen to her body, to rest when necessary, to push when possible. She experimented with her diet—going mostly vegan and raw to reduce inflammation. She worked with doctors to find the right combination of medications and lifestyle changes.</p>
+
+            <p>Slowly, painfully, she started to improve. Not back to her peak—that was impossible with Sjögren's—but enough to compete. Enough to show people she wasn't done.</p>
+
+            <p>In 2014, three years after her diagnosis, Venus made it to the semifinals of Wimbledon. In 2015, she made it to the quarterfinals of the US Open. In 2016, she reached two Grand Slam semifinals. And in 2017—six years after being diagnosed with an incurable disease—Venus Williams reached the Wimbledon final.</p>
+
+            <p>She lost to her sister Serena, but the fact that she was there at all—competing at age 37 with a chronic autoimmune disease—was miraculous.</p>
+
+            <p>Venus has continued playing professionally through 2024, competing into her mid-40s. Every match is harder because of Sjögren's. Every tournament requires careful management of her symptoms. But she refuses to quit.</p>
+
+            <p>"My disease doesn't define me," Venus said. "I define me. And I'm a fighter."</p>
+        </section>
+
+        <div class="quote-box">
+            <blockquote>"Autoimmune disease doesn't mean your dreams are over. It means you have to fight harder. And I'm good at fighting."</blockquote>
+            <p class="quote-author">— Venus Williams</p>
+        </div>
+
+        <section class="section">
+            <h2>From Compton to Center Court</h2>
+
+            <h3>The Ghetto That Built Champions</h3>
+            <p>Venus Ebony Starr Williams was born on June 17, 1980, in Lynwood, California. She was the fourth of five daughters. Her father, Richard Williams, was a self-taught tennis coach with a plan: he was going to turn his daughters into tennis champions.</p>
+
+            <p>The family lived in Compton, California—one of the most dangerous cities in America in the 1980s and 90s. Compton was synonymous with gang violence, drug dealing, and poverty. Drive-by shootings were common. The public tennis courts where Venus and Serena practiced were controlled by gangs.</p>
+
+            <p>Richard Williams would take his daughters to those courts every day. They practiced for hours while gunshots echoed in the background. Gang members would sometimes interrupt their practice, threatening them or trying to intimidate them. Richard stood his ground, refusing to let his daughters be scared away.</p>
+
+            <p>Venus was 4 years old when she started playing tennis. By age 7, she had a 63-0 record in junior tournaments. By age 10, coaches were calling her a future champion. But the path from Compton to Wimbledon was anything but smooth.</p>
+
+            <h3>Facing Racism From Day One</h3>
+            <p>The tennis world in the 1980s and 90s was overwhelmingly white, wealthy, and exclusive. Venus and Serena—two Black girls from Compton with beads in their braided hair—did not fit the country club image of tennis.</p>
+
+            <p>They faced racism constantly. Opponents' parents made racist comments during matches. Tournament officials treated them differently. Media coverage focused on their appearance, their hair, their bodies—not their talent. They were called "ghetto," "aggressive," "too muscular," "too Black."</p>
+
+            <p>In one particularly awful incident at a junior tournament, a group of parents booed Venus during a match and shouted racial slurs at her family. She was 11 years old.</p>
+
+            <p>Richard Williams withdrew Venus and Serena from junior tennis after that incident. "I'm not letting my daughters be abused," he said. Instead, he coached them privately, preparing them to turn professional when they were ready.</p>
+
+            <p>Venus turned pro at age 14 in 1994. She was the youngest player to reach the final of a professional tournament since 1979. The tennis world took notice—but not all the attention was positive.</p>
+
+            <h3>The Indian Wells Boycott</h3>
+            <p>In 2001, Venus and Serena were scheduled to play each other in the semifinals of the Indian Wells tournament in California. Venus withdrew just minutes before the match, citing a knee injury. Serena advanced to the final.</p>
+
+            <p>When Serena walked onto the court for the final, accompanied by Venus and their father Richard, the crowd of 16,000 fans booed them relentlessly. Racial slurs were shouted from the stands. It was one of the most openly racist moments in modern tennis history.</p>
+
+            <p>Serena won the match, but both sisters were traumatized. They boycotted Indian Wells for the next 14 years, refusing to play there despite it being one of the biggest tournaments in tennis.</p>
+
+            <p>Venus didn't return to Indian Wells until 2016—15 years after the incident. When she walked onto the court, she received a standing ovation. She broke down in tears.</p>
+
+            <p>"I've been through a lot in my career," she said afterward. "But that day at Indian Wells... that was one of the hardest. Coming back here took courage. But I wanted to show people you can face your pain and move forward."</p>
+        </section>
+
+        <div class="timeline">
+            <h2>Timeline of Determination</h2>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-date">1980</div>
+                <div class="timeline-content">
+                    <h3>Born in Lynwood, California</h3>
+                    <p>Born Venus Ebony Starr Williams on June 17. Fourth of five daughters of Richard and Oracene Williams. Family moved to Compton when Venus was young. Began playing tennis at age 4 on dangerous public courts controlled by gangs.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-date">1994</div>
+                <div class="timeline-content">
+                    <h3>Turned Professional at 14</h3>
+                    <p>Turned pro at age 14. First match at Bank of the West Classic in Oakland. Lost in first round but showed incredible potential. Youngest player to reach professional tournament final since 1979.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-date">1997</div>
+                <div class="timeline-content">
+                    <h3>First Grand Slam Final</h3>
+                    <p>Reached US Open final as unseeded player, becoming first woman in Open Era to reach final in her debut. Lost to Martina Hingis but proved she belonged among the elite. Ranked #22 in the world.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-date">2000-2001</div>
+                <div class="timeline-content">
+                    <h3>Wimbledon Dominance Begins</h3>
+                    <p>Won first Wimbledon title in 2000, defeating Lindsay Davenport in final. Defended title in 2001. Became first Black woman since Althea Gibson to win Wimbledon. Also won US Open 2000 and 2001. Achieved #1 world ranking.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-date">2001</div>
+                <div class="timeline-content">
+                    <h3>Indian Wells Racism</h3>
+                    <p>Experienced racist abuse from crowd at Indian Wells tournament. Fans booed and shouted slurs at Venus, Serena, and their father. Boycotted tournament for next 14 years. Traumatic incident that highlighted racism in tennis.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-date">2005-2008</div>
+                <div class="timeline-content">
+                    <h3>More Wimbledon Titles</h3>
+                    <p>Won Wimbledon three more times (2005, 2007, 2008). Total of 5 Wimbledon singles titles. Also won 13 Grand Slam doubles titles with Serena. Dominated grass court tennis for nearly a decade.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-date">2006-2007</div>
+                <div class="timeline-content">
+                    <h3>Equal Pay Victory at Wimbledon</h3>
+                    <p>Led public campaign for equal prize money at Wimbledon. Wrote op-ed in The Times of London. Testified before Parliament. In 2007, Wimbledon announced equal prize money for men and women for first time in tournament's 130-year history.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-date">September 2011</div>
+                <div class="timeline-content">
+                    <h3>Sjögren's Syndrome Diagnosis</h3>
+                    <p>Diagnosed with Sjögren's syndrome, chronic autoimmune disease. Suffered months of debilitating fatigue, joint pain, muscle pain. Doctors said career was over. Ranking fell outside top 100. Refused to quit.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-date">2017</div>
+                <div class="timeline-content">
+                    <h3>Wimbledon Final at 37</h3>
+                    <p>Reached Wimbledon final at age 37—six years after Sjögren's diagnosis. Lost to sister Serena but proved she could still compete at highest level despite chronic disease. Inspirational comeback story.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-date">2020s</div>
+                <div class="timeline-content">
+                    <h3>Still Competing in Her 40s</h3>
+                    <p>Continues playing professionally into her mid-40s despite Sjögren's syndrome. Manages symptoms through diet, medication, careful training. Inspires millions with chronic illnesses. Also entrepreneur, fashion designer, advocate.</p>
+                </div>
+            </div>
+        </div>
+
+        <section class="section">
+            <h2>The Equal Pay Fight</h2>
+
+            <h3>Standing Up to Wimbledon</h3>
+            <p>In 2006, Wimbledon was the last Grand Slam tournament that refused to pay women and men equally. The argument was the same as it had been for decades: men play best-of-five sets, women play best-of-three, therefore men deserve more money.</p>
+
+            <p>Venus had had enough. She wrote a powerful op-ed published in The Times of London on the eve of Wimbledon 2006:</p>
+
+            <p style="margin-left: 2rem; font-style: italic; color: #555;">"I feel very strongly that Wimbledon's stance devalues the principle of meritocracy and diminishes the years of hard work that women on the tour have put into becoming professional tennis players... I believe this is a very important issue and one that the All England Club should reconsider for the benefit of the sport and for the message it sends to all women and girls."</p>
+
+            <p>The op-ed made international headlines. Venus followed up by testifying before the British Parliament, becoming the first professional athlete to address Parliament on the issue of equal pay.</p>
+
+            <p>She spoke eloquently about inequality, about the message it sends to young girls, about the principle that women's work is worth as much as men's work. Her testimony was powerful, passionate, and persuasive.</p>
+
+            <p>In February 2007, Wimbledon announced they would offer equal prize money to men and women for the first time in the tournament's 130-year history.</p>
+
+            <p>Venus won Wimbledon that year—and received the same prize money as the men's champion. When she held up the trophy, she was holding more than just a tennis championship. She was holding proof that fighting for equality works.</p>
+
+            <h3>Paving the Way</h3>
+            <p>Venus's equal pay victory had ripple effects far beyond tennis. It showed that women athletes could successfully advocate for themselves, that speaking out could create change, that the old excuses for inequality didn't hold up under scrutiny.</p>
+
+            <p>The victory inspired the U.S. Women's National Soccer Team's equal pay fight. It inspired WNBA players to demand better pay. It inspired women in business to negotiate harder for equal salaries.</p>
+
+            <p>Billie Jean King, who had fought for equal pay in the 1970s, called Venus's victory "the final breakthrough." Serena Williams said, "Venus did that for all of us. She stood up when it wasn't easy."</p>
+
+            <p>Venus didn't just win equal pay for herself. She won it for every woman athlete who came after her.</p>
+        </section>
+
+        <div class="stats-grid">
+            <div class="stats-card">
+                <span class="stats-card-number">7</span>
+                <p>Grand Slam Singles Titles</p>
+            </div>
+            <div class="stats-card">
+                <span class="stats-card-number">14</span>
+                <p>Grand Slam Doubles Titles</p>
+            </div>
+            <div class="stats-card">
+                <span class="stats-card-number">49</span>
+                <p>Career Singles Titles</p>
+            </div>
+            <div class="stats-card">
+                <span class="stats-card-number">5x</span>
+                <p>Wimbledon Singles Champion</p>
+            </div>
+        </div>
+
+        <section class="section">
+            <h2>The Sister Bond That Changed Tennis</h2>
+
+            <h3>Venus and Serena</h3>
+            <p>You can't tell Venus's story without talking about Serena. The Williams sisters are inseparable—in life, in tennis, in history.</p>
+
+            <p>They've played each other 31 times professionally. Serena leads the head-to-head 19-12. Every match between them is emotionally brutal—they're not just competitors, they're sisters who love each other deeply.</p>
+
+            <p>But they've also won 14 Grand Slam doubles titles together. They've been Olympic doubles partners, winning three gold medals. They've dominated women's doubles tennis for over two decades whenever they choose to play together.</p>
+
+            <p>Venus has always been Serena's biggest supporter—even when Serena surpassed her in Grand Slam titles, even when Serena became considered the greatest female player of all time. Venus has never shown jealousy, only pride.</p>
+
+            <p>"Serena is my baby sister," Venus said. "I want her to be the best. When she wins, I win. We came from Compton together. We made it together. There's no competition in love."</p>
+
+            <p>Serena has been equally supportive of Venus, especially during her battle with Sjögren's syndrome. When Venus was struggling to compete, Serena was there encouraging her, training with her, refusing to let her give up.</p>
+
+            <p>After Venus reached the 2017 Wimbledon final and lost to Serena, they embraced at the net with tears in their eyes. "I'm so proud of you," Serena whispered. Venus whispered back, "I love you."</p>
+
+            <p>The Williams sisters didn't just dominate tennis. They showed the world that women can be fierce competitors and loving sisters at the same time.</p>
+        </section>
+
+        <div class="impact-grid">
+            <div class="impact-card">
+                <div class="impact-icon">🎾</div>
+                <h3>Tennis Dominance</h3>
+                <p>7 Grand Slam singles titles, 14 Grand Slam doubles titles. 5-time Wimbledon champion. 49 career titles. Former #1 ranked player. Dominated tennis for two decades.</p>
+            </div>
+            <div class="impact-card">
+                <div class="impact-icon">⚖️</div>
+                <h3>Equal Pay Champion</h3>
+                <p>Fought for equal prize money at Wimbledon. Wrote op-ed, testified before Parliament. Achieved equal pay in 2007 after 130 years of inequality. Changed sports forever.</p>
+            </div>
+            <div class="impact-card">
+                <div class="impact-icon">💪</div>
+                <h3>Chronic Illness Warrior</h3>
+                <p>Diagnosed with Sjögren's syndrome in 2011. Refused to quit despite doctors saying career was over. Reached Wimbledon final six years after diagnosis. Inspires millions with chronic illnesses.</p>
+            </div>
+            <div class="impact-card">
+                <div class="impact-icon">🌟</div>
+                <h3>Pioneer and Role Model</h3>
+                <p>First Black woman to win Wimbledon since Althea Gibson. Overcame racism from Compton to center court. Entrepreneur, fashion designer, advocate. Proof that you can overcome anything.</p>
+            </div>
+        </div>
+
+        <section class="section">
+            <h2>Beyond Tennis: Building an Empire</h2>
+
+            <h3>EleVen by Venus Williams</h3>
+            <p>In 2007, Venus launched her own athletic apparel line called EleVen (a play on her name and the number 7, her lucky number and Grand Slam singles titles count). The brand focuses on fashionable, functional athletic wear for women.</p>
+
+            <p>EleVen was groundbreaking because Venus maintained creative and business control—rare for athlete-branded clothing lines at the time. She designed pieces she actually wanted to wear on court, mixing performance with style.</p>
+
+            <p>The brand became successful, selling in major retailers and online. Venus proved she could be a successful entrepreneur while still competing at the highest level of tennis.</p>
+
+            <h3>Interior Design and V Starr</h3>
+            <p>Venus is also a certified interior designer. She earned her degree from the Art Institute of Fort Lauderdale while still playing professional tennis—taking online courses, studying between tournaments, doing homework on planes.</p>
+
+            <p>In 2002, she launched V Starr Interiors, her own interior design firm. The company has designed residential and commercial spaces, including renovating several of Venus's own homes.</p>
+
+            <p>"People think athletes are one-dimensional," Venus said. "But I'm interested in so many things. Tennis is what I'm known for, but it's not all I am."</p>
+
+            <h3>Advocacy and Activism</h3>
+            <p>Venus has been vocal about equality, not just in sports but in society. She's spoken out about gender equality, racial justice, and opportunities for underprivileged youth.</p>
+
+            <p>She's worked with organizations providing tennis programs in inner cities—giving kids from backgrounds like hers a chance to play. She's advocated for funding for girls' sports programs. She's used her platform to amplify marginalized voices.</p>
+
+            <p>"I've been given so much," Venus said. "I came from nothing—from Compton, from public courts with broken nets. Now I'm here. I have a responsibility to give back, to open doors for other people."</p>
+        </section>
+
+        <div class="quote-box">
+            <blockquote>"Some people say I'm too old to compete. I say: watch me. I've been counted out my entire life. I'm still here. I'm not going anywhere."</blockquote>
+            <p class="quote-author">— Venus Williams</p>
+        </div>
+
+        <section class="section">
+            <h2>Why She Matters</h2>
+
+            <p>Venus Williams has won 7 Grand Slam singles titles. That's an incredible achievement. But Venus's legacy is so much bigger than her trophy count.</p>
+
+            <p>She proved that Black women from poor neighborhoods could dominate a sport that had excluded them for generations. She faced racism head-on and refused to be intimidated. She and Serena changed the demographics of tennis forever.</p>
+
+            <p>She fought for equal pay when everyone told her to be quiet and be grateful. She won that fight—and every woman athlete today benefits from her courage.</p>
+
+            <p>She was diagnosed with a chronic autoimmune disease that should have ended her career. Instead, she adapted, fought back, and continued competing for over a decade after her diagnosis—inspiring millions of people with chronic illnesses who are told they can't do things.</p>
+
+            <p>She built businesses, earned a degree in interior design, created a fashion brand—all while playing professional tennis. She proved that athletes can be multi-dimensional, that success in one area doesn't mean you can't pursue other passions.</p>
+
+            <p>But most importantly, Venus showed us what resilience looks like. She's been knocked down repeatedly—by racism, by inequality, by disease, by age, by doubters. And every single time, she gets back up.</p>
+
+            <p>Venus Williams is still playing professional tennis in her mid-40s with a chronic autoimmune disease. She still shows up. She still competes. She still fights.</p>
+
+            <p>That's her legacy: never quitting, never accepting limits, never letting anyone tell her what she can't do.</p>
+
+            <p>Seven Grand Slam titles is impressive. But inspiring millions of people to keep fighting when everything seems impossible? That's legendary.</p>
+        </section>
+
+        <div class="image-grid">
+            <div class="image-card">
+                <img src="https://source.unsplash.com/800x600/?wimbledon,tennis,grass,court,championship" alt="Wimbledon grass courts" loading="lazy">
+                <div class="image-caption">5-Time Wimbledon Champion</div>
+            </div>
+            <div class="image-card">
+                <img src="https://source.unsplash.com/800x600/?tennis,serve,power,athlete,champion" alt="Powerful tennis serve" loading="lazy">
+                <div class="image-caption">Power and Grace</div>
+            </div>
+            <div class="image-card">
+                <img src="https://source.unsplash.com/800x600/?equality,justice,champion,victory,triumph" alt="Equality and justice" loading="lazy">
+                <div class="image-caption">Equal Pay Warrior</div>
+            </div>
+        </div>
+
+        <div class="quote-box">
+            <blockquote>"I don't focus on what I'm up against. I focus on my goals and I try to ignore the rest."</blockquote>
+            <p class="quote-author">— Venus Williams</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Athletic Players. Celebrating the courage, determination, and pioneering spirit of Venus Williams.</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">Sources: WTA records, Wimbledon archives, Venus Williams interviews, Sjögren's Syndrome Foundation</p>
+    </footer>
+</body>
+</html>

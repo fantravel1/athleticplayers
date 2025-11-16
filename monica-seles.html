@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Monica Seles - Nine Grand Slam champion stabbed on court by deranged fan. Suffered PTSD. Lost #1 ranking. Fought back to compete again. Warrior who refused to be broken.">
+    <title>Monica Seles - The Warrior Who Survived | Athletic Players</title>
+    <style>
+        :root {
+            --primary-color: #e74c3c;
+            --secondary-color: #c0392b;
+            --accent-color: #f39c12;
+            --text-dark: #2c3e50;
+            --text-light: #ecf0f1;
+            --bg-light: #ffffff;
+            --bg-dark: #34495e;
+            --gradient-primary: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            --gradient-accent: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+            --shadow: 0 10px 30px rgba(0,0,0,0.1);
+            --shadow-hover: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--bg-light);
+        }
+
+        /* Header/Navigation */
+        header {
+            background: var(--gradient-primary);
+            padding: 1rem 0;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--text-light);
+            text-decoration: none;
+        }
+
+        .nav-link {
+            color: var(--text-light);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .nav-link:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://source.unsplash.com/1600x900/?tennis,court,athlete,champion,powerful,woman') center/cover;
+            color: var(--text-light);
+            padding: 6rem 2rem;
+            text-align: center;
+            animation: fadeIn 1s ease-in;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 1rem;
+            animation: slideInDown 0.8s ease-out;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+            margin-bottom: 2rem;
+            font-weight: 300;
+            animation: slideInUp 0.8s ease-out;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--accent-color);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Main Content */
+        .content {
+            max-width: 900px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--gradient-accent);
+        }
+
+        .section h3 {
+            font-size: 1.8rem;
+            margin: 2rem 0 1rem;
+            color: var(--secondary-color);
+        }
+
+        .section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: #444;
+        }
+
+        /* Quote Box */
+        .quote-box {
+            background: var(--gradient-primary);
+            color: var(--text-light);
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            border-left: 5px solid var(--accent-color);
+            box-shadow: var(--shadow);
+        }
+
+        .quote-box blockquote {
+            font-size: 1.3rem;
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .quote-author {
+            text-align: right;
+            font-weight: bold;
+            opacity: 0.9;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--gradient-primary);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 100px;
+            margin-bottom: 3rem;
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: 35px;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: var(--gradient-accent);
+            border: 4px solid var(--bg-light);
+            box-shadow: var(--shadow);
+        }
+
+        .timeline-date {
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        /* Image Grid */
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .image-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .image-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .image-caption {
+            padding: 1rem;
+            background: var(--bg-dark);
+            color: var(--text-light);
+            text-align: center;
+        }
+
+        /* Impact Grid */
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .impact-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: var(--text-light);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .impact-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .impact-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .impact-card h3 {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .stats-card {
+            background: var(--gradient-primary);
+            color: var(--text-light);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        .stats-card-number {
+            font-size: 3rem;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-dark);
+            color: var(--text-light);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 4rem 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .content {
+                margin: 2rem auto;
+                padding: 0 1rem;
+            }
+
+            .section h2 {
+                font-size: 2rem;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                padding-left: 60px;
+            }
+
+            .timeline-marker {
+                left: 5px;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-stats {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .section h2 {
+                font-size: 1.5rem;
+            }
+
+            .section p {
+                font-size: 1rem;
+            }
+
+            .quote-box blockquote {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">Athletic Players</a>
+            <a href="index.html" class="nav-link">← Back to All Athletes</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Monica Seles</h1>
+            <p class="hero-subtitle">The Warrior Who Survived</p>
+            <p style="font-size: 1.2rem; margin-top: 1rem;">Nine Grand Slams. Stabbed on court. Suffered PTSD. Lost everything. Fought back. Unbreakable.</p>
+
+            <div class="hero-stats">
+                <div class="stat-card">
+                    <span class="stat-number">9</span>
+                    <span class="stat-label">Grand Slam Titles</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">1993</span>
+                    <span class="stat-label">The Attack</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">178</span>
+                    <span class="stat-label">Weeks at #1</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">∞</span>
+                    <span class="stat-label">Courage</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="content">
+        <section class="section">
+            <h2>April 30, 1993: The Day Everything Changed</h2>
+            <p>Hamburg, Germany. The Citizen Cup quarterfinal match. Monica Seles, the 19-year-old world #1, was playing Magdalena Maleeva. It was a normal match—or it should have been.</p>
+
+            <p>Monica was dominating. She had won the first set 6-4 and was leading 4-3 in the second set. During a changeover, she sat in her chair facing away from the crowd, toweling off, sipping water, catching her breath for the next game.</p>
+
+            <p>Then, suddenly, she felt a sharp, burning pain in her back.</p>
+
+            <p>A man had jumped out of the stands, run onto the court, and plunged a nine-inch boning knife between her shoulder blades.</p>
+
+            <p>Monica screamed. She fell forward, reaching behind her back, not understanding what had happened. Blood soaked through her white tennis shirt. Security tackled the attacker. The crowd erupted in chaos and horror.</p>
+
+            <p>The man's name was Günter Parche. He was a 38-year-old unemployed German lathe operator and an obsessed fan of Steffi Graf—Monica's biggest rival. He had traveled to Hamburg specifically to attack Monica. His goal: to injure her badly enough that she couldn't play tennis, allowing Steffi Graf to reclaim the #1 ranking.</p>
+
+            <p>The knife missed Monica's spinal cord by less than an inch. If it had struck just slightly to the left, she would have been paralyzed for life. If it had gone deeper, she could have died.</p>
+
+            <p>Monica was rushed to the hospital. The physical wound required only minor treatment—the knife hadn't gone deep enough to cause permanent damage. Doctors stitched her up and said she'd be fine in a few weeks.</p>
+
+            <p>But the psychological wound would take years to heal. And in many ways, Monica Seles never fully recovered.</p>
+        </section>
+
+        <div class="quote-box">
+            <blockquote>"The moment that knife went into my back, my life changed forever. I lost my innocence. I lost my fearlessness. I lost myself."</blockquote>
+            <p class="quote-author">— Monica Seles</p>
+        </div>
+
+        <section class="section">
+            <h2>The Aftermath: PTSD and Lost Years</h2>
+
+            <h3>The Trial That Added Insult to Injury</h3>
+            <p>Monica expected justice. A man had stabbed her on a tennis court in front of thousands of witnesses and cameras. The evidence was indisputable. Surely he would go to prison.</p>
+
+            <p>But German courts ruled that Parche was a "mentally ill" Graf fan who acted out of "excessive zeal." He received a two-year suspended sentence and probation. He never spent a single day in jail.</p>
+
+            <p>The reasoning? The judge said Parche was "psychologically abnormal" but not legally insane. And because Monica had recovered physically from the wound, the attack was classified as "causing bodily harm" rather than attempted murder.</p>
+
+            <p>Monica was devastated. "The man who tried to kill me walked free," she later said. "The justice system failed me completely. That hurt almost as much as the stabbing."</p>
+
+            <h3>The Fear That Wouldn't Leave</h3>
+            <p>Monica tried to return to tennis. She attempted comebacks in 1994, but each time she stepped onto a court, the fear overwhelmed her. She would scan the crowd obsessively, looking for threats. She couldn't concentrate on the match. Every sudden movement in the stands made her flinch.</p>
+
+            <p>She suffered from severe PTSD—post-traumatic stress disorder. She had nightmares about being attacked. She developed anxiety and panic attacks. She couldn't eat. She gained weight from stress and inactivity, which the media cruelly mocked.</p>
+
+            <p>"I was terrified all the time," Monica said. "I couldn't be in public without feeling like someone was going to hurt me. Tennis courts—the place I had always felt safest—became the place I feared most."</p>
+
+            <p>Monica stayed away from professional tennis for 27 months. She was only 19 when she was attacked. She didn't return to Grand Slam competition until she was 21—missing the prime years of her career.</p>
+
+            <p>During those 27 months, Steffi Graf reclaimed the #1 ranking—exactly what Günter Parche had wanted to achieve. The attack had succeeded in derailing Monica's dominance.</p>
+
+            <h3>The Comeback That Showed Her Strength</h3>
+            <p>In August 1995, Monica finally returned to professional tennis. She was scared. She was out of shape. She hadn't competed in over two years. Nobody expected her to compete at the same level.</p>
+
+            <p>But Monica shocked the world. At the 1995 US Open—her first Grand Slam back—she reached the final. She lost to Steffi Graf in three sets, but the fact that she even made it to the final after everything she'd been through was miraculous.</p>
+
+            <p>In 1996, Monica won the Australian Open—her first Grand Slam title since the attack. When she won the final point, she collapsed to her knees and sobbed. It had been three years since she'd won a major. Three years since a man stabbed her for being too good at tennis.</p>
+
+            <p>"That win meant more than all my other titles combined," Monica said. "Because I didn't just beat my opponent. I beat my fear."</p>
+
+            <p>Monica played until 2003, eventually retiring at age 29 with nine Grand Slam titles. But everyone who followed her career knew the truth: if she hadn't been attacked, if she hadn't lost those prime years, Monica Seles would have won many more Grand Slams. She might have been remembered as the greatest female player of all time.</p>
+
+            <p>Instead, she's remembered as the player who was robbed—not just by a knife, but by a justice system that failed her and a world that didn't take her trauma seriously.</p>
+        </section>
+
+        <div class="quote-box">
+            <blockquote>"People ask if I'm bitter. I'm not bitter. I'm sad. I'm sad for the player I could have been, the titles I could have won, the years I lost. But I'm also proud. Because I survived."</blockquote>
+            <p class="quote-author">— Monica Seles</p>
+        </div>
+
+        <section class="section">
+            <h2>Before the Attack: The Prodigy Who Dominated</h2>
+
+            <h3>From Yugoslavia to Tennis Greatness</h3>
+            <p>Monica Seles was born on December 2, 1973, in Novi Sad, Yugoslavia (now Serbia). Her father, Karolj Seles, was a cartoonist who loved tennis and decided to teach his daughter the game when she was 6 years old.</p>
+
+            <p>Karolj saw Monica's talent immediately. She was fast, aggressive, powerful—and she had a two-handed forehand and backhand that was unusual but devastatingly effective. She grunted loudly with every shot—a habit that would later become her signature and also attract criticism.</p>
+
+            <p>By age 9, Monica was dominating junior tennis in Yugoslavia. By age 12, she moved to the United States to train at Nick Bollettieri's Tennis Academy in Florida—the same academy that produced Andre Agassi, Jim Courier, and many other champions.</p>
+
+            <p>Monica turned professional at age 15 in 1989. Within months, she won her first professional tournament. At age 16, she became the youngest-ever French Open champion, defeating Steffi Graf—the dominant player of that era—in the final.</p>
+
+            <p>That victory announced Monica Seles as the future of women's tennis.</p>
+
+            <h3>Total Dominance: 1990-1993</h3>
+            <p>Between 1990 and 1993, Monica Seles was unstoppable. She won eight of the 12 Grand Slam tournaments she entered. Her record in Grand Slam finals was 8-1. She became the youngest-ever #1 ranked player at age 17.</p>
+
+            <p>Her playing style was revolutionary. She hit the ball harder than anyone—male or female. She took the ball early, on the rise, giving opponents no time to react. She was aggressive from the baseline, constantly attacking. And her two-handed forehand and backhand gave her incredible control and power.</p>
+
+            <p>But it was her mental toughness that truly set her apart. Monica never gave up. She fought for every point like it was match point. She intimidated opponents with her intensity and her grunting—a loud "AAAAAH!" with every shot that some players complained was distracting.</p>
+
+            <p>By 1993, at age 19, Monica had already won nine Grand Slam titles:</p>
+            <ul style="margin-left: 2rem; margin-bottom: 1.5rem;">
+                <li>Australian Open: 1991, 1992, 1993</li>
+                <li>French Open: 1990, 1991, 1992</li>
+                <li>US Open: 1991, 1992</li>
+                <li>Wimbledon: (best result: finalist 1992)</li>
+            </ul>
+
+            <p>She was on track to become the most dominant female player in history. Experts predicted she could win 20+ Grand Slams. She seemed invincible.</p>
+
+            <p>And then Günter Parche stabbed her.</p>
+        </section>
+
+        <div class="timeline">
+            <h2>Timeline of Triumph and Tragedy</h2>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-date">1973</div>
+                <div class="timeline-content">
+                    <h3>Born in Novi Sad, Yugoslavia</h3>
+                    <p>Born December 2 in Novi Sad, Yugoslavia (now Serbia). Father Karolj was a cartoonist who taught her tennis starting at age 6. Showed immediate talent with unusual two-handed forehand and backhand.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-date">1985</div>
+                <div class="timeline-content">
+                    <h3>Moved to United States</h3>
+                    <p>At age 12, moved to Florida to train at Nick Bollettieri's Tennis Academy. Left family and country to pursue tennis dream. Trained alongside future champions like Andre Agassi and Jim Courier.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-date">1990</div>
+                <div class="timeline-content">
+                    <h3>Youngest French Open Champion</h3>
+                    <p>At age 16 years, 6 months, became youngest-ever French Open champion, defeating Steffi Graf in final. Announced herself as the future of women's tennis. Won second Grand Slam title at same tournament in 1991.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-date">1991-1993</div>
+                <div class="timeline-content">
+                    <h3>Total Dominance</h3>
+                    <p>Became #1 ranked player at age 17. Won 8 out of 12 Grand Slams entered. Dominated Australian Open (3 titles), French Open (3 titles), US Open (2 titles). Seemed unstoppable. Total of 9 Grand Slam titles by age 19.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-date">April 30, 1993</div>
+                <div class="timeline-content">
+                    <h3>The Attack</h3>
+                    <p>Stabbed on court during match in Hamburg, Germany by Günter Parche, deranged Steffi Graf fan. Knife plunged between shoulder blades, missing spinal cord by less than inch. Could have been paralyzed or killed. Attacker received suspended sentence, never jailed.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-date">1993-1995</div>
+                <div class="timeline-content">
+                    <h3>27 Months Away: PTSD and Recovery</h3>
+                    <p>Stayed away from professional tennis for 27 months. Suffered severe PTSD, anxiety, panic attacks. Gained weight from stress, was mocked by media. Lost prime years of career. Attacker walked free while Monica suffered.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-date">1995</div>
+                <div class="timeline-content">
+                    <h3>The Comeback</h3>
+                    <p>Returned to tennis in August 1995. Reached US Open final in first Grand Slam back—lost to Steffi Graf. Showed incredible courage to compete again after trauma. Still fighting fear and PTSD.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-date">1996</div>
+                <div class="timeline-content">
+                    <h3>Australian Open Victory</h3>
+                    <p>Won 1996 Australian Open—first Grand Slam title since attack. Collapsed in tears after winning. Proved she could still win majors despite PTSD and lost years. Victory was emotional vindication.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-date">2003</div>
+                <div class="timeline-content">
+                    <h3>Retirement</h3>
+                    <p>Retired from professional tennis at age 29. Finished with 9 Grand Slam singles titles, 53 career titles, 178 weeks at #1. Career cut short by attack and PTSD. Could have won many more Grand Slams if not stabbed.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-date">2009</div>
+                <div class="timeline-content">
+                    <h3>Hall of Fame</h3>
+                    <p>Inducted into International Tennis Hall of Fame. Recognized not just for titles won, but for courage in returning after attack. Became advocate for athlete safety and mental health awareness.</p>
+                </div>
+            </div>
+        </div>
+
+        <section class="section">
+            <h2>The Adversity Beyond the Stabbing</h2>
+
+            <h3>Losing Her Father</h3>
+            <p>In 1998, Monica's father Karolj—her first coach, her biggest supporter, the person who had dedicated his life to her tennis career—died of stomach cancer. Monica was 24 years old, still trying to rebuild her career after the attack.</p>
+
+            <p>Karolj's death devastated Monica. He had been more than her coach—he had been her anchor. After his death, Monica struggled with depression. She gained more weight. She questioned whether she wanted to continue playing tennis without him there to support her.</p>
+
+            <p>"When my dad died, I lost my biggest cheerleader," Monica said. "Tennis was always something we shared. Without him, it felt empty."</p>
+
+            <p>Monica continued playing for five more years, but the joy was gone. She retired in 2003, saying she had lost her passion for the game.</p>
+
+            <h3>The Weight Struggle and Media Cruelty</h3>
+            <p>After the attack and during her battle with PTSD and depression, Monica gained weight. She went from a fit 135 pounds to over 170 pounds at her heaviest. The weight gain was a direct result of trauma, anxiety, and depression—but the media didn't care.</p>
+
+            <p>Tabloids ran cruel headlines about her weight. Commentators mocked her appearance. Fans made brutal comments. She was called "fat," "lazy," "undisciplined." Some suggested she was using the attack as an excuse and had just gotten out of shape.</p>
+
+            <p>The cruelty made everything worse. Monica developed an eating disorder—binge eating followed by extreme guilt. She tried crash diets, which only made the problem worse. She became deeply insecure about her body.</p>
+
+            <p>"I was already dealing with PTSD and depression," Monica said. "And then the world decided to attack me for gaining weight—weight I gained because someone stabbed me and I was terrified to leave my house. It was like being attacked all over again."</p>
+
+            <p>The media's treatment of Monica Seles during this period was one of the cruelest examples of how female athletes are judged not just on their performance but on their appearance.</p>
+
+            <h3>The "What If" That Haunts Her Legacy</h3>
+            <p>Monica Seles won 9 Grand Slam titles—an incredible achievement. But everyone who knows tennis asks the same question: What if she hadn't been attacked?</p>
+
+            <p>When Monica was stabbed, she was 19 years old and had already won 9 Grand Slams. At the same age, Serena Williams had won 3. Steffi Graf had won 7. Martina Navratilova had won 1.</p>
+
+            <p>Monica was on pace to potentially win 25-30 Grand Slam titles. She was dominating the sport like few players ever had. And then a man with a knife took it all away.</p>
+
+            <p>The "what if" haunts Monica's legacy. She's in the Hall of Fame, but she's remembered more for what could have been than for what she achieved. That's the cruelest part of her story—her greatest accomplishments are overshadowed by what was stolen from her.</p>
+        </section>
+
+        <div class="stats-grid">
+            <div class="stats-card">
+                <span class="stats-card-number">9</span>
+                <p>Grand Slam Singles Titles</p>
+            </div>
+            <div class="stats-card">
+                <span class="stats-card-number">53</span>
+                <p>Career Singles Titles</p>
+            </div>
+            <div class="stats-card">
+                <span class="stats-card-number">178</span>
+                <p>Weeks Ranked #1</p>
+            </div>
+            <div class="stats-card">
+                <span class="stats-card-number">8/12</span>
+                <p>Grand Slams Won (1990-93)</p>
+            </div>
+        </div>
+
+        <section class="section">
+            <h2>Life After Tennis: Advocacy and Healing</h2>
+
+            <h3>Becoming a Voice for Mental Health</h3>
+            <p>After retiring, Monica became an advocate for mental health awareness—particularly PTSD. She spoke openly about her struggles, about the panic attacks and nightmares, about the years of therapy it took to feel safe again.</p>
+
+            <p>"For so long, I was ashamed," Monica said. "I thought I should just be tough, just get over it. But PTSD doesn't work that way. It's not weakness—it's a normal response to trauma."</p>
+
+            <p>Monica's openness helped destigmatize mental health issues in sports. She showed that even elite athletes—people who seem invincible—can suffer from psychological trauma and need help.</p>
+
+            <p>She became particularly vocal about athlete safety and security at sporting events. After her attack, tennis tournaments increased security dramatically. But Monica argued that more needed to be done across all sports to protect athletes from deranged fans.</p>
+
+            <h3>Writing Her Story</h3>
+            <p>In 2009, Monica published her memoir "Getting a Grip: On My Body, My Mind, My Self." The book detailed her struggles with PTSD, depression, eating disorders, and body image issues. It was brutally honest—and it helped millions of people who faced similar struggles.</p>
+
+            <p>The book became a bestseller. Readers praised Monica's vulnerability and courage. Many said the book helped them understand their own trauma and seek help.</p>
+
+            <p>"Writing the book was terrifying," Monica said. "But staying silent was more terrifying. I wanted people to know they're not alone."</p>
+
+            <h3>Finding Love and Peace</h3>
+            <p>In 2014, Monica married businessman Tom Golisano. It was her first marriage—she was 40 years old. For years, Monica had struggled with relationships, with trust, with letting people close to her after the attack.</p>
+
+            <p>"The stabbing made me afraid of people," Monica admitted. "I built walls around myself. Finding someone I could trust enough to marry took a long time."</p>
+
+            <p>Monica now lives a quieter life away from the spotlight. She does occasional tennis commentary and appearances, but mostly focuses on her personal life and advocacy work.</p>
+
+            <p>She's spoken about finally finding peace—not with what happened to her, but with who she is despite what happened.</p>
+        </section>
+
+        <div class="impact-grid">
+            <div class="impact-card">
+                <div class="impact-icon">🎾</div>
+                <h3>Tennis Dominance</h3>
+                <p>9 Grand Slam singles titles by age 19. 53 career titles. 178 weeks at #1. Youngest French Open champion ever. Revolutionized women's tennis with power and aggression.</p>
+            </div>
+            <div class="impact-card">
+                <div class="impact-icon">💔</div>
+                <h3>Survived Unthinkable Trauma</h3>
+                <p>Stabbed on court by deranged fan. Suffered PTSD, depression, panic attacks. Lost 27 months of career. Fought back to win another Grand Slam. Showed incredible courage.</p>
+            </div>
+            <div class="impact-card">
+                <div class="impact-icon">🧠</div>
+                <h3>Mental Health Advocate</h3>
+                <p>Spoke openly about PTSD, depression, eating disorders. Helped destigmatize mental health in sports. Wrote bestselling memoir. Gave voice to trauma survivors worldwide.</p>
+            </div>
+            <div class="impact-card">
+                <div class="impact-icon">🛡️</div>
+                <h3>Athlete Safety Champion</h3>
+                <p>Advocated for improved security at sporting events. Her attack led to major changes in athlete protection protocols. Worked to prevent similar tragedies from happening to others.</p>
+            </div>
+        </div>
+
+        <section class="section">
+            <h2>Why She Matters</h2>
+
+            <p>Monica Seles won 9 Grand Slam titles. That's an incredible achievement. But Monica's legacy is about so much more than tennis.</p>
+
+            <p>She was the victim of one of the most shocking attacks in sports history—and she survived. She suffered PTSD, depression, and public ridicule—and she fought back. She lost the prime years of her career to trauma and fear—and she still came back to win again.</p>
+
+            <p>Monica showed the world that mental health struggles are real, that trauma doesn't just go away because you're tough or successful, that healing takes time and help.</p>
+
+            <p>She showed that you can be a champion and still struggle. You can be strong and still need support. You can survive something terrible and still be affected by it—and that's okay.</p>
+
+            <p>The "what if" will always haunt Monica's legacy. What if she hadn't been stabbed? What if she had been allowed to continue dominating tennis without interruption? How many Grand Slams would she have won?</p>
+
+            <p>But maybe the better question is: What if Monica had given up? What if she had let the attack destroy her completely? What if she had stayed silent about her struggles?</p>
+
+            <p>Instead, Monica Seles showed millions of people that you can be attacked, traumatized, and broken—and still survive. Still come back. Still matter.</p>
+
+            <p>Nine Grand Slam titles is an incredible legacy. But Monica Seles's real legacy is showing the world what true strength looks like: not the strength to never fall, but the strength to get back up after someone knocks you down.</p>
+
+            <p>That's why Monica Seles matters. Not because she won tennis matches. But because she survived—and helped others survive too.</p>
+        </section>
+
+        <div class="image-grid">
+            <div class="image-card">
+                <img src="https://source.unsplash.com/800x600/?tennis,champion,victory,court,powerful" alt="Tennis championship court" loading="lazy">
+                <div class="image-caption">Where She Dominated</div>
+            </div>
+            <div class="image-card">
+                <img src="https://source.unsplash.com/800x600/?strength,courage,warrior,survivor,powerful" alt="Strength and courage" loading="lazy">
+                <div class="image-caption">Unbreakable Spirit</div>
+            </div>
+            <div class="image-card">
+                <img src="https://source.unsplash.com/800x600/?hope,healing,light,recovery,strength" alt="Hope and healing" loading="lazy">
+                <div class="image-caption">Finding Peace After Trauma</div>
+            </div>
+        </div>
+
+        <div class="quote-box">
+            <blockquote>"I used to be angry about what happened to me. Now I'm grateful—grateful I survived, grateful for the career I did have, grateful for the lessons I learned. That's not weakness. That's wisdom."</blockquote>
+            <p class="quote-author">— Monica Seles</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Athletic Players. Honoring the courage, resilience, and unbreakable spirit of Monica Seles.</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">Sources: Monica Seles memoir "Getting a Grip," WTA records, International Tennis Hall of Fame, PTSD advocacy organizations</p>
+    </footer>
+</body>
+</html>
