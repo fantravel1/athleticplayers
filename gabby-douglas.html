@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabby Douglas - The Flying Squirrel Who Soared Above It All</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #D32F2F;
+            --secondary-color: #1976D2;
+            --accent-color: #FFD700;
+            --text-dark: #1a1a1a;
+            --text-light: #ffffff;
+            --background: #f8f9fa;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--background);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #D32F2F 0%, #1976D2 50%, #FFD700 100%);
+            color: var(--text-light);
+            padding: 120px 20px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200') center/cover;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            line-height: 1.1;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 60px auto 0;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            display: block;
+            margin-bottom: 10px;
+            color: var(--accent-color);
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .section {
+            margin-bottom: 80px;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            margin: 40px 0 20px;
+            color: var(--primary-color);
+        }
+
+        .lead {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        .quote-box {
+            background: linear-gradient(135deg, #D32F2F 0%, #1976D2 100%);
+            color: var(--text-light);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+            border-left: 5px solid var(--accent-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .quote-text {
+            font-size: 1.4rem;
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .quote-author {
+            font-size: 1.1rem;
+            text-align: right;
+            opacity: 0.9;
+            font-weight: 600;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+            margin: 40px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, var(--primary-color), var(--accent-color));
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+            padding-left: 30px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -46px;
+            top: 5px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: var(--accent-color);
+            border: 3px solid var(--primary-color);
+        }
+
+        .timeline-year {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .timeline-content {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .impact-card {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--primary-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .impact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .impact-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .impact-label {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background: white;
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .back-link:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-2px);
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, rgba(211, 47, 47, 0.1) 0%, rgba(255, 215, 0, 0.1) 100%);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .container {
+                padding: 40px 20px;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .quote-text {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Gabby Douglas</h1>
+            <p class="subtitle">The First African American Olympic All-Around Champion</p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">First</span>
+                    <span class="stat-label">Black All-Around Champion</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">3</span>
+                    <span class="stat-label">Olympic Gold Medals</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">16</span>
+                    <span class="stat-label">Years Old at London 2012</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">1,200</span>
+                    <span class="stat-label">Miles from Home to Train</span>
+                </div>
+            </div>
+
+            <a href="index.html" class="back-link">← Back to Athletes</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <section class="section">
+            <h2>The Moment That Changed History</h2>
+
+            <p class="lead">August 2, 2012. London Olympic Arena. Sixteen-year-old Gabby Douglas stood on the floor, waiting for her final score in the women's all-around gymnastics competition. If the score was high enough, she would make history. If it wasn't, she would be just another talented gymnast who came close.</p>
+
+            <p>Her final routine—the floor exercise—had been nearly flawless. She had tumbled, twisted, and soared with the grace and power that had earned her the nickname "The Flying Squirrel." But in gymnastics, nearly flawless isn't always enough.</p>
+
+            <p>The score flashed: <span class="highlight">15.066</span>. It was enough. Gabby Douglas had won the Olympic all-around gold medal. And in that moment, she became <span class="highlight">the first African American woman in history</span> to win the most prestigious title in gymnastics.</p>
+
+            <p>She collapsed in tears. Her coach, Liang Chow, embraced her. The crowd roared. And back home in the United States, millions of people—particularly young Black girls—saw something they had never seen before: someone who looked like them standing on top of the gymnastics world.</p>
+
+            <p>For decades, gymnastics had been dominated by white athletes. Black gymnasts were told—sometimes explicitly, sometimes implicitly—that they didn't fit the sport's aesthetic. Their bodies were "wrong." Their hair was "unprofessional." They weren't the "right image" for gymnastics.</p>
+
+            <p>Gabby Douglas shattered every one of those racist myths. She didn't just compete—she dominated. She didn't just participate—she won. And she did it with a smile that lit up the arena and a spirit that refused to be broken.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"I didn't just win for me. I won for every little Black girl who was told she didn't belong in gymnastics. I proved them all wrong."</p>
+                <p class="quote-author">— Gabby Douglas</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Growing Up in the Struggle</h2>
+
+            <p class="lead">Gabrielle Christina Victoria Douglas was born on December 31, 1995, in Newport News, Virginia. She was the youngest of four children, raised by a single mother who worked multiple jobs just to keep the family afloat.</p>
+
+            <p>Gabby's father, Timothy Douglas, was in and out of her life. Her parents' marriage was troubled, marked by financial stress and eventual divorce. Her mother, Natalie Hawkins, did everything she could to provide, but money was always tight.</p>
+
+            <p>The family lived in a small apartment in Virginia Beach. Some months, they struggled to pay rent. Some weeks, they didn't know where the next meal would come from. Gabby grew up understanding that nothing in life came easy—and that if you wanted something, you had to fight for it.</p>
+
+            <p>Gabby discovered gymnastics at age six, when her older sister Arielle was taking classes. Gabby would watch from the sidelines, mesmerized. One day, she climbed onto the uneven bars and started swinging. The coaches noticed immediately: this kid was fearless.</p>
+
+            <p>She started training. And it became clear almost instantly that Gabby had something special—a natural talent, an explosive power, and a willingness to push herself beyond her limits.</p>
+
+            <p>But gymnastics is expensive. Coaching, equipment, travel to competitions—it all costs money that the Douglas family didn't have. Natalie worked extra shifts. She took out loans. She sacrificed everything to give Gabby a chance.</p>
+
+            <p>When Gabby was 14, her coach told Natalie the truth: if Gabby wanted to be the best, she needed to train with the best. And the best coach in the country was Liang Chow in West Des Moines, Iowa—<span class="highlight">1,200 miles away from home</span>.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"My mom gave up everything for me. She worked herself to exhaustion so I could chase my dreams. I owe her everything."</p>
+                <p class="quote-author">— Gabby Douglas</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>The Hardest Decision</h2>
+
+            <p class="lead">In 2010, at just 14 years old, Gabby Douglas left her family and moved to Iowa to train with Liang Chow—the coach who had trained Olympic champion Shawn Johnson.</p>
+
+            <p>She lived with a host family, the Partons, in West Des Moines. They were kind, supportive, and welcoming. But they weren't her family. And Iowa wasn't home.</p>
+
+            <p>Gabby was desperately homesick. She missed her mother. She missed her siblings. She missed Virginia. She cried herself to sleep almost every night. Some days, she wanted to quit and go home.</p>
+
+            <p>Making it worse, Gabby faced racism and isolation. She was one of the only Black gymnasts at her gym. Some of the other girls didn't accept her. She later revealed that she was bullied—teased about her hair, excluded from social groups, made to feel like she didn't belong.</p>
+
+            <p>The pressure was crushing. She was a teenager living away from home, training eight hours a day, sacrificing her childhood, and being told she wasn't good enough, wasn't the right fit, didn't belong.</p>
+
+            <p>But Gabby didn't quit. She channeled the pain into power. She trained harder. She got better. And in 2011, she started winning—big.</p>
+
+            <p>At the 2011 U.S. Classic, she finished second all-around. At the 2011 World Championships, she helped Team USA win the gold medal. And by 2012, she was one of the top gymnasts in the country.</p>
+
+            <p>She had earned her spot on the Olympic team. Now she just had to prove she belonged on the world stage.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"There were so many nights I wanted to give up and go home. But my mom didn't sacrifice everything just for me to quit. So I kept going. And it was worth it."</p>
+                <p class="quote-author">— Gabby Douglas</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>The Journey of a Trailblazer</h2>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">December 31, 1995</div>
+                    <div class="timeline-content">Born in Newport News, Virginia; grows up in poverty with single mother</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2001 (Age 6)</div>
+                    <div class="timeline-content">Begins gymnastics training after watching older sister; shows immediate talent</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2010 (Age 14)</div>
+                    <div class="timeline-content"><strong>Moves 1,200 miles from home to Iowa to train with elite coach Liang Chow; lives with host family</strong></div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2011</div>
+                    <div class="timeline-content">Wins gold medal at World Championships as part of Team USA</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2012 Olympic Trials</div>
+                    <div class="timeline-content">Qualifies for U.S. Olympic Team along with Jordyn Wieber, Aly Raisman, McKayla Maroney, and Kyla Ross—the "Fierce Five"</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">July 31, 2012</div>
+                    <div class="timeline-content">Wins first Olympic gold medal as Team USA wins team all-around in London</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">August 2, 2012</div>
+                    <div class="timeline-content"><strong>Wins individual all-around gold medal—becomes first African American woman to win the title; makes history</strong></div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2012 (Post-Olympics)</div>
+                    <div class="timeline-content">Faces racist criticism about her hair and appearance on social media; receives widespread support from fans</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2016</div>
+                    <div class="timeline-content">Returns to Olympics in Rio; wins third gold medal as part of "Final Five" team; does not medal in all-around</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2017</div>
+                    <div class="timeline-content">Reveals she was sexually abused by former USA Gymnastics team doctor Larry Nassar</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">Present</div>
+                    <div class="timeline-content">Advocate for survivors of abuse; motivational speaker; trailblazer who opened doors for Black gymnasts</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>The Ugliness Behind the Gold</h2>
+
+            <p class="lead">Gabby Douglas won Olympic gold and became a national hero. But instead of universal celebration, she faced a wave of racist criticism that shocked the nation.</p>
+
+            <p>Within hours of her historic victory, social media exploded with comments—not about her gymnastics, but about <span class="highlight">her hair</span>. Critics said it was "unprofessional," "messy," "unpolished." They said she didn't "look like a champion."</p>
+
+            <p>The criticism was thinly veiled racism. No one had ever criticized white gymnasts for their hair. But Gabby—a Black girl who had just made history—was being attacked for not conforming to Eurocentric beauty standards.</p>
+
+            <p>The backlash was cruel and relentless. Gabby, still only 16 years old, was devastated. She had just achieved the impossible, and instead of being celebrated, she was being torn down.</p>
+
+            <p>But supporters rallied around her. Fellow athletes, celebrities, and millions of fans defended her. They pointed out the absurdity of criticizing a teenage girl's hair after she won an Olympic gold medal.</p>
+
+            <p>Gabby handled it with grace. "I just made history," she said. "And we're talking about hair?"</p>
+
+            <p>But the experience left scars. Years later, Gabby would speak about the toll that racism and scrutiny took on her mental health. The pressure to be perfect—not just in gymnastics, but in appearance, in demeanor, in everything—was crushing.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"I was 16 years old. I had just won Olympic gold. And people were attacking me for my hair. It hurt. But it also showed me that some people would never see me as good enough—no matter what I achieved."</p>
+                <p class="quote-author">— Gabby Douglas</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Surviving the Unthinkable</h2>
+
+            <p class="lead">In 2017, Gabby Douglas revealed something that shook the gymnastics world to its core. She had been sexually abused by Dr. Larry Nassar, the USA Gymnastics team doctor.</p>
+
+            <p>Nassar had abused hundreds of young gymnasts over decades, using his position of power and trust to prey on vulnerable girls. Gabby was one of his victims.</p>
+
+            <p>Coming forward was terrifying. Gabby knew she would face scrutiny, disbelief, and judgment. But she also knew that staying silent would allow the abuse to continue.</p>
+
+            <p>Her testimony helped bring Nassar to justice. He was sentenced to hundreds of years in prison. And Gabby, along with dozens of other survivors, became an advocate for protecting young athletes from abuse.</p>
+
+            <p>The experience added another layer of pain to Gabby's story. She had already endured poverty, homesickness, bullying, and racism. Now she carried the trauma of abuse.</p>
+
+            <p>But she refused to be defined by it. She sought therapy. She spoke out. She used her platform to push for systemic change in gymnastics.</p>
+
+            <p>"I'm not just a survivor," she said. "I'm a fighter. And I'm going to keep fighting until every young athlete is safe."</p>
+
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <div class="impact-number">First</div>
+                    <div class="impact-label">African American Olympic all-around gymnastics champion</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">3</div>
+                    <div class="impact-label">Olympic gold medals (2012 team, 2012 all-around, 2016 team)</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">16</div>
+                    <div class="impact-label">Years old when she made history in London</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">Trailblazer</div>
+                    <div class="impact-label">Opened doors for Black gymnasts everywhere</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">Survivor</div>
+                    <div class="impact-label">Helped bring Larry Nassar to justice</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">Inspiration</div>
+                    <div class="impact-label">Proved that excellence knows no color</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>The Legacy of the Flying Squirrel</h2>
+
+            <p class="lead">Gabby Douglas is no longer competing. But her impact on gymnastics—and on sports as a whole—is permanent.</p>
+
+            <p>Before Gabby, Black gymnasts were rare in elite competition. After Gabby, they became champions. Simone Biles, the greatest gymnast of all time, has said that Gabby paved the way for her. So have countless other young Black gymnasts who saw Gabby's gold medal and thought, "If she can do it, so can I."</p>
+
+            <p>Gabby proved that gymnastics isn't about fitting a certain image or conforming to outdated standards. It's about skill, artistry, and heart. And by those measures, she was—and is—a champion.</p>
+
+            <p>Today, Gabby works as a motivational speaker and advocate. She talks openly about mental health, racism, and abuse in sports. She uses her platform to create change.</p>
+
+            <p>She's also a reminder that athletic achievement doesn't erase pain. Gabby won Olympic gold, but she also faced poverty, homesickness, bullying, racism, and abuse. Her story isn't just one of triumph—it's one of survival.</p>
+
+            <p>And that's what makes her so inspiring. She didn't just win because she was talented. She won because she refused to give up, even when everything seemed stacked against her.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"I want every little girl—especially every little Black girl—to know that you belong wherever you want to be. Don't let anyone tell you otherwise. Dream big. Work hard. And never, ever give up."</p>
+                <p class="quote-author">— Gabby Douglas</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

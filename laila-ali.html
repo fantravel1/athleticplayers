@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laila Ali - The Undefeated Daughter Who Forged Her Own Legacy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #C62828;
+            --secondary-color: #212121;
+            --accent-color: #FFD700;
+            --text-dark: #1a1a1a;
+            --text-light: #ffffff;
+            --background: #f8f9fa;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--background);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #C62828 0%, #212121 50%, #FFD700 100%);
+            color: var(--text-light);
+            padding: 120px 20px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=1200') center/cover;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            line-height: 1.1;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 60px auto 0;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            display: block;
+            margin-bottom: 10px;
+            color: var(--accent-color);
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .section {
+            margin-bottom: 80px;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+
+        .lead {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        .quote-box {
+            background: linear-gradient(135deg, #C62828 0%, #212121 100%);
+            color: var(--text-light);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+            border-left: 5px solid var(--accent-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .quote-text {
+            font-size: 1.4rem;
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .quote-author {
+            font-size: 1.1rem;
+            text-align: right;
+            opacity: 0.9;
+            font-weight: 600;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .impact-card {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--primary-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .impact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .impact-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .impact-label {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background: white;
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .back-link:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-2px);
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, rgba(198, 40, 40, 0.1) 0%, rgba(255, 215, 0, 0.1) 100%);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .container {
+                padding: 40px 20px;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .quote-text {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Laila Ali</h1>
+            <p class="subtitle">The Undefeated Champion Who Stepped Out of Her Father's Shadow</p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">24-0</span>
+                    <span class="stat-label">Undefeated Record</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">21</span>
+                    <span class="stat-label">Knockouts</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">0</span>
+                    <span class="stat-label">Losses Ever</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">Champion</span>
+                    <span class="stat-label">Her Own Legacy</span>
+                </div>
+            </div>
+
+            <a href="index.html" class="back-link">← Back to Athletes</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <section class="section">
+            <h2>The Name She Had to Overcome</h2>
+
+            <p class="lead">Being Muhammad Ali's daughter was both a blessing and a curse. The blessing: she inherited his athleticism, his charisma, his fighting spirit. The curse: she would spend her entire career trying to prove she was more than just "Ali's daughter."</p>
+
+            <p>When Laila Ali announced she was becoming a professional boxer in 1999, the reaction was swift and brutal. Critics said she was trading on her father's name. They said she couldn't really fight. They said women's boxing was a joke, and she was making it worse.</p>
+
+            <p>Her father, Muhammad Ali—the greatest boxer of all time—didn't want her to fight. He worried about her getting hurt. He knew the brutality of boxing. He tried to talk her out of it.</p>
+
+            <p>But Laila was determined. "I'm not doing this because of my father," she said. "I'm doing this in spite of him. I'm doing this to prove that I'm Laila Ali—not just Muhammad's daughter."</p>
+
+            <p>Over the next eight years, Laila compiled a <span class="highlight">24-0 record with 21 knockouts</span>. She never lost. Not once. She became a four-time world champion. And she proved that she was one of the greatest female boxers of all time.</p>
+
+            <p>By the time she retired in 2007, even her critics had to admit: Laila Ali was the real deal.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"My father's name opened doors. But once I stepped through those doors, I had to fight alone. And I did. And I won."</p>
+                <p class="quote-author">— Laila Ali</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Proving She Could Hit</h2>
+
+            <p class="lead">Laila's first professional fight was October 8, 1999, against April Fowler. The boxing world watched, waiting for her to fail. Instead, she knocked Fowler out in 31 seconds of the first round.</p>
+
+            <p>The message was clear: Laila Ali could hit. Hard.</p>
+
+            <p>Fight after fight, she dominated. She was fast, powerful, and technically skilled. She had her father's footwork and hand speed. But she also had something uniquely her own: a devastating right hand that ended fights.</p>
+
+            <p>Critics kept trying to dismiss her. They said she was fighting weak opponents. They said she was ducking the real competition. So Laila sought out the best fighters she could find—Jacqui Frazier-Lyde (daughter of Joe Frazier), Christy Martin (the biggest name in women's boxing), Mary Ann Almager (undefeated champion).</p>
+
+            <p>She beat them all.</p>
+
+            <p>Her fight against Jacqui Frazier-Lyde in 2001 was billed as "Ali-Frazier IV"—a continuation of the legendary rivalry between their fathers. Laila won by decision, dominating for eight rounds.</p>
+
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <div class="impact-number">24-0</div>
+                    <div class="impact-label">Perfect professional record</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">21</div>
+                    <div class="impact-label">Wins by knockout</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">4-Time</div>
+                    <div class="impact-label">World champion</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">Undefeated</div>
+                    <div class="impact-label">Retired without a single loss</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">Pioneer</div>
+                    <div class="impact-label">Brought legitimacy to women's boxing</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">Her Own</div>
+                    <div class="impact-label">Legacy—not just Ali's daughter</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Life Beyond the Ring</h2>
+
+            <p class="lead">Laila Ali retired undefeated in 2007. She had nothing left to prove. She had built her own legacy, separate from her father's name. And she walked away on top.</p>
+
+            <p>Since retirement, Laila has become a television personality, fitness expert, and entrepreneur. She's appeared on Dancing with the Stars, hosted cooking shows, and built a successful lifestyle brand.</p>
+
+            <p>She's also been an advocate for women in sports, particularly in combat sports. She paved the way for fighters like Ronda Rousey and Amanda Nunes to become mainstream stars.</p>
+
+            <p>"I wanted to show that women could box at the highest level," Laila said. "Not as a novelty. Not as a sideshow. As real athletes. As real champions."</p>
+
+            <p>And that's exactly what she did.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"I'm proud to be Muhammad Ali's daughter. But I'm even more proud to be Laila Ali—undefeated world champion."</p>
+                <p class="quote-author">— Laila Ali</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

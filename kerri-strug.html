@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kerri Strug - The Vault That Defined a Generation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #D50032;
+            --secondary-color: #002868;
+            --accent-color: #FFD700;
+            --text-dark: #1a1a1a;
+            --text-light: #ffffff;
+            --background: #f8f9fa;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--background);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #D50032 0%, #002868 50%, #FFD700 100%);
+            color: var(--text-light);
+            padding: 120px 20px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200') center/cover;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            line-height: 1.1;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 60px auto 0;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            display: block;
+            margin-bottom: 10px;
+            color: var(--accent-color);
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .section {
+            margin-bottom: 80px;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            margin: 40px 0 20px;
+            color: var(--primary-color);
+        }
+
+        .lead {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        .quote-box {
+            background: linear-gradient(135deg, #D50032 0%, #002868 100%);
+            color: var(--text-light);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+            border-left: 5px solid var(--accent-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .quote-text {
+            font-size: 1.4rem;
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .quote-author {
+            font-size: 1.1rem;
+            text-align: right;
+            opacity: 0.9;
+            font-weight: 600;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+            margin: 40px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, var(--primary-color), var(--accent-color));
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+            padding-left: 30px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -46px;
+            top: 5px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: var(--accent-color);
+            border: 3px solid var(--primary-color);
+        }
+
+        .timeline-year {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .timeline-content {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .impact-card {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--primary-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .impact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .impact-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .impact-label {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background: white;
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .back-link:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-2px);
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, rgba(213, 0, 50, 0.1) 0%, rgba(255, 215, 0, 0.1) 100%);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .container {
+                padding: 40px 20px;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .quote-text {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Kerri Strug</h1>
+            <p class="subtitle">The Vault Heard 'Round the World—25 Seconds That Defined Courage</p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">9.712</span>
+                    <span class="stat-label">Score on Injured Ankle</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">18</span>
+                    <span class="stat-label">Years Old in 1996</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">2</span>
+                    <span class="stat-label">Olympic Gold Medals</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">1</span>
+                    <span class="stat-label">Vault That Changed Everything</span>
+                </div>
+            </div>
+
+            <a href="index.html" class="back-link">← Back to Athletes</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <section class="section">
+            <h2>25 Seconds That Stopped the World</h2>
+
+            <p class="lead">July 23, 1996. Georgia Dome, Atlanta Olympics. The roar of 32,000 fans. Team USA was one vault away from winning its first-ever Olympic team gold medal in gymnastics. And 18-year-old Kerri Strug was about to deliver the most iconic performance in Olympic history—on one leg.</p>
+
+            <p>The vault was the final event. The United States was in a tight race with Russia. Dominique Moceanu, one of Team USA's stars, had fallen on both of her vault attempts—scoring shockingly low. The pressure shifted to Kerri.</p>
+
+            <p>Kerri sprinted down the runway for her first vault. She launched herself into the air, twisted, and landed—but something was wrong. Her left ankle buckled. She collapsed onto the mat, writhing in pain.</p>
+
+            <p>The crowd gasped. Kerri's ankle had <span class="highlight">severely sprained—later diagnosed as torn ligaments</span>. She could barely stand. Medical staff rushed toward her, but her coach, Béla Károlyi, waved them off.</p>
+
+            <p>"Kerri, we need you one more time," Károlyi said. "We need you one more time for the gold."</p>
+
+            <p>The math was uncertain. It looked like the U.S. might need Kerri's second vault to secure gold over Russia. Without a strong second vault, the gold medal could slip away.</p>
+
+            <p>Kerri, tears streaming down her face, nodded. She would do it.</p>
+
+            <p>She limped back to the start of the runway. The arena fell silent. Everyone watching—in the arena, on television, around the world—knew they were witnessing something extraordinary.</p>
+
+            <p>Kerri took a deep breath. Then she ran.</p>
+
+            <p>She sprinted down the runway as fast as her injured leg would allow. She hit the springboard. She launched into the air, twisting and rotating. And then she landed—<span class="highlight">on one foot</span>. Her left foot barely touched the mat before she pulled it up, balancing entirely on her right leg.</p>
+
+            <p>She held the landing. Saluted the judges. And then collapsed.</p>
+
+            <p>The crowd erupted. Teammates rushed to her side. Béla Károlyi scooped her up in his arms and carried her off the mat—an image that would become one of the most famous photographs in sports history.</p>
+
+            <p>Her score flashed: <span class="highlight">9.712</span>. It was enough. Team USA had won gold.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"I was terrified. I was in so much pain. But my team needed me. My country needed me. So I did it. I don't know how, but I did it."</p>
+                <p class="quote-author">— Kerri Strug</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>The Girl Who Sacrificed Everything</h2>
+
+            <p class="lead">Kerri Allyson Strug was born on November 19, 1977, in Tucson, Arizona. She was the youngest of three children in a family that valued discipline, hard work, and excellence.</p>
+
+            <p>Kerri started gymnastics at age three. By age eight, she was training with elite coaches. By age twelve, she left home to train with Béla and Márta Károlyi in Houston, Texas—the same coaches who had trained Olympic champions like Mary Lou Retton and Nadia Comăneci.</p>
+
+            <p>The Károlyis were legendary—and legendarily demanding. They pushed their gymnasts to the absolute limit, sometimes beyond. Training was grueling. Injuries were common. The pressure was relentless.</p>
+
+            <p>Kerri thrived in that environment. She was small, strong, and fearless. She became one of the top junior gymnasts in the country. In 1992, at just 14 years old, she made the U.S. Olympic team for the Barcelona Olympics.</p>
+
+            <p>The 1992 team won bronze—a solid achievement, but not the gold they had hoped for. Kerri contributed, but she wasn't the star. She was overshadowed by Shannon Miller and other older, more experienced gymnasts.</p>
+
+            <p>Kerri vowed that 1996 would be different. She would be ready. She would be essential. She would be a champion.</p>
+
+            <p>For four years, she trained. She sacrificed her teenage years. She pushed her body to its breaking point. She endured injuries, exhaustion, and unimaginable pressure.</p>
+
+            <p>And in 1996, she made the Olympic team again—this time as one of the leaders. The team was nicknamed the <span class="highlight">"Magnificent Seven"</span>: Shannon Miller, Dominique Moceanu, Dominique Dawes, Jaycie Phelps, Amanda Borden, Amy Chow, and Kerri Strug.</p>
+
+            <p>They were competing at home, in Atlanta. The pressure was immense. And Kerri, the quiet, determined veteran, was ready.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"I gave up everything for gymnastics. My childhood, my teenage years, my body. I didn't go to dances. I didn't have sleepovers. I just trained. And on that day in Atlanta, it was all worth it."</p>
+                <p class="quote-author">— Kerri Strug</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>The Journey to That Moment</h2>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">November 19, 1977</div>
+                    <div class="timeline-content">Born in Tucson, Arizona; begins gymnastics at age three</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1989 (Age 12)</div>
+                    <div class="timeline-content">Leaves home to train with legendary coaches Béla and Márta Károlyi in Houston</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1992 (Age 14)</div>
+                    <div class="timeline-content">Makes U.S. Olympic team; competes in Barcelona; team wins bronze medal</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1992-1996</div>
+                    <div class="timeline-content">Four years of intense training, injuries, and preparation for Atlanta Olympics</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1996 Olympic Trials</div>
+                    <div class="timeline-content">Earns spot on "Magnificent Seven" Olympic team; one of the team leaders</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">July 23, 1996</div>
+                    <div class="timeline-content"><strong>Injures ankle on first vault; performs heroic second vault on one leg; Team USA wins first-ever team gold in gymnastics</strong></div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">July 25, 1996</div>
+                    <div class="timeline-content">Unable to compete in individual all-around due to injury; watches from sidelines</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1996-1997</div>
+                    <div class="timeline-content">Retires from competitive gymnastics due to injury; becomes national icon</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2000</div>
+                    <div class="timeline-content">Graduates from UCLA; later earns master's degree from Stanford</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">Present</div>
+                    <div class="timeline-content">Works in education and policy; advocate for youth sports; symbol of courage and sacrifice</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>The Truth Behind the Heroism</h2>
+
+            <p class="lead">For years, Kerri Strug's vault was celebrated as the ultimate act of courage and sacrifice. But over time, a more complicated truth emerged.</p>
+
+            <p>After the competition, analysts reviewed the scores. They realized that because of how the scoring worked, <span class="highlight">Kerri's second vault might not have been necessary</span>. Dominique Moceanu's low scores had already been dropped as the team's lowest results. The U.S. had likely already secured enough points to win gold even if Kerri hadn't vaulted a second time.</p>
+
+            <p>The revelation sparked a debate: Was Kerri's vault heroic, or was it unnecessary? Did Béla Károlyi push her to perform when she didn't need to—potentially causing permanent damage to her ankle?</p>
+
+            <p>Years later, Kerri addressed the controversy with honesty. "At the time, we didn't know if we needed it," she said. "The coaches thought we did. I thought we did. So I did it. Would I do it again knowing what I know now? I don't know. But in that moment, I believed it was necessary."</p>
+
+            <p>The injury ended Kerri's competitive career. She couldn't compete in the individual all-around final two days later—an event she had trained her entire life for. She never competed in elite gymnastics again.</p>
+
+            <p>She also acknowledged the immense pressure she felt from Károlyi. In the years since, many former gymnasts have spoken out about the Károlyis' harsh coaching methods—the verbal abuse, the physical demands, the culture of fear.</p>
+
+            <p>Kerri's vault, in retrospect, became a symbol not just of courage, but of the dangerous pressure placed on young athletes to sacrifice their bodies for glory.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"I'm proud of what I did. But I also wish someone had told me it was okay to stop. That my health mattered more than a medal. No 18-year-old should have to make that choice."</p>
+                <p class="quote-author">— Kerri Strug</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>A Moment Frozen in Time</h2>
+
+            <p class="lead">Whether or not Kerri's second vault was technically necessary, one thing is undeniable: it became one of the most iconic moments in Olympic history.</p>
+
+            <p>The image of Béla Károlyi carrying Kerri to the medal podium is seared into the memory of everyone who watched. Her tiny frame, wrapped in a Team USA warm-up suit, cradled in his arms. Her face a mix of pain and pride.</p>
+
+            <p>That moment transcended sports. It became a symbol of perseverance, of pushing through pain, of doing whatever it takes for your team and your country.</p>
+
+            <p>Kerri appeared on talk shows, magazine covers, and cereal boxes. She met President Bill Clinton. She was invited to the White House. She became a household name.</p>
+
+            <p>But the fame came with a cost. Kerri never got to compete in the all-around final—the event she had dreamed of since she was a little girl. Her ankle never fully healed. Her gymnastics career was over at 18.</p>
+
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <div class="impact-number">9.712</div>
+                    <div class="impact-label">Score on second vault with injured ankle</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">1st</div>
+                    <div class="impact-label">U.S. women's team gold in gymnastics</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">32,000</div>
+                    <div class="impact-label">Fans in the Georgia Dome that night</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">18</div>
+                    <div class="impact-label">Years old when her career ended</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">Iconic</div>
+                    <div class="impact-label">One of most famous Olympic moments ever</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">25 Seconds</div>
+                    <div class="impact-label">That defined a generation</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Life After the Vault</h2>
+
+            <p class="lead">Kerri Strug left gymnastics and built a new life. She attended UCLA, where she earned a degree in communications. She later earned a master's degree in sociology from Stanford University.</p>
+
+            <p>She worked in the U.S. Department of Justice's Office of Juvenile Justice and Delinquency Prevention. She became an advocate for education, youth development, and healthy athletics.</p>
+
+            <p>She got married, had children, and found happiness outside of the spotlight.</p>
+
+            <p>But she never forgot that night in Atlanta. And the world never forgot her.</p>
+
+            <p>In interviews, Kerri is thoughtful and reflective. She's proud of what she accomplished, but also honest about the cost. She talks openly about the pressure young gymnasts face, the importance of mental and physical health, and the need for better protections for child athletes.</p>
+
+            <p>"I don't regret what I did," she says. "But I want the next generation of gymnasts to have choices I didn't have. I want them to know that their value isn't measured by medals. That their health matters. That they matter."</p>
+
+            <p>Kerri Strug's vault will be remembered forever. But her legacy is more than that one moment. It's a reminder of the incredible things human beings are capable of—and a warning about the cost of pushing too hard, too young, for too much.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"That vault was 25 seconds. But it defined my entire life. I'm more than that moment. But I'll never escape it. And I'm okay with that. Because it meant something. To my team. To my country. To millions of people. And that's enough."</p>
+                <p class="quote-author">— Kerri Strug</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

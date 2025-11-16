@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diana Nyad - The Swimmer Who Never Gave Up</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #0277BD;
+            --secondary-color: #00695C;
+            --accent-color: #FFD700;
+            --text-dark: #1a1a1a;
+            --text-light: #ffffff;
+            --background: #f8f9fa;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--background);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #0277BD 0%, #00695C 50%, #FFD700 100%);
+            color: var(--text-light);
+            padding: 120px 20px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1519315901367-f34ff9154487?w=1200') center/cover;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            line-height: 1.1;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 60px auto 0;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            display: block;
+            margin-bottom: 10px;
+            color: var(--accent-color);
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .section {
+            margin-bottom: 80px;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+
+        .lead {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        .quote-box {
+            background: linear-gradient(135deg, #0277BD 0%, #00695C 100%);
+            color: var(--text-light);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+            border-left: 5px solid var(--accent-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .quote-text {
+            font-size: 1.4rem;
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .quote-author {
+            font-size: 1.1rem;
+            text-align: right;
+            opacity: 0.9;
+            font-weight: 600;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .impact-card {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--primary-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .impact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .impact-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .impact-label {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background: white;
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .back-link:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-2px);
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, rgba(2, 119, 189, 0.1) 0%, rgba(255, 215, 0, 0.1) 100%);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .container {
+                padding: 40px 20px;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .quote-text {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Diana Nyad</h1>
+            <p class="subtitle">The Woman Who Swam From Cuba to Florida at Age 64</p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">110</span>
+                    <span class="stat-label">Miles Swam (Cuba to Florida)</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">53</span>
+                    <span class="stat-label">Hours Non-Stop Swimming</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">64</span>
+                    <span class="stat-label">Years Old When She Did It</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">5</span>
+                    <span class="stat-label">Attempts Before Success</span>
+                </div>
+            </div>
+
+            <a href="index.html" class="back-link">← Back to Athletes</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <section class="section">
+            <h2>The Dream That Wouldn't Die</h2>
+
+            <p class="lead">September 2, 2013. After 53 hours of non-stop swimming, 64-year-old Diana Nyad stumbled onto the beach in Key West, Florida. She had just swum 110 miles from Cuba to Florida without a shark cage. And she had done something no one had ever done before.</p>
+
+            <p>"Never, ever give up," she gasped into the cameras. Those were her first words after completing the impossible.</p>
+
+            <p>But this wasn't Diana's first attempt. It was her <span class="highlight">fifth</span>.</p>
+
+            <p>She had first tried the Cuba-to-Florida swim in 1978 at age 28. She failed due to weather and currents. For 30 years, she lived with that failure. And at age 60, she decided to try again.</p>
+
+            <p>In 2011, she failed again—jellyfish stings and asthma attacks forced her to quit. In 2012, she tried three more times. Each attempt ended in failure—storms, hypothermia, jellyfish swarms.</p>
+
+            <p>Most people would have given up. But Diana Nyad wasn't most people.</p>
+
+            <p>"I'm not a quitter," she said. "I'll keep trying until I die or I succeed."</p>
+
+            <p>On her fifth attempt, at age 64, she finally made it. She became the first person to swim from Cuba to Florida without a shark cage. And she became a symbol of perseverance, determination, and refusing to accept limitations.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"You're never too old to chase your dreams. I proved that at 64. If I can do it, anyone can."</p>
+                <p class="quote-author">— Diana Nyad</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>The Dangers of the Swim</h2>
+
+            <p class="lead">Swimming from Cuba to Florida isn't just difficult—it's deadly. The 110-mile stretch of ocean is filled with dangers: deadly jellyfish, sharks, unpredictable currents, extreme weather, and hypothermia.</p>
+
+            <p>Diana faced all of them. She was stung by jellyfish so many times her face swelled. She swam through the night in complete darkness. She battled hallucinations from exhaustion. She vomited from swallowing seawater.</p>
+
+            <p>But she kept swimming. Stroke after stroke. Hour after hour. For 53 hours straight.</p>
+
+            <p>When she finally reached Florida, her lips were swollen, her face was blistered, and she could barely stand. But she had done it.</p>
+
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <div class="impact-number">110</div>
+                    <div class="impact-label">Miles from Cuba to Florida</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">53</div>
+                    <div class="impact-label">Hours of continuous swimming</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">64</div>
+                    <div class="impact-label">Years old when she succeeded</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">5</div>
+                    <div class="impact-label">Total attempts before success</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">First</div>
+                    <div class="impact-label">Person to do it without a shark cage</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">Inspiration</div>
+                    <div class="impact-label">Proved age is just a number</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Never Too Old to Dream</h2>
+
+            <p class="lead">Diana Nyad's Cuba swim made her a global sensation. She appeared on talk shows, gave TED Talks, and wrote bestselling books. But her real message was simple: you're never too old to chase your dreams.</p>
+
+            <p>"People think life is over at 60," Diana said. "I proved them wrong. I did the greatest thing of my life at 64. Your best years might still be ahead of you."</p>
+
+            <p>Diana's story inspired millions—particularly older adults who felt like their best days were behind them. She showed that age is just a number. That determination matters more than youth. That giving up is the only real failure.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"Find a way. When you have a dream, you have to find a way. It's not about being young or strong. It's about refusing to quit."</p>
+                <p class="quote-author">— Diana Nyad</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

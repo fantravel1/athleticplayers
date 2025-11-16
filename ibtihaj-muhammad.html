@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ibtihaj Muhammad - The Fencer Who Broke Barriers in a Hijab</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #00695C;
+            --secondary-color: #D84315;
+            --accent-color: #FFD700;
+            --text-dark: #1a1a1a;
+            --text-light: #ffffff;
+            --background: #f8f9fa;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--background);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #00695C 0%, #D84315 50%, #FFD700 100%);
+            color: var(--text-light);
+            padding: 120px 20px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200') center/cover;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            line-height: 1.1;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 60px auto 0;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            display: block;
+            margin-bottom: 10px;
+            color: var(--accent-color);
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .section {
+            margin-bottom: 80px;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            margin: 40px 0 20px;
+            color: var(--primary-color);
+        }
+
+        .lead {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        .quote-box {
+            background: linear-gradient(135deg, #00695C 0%, #D84315 100%);
+            color: var(--text-light);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+            border-left: 5px solid var(--accent-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .quote-text {
+            font-size: 1.4rem;
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .quote-author {
+            font-size: 1.1rem;
+            text-align: right;
+            opacity: 0.9;
+            font-weight: 600;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+            margin: 40px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, var(--primary-color), var(--accent-color));
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+            padding-left: 30px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -46px;
+            top: 5px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: var(--accent-color);
+            border: 3px solid var(--primary-color);
+        }
+
+        .timeline-year {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .timeline-content {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .impact-card {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--primary-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .impact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .impact-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .impact-label {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background: white;
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .back-link:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-2px);
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, rgba(0, 105, 92, 0.1) 0%, rgba(255, 215, 0, 0.1) 100%);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .container {
+                padding: 40px 20px;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .quote-text {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Ibtihaj Muhammad</h1>
+            <p class="subtitle">The First Hijabi Olympian Who Refused to Choose Between Faith and Sport</p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">First</span>
+                    <span class="stat-label">Hijabi U.S. Olympian</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">1</span>
+                    <span class="stat-label">Olympic Bronze Medal</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">5</span>
+                    <span class="stat-label">World Championship Medals</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">Barrier</span>
+                    <span class="stat-label">Breaker & Role Model</span>
+                </div>
+            </div>
+
+            <a href="index.html" class="back-link">← Back to Athletes</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <section class="section">
+            <h2>The Moment That Changed Everything</h2>
+
+            <p class="lead">August 8, 2016. Rio de Janeiro Olympics. Ibtihaj Muhammad stepped onto the fencing piste wearing her Team USA uniform and her hijab—the traditional Muslim headscarf. And in that moment, she made history as the first Muslim American woman to compete for the United States while wearing a hijab.</p>
+
+            <p>The moment was electric. Millions of Muslims around the world—particularly young Muslim girls—saw someone who looked like them competing on the Olympic stage. For the first time, they saw that you didn't have to choose between your faith and your dreams.</p>
+
+            <p>But for Ibtihaj, that moment was the culmination of a lifetime of fighting to belong. Fighting against discrimination. Fighting against people who told her she didn't fit. Fighting to prove that <span class="highlight">a Black Muslim woman in a hijab could be an American hero</span>.</p>
+
+            <p>Her first match in Rio was against Olena Kravatska of Ukraine. Ibtihaj won, advancing to the next round. The crowd roared. But it wasn't just about winning—it was about representation. It was about visibility. It was about showing the world that Muslim women are athletes, champions, and Americans.</p>
+
+            <p>Later in the tournament, Team USA won the bronze medal in the team sabre event. Ibtihaj stood on the podium, medal around her neck, hijab on her head, hand over her heart as the American national anthem played.</p>
+
+            <p>She had proven what she had always known: you can be devoutly Muslim, unapologetically Black, proudly American, and an Olympic medalist—all at the same time.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"I wanted Muslim girls to see me and know that they don't have to choose. You can wear hijab. You can be an athlete. You can be anything you want to be. Your faith is not a limitation—it's your strength."</p>
+                <p class="quote-author">— Ibtihaj Muhammad</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Growing Up Different</h2>
+
+            <p class="lead">Ibtihaj Muhammad was born on December 4, 1985, in Maplewood, New Jersey. She was one of five children in a close-knit African American Muslim family. Her parents, Eugene and Denise Muhammad, raised their children with a strong emphasis on faith, education, and self-respect.</p>
+
+            <p>From a young age, Ibtihaj wore hijab—a choice she made out of devotion to her faith. But in suburban New Jersey in the 1990s and early 2000s, being a Black Muslim girl who wore hijab meant standing out. And standing out meant becoming a target.</p>
+
+            <p>She was bullied relentlessly. Kids called her names. They pulled at her hijab. They told her to "go back to your country"—even though she was born in New Jersey and was as American as anyone else.</p>
+
+            <p>Teachers treated her differently. Strangers stared. People made assumptions about her based on what she wore on her head.</p>
+
+            <p>"I felt like I didn't belong anywhere," Ibtihaj later said. "I was too Black for some people, too Muslim for others. I just wanted to find a place where I could be myself."</p>
+
+            <p>She tried various sports growing up—softball, volleyball, track. But they all required uniforms that didn't accommodate her hijab. Her mother, Denise, took Ibtihaj to practices and games, constantly advocating for her daughter's right to compete while maintaining her modesty.</p>
+
+            <p>Then, when Ibtihaj was 13, her mother discovered fencing. The uniform—long sleeves, long pants, a mask—was perfectly modest. Ibtihaj could compete without compromising her faith.</p>
+
+            <p>Her mother signed her up for fencing lessons. And Ibtihaj found her sport.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"Fencing saved me. It gave me a place where I belonged. Where my hijab didn't matter. Where all that mattered was how fast I was, how skilled I was, how hard I fought."</p>
+                <p class="quote-author">— Ibtihaj Muhammad</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>The Journey of a Trailblazer</h2>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">December 4, 1985</div>
+                    <div class="timeline-content">Born in Maplewood, New Jersey; raised in African American Muslim family</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1999 (Age 13)</div>
+                    <div class="timeline-content">Begins fencing—a sport where she can compete while wearing hijab</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2003-2007</div>
+                    <div class="timeline-content">Attends Duke University on athletic scholarship; becomes three-time All-American fencer</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2010</div>
+                    <div class="timeline-content">Wins first senior international medal; joins U.S. National Fencing Team</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2014</div>
+                    <div class="timeline-content">Wins bronze medal at World Fencing Championships in team sabre</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2016</div>
+                    <div class="timeline-content"><strong>Rio Olympics: Becomes first Muslim American woman to compete for USA while wearing hijab; wins bronze medal in team sabre</strong></div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">December 2016</div>
+                    <div class="timeline-content"><strong>Detained by U.S. Customs despite being an Olympic medalist—highlighting discrimination Muslim Americans face</strong></div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2017</div>
+                    <div class="timeline-content">Barbie releases first hijab-wearing doll modeled after Ibtihaj; becomes global icon for representation</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2018</div>
+                    <div class="timeline-content">Retires from competitive fencing; publishes memoir "Proud"</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">Present</div>
+                    <div class="timeline-content">Activist, entrepreneur, speaker; advocates for diversity, inclusion, and Muslim representation</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>The Day Her Own Country Detained Her</h2>
+
+            <p class="lead">December 2016. Just months after representing the United States at the Olympics and winning a bronze medal, Ibtihaj Muhammad was detained by U.S. Customs while returning from an international competition.</p>
+
+            <p>She was pulled aside. Questioned. Held for over two hours. No explanation was given. No reason was provided.</p>
+
+            <p>She was an Olympic medalist. She had represented her country on the world stage. She had done nothing wrong. But she was detained—and she knew exactly why.</p>
+
+            <p>"It was because of my hijab," she later said. "Because of my name. Because I'm Muslim."</p>
+
+            <p>The experience was humiliating, dehumanizing, and infuriating. After everything she had done for her country, she was still treated as a suspect, as an outsider, as someone who didn't belong.</p>
+
+            <p>This happened during a particularly tense period in American politics. The 2016 election had amplified anti-Muslim rhetoric. Then-candidate Donald Trump had called for a "Muslim ban." Hate crimes against Muslims were surging.</p>
+
+            <p>Ibtihaj spoke out. She told her story publicly. She called out the discrimination. She refused to stay silent.</p>
+
+            <p>"I'm an American," she said. "I was born here. I represent this country. And I shouldn't be treated like a criminal because of my religion."</p>
+
+            <p>Her detention sparked national outrage. Civil rights organizations condemned it. Fellow Olympians supported her. And millions of Americans were forced to confront an uncomfortable truth: even Olympic heroes face discrimination if they're Muslim.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"Winning an Olympic medal didn't protect me from Islamophobia. Being an American didn't protect me. That's when I realized: the fight isn't just about representation in sports. It's about fighting for basic dignity and respect."</p>
+                <p class="quote-author">— Ibtihaj Muhammad</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>More Than an Athlete</h2>
+
+            <p class="lead">Ibtihaj Muhammad could have simply been a great fencer. She could have competed, won medals, and faded into obscurity. But she chose to be more. She chose to be a voice for the voiceless.</p>
+
+            <p>Throughout her career, she faced challenges that had nothing to do with fencing. She dealt with sponsors who didn't want to work with a hijabi athlete. She endured media coverage that focused more on her religion than her athletic achievements. She faced death threats from people who hated her for her faith.</p>
+
+            <p>But she also inspired millions. Young Muslim girls saw her and thought, "If she can do it, so can I." Parents saw her and thought, "My daughter can be an athlete and still maintain her faith."</p>
+
+            <p>After the 2016 Olympics, Ibtihaj became a global icon. In 2017, <span class="highlight">Barbie released a doll modeled after her</span>—the first hijab-wearing Barbie in the company's history. The doll sold out within hours.</p>
+
+            <p>For young Muslim girls around the world, that doll meant everything. It meant they were seen. They were valued. They were represented.</p>
+
+            <p>Ibtihaj also launched Louella, a modest fashion brand, proving that Muslim women could be both devout and stylish. She wrote a memoir, "Proud," sharing her story of overcoming discrimination and achieving her dreams.</p>
+
+            <p>She spoke at the United Nations. She met with world leaders. She became an ambassador for diversity and inclusion.</p>
+
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <div class="impact-number">First</div>
+                    <div class="impact-label">Muslim American woman to compete for USA in hijab at Olympics</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">1 Bronze</div>
+                    <div class="impact-label">Olympic medal (team sabre, 2016)</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">5</div>
+                    <div class="impact-label">World Championship medals in fencing</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">First</div>
+                    <div class="impact-label">Hijab-wearing Barbie doll (2017)</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">Icon</div>
+                    <div class="impact-label">Global symbol of Muslim representation</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">Millions</div>
+                    <div class="impact-label">Young Muslim girls inspired worldwide</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>The Legacy of Visibility</h2>
+
+            <p class="lead">When Ibtihaj Muhammad retired from competitive fencing in 2018, she left behind more than medals and records. She left behind a blueprint for how to be unapologetically yourself in a world that constantly demands conformity.</p>
+
+            <p>She proved that you don't have to choose between your identity and your ambition. That you can be Muslim, Black, female, and excellent—all at the same time.</p>
+
+            <p>She showed young Muslim girls that hijab is not a limitation. That faith is not weakness. That you can cover your hair and still compete, achieve, and dominate.</p>
+
+            <p>She also showed America something it desperately needed to see: that Muslim Americans are not a threat. They are teachers, doctors, artists, entrepreneurs—and yes, Olympic medalists.</p>
+
+            <p>Today, there are more hijabi athletes competing at the highest levels of sports than ever before. Hijabi runners, basketball players, swimmers, and fencers are breaking barriers every day.</p>
+
+            <p>And they all point to Ibtihaj Muhammad as the one who made it possible.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"I didn't set out to be a trailblazer. I just wanted to fence. But when I realized that my existence—a Black Muslim woman in a hijab competing for America—was revolutionary, I embraced it. If my visibility helps one young girl feel less alone, then everything I endured was worth it."</p>
+                <p class="quote-author">— Ibtihaj Muhammad</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>The Fight Continues</h2>
+
+            <p class="lead">Ibtihaj Muhammad is no longer competing. But her fight is far from over.</p>
+
+            <p>She continues to speak out against Islamophobia, racism, and discrimination. She advocates for policies that protect religious freedom and civil rights. She uses her platform to amplify the voices of marginalized communities.</p>
+
+            <p>She's also focused on building her business, Louella, which provides modest, fashionable clothing for Muslim women and anyone who values modesty. The brand is a statement: Muslim women deserve fashion that reflects their values without sacrificing style.</p>
+
+            <p>And she mentors young athletes, particularly young Muslim girls, showing them that they can achieve anything.</p>
+
+            <p>"My Olympic medal will eventually tarnish," she says. "But the impact I've had on young Muslim girls—that will last forever."</p>
+
+            <p>Ibtihaj Muhammad didn't just break barriers. She obliterated them. She didn't just compete wearing hijab—she won wearing hijab. She didn't just represent America—she redefined what it means to be American.</p>
+
+            <p>She is a champion, a trailblazer, and a hero. Not in spite of her hijab, but because she wore it proudly, unapologetically, and with the full force of her talent and determination.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"I am Black. I am Muslim. I am American. I am an Olympian. I am all of these things at once, and I refuse to be anything less. That's my legacy. That's my message. Be unapologetically yourself. The world will adjust."</p>
+                <p class="quote-author">— Ibtihaj Muhammad</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

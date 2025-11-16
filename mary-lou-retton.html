@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mary Lou Retton - America's Sweetheart Who Achieved Perfect 10s</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #DC143C;
+            --secondary-color: #002868;
+            --accent-color: #FFD700;
+            --text-dark: #1a1a1a;
+            --text-light: #ffffff;
+            --background: #f8f9fa;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--background);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #DC143C 0%, #002868 50%, #FFD700 100%);
+            color: var(--text-light);
+            padding: 120px 20px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200') center/cover;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            line-height: 1.1;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 60px auto 0;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            display: block;
+            margin-bottom: 10px;
+            color: var(--accent-color);
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .section {
+            margin-bottom: 80px;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            margin: 40px 0 20px;
+            color: var(--primary-color);
+        }
+
+        .lead {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        .quote-box {
+            background: linear-gradient(135deg, #DC143C 0%, #002868 100%);
+            color: var(--text-light);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+            border-left: 5px solid var(--accent-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .quote-text {
+            font-size: 1.4rem;
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .quote-author {
+            font-size: 1.1rem;
+            text-align: right;
+            opacity: 0.9;
+            font-weight: 600;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+            margin: 40px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, var(--primary-color), var(--accent-color));
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+            padding-left: 30px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -46px;
+            top: 5px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: var(--accent-color);
+            border: 3px solid var(--primary-color);
+        }
+
+        .timeline-year {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .timeline-content {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .impact-card {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--primary-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .impact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .impact-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .impact-label {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background: white;
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .back-link:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-2px);
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, rgba(220, 20, 60, 0.1) 0%, rgba(255, 215, 0, 0.1) 100%);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .container {
+                padding: 40px 20px;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .quote-text {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Mary Lou Retton</h1>
+            <p class="subtitle">The First American Woman to Win Olympic All-Around Gold in Gymnastics</p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">10.0</span>
+                    <span class="stat-label">Perfect Score on Final Vault</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">First</span>
+                    <span class="stat-label">American Woman Gold Medalist</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">5</span>
+                    <span class="stat-label">Olympic Medals (1984)</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">16</span>
+                    <span class="stat-label">Years Old at LA Olympics</span>
+                </div>
+            </div>
+
+            <a href="index.html" class="back-link">← Back to Athletes</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <section class="section">
+            <h2>The Vault That Made History</h2>
+
+            <p class="lead">August 3, 1984. Los Angeles Memorial Coliseum. The women's gymnastics all-around final. Sixteen-year-old Mary Lou Retton stood at the end of the vault runway, knowing exactly what she needed: a perfect 10. Anything less, and the gold medal would go to Romania's Ecaterina Szabo.</p>
+
+            <p>The pressure was crushing. The entire Pauley Pavilion—9,023 fans—was on its feet, chanting "U-S-A! U-S-A!" Mary Lou was competing in her home country, at the Los Angeles Olympics. America hadn't won a women's gymnastics all-around gold medal. Ever.</p>
+
+            <p>She had one vault. One chance. One score needed: <span class="highlight">10.0</span>.</p>
+
+            <p>Mary Lou took a deep breath. She sprinted down the runway, hit the springboard, launched into the air, twisted, and landed—perfectly. Stuck. Not a wobble. Not a step. Pure perfection.</p>
+
+            <p>The crowd erupted. Mary Lou threw her arms in the air, beaming. And when the score flashed—<span class="highlight">10.0</span>—the arena went absolutely wild.</p>
+
+            <p>But she wasn't done. There was a second vault. She didn't need it for the gold—the perfect 10 had already secured it—but she did it anyway. And she scored another <span class="highlight">10.0</span>.</p>
+
+            <p>Two perfect scores. Back-to-back. Under the most intense pressure imaginable.</p>
+
+            <p>Mary Lou Retton had just become <span class="highlight">the first American woman to win the Olympic all-around gold medal in gymnastics</span>. She was 16 years old. And she had just made history.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"I knew I needed a perfect 10. I didn't think about the pressure. I didn't think about the crowd. I just thought: do what you've done a thousand times in practice. And I did."</p>
+                <p class="quote-author">— Mary Lou Retton</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>The Girl from Fairmont</h2>
+
+            <p class="lead">Mary Lou Retton was born on January 24, 1968, in Fairmont, West Virginia—a small coal-mining town where football mattered more than gymnastics and no one had ever heard of the Olympics.</p>
+
+            <p>She was the youngest of five children in an Italian-American family. Her father, Ronnie Retton, ran a transportation equipment company. Her mother, Lois, was a homemaker. They were a close-knit, working-class family.</p>
+
+            <p>Mary Lou started gymnastics at age 4 after watching Nadia Comăneci—the Romanian gymnast who scored the first perfect 10 at the 1976 Olympics—on television. "I want to do that," Mary Lou told her parents.</p>
+
+            <p>Her parents enrolled her in a local gymnastics class. And immediately, it was clear: Mary Lou was a natural. She was fearless, powerful, and explosive—built more like a gymnast from an earlier era than the tiny, willowy gymnasts dominating the sport in the 1980s.</p>
+
+            <p>She stood just <span class="highlight">4'9"</span> and weighed about 95 pounds, but she was pure muscle and power. She could generate incredible speed and height on vault and floor exercise. Coaches saw her and knew she was special.</p>
+
+            <p>But Fairmont, West Virginia, didn't have world-class gymnastics facilities. If Mary Lou wanted to become great, she would have to leave home.</p>
+
+            <p>At age 14, Mary Lou moved to Houston, Texas, to train with legendary coach Béla Károlyi—the same coach who had trained Nadia Comăneci. She left her family, her friends, and everything she knew.</p>
+
+            <p>"I cried every night for the first month," Mary Lou later said. "But I knew this was what I had to do to achieve my dream."</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"I was a small-town girl with a big dream. I wasn't supposed to be an Olympic champion. But I believed I could be. And that belief changed everything."</p>
+                <p class="quote-author">— Mary Lou Retton</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>The Journey to Perfection</h2>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">January 24, 1968</div>
+                    <div class="timeline-content">Born in Fairmont, West Virginia; youngest of five children</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1972 (Age 4)</div>
+                    <div class="timeline-content">Begins gymnastics after watching Nadia Comăneci at 1976 Olympics on TV</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1982 (Age 14)</div>
+                    <div class="timeline-content">Moves to Houston to train with Béla Károlyi; leaves family behind</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">June 1984</div>
+                    <div class="timeline-content"><strong>Undergoes emergency knee surgery just 6 weeks before Olympics; doctors say she might not compete</strong></div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">August 3, 1984</div>
+                    <div class="timeline-content"><strong>LA Olympics: Scores two perfect 10s on vault to win all-around gold—first American woman to win this title; becomes instant celebrity</strong></div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">August 1984</div>
+                    <div class="timeline-content">Wins 5 total Olympic medals (1 gold, 2 silver, 2 bronze); dominates the Games</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1984-1985</div>
+                    <div class="timeline-content">Becomes America's sweetheart; appears on Wheaties box, meets President Reagan, becomes household name</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1986</div>
+                    <div class="timeline-content">Retires from competitive gymnastics; inducted into International Gymnastics Hall of Fame</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">October 2023</div>
+                    <div class="timeline-content"><strong>Nearly dies from rare form of pneumonia; spends weeks in ICU on ventilator; family crowdfunds medical bills</strong></div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">Present</div>
+                    <div class="timeline-content">Recovered; continues advocacy work and inspiring new generations</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Six Weeks from Disaster</h2>
+
+            <p class="lead">In June 1984—just six weeks before the Olympics—Mary Lou's knee gave out during training. The pain was excruciating. Doctors diagnosed a torn cartilage. She needed surgery. Immediately.</p>
+
+            <p>Most athletes would have withdrawn from the Olympics. Recovery from knee surgery takes months, not weeks. But Mary Lou wasn't most athletes.</p>
+
+            <p>"I'm competing," she told her doctors. "I don't care what it takes."</p>
+
+            <p>She underwent arthroscopic surgery. And then she did the impossible: she rehabbed her knee in six weeks. She trained through pain. She pushed her body beyond what doctors thought safe.</p>
+
+            <p>When the Olympics began in late July, Mary Lou's knee was still not 100%. She wore a brace. She iced it constantly. She took painkillers.</p>
+
+            <p>But when she stepped onto the competition floor, none of that mattered. She was ready.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"The doctors said I was crazy. My coach said I was crazy. But I knew I could do it. I didn't come this far to quit six weeks before the Olympics."</p>
+                <p class="quote-author">— Mary Lou Retton</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>America's Sweetheart</h2>
+
+            <p class="lead">After winning gold, Mary Lou Retton became an overnight sensation. She was on the cover of every magazine. She appeared on talk shows. She met President Ronald Reagan. And most famously, she became <span class="highlight">the first woman to appear on the front of a Wheaties cereal box</span>.</p>
+
+            <p>She embodied everything America loved in 1984: she was small-town, hard-working, cheerful, and victorious. She had the perfect smile. The perfect attitude. The perfect story.</p>
+
+            <p>She earned millions in endorsements—more than any female athlete at the time. She was one of the most recognizable athletes in the world.</p>
+
+            <p>But fame came with pressure. Mary Lou was 16 years old. She had achieved everything she had ever dreamed of. And now, what?</p>
+
+            <p>She retired from competitive gymnastics in 1986 at age 18. She had won everything there was to win. Her body was breaking down from years of intense training and her knee surgery. And she was ready for a new chapter.</p>
+
+            <p>She became a motivational speaker, an actress, and a businesswoman. She got married, had four daughters, and built a life beyond gymnastics.</p>
+
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <div class="impact-number">First</div>
+                    <div class="impact-label">American woman to win Olympic all-around gold in gymnastics</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">2</div>
+                    <div class="impact-label">Perfect 10s on vault under maximum pressure</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">5</div>
+                    <div class="impact-label">Olympic medals at 1984 LA Games</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">First Woman</div>
+                    <div class="impact-label">To appear on Wheaties cereal box</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">Icon</div>
+                    <div class="impact-label">America's Sweetheart of the 1980s</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">Inspiration</div>
+                    <div class="impact-label">Sparked gymnastics boom in America</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>The Fight for Her Life</h2>
+
+            <p class="lead">October 2023. Mary Lou Retton, now 55 years old, woke up struggling to breathe. She had pneumonia—but not the common kind. She had a rare, aggressive form that was attacking her lungs.</p>
+
+            <p>Within hours, she was in the ICU. Within days, she was on a ventilator, unable to breathe on her own. Doctors told her family to prepare for the worst.</p>
+
+            <p>For weeks, Mary Lou fought for her life. The same determination that won her Olympic gold was now keeping her alive.</p>
+
+            <p>But there was another problem: <span class="highlight">Mary Lou didn't have health insurance</span>. Her medical bills were skyrocketing—hundreds of thousands of dollars. Her daughter set up a crowdfunding campaign to help pay for her care.</p>
+
+            <p>The response was overwhelming. Donations poured in from around the world. People who had watched her win gold in 1984 now rallied to save her life.</p>
+
+            <p>Slowly, Mary Lou improved. She came off the ventilator. She started breathing on her own. She left the ICU. And by December 2023, she was home, recovering.</p>
+
+            <p>The experience changed her. "I realized that health is everything," she said. "All the medals, all the fame, none of it matters if you don't have your health."</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"I fought for Olympic gold. But fighting for my life was the hardest thing I've ever done. And I won that fight too."</p>
+                <p class="quote-author">— Mary Lou Retton</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>The Legacy of Perfection</h2>
+
+            <p class="lead">Mary Lou Retton's perfect 10s in 1984 changed American gymnastics forever. Before her, gymnastics was a niche sport that most Americans ignored. After her, it became must-see television.</p>
+
+            <p>Gymnastics clubs across America saw enrollment explode. Young girls wanted to be Mary Lou. They wanted to do what she did. They wanted those perfect 10s.</p>
+
+            <p>She paved the way for future American gymnastics stars—Shannon Miller, Dominique Dawes, Kerri Strug, Simone Biles. They all grew up watching Mary Lou and dreaming of Olympic gold.</p>
+
+            <p>But her legacy is more than gymnastics. It's about achieving the impossible when the pressure is highest. It's about coming back from injury when everyone says you can't. It's about small-town kids with big dreams.</p>
+
+            <p>Mary Lou Retton proved that perfection is possible. That an American girl from West Virginia can stand on top of the world. That when you need a 10, you can deliver.</p>
+
+            <p>Her smile is still iconic. Her story is still inspiring. And her perfect 10s are still, four decades later, the standard of excellence.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"People ask me what it felt like to score a perfect 10. I tell them: it felt like flying. Like nothing could stop me. Like anything was possible. That's what perfection feels like."</p>
+                <p class="quote-author">— Mary Lou Retton</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

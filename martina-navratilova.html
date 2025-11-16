@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Martina Navratilova - The Champion Who Refused to Hide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #C2185B;
+            --secondary-color: #7B1FA2;
+            --accent-color: #00BCD4;
+            --text-dark: #1a1a1a;
+            --text-light: #ffffff;
+            --background: #f8f9fa;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--background);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #C2185B 0%, #7B1FA2 50%, #00BCD4 100%);
+            color: var(--text-light);
+            padding: 120px 20px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?w=1200') center/cover;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            line-height: 1.1;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 60px auto 0;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            display: block;
+            margin-bottom: 10px;
+            color: var(--accent-color);
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .section {
+            margin-bottom: 80px;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            margin: 40px 0 20px;
+            color: var(--primary-color);
+        }
+
+        .lead {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        .quote-box {
+            background: linear-gradient(135deg, #C2185B 0%, #7B1FA2 100%);
+            color: var(--text-light);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+            border-left: 5px solid var(--accent-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .quote-text {
+            font-size: 1.4rem;
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .quote-author {
+            font-size: 1.1rem;
+            text-align: right;
+            opacity: 0.9;
+            font-weight: 600;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+            margin: 40px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, var(--primary-color), var(--accent-color));
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+            padding-left: 30px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -46px;
+            top: 5px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: var(--accent-color);
+            border: 3px solid var(--primary-color);
+        }
+
+        .timeline-year {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .timeline-content {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .impact-card {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--primary-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .impact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .impact-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .impact-label {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background: white;
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .back-link:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-2px);
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, rgba(194, 24, 91, 0.1) 0%, rgba(0, 188, 212, 0.1) 100%);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .container {
+                padding: 40px 20px;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .quote-text {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Martina Navratilova</h1>
+            <p class="subtitle">The Champion Who Defected, Dominated, and Refused to Hide</p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">18</span>
+                    <span class="stat-label">Grand Slam Singles Titles</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">59</span>
+                    <span class="stat-label">Total Grand Slam Titles</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">167</span>
+                    <span class="stat-label">Singles Championships</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">332</span>
+                    <span class="stat-label">Weeks Ranked #1</span>
+                </div>
+            </div>
+
+            <a href="index.html" class="back-link">← Back to Athletes</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <section class="section">
+            <h2>The Day She Chose Freedom</h2>
+
+            <p class="lead">September 6, 1975. U.S. Open in New York. Eighteen-year-old Martina Navratilova walked into the offices of the Immigration and Naturalization Service and asked for political asylum. She was defecting from Communist Czechoslovakia. And she knew there was no going back.</p>
+
+            <p>The decision had been building for months. Martina had been playing tennis professionally since she was sixteen, traveling to tournaments around the world. But every time she left Czechoslovakia, she had to return. The Communist government controlled her passport, her movements, her life.</p>
+
+            <p>They watched her constantly. They monitored her phone calls. They told her what she could say in interviews. They threatened to revoke her travel privileges if she stepped out of line. Martina was one of the best tennis players in the world, but in Czechoslovakia, she wasn't free.</p>
+
+            <p>In America, she saw something different. She saw freedom. She saw opportunity. She saw a place where she could be herself, speak her mind, and control her own destiny.</p>
+
+            <p>So on that September day in 1975, she made the hardest decision of her life. She filed for asylum. Within hours, the news was everywhere. <span class="highlight">Martina Navratilova had defected.</span></p>
+
+            <p>The Czechoslovakian government was furious. They revoked her citizenship. They declared her a traitor. They forbade her from returning home—which meant she couldn't see her family, her friends, the country she loved.</p>
+
+            <p>Her father, heartbroken, stopped speaking to her. Her mother cried for months. Martina was free, but the price was almost unbearable.</p>
+
+            <p>"I lost everything that day," she would later say. "My country, my family, my identity. But I gained something too: the right to be myself."</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"I didn't defect because I hated Czechoslovakia. I defected because I loved freedom more than I feared losing everything."</p>
+                <p class="quote-author">— Martina Navratilova</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>From Prague to Perfection</h2>
+
+            <p class="lead">Martina Subertova was born on October 18, 1956, in Prague, Czechoslovakia. Her parents divorced when she was three, and her mother remarried Miroslav Navratil—a man Martina adored and whose last name she would take.</p>
+
+            <p>Tennis ran in the family. Her grandmother, Agnes Semanska, had been a tennis champion. Her stepfather loved the game. And Martina, from the moment she picked up a racket at age four, was a natural.</p>
+
+            <p>But growing up in Communist Czechoslovakia in the 1960s and 70s was suffocating. The government controlled everything—education, careers, travel, even sports. Young athletes were property of the state. If you showed promise, the government took you, trained you, and used you to demonstrate the superiority of Communism.</p>
+
+            <p>Martina was brilliant at tennis. By age eight, she was beating girls three and four years older. By fifteen, she was playing professionally. But she was also headstrong, outspoken, and fiercely independent—qualities the Communist regime despised.</p>
+
+            <p>When she traveled to the United States for the first time in 1973, she was overwhelmed. The freedom. The choices. The opportunity. Everything Czechoslovakia denied her, America offered freely.</p>
+
+            <p>She dreamed of staying. But she was only seventeen. She wasn't ready to leave her family forever. So she went home.</p>
+
+            <p>But the dream never left her. And in 1975, at age eighteen, she made it real. She defected. And she became American—not just legally, but in spirit.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"In Czechoslovakia, I was told what to think, what to say, where to go. In America, I could be anything I wanted. That freedom was worth any price."</p>
+                <p class="quote-author">— Martina Navratilova</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>The Journey of a Legend</h2>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">October 18, 1956</div>
+                    <div class="timeline-content">Born in Prague, Czechoslovakia; begins playing tennis at age four</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1972 (Age 15)</div>
+                    <div class="timeline-content">Turns professional; begins competing internationally under strict Communist government control</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">September 6, 1975</div>
+                    <div class="timeline-content"><strong>Defects from Czechoslovakia during U.S. Open; requests political asylum in the United States</strong></div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1978</div>
+                    <div class="timeline-content">Wins first Wimbledon singles title; begins dominant era in women's tennis</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1981</div>
+                    <div class="timeline-content">Becomes U.S. citizen; says it's one of the proudest moments of her life</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1981-1984</div>
+                    <div class="timeline-content">Wins six consecutive Wimbledon singles titles; dominates women's tennis like no one before</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1981</div>
+                    <div class="timeline-content"><strong>Publicly comes out as gay in an interview—a courageous act when homosexuality was deeply stigmatized</strong></div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1983-1984</div>
+                    <div class="timeline-content">Loses millions in endorsements after coming out; many sponsors drop her</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1986</div>
+                    <div class="timeline-content">Returns to Czechoslovakia for the first time since defection; emotional reunion with family</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1987</div>
+                    <div class="timeline-content">Reaches all four Grand Slam finals at age 30—only player ever to do so</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1990</div>
+                    <div class="timeline-content">Wins record ninth Wimbledon singles title at age 33</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1994 (Age 37)</div>
+                    <div class="timeline-content">Retires from singles competition; continues playing doubles into her 40s</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2006</div>
+                    <div class="timeline-content">Wins mixed doubles championship at U.S. Open at age 49—almost 50 years old</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">Present</div>
+                    <div class="timeline-content">LGBTQ+ icon, activist, tennis commentator; outspoken advocate for equality and human rights</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>The Truth That Cost Her Millions</h2>
+
+            <p class="lead">In 1981, at the height of her tennis dominance, Martina Navratilova did something that could have destroyed her career. She told the truth. She came out as gay.</p>
+
+            <p>It wasn't planned. During an interview, a journalist asked about her personal life. Martina had been dating author Rita Mae Brown. She could have lied. She could have deflected. She could have stayed silent, like so many other gay athletes did.</p>
+
+            <p>Instead, she said: "Yes, I'm gay."</p>
+
+            <p>The reaction was immediate and devastating. Sponsors dropped her. Endorsement deals evaporated. Companies that had lined up to work with her—one of the greatest tennis players in the world—suddenly wanted nothing to do with her.</p>
+
+            <p>In the early 1980s, being openly gay wasn't just taboo—it was career suicide. The AIDS crisis was beginning, and homophobia was rampant. Gay people were losing jobs, being disowned by families, facing violence. Few public figures dared to come out.</p>
+
+            <p>But Martina refused to lie. <span class="highlight">She lost millions of dollars in endorsements</span>—money she would have easily earned had she stayed silent. Her rival, Chris Evert, who was straight and presented a more "traditional" image, earned far more in sponsorships despite being less dominant on the court.</p>
+
+            <p>The double standard was obvious, painful, and infuriating. But Martina didn't back down. She continued speaking openly about her sexuality. She became a voice for LGBTQ+ rights at a time when almost no one else would.</p>
+
+            <p>"I could have hidden," she said years later. "I could have made so much more money. But I would have hated myself. And I wasn't going to live a lie just to make corporations comfortable."</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"I didn't come out to be brave. I came out because I couldn't lie anymore. Living in the closet felt like being back in Czechoslovakia—trapped, controlled, not free. I didn't defect from one cage just to live in another."</p>
+                <p class="quote-author">— Martina Navratilova</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Dominance Like No Other</h2>
+
+            <p class="lead">While Martina was fighting for her right to exist authentically off the court, on the court she was simply unstoppable.</p>
+
+            <p>From 1978 to 1990, Martina Navratilova dominated women's tennis in a way few athletes have ever dominated any sport. She won <span class="highlight">18 Grand Slam singles titles</span>—tied for third-most in history. But singles titles don't tell the full story.</p>
+
+            <p>She won <span class="highlight">31 Grand Slam doubles titles</span> and <span class="highlight">10 Grand Slam mixed doubles titles</span>—for a total of <span class="highlight">59 Grand Slam championships</span>. That's the most in tennis history.</p>
+
+            <p>At Wimbledon, the most prestigious tournament in tennis, Martina was untouchable. She won the singles title <span class="highlight">nine times</span>—more than any other player in history. From 1982 to 1987, she won six consecutive Wimbledon singles titles. No one had ever done that before. No one has done it since.</p>
+
+            <p>In 1984, she had one of the greatest seasons in tennis history, winning 13 tournaments and compiling a record of 78-2. Her only two losses came in the French Open semifinals and the Australian Open final.</p>
+
+            <p>She was fast, aggressive, and revolutionary. Before Martina, most women played from the baseline. Martina served and volleyed—rushing the net, attacking, dominating. She changed the way the game was played.</p>
+
+            <p>She was also one of the first female athletes to prioritize fitness and strength training. She lifted weights, ran, and trained like a professional athlete—not like a "lady playing tennis." Her physicality intimidated opponents and redefined what a female athlete could look like.</p>
+
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <div class="impact-number">59</div>
+                    <div class="impact-label">Total Grand Slam titles (most in tennis history)</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">18</div>
+                    <div class="impact-label">Grand Slam singles titles</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">9</div>
+                    <div class="impact-label">Wimbledon singles titles (record)</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">332</div>
+                    <div class="impact-label">Weeks ranked world #1</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">167</div>
+                    <div class="impact-label">Singles championships in her career</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">49</div>
+                    <div class="impact-label">Age when she won her last Grand Slam</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>The Rivalry That Defined an Era</h2>
+
+            <p class="lead">For much of the 1980s, women's tennis was defined by one rivalry: Martina Navratilova vs. Chris Evert. They were opposites in almost every way, and together they created one of the greatest rivalries in sports history.</p>
+
+            <p>Chris Evert was America's sweetheart—elegant, poised, traditionally feminine. She played from the baseline with precision and patience. She was quiet, polite, and commercially perfect.</p>
+
+            <p>Martina was powerful, aggressive, outspoken, and unapologetically herself. She rushed the net. She hit with power. She defied convention.</p>
+
+            <p>They faced each other <span class="highlight">80 times</span>—more than any other rivalry in tennis history. Martina won 43 matches; Chris won 37. They met in 14 Grand Slam finals. Martina won 10 of them.</p>
+
+            <p>But despite the intensity of their rivalry, they respected each other deeply. Chris defended Martina when sponsors dropped her. Martina spoke out when the media unfairly criticized Chris.</p>
+
+            <p>Years later, they became close friends. Their rivalry, they both agreed, had made them better. Not just as players, but as people.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"Chris made me better. She pushed me to be faster, smarter, tougher. Our rivalry wasn't about hate—it was about mutual respect and the pursuit of excellence."</p>
+                <p class="quote-author">— Martina Navratilova</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>A Voice That Wouldn't Be Silenced</h2>
+
+            <p class="lead">Martina Navratilova retired from singles tennis in 1994 at age 37. But she didn't retire from fighting for what she believed in.</p>
+
+            <p>She became an activist—for LGBTQ+ rights, for gender equality, for human rights. She spoke out against discrimination in sports, in politics, in society. She used her platform to amplify voices that had been silenced.</p>
+
+            <p>In 2010, she was diagnosed with breast cancer. She fought it, beat it, and then used her experience to raise awareness about the disease and the importance of early detection.</p>
+
+            <p>In recent years, she's been an outspoken advocate for fairness in women's sports, particularly around issues of biological males competing in women's categories—a stance that has sometimes put her at odds with LGBTQ+ activists. But Martina has never been afraid of controversy. She speaks her truth, even when it's unpopular.</p>
+
+            <p>"I've been called a traitor for defecting. I've been called immoral for being gay. I've been criticized for being too outspoken," she says. "But I've never apologized for being myself. And I never will."</p>
+
+            <p>Martina Navratilova is now in her late 60s. She works as a tennis commentator, lives with her wife Julia Lemigova (a former Miss USSR), and continues to speak out on issues she cares about.</p>
+
+            <p>She's a champion. A pioneer. A defector who found freedom. A lesbian who refused to hide. An athlete who changed the game.</p>
+
+            <p>And through it all, she's been unapologetically, courageously, defiantly herself.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"I've lived a life of freedom—the freedom to compete, the freedom to love, the freedom to speak my mind. I lost a country to gain that freedom. And I'd make the same choice again in a heartbeat."</p>
+                <p class="quote-author">— Martina Navratilova</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

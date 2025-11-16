@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Babe Didrikson Zaharias - The Greatest Female Athlete of the 20th Century</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #D84315;
+            --secondary-color: #558B2F;
+            --accent-color: #FFD700;
+            --text-dark: #1a1a1a;
+            --text-light: #ffffff;
+            --background: #f8f9fa;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--background);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #D84315 0%, #558B2F 50%, #FFD700 100%);
+            color: var(--text-light);
+            padding: 120px 20px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?w=1200') center/cover;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            line-height: 1.1;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 60px auto 0;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            display: block;
+            margin-bottom: 10px;
+            color: var(--accent-color);
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .section {
+            margin-bottom: 80px;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            margin: 40px 0 20px;
+            color: var(--primary-color);
+        }
+
+        .lead {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        .quote-box {
+            background: linear-gradient(135deg, #D84315 0%, #558B2F 100%);
+            color: var(--text-light);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+            border-left: 5px solid var(--accent-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .quote-text {
+            font-size: 1.4rem;
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .quote-author {
+            font-size: 1.1rem;
+            text-align: right;
+            opacity: 0.9;
+            font-weight: 600;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+            margin: 40px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, var(--primary-color), var(--accent-color));
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+            padding-left: 30px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -46px;
+            top: 5px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: var(--accent-color);
+            border: 3px solid var(--primary-color);
+        }
+
+        .timeline-year {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .timeline-content {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .impact-card {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--primary-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .impact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .impact-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .impact-label {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background: white;
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .back-link:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-2px);
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, rgba(216, 67, 21, 0.1) 0%, rgba(255, 215, 0, 0.1) 100%);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .container {
+                padding: 40px 20px;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .quote-text {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Babe Didrikson Zaharias</h1>
+            <p class="subtitle">The Woman Who Could Do Anything—And Did</p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">2</span>
+                    <span class="stat-label">Olympic Gold Medals</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">10</span>
+                    <span class="stat-label">Golf Major Championships</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">3</span>
+                    <span class="stat-label">World Records Set (1932)</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">Greatest</span>
+                    <span class="stat-label">Female Athlete (20th Century)</span>
+                </div>
+            </div>
+
+            <a href="index.html" class="back-link">← Back to Athletes</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <section class="section">
+            <h2>The One-Woman Track Team</h2>
+
+            <p class="lead">July 16, 1932. Evanston, Illinois. The Amateur Athletic Union Championships—also serving as the Olympic trials for the upcoming Los Angeles Games. Most teams brought 15-20 athletes. The Employers Casualty Insurance Company brought one: Babe Didrikson. And she destroyed everyone.</p>
+
+            <p>In three hours, competing as a team of one, Babe entered eight events. She won five outright. She tied for first in a sixth. She set <span class="highlight">three world records</span>. And she single-handedly won the team championship with 30 points—her closest competitor team had 22.</p>
+
+            <p>She won the shot put, the baseball throw, the long jump, the 80-meter hurdles, and the javelin. She tied for first in the high jump. She finished fourth in the discus—after barely practicing it.</p>
+
+            <p>It was the greatest individual performance in track and field history. One woman. Eight events. Three world records. One afternoon.</p>
+
+            <p>Sportswriters couldn't believe what they had witnessed. One wrote: "She is beyond belief until you see her. Then you finally understand that you are watching <span class="highlight">the greatest athlete alive, male or female</span>."</p>
+
+            <p>A few weeks later, Babe traveled to Los Angeles for the 1932 Olympics. Olympic rules limited her to three events. She won gold in the javelin and the 80-meter hurdles—setting world records in both. She won silver in the high jump after a controversial judging decision.</p>
+
+            <p>At 21 years old, Babe Didrikson had become the most famous female athlete in the world. And she was just getting started.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"Before I was born, my mother was told she would have a boy. They were going to name him Babe, after Babe Ruth. Well, she had a girl. But I became Babe anyway. And I beat the boys at everything."</p>
+                <p class="quote-author">— Babe Didrikson Zaharias</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>The Girl Who Refused to Be Ladylike</h2>
+
+            <p class="lead">Mildred Ella Didrikson was born on June 26, 1911, in Port Arthur, Texas, to Norwegian immigrant parents. She was the sixth of seven children in a working-class family that struggled to make ends meet.</p>
+
+            <p>Her father, Ole, was a ship's carpenter. Her mother, Hannah, took in washing to help support the family. Money was always tight. Childhood was hard. But the Didrikson kids were tough, competitive, and fearless.</p>
+
+            <p>Young Mildred—nicknamed "Babe" after Babe Ruth because of her prodigious home-run hitting in neighborhood baseball games—was a tomboy in an era when girls were expected to be delicate and demure.</p>
+
+            <p>She climbed trees. She played baseball, basketball, and football with the boys. She ran faster, jumped higher, and threw farther than anyone in her neighborhood—boys included.</p>
+
+            <p>Her mother worried. "Why can't you act like a lady?" she would ask. Babe's response: "Because I'm not one."</p>
+
+            <p>The world in the 1920s and 30s had rigid ideas about what women could and couldn't do. Women weren't supposed to be athletic. They weren't supposed to compete. They weren't supposed to sweat, grunt, or show strength. Those things were "unfeminine."</p>
+
+            <p>Babe didn't care. She knew she was the best athlete anyone had ever seen. And she wasn't going to apologize for it.</p>
+
+            <p>In high school, she dominated every sport she tried. She led her basketball team to the state championship. She set records in track and field. She played organized baseball. She even excelled at swimming, diving, and tennis—sports she barely practiced.</p>
+
+            <p>After high school, she got a job with the Employers Casualty Insurance Company in Dallas, which sponsored a women's basketball team and track team. Babe joined both. And she dominated both.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"My goal was to be the greatest athlete that ever lived. Not the greatest female athlete. The greatest athlete. Period."</p>
+                <p class="quote-author">— Babe Didrikson Zaharias</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>The Journey of a Legend</h2>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">June 26, 1911</div>
+                    <div class="timeline-content">Born in Port Arthur, Texas, to Norwegian immigrant parents</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1920s</div>
+                    <div class="timeline-content">Dominates high school basketball and track; nicknamed "Babe" after Babe Ruth</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">July 16, 1932</div>
+                    <div class="timeline-content"><strong>Single-handedly wins AAU team championship; competes in 8 events in 3 hours, wins 5, sets 3 world records</strong></div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">August 1932</div>
+                    <div class="timeline-content">Los Angeles Olympics: Wins 2 gold medals (javelin, 80m hurdles) and 1 silver (high jump); sets 2 world records</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1933</div>
+                    <div class="timeline-content">Stripped of amateur status for appearing in car advertisement; begins barnstorming and exhibition tours</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1935</div>
+                    <div class="timeline-content">Takes up golf seriously; begins training to dominate a new sport</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1938</div>
+                    <div class="timeline-content">Marries professional wrestler George Zaharias; becomes Babe Didrikson Zaharias</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1946-1947</div>
+                    <div class="timeline-content"><strong>Wins 17 consecutive golf tournaments—an unmatched streak in golf history</strong></div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1950</div>
+                    <div class="timeline-content">Co-founds the Ladies Professional Golf Association (LPGA)</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1953</div>
+                    <div class="timeline-content">Diagnosed with colon cancer; undergoes surgery</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1954</div>
+                    <div class="timeline-content"><strong>Returns from cancer surgery to win the U.S. Women's Open by 12 strokes—one of the greatest comebacks in sports history</strong></div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">September 27, 1956</div>
+                    <div class="timeline-content">Dies from cancer at age 45; leaves behind a legacy as the greatest female athlete of the 20th century</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>The Price of Being Great</h2>
+
+            <p class="lead">After the 1932 Olympics, Babe Didrikson should have been celebrated as a national hero. Instead, she faced a wave of criticism, mockery, and sexism that nearly destroyed her career.</p>
+
+            <p>Sportswriters called her "mannish" and "unfeminine." They questioned her gender. They suggested she wasn't a "real woman" because of her athletic abilities and muscular build.</p>
+
+            <p>One columnist wrote: "It would be much better if she and her ilk stayed at home, got themselves prettied up and waited for the phone to ring."</p>
+
+            <p>The Amateur Athletic Union, looking for any excuse to punish her for challenging gender norms, <span class="highlight">stripped her of her amateur status in 1933</span> after she appeared in a car advertisement. The punishment was absurd and vindictive—male athletes appeared in ads all the time without consequences.</p>
+
+            <p>Without amateur status, Babe couldn't compete in most track and field events. At 22, her Olympic career was over.</p>
+
+            <p>So she reinvented herself. She barnstormed across the country, playing exhibition basketball games, baseball games, and billiards matches. She pitched in minor league baseball games—striking out major leaguers. She played in golf exhibitions. She even toured with a vaudeville act, playing the harmonica and joking with audiences.</p>
+
+            <p>She did whatever it took to make money and stay in the public eye. And through it all, she kept practicing golf—a sport that didn't have the same amateur restrictions as track and field.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"They tried to shame me for being strong. For being good. For being better than the men. But I refused to be ashamed. I was the best, and they couldn't stand it."</p>
+                <p class="quote-author">— Babe Didrikson Zaharias</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Conquering a New Sport</h2>
+
+            <p class="lead">In 1935, Babe decided to become the greatest golfer in the world. She had dabbled in golf before, but now she approached it with the same obsessive dedication she had brought to track and field.</p>
+
+            <p>She practiced <span class="highlight">12-16 hours a day</span>. She hit golf balls until her hands bled. She studied every aspect of the game—swing mechanics, course strategy, mental toughness. She worked with the best coaches. She played thousands of rounds.</p>
+
+            <p>And within a few years, she became the best female golfer in the world.</p>
+
+            <p>In 1946 and 1947, Babe won <span class="highlight">17 consecutive golf tournaments</span>—a record that has never been matched. She won 10 major championships, including three U.S. Women's Opens. She revolutionized women's golf with her power and athleticism.</p>
+
+            <p>Before Babe, women's golf was a genteel, country-club sport for wealthy amateurs. Babe brought power, competitiveness, and professionalism. She hit the ball farther than anyone. She played aggressively. She transformed the sport.</p>
+
+            <p>In 1950, she helped co-found the <span class="highlight">Ladies Professional Golf Association (LPGA)</span>, creating opportunities for women to compete professionally and earn a living from the sport.</p>
+
+            <p>Babe became a household name. She appeared on magazine covers. She won the Associated Press Female Athlete of the Year award six times. She was beloved by fans for her charisma, her humor, and her undeniable greatness.</p>
+
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <div class="impact-number">2</div>
+                    <div class="impact-label">Olympic gold medals (1932 javelin, hurdles)</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">10</div>
+                    <div class="impact-label">Golf major championships</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">17</div>
+                    <div class="impact-label">Consecutive golf tournaments won (1946-47)</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">3</div>
+                    <div class="impact-label">World records set in one day (1932)</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">Co-Founder</div>
+                    <div class="impact-label">Ladies Professional Golf Association (LPGA)</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">#1</div>
+                    <div class="impact-label">Greatest female athlete of 20th century</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Fighting to the End</h2>
+
+            <p class="lead">In 1953, at the peak of her golf career, Babe was diagnosed with colon cancer. Doctors performed emergency surgery, removing a cancerous tumor and performing a colostomy. The prognosis was grim.</p>
+
+            <p>Most people would have retired. But Babe wasn't most people.</p>
+
+            <p>Just 14 weeks after major surgery, she returned to competitive golf. And in 1954, she won the U.S. Women's Open—<span class="highlight">by 12 strokes</span>. It was one of the greatest comebacks in sports history.</p>
+
+            <p>"They told me I might never play again," she said afterward. "I told them to watch me."</p>
+
+            <p>But the cancer had spread. Over the next two years, Babe underwent more surgeries and treatments. She continued playing golf as long as she could, refusing to let the disease define her.</p>
+
+            <p>On September 27, 1956, Babe Didrikson Zaharias died at age 45. Thousands attended her funeral. President Eisenhower sent condolences. The sports world mourned.</p>
+
+            <p>But her legacy lived on. She had proven that women could be powerful, competitive, and dominant in sports. She had shattered every limitation society tried to place on her. She had shown the world what greatness looked like.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"I just hitch up my girdle and let 'er fly. I've lived my whole life that way—no fear, no limits, no apologies. And I'd do it all again."</p>
+                <p class="quote-author">— Babe Didrikson Zaharias</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>The Greatest Who Ever Lived</h2>
+
+            <p class="lead">In 1999, the Associated Press named Babe Didrikson Zaharias the greatest female athlete of the 20th century. ESPN ranked her as the 10th greatest athlete of the century—the highest-ranking woman on the list.</p>
+
+            <p>She is the only athlete—male or female—to have won Olympic medals and professional major championships in different sports. Her versatility, dominance, and longevity are unmatched.</p>
+
+            <p>But more importantly, Babe changed what people believed women could do. Before her, female athletes were novelties. After her, they were champions.</p>
+
+            <p>She didn't fit the mold. She didn't apologize. She didn't conform. She just won. Again and again and again.</p>
+
+            <p>And in doing so, she opened doors for every female athlete who came after her—from Billie Jean King to Serena Williams to Simone Biles. They all walked through doors that Babe kicked open.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"All of my life, people told me what I couldn't do because I was a woman. I made it my mission to prove them all wrong. And I did."</p>
+                <p class="quote-author">— Babe Didrikson Zaharias</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
