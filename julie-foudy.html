@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Julie Foudy - The Captain Who Led a Revolution On and Off the Field</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1565C0;
+            --secondary-color: #D32F2F;
+            --accent-color: #FFC107;
+            --text-dark: #1a1a1a;
+            --text-light: #ffffff;
+            --background: #f8f9fa;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--background);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #1565C0 0%, #D32F2F 50%, #FFC107 100%);
+            color: var(--text-light);
+            padding: 120px 20px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1529900748604-07564a03e7a6?w=1200') center/cover;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            line-height: 1.1;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 60px auto 0;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            display: block;
+            margin-bottom: 10px;
+            color: var(--accent-color);
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .section {
+            margin-bottom: 80px;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+
+        .lead {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        .quote-box {
+            background: linear-gradient(135deg, #1565C0 0%, #D32F2F 100%);
+            color: var(--text-light);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+            border-left: 5px solid var(--accent-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .quote-text {
+            font-size: 1.4rem;
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .quote-author {
+            font-size: 1.1rem;
+            text-align: right;
+            opacity: 0.9;
+            font-weight: 600;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 50px;
+            margin: 40px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(180deg, var(--primary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+            padding-left: 30px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -54px;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            background: var(--accent-color);
+            border: 4px solid var(--background);
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px var(--primary-color);
+        }
+
+        .timeline-year {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .timeline-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .impact-card {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--primary-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .impact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .impact-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .impact-label {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background: white;
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .back-link:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-2px);
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, rgba(21, 101, 192, 0.1) 0%, rgba(255, 193, 7, 0.1) 100%);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .container {
+                padding: 40px 20px;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .quote-text {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Julie Foudy</h1>
+            <p class="subtitle">The Captain Who Changed Soccer and Championed Equality</p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">2</span>
+                    <span class="stat-label">Olympic Gold Medals</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">2</span>
+                    <span class="stat-label">World Cup Championships</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">272</span>
+                    <span class="stat-label">International Caps</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">Leader</span>
+                    <span class="stat-label">On and Off the Field</span>
+                </div>
+            </div>
+
+            <a href="index.html" class="back-link">← Back to Athletes</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <section class="section">
+            <h2>The Voice That Wouldn't Be Silenced</h2>
+
+            <p class="lead">Julie Foudy was never the fastest player on the field. She wasn't the flashiest. She didn't score the most goals. But she was the heart and soul of the U.S. Women's National Soccer Team for 17 years—and the leader who changed women's soccer forever.</p>
+
+            <p>Growing up in Southern California, Julie fell in love with soccer at age seven. By her teens, she was playing for the U.S. Youth National Team. By age 18, she made her first appearance with the senior national team. By 23, she was the team captain.</p>
+
+            <p>And she held that captaincy for nine years—leading the team through triumphs, heartbreaks, and battles that had nothing to do with what happened on the field.</p>
+
+            <p>Because Julie Foudy wasn't just a soccer player. She was an activist. A leader. A fighter for equality. And she refused to stay quiet when she saw injustice.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"Leadership isn't about being the loudest. It's about speaking up when it matters most—even when it's uncomfortable."</p>
+                <p class="quote-author">— Julie Foudy</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Building a Dynasty</h2>
+
+            <p class="lead">When Julie Foudy joined the U.S. Women's National Team in 1988, women's soccer was an afterthought. There was no professional league. No significant media coverage. No real pay.</p>
+
+            <p>But Julie and her teammates—Mia Hamm, Brandi Chastain, Joy Fawcett, Kristine Lilly—were determined to change that. They worked full-time jobs while training. They played in front of tiny crowds. They fought for every scrap of recognition.</p>
+
+            <p>And slowly, they built something extraordinary.</p>
+
+            <p>In 1991, the first-ever FIFA Women's World Cup was held in China. The U.S. team, with Julie as a midfielder, <span class="highlight">won the championship</span>. The victory barely made headlines back home. But it proved that American women could compete—and win—on the world stage.</p>
+
+            <p>Five years later, at the 1996 Atlanta Olympics, women's soccer made its Olympic debut. Over 76,000 fans packed the stadium for the gold medal match against China. Julie and her teammates won 2-1, claiming <span class="highlight">Olympic gold</span> in front of the largest crowd ever to watch a women's sporting event.</p>
+
+            <p>Women's soccer had arrived. And Julie Foudy was at the center of it all.</p>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">1971</div>
+                    <div class="timeline-content">Born in San Diego, California</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1988</div>
+                    <div class="timeline-content">Makes U.S. Women's National Team debut at age 16</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1991</div>
+                    <div class="timeline-content">Wins first FIFA Women's World Cup in China</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1996</div>
+                    <div class="timeline-content">Wins Olympic gold medal in Atlanta—soccer's Olympic debut</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1999</div>
+                    <div class="timeline-content">Wins second World Cup in iconic tournament that changed women's soccer</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2000</div>
+                    <div class="timeline-content">Leads equal pay fight—threatens to boycott Olympics over wage discrimination</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2004</div>
+                    <div class="timeline-content">Wins second Olympic gold medal in Athens</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2004</div>
+                    <div class="timeline-content">Retires after 17 years, 272 caps, and countless battles for equality</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2007</div>
+                    <div class="timeline-content">Inducted into National Soccer Hall of Fame</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>1999: The Tournament That Changed Everything</h2>
+
+            <p class="lead">The 1999 FIFA Women's World Cup was held in the United States. It was a gamble—would American fans show up to watch women's soccer? The answer was a resounding yes.</p>
+
+            <p>Over 90,000 fans packed the Rose Bowl in Pasadena for the final against China. Millions more watched on television. The match went to penalty kicks. Brandi Chastain scored the winning goal, ripped off her jersey in celebration, and created one of the most iconic images in sports history.</p>
+
+            <p>The U.S. had won their <span class="highlight">second World Cup</span>. And women's soccer had become a cultural phenomenon.</p>
+
+            <p>Julie Foudy played every minute of that final. She controlled the midfield. She led her teammates. And when the final whistle blew, she celebrated a victory that transcended soccer.</p>
+
+            <p>The 1999 World Cup proved that women's sports could draw massive crowds, generate huge television ratings, and capture the nation's imagination. It created a generation of young girls who saw soccer as their sport.</p>
+
+            <p>And Julie Foudy had been at the heart of it all.</p>
+        </section>
+
+        <section class="section">
+            <h2>The Fight for Equal Pay</h2>
+
+            <p class="lead">But Julie Foudy's greatest battles weren't on the field. They were in boardrooms, negotiating sessions, and press conferences where she fought for equal treatment of female athletes.</p>
+
+            <p>In 2000, just months before the Sydney Olympics, Julie and her teammates discovered they were being paid a fraction of what male soccer players earned—despite the women's team being far more successful. The men's team had never won a World Cup. The women's team had won two.</p>
+
+            <p>Julie, as team captain and president of the Women's Sports Foundation, led the fight. She and her teammates threatened to boycott the Olympics unless U.S. Soccer agreed to fair pay.</p>
+
+            <p>The negotiations were brutal. U.S. Soccer officials accused the women of being greedy. Media questioned whether they deserved equal pay. Critics said they should just be grateful to play.</p>
+
+            <p>Julie refused to back down. \"We're not asking for a handout,\" she said. \"We're asking for fairness. We've won. We've drawn crowds. We've generated revenue. We deserve equal treatment.\"</p>
+
+            <p>Days before the Olympics, U.S. Soccer agreed to significantly increase the women's pay and improve their working conditions. It wasn't full equality—but it was a massive step forward.</p>
+
+            <p>The team went to Sydney and won <span class="highlight">another Olympic gold medal</span>. Julie had won both on and off the field.</p>
+
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <div class="impact-number">2</div>
+                    <div class="impact-label">Olympic gold medals (1996, 2004)</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">2</div>
+                    <div class="impact-label">World Cup championships (1991, 1999)</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">272</div>
+                    <div class="impact-label">International appearances</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">9 Years</div>
+                    <div class="impact-label">U.S. Women's National Team captain</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">Champion</div>
+                    <div class="impact-label">For equal pay and women's rights</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">Leader</div>
+                    <div class="impact-label">Changed women's soccer forever</div>
+                </div>
+            </impact-grid>
+        </section>
+
+        <section class="section">
+            <h2>Life Beyond Soccer</h2>
+
+            <p class="lead">Julie Foudy retired in 2004 after winning her second Olympic gold medal in Athens. She had played 272 international matches—one of the most in U.S. history. She had won every major trophy. She had changed the sport forever.</p>
+
+            <p>But retirement didn't mean slowing down.</p>
+
+            <p>Julie became a soccer analyst for ESPN, bringing the same intelligence and passion to broadcasting that she brought to the field. She founded the Julie Foudy Sports Leadership Academy—a program that teaches young female athletes leadership skills and encourages them to use their platforms for social good.</p>
+
+            <p>She served as president of the Women's Sports Foundation, advocating for Title IX enforcement, equal pay, and increased opportunities for female athletes. She's been a vocal critic of FIFA corruption and a champion for human rights in international sports.</p>
+
+            <p>In 2007, Julie was inducted into the National Soccer Hall of Fame. In 2021, she was part of the U.S. women's soccer players who finally secured equal pay with their male counterparts—a battle she had started two decades earlier.</p>
+
+            <p>Today, when young girls play soccer in America, they do so because Julie Foudy and her teammates built the foundation. When female athletes speak up about inequality, they follow the path Julie carved. When women demand equal treatment in sports, they echo Julie's voice.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"We didn't just play soccer. We changed the game for every woman who came after us. That's the real victory."</p>
+                <p class="quote-author">— Julie Foudy</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>The Legacy of Leadership</h2>
+
+            <p class="lead">Julie Foudy's legacy isn't measured in goals or trophies—though she has plenty of both. It's measured in the doors she opened, the barriers she broke, and the voices she empowered.</p>
+
+            <p>She showed that athletes could be activists. That sports could be a platform for social change. That leadership meant fighting for what's right, even when it's difficult.</p>
+
+            <p>She proved that women's sports deserved investment, respect, and equal treatment. She helped transform women's soccer from an afterthought into a cultural force.</p>
+
+            <p>And she did it all while being a phenomenal midfielder, a beloved teammate, and a captain who inspired loyalty and excellence.</p>
+
+            <p>Julie Foudy didn't just play the game. She changed it. Forever.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"My greatest accomplishment isn't the gold medals. It's knowing that young girls can dream bigger because we fought for them."</p>
+                <p class="quote-author">— Julie Foudy</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
