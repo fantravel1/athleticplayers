@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steffi Graf - The Only Golden Slam Winner in Tennis History</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #E53935;
+            --secondary-color: #1E88E5;
+            --accent-color: #FFD700;
+            --text-dark: #1a1a1a;
+            --text-light: #ffffff;
+            --background: #f8f9fa;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--background);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #E53935 0%, #1E88E5 50%, #FFD700 100%);
+            color: var(--text-light);
+            padding: 120px 20px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?w=1200') center/cover;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            line-height: 1.1;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 60px auto 0;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            display: block;
+            margin-bottom: 10px;
+            color: var(--accent-color);
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .section {
+            margin-bottom: 80px;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            margin: 40px 0 20px;
+            color: var(--primary-color);
+        }
+
+        .lead {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        .quote-box {
+            background: linear-gradient(135deg, #E53935 0%, #1E88E5 100%);
+            color: var(--text-light);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+            border-left: 5px solid var(--accent-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .quote-text {
+            font-size: 1.4rem;
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .quote-author {
+            font-size: 1.1rem;
+            text-align: right;
+            opacity: 0.9;
+            font-weight: 600;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+            margin: 40px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, var(--primary-color), var(--accent-color));
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+            padding-left: 30px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -46px;
+            top: 5px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: var(--accent-color);
+            border: 3px solid var(--primary-color);
+        }
+
+        .timeline-year {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .timeline-content {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .impact-card {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--primary-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .impact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .impact-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .impact-label {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background: white;
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .back-link:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-2px);
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, rgba(229, 57, 53, 0.1) 0%, rgba(255, 215, 0, 0.1) 100%);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .container {
+                padding: 40px 20px;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .quote-text {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Steffi Graf</h1>
+            <p class="subtitle">The Only Golden Slam Winner—and the Woman Who Did It While Her World Fell Apart</p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">22</span>
+                    <span class="stat-label">Grand Slam Singles Titles</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">Only</span>
+                    <span class="stat-label">Golden Slam Winner Ever</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">377</span>
+                    <span class="stat-label">Weeks Ranked #1</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">107</span>
+                    <span class="stat-label">Career Titles</span>
+                </div>
+            </div>
+
+            <a href="index.html" class="back-link">← Back to Athletes</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <section class="section">
+            <h2>The Year She Did the Impossible</h2>
+
+            <p class="lead">1988. Steffi Graf won the Australian Open in January. The French Open in June. Wimbledon in July. The U.S. Open in September. And the Olympic gold medal in Seoul in October. She won all four Grand Slams and the Olympics in a single calendar year—the Golden Slam. No one had ever done it before. No one has done it since.</p>
+
+            <p>It remains <span class="highlight">the greatest single-season achievement in tennis history</span>. Not just women's tennis. All of tennis. Male or female. Past or present.</p>
+
+            <p>Steffi was just 19 years old. And she made it look easy.</p>
+
+            <p>Her forehand was devastating—a weapon that terrorized opponents. She hit it with pace, precision, and topspin that made the ball kick up and explode off the court. Players couldn't handle it. They watched helplessly as her shots zipped past them.</p>
+
+            <p>But the Golden Slam was just the beginning. Over the next decade, Steffi would win 22 Grand Slam singles titles, hold the world #1 ranking for a record <span class="highlight">377 weeks</span> (including a record 186 consecutive weeks), and cement herself as one of the greatest tennis players of all time.</p>
+
+            <p>But her greatest achievement wasn't the trophies. It was what she endured while winning them.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"Winning the Golden Slam was the easy part. Living through everything else—that was the hard part."</p>
+                <p class="quote-author">— Steffi Graf</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>The Scandal That Nearly Destroyed Her</h2>
+
+            <p class="lead">April 1995. Steffi Graf was at the peak of her career when the news broke: her father, Peter Graf, had been arrested for tax evasion. And it was bad. Really bad.</p>
+
+            <p>Peter Graf had been Steffi's manager, coach, and the architect of her tennis career. He controlled everything—her finances, her schedule, her life. And he had been stealing from her.</p>
+
+            <p>Investigators discovered that Peter had evaded paying taxes on <span class="highlight">millions of dollars</span> of Steffi's earnings. He had hidden money in secret accounts. He had lied to German authorities. And worst of all, he had done it all while Steffi trusted him completely.</p>
+
+            <p>The scandal exploded across international headlines. Steffi, who had always been intensely private, was suddenly thrust into a media firestorm. Reporters camped outside her home. Tabloids published humiliating details about her family. Prosecutors threatened to charge Steffi herself with tax fraud.</p>
+
+            <p>And then it got worse. The media revealed that Peter had been having an affair with a model named Nicole Meissner—and that Nicole had given birth to his child. Peter had betrayed not just Steffi financially, but also her mother, Heidi.</p>
+
+            <p>Steffi was devastated. The man she had trusted most in the world—her father—had lied, stolen, and cheated. And now she was being dragged through the mud because of his crimes.</p>
+
+            <p>She paid <span class="highlight">over $20 million</span> to the German government to settle the tax case. She cut ties with her father. She fought to rebuild her reputation and her life.</p>
+
+            <p>And through it all, she kept playing tennis. She kept winning. Because that's what Steffi Graf did.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"People ask how I kept playing during the scandal. The truth is, tennis was the only place I felt safe. On the court, I was in control. Off the court, everything was chaos."</p>
+                <p class="quote-author">— Steffi Graf</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>The Journey of Greatness</h2>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">June 14, 1969</div>
+                    <div class="timeline-content">Born in Mannheim, West Germany; begins playing tennis at age 3 under father's coaching</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1982 (Age 13)</div>
+                    <div class="timeline-content">Turns professional; becomes one of youngest pros in tennis</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1987</div>
+                    <div class="timeline-content">Wins first Grand Slam at French Open; becomes world #1 for first time</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1988</div>
+                    <div class="timeline-content"><strong>Achieves the Golden Slam—wins all four Grand Slams and Olympic gold in same year; only person ever to accomplish this feat</strong></div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1988-1990</div>
+                    <div class="timeline-content">Holds #1 ranking for record 186 consecutive weeks</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">April 1995</div>
+                    <div class="timeline-content"><strong>Father arrested for tax evasion; family scandal erupts; Steffi pays over $20 million to settle case</strong></div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1995-1996</div>
+                    <div class="timeline-content">Continues winning Grand Slams despite personal turmoil; shows incredible mental strength</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1999</div>
+                    <div class="timeline-content">Wins French Open at age 30; completes career Grand Slam for fourth time across all four surfaces</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">August 13, 1999</div>
+                    <div class="timeline-content">Retires from professional tennis at age 30 with 22 Grand Slam titles</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2001</div>
+                    <div class="timeline-content">Marries tennis legend Andre Agassi; they have two children</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">Present</div>
+                    <div class="timeline-content">Philanthropist, businesswoman; remembered as one of the greatest tennis players ever</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>The Forehand That Changed Tennis</h2>
+
+            <p class="lead">Steffi Graf's forehand wasn't just a shot. It was a weapon of mass destruction. And it revolutionized women's tennis.</p>
+
+            <p>Before Steffi, most women played tennis with finesse—long rallies, strategic placement, patience. Steffi brought power. Aggression. Pace that opponents simply couldn't handle.</p>
+
+            <p>Her forehand was hit with extreme topspin, allowing her to swing as hard as she wanted while keeping the ball in the court. The ball would kick up off the surface, bouncing high and fast, forcing opponents into defensive positions.</p>
+
+            <p>She could hit it down the line. She could hit it crosscourt. She could hit it inside-out. And she could do it at full speed while running at a dead sprint.</p>
+
+            <p>Opponents knew it was coming. They prepared for it. They dreaded it. And they still couldn't stop it.</p>
+
+            <p>Steffi also had exceptional footwork. She glided across the court with balletic grace, reaching balls that seemed impossible. Her slice backhand—though not as powerful as her forehand—was one of the best in the game, keeping opponents off balance.</p>
+
+            <p>But it was the forehand that defined her. The forehand that won her 22 Grand Slams. The forehand that made her unbeatable.</p>
+
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <div class="impact-number">22</div>
+                    <div class="impact-label">Grand Slam singles titles (3rd most in history)</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">Only One</div>
+                    <div class="impact-label">Golden Slam winner in tennis history</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">377</div>
+                    <div class="impact-label">Total weeks ranked #1 (record for women)</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">186</div>
+                    <div class="impact-label">Consecutive weeks at #1 (record)</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">107</div>
+                    <div class="impact-label">Career singles titles</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">88.7%</div>
+                    <div class="impact-label">Career win percentage</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Surviving the Spotlight</h2>
+
+            <p class="lead">Steffi Graf was never comfortable with fame. She was shy, private, and uncomfortable in the spotlight. But she became one of the most famous athletes in the world anyway.</p>
+
+            <p>The media obsession with her was relentless. Paparazzi followed her everywhere. Tabloids published rumors and lies. When her father's scandal broke, the media frenzy became unbearable.</p>
+
+            <p>In 1992, a deranged Steffi Graf fan stabbed her rival Monica Seles during a match in Hamburg, hoping to help Steffi reclaim the #1 ranking. Steffi was horrified. She never asked for that. She never wanted that. But the media blamed her anyway.</p>
+
+            <p>The stabbing traumatized Monica and kept her out of tennis for over two years. When she returned, she was never quite the same. And Steffi carried guilt over it for years—even though she had done nothing wrong.</p>
+
+            <p>Through all the scandals, the pressure, the media scrutiny, Steffi remained composed. She rarely gave interviews. She rarely showed emotion. She earned the nickname "Fraulein Forehand"—respected but distant.</p>
+
+            <p>But those close to her knew the truth: she was suffering. The pressure was crushing. She wanted to quit. But she kept going, kept winning, kept fighting.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"People saw me as robotic, emotionless. They didn't know I was dying inside. I just didn't know how to show it."</p>
+                <p class="quote-author">— Steffi Graf</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>The Fairy Tale Ending</h2>
+
+            <p class="lead">In 1999, Steffi Graf retired from tennis at age 30. She had won 22 Grand Slams. She had nothing left to prove. And she was exhausted.</p>
+
+            <p>Two years later, she married Andre Agassi—one of the greatest male tennis players of all time. They had met years earlier, but didn't start dating until after both had retired.</p>
+
+            <p>Together, they built a quiet, private life in Las Vegas. They had two children—Jaden and Jaz. They focused on family, philanthropy, and staying out of the spotlight.</p>
+
+            <p>Steffi finally found the peace she had been searching for her entire career. She was no longer defined by tennis. She was just Steffi—wife, mother, person.</p>
+
+            <p>"I don't miss tennis," she once said. "I gave it everything I had. Now I'm living the life I always dreamed of—a normal life."</p>
+
+            <p>But her legacy lives on. The Golden Slam remains the gold standard of tennis achievement. No one has matched it. No one has come close.</p>
+
+            <p>Steffi Graf didn't just dominate her era. She achieved something that may never be repeated. And she did it while surviving scandals, betrayals, and pressures that would have broken most people.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"My career was defined by one year—1988. But my life is defined by what came after. Finding peace. Finding love. Finding myself."</p>
+                <p class="quote-author">— Steffi Graf</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

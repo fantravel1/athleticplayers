@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chris Evert - The Ice Maiden Who Melted Hearts</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1976D2;
+            --secondary-color: #E91E63;
+            --accent-color: #FFD700;
+            --text-dark: #1a1a1a;
+            --text-light: #ffffff;
+            --background: #f8f9fa;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--background);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #1976D2 0%, #E91E63 50%, #FFD700 100%);
+            color: var(--text-light);
+            padding: 120px 20px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?w=1200') center/cover;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            line-height: 1.1;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 60px auto 0;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            display: block;
+            margin-bottom: 10px;
+            color: var(--accent-color);
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .section {
+            margin-bottom: 80px;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            margin: 40px 0 20px;
+            color: var(--primary-color);
+        }
+
+        .lead {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        .quote-box {
+            background: linear-gradient(135deg, #1976D2 0%, #E91E63 100%);
+            color: var(--text-light);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+            border-left: 5px solid var(--accent-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .quote-text {
+            font-size: 1.4rem;
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .quote-author {
+            font-size: 1.1rem;
+            text-align: right;
+            opacity: 0.9;
+            font-weight: 600;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+            margin: 40px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, var(--primary-color), var(--accent-color));
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+            padding-left: 30px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -46px;
+            top: 5px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: var(--accent-color);
+            border: 3px solid var(--primary-color);
+        }
+
+        .timeline-year {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .timeline-content {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .impact-card {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--primary-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .impact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .impact-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .impact-label {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background: white;
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .back-link:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-2px);
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, rgba(25, 118, 210, 0.1) 0%, rgba(255, 215, 0, 0.1) 100%);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .container {
+                padding: 40px 20px;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .quote-text {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Chris Evert</h1>
+            <p class="subtitle">The Ice Maiden Who Became America's Sweetheart</p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">18</span>
+                    <span class="stat-label">Grand Slam Singles Titles</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">90%+</span>
+                    <span class="stat-label">Career Win Percentage</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">125</span>
+                    <span class="stat-label">Consecutive Wins on Clay</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">157</span>
+                    <span class="stat-label">Career Titles</span>
+                </div>
+            </div>
+
+            <a href="index.html" class="back-link">← Back to Athletes</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <section class="section">
+            <h2>The Girl Who Never Showed Emotion</h2>
+
+            <p class="lead">Chris Evert was famous for her icy composure. On the tennis court, she never screamed, never cried, never showed any emotion. Her face was a mask of calm. Her demeanor was cool, controlled, perfect. They called her the "Ice Maiden."</p>
+
+            <p>But beneath that ice was a girl who felt everything—deeply, intensely, overwhelmingly.</p>
+
+            <p>"I was terrified all the time," Chris later admitted. "I was afraid of failing. Afraid of disappointing people. Afraid of showing weakness. So I froze. I became ice. Because ice doesn't crack under pressure."</p>
+
+            <p>That ice made her one of the greatest tennis players in history. She won <span class="highlight">18 Grand Slam singles titles</span>—tied for fourth-most all-time. She reached 34 Grand Slam finals—more than any player in the Open Era except Martina Navratilova.</p>
+
+            <p>She held the world #1 ranking for 260 weeks. She won <span class="highlight">157 singles titles</span>. And she had a career win-loss record of 1,309-146—a staggering <span class="highlight">90% win percentage</span>.</p>
+
+            <p>But her most remarkable achievement wasn't a statistic. It was a streak: <span class="highlight">125 consecutive wins on clay courts</span>. From August 1973 to May 1979, Chris Evert didn't lose a single clay court match. Not one. For nearly six years.</p>
+
+            <p>She was called the "Queen of Clay." And for good reason.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"People thought I was cold, emotionless, robotic. The truth is, I felt everything. I just didn't know how to show it."</p>
+                <p class="quote-author">— Chris Evert</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>The Rivalry That Defined an Era</h2>
+
+            <p class="lead">For 15 years, women's tennis was defined by one rivalry: Chris Evert vs. Martina Navratilova. They faced each other 80 times—more than any other rivalry in tennis history. And they pushed each other to greatness.</p>
+
+            <p>Chris and Martina were opposites in every way. Chris was baseline precision—calculated, patient, strategic. Martina was serve-and-volley aggression—powerful, fast, attacking. Chris was America's sweetheart—elegant, composed, traditional. Martina was the defector from Communist Czechoslovakia—bold, outspoken, unapologetic.</p>
+
+            <p>Their matches were epic. They met in <span class="highlight">14 Grand Slam finals</span>. Martina won 10 of them. But Chris won the matches that mattered most to her—especially on clay.</p>
+
+            <p>Off the court, they became close friends. They respected each other. They defended each other. And they understood each other in ways no one else could.</p>
+
+            <p>"Martina made me better," Chris said. "She forced me to evolve, to adapt, to become more than I thought I could be. Our rivalry wasn't just about winning—it was about pushing the limits of what women's tennis could be."</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"Chris and I were perfect foils. We were yin and yang. We needed each other. And together, we made women's tennis matter."</p>
+                <p class="quote-author">— Martina Navratilova on Chris Evert</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>The Journey of a Champion</h2>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">December 21, 1954</div>
+                    <div class="timeline-content">Born in Fort Lauderdale, Florida; father Jimmy Evert is tennis coach</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1970 (Age 15)</div>
+                    <div class="timeline-content">Defeats world #1 Margaret Court in her first major tournament; becomes instant sensation</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1971</div>
+                    <div class="timeline-content">Reaches semifinals of U.S. Open at age 16; "Chrissie" becomes America's tennis darling</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1974</div>
+                    <div class="timeline-content">Wins first Grand Slam at French Open and Wimbledon; becomes world #1</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1973-1979</div>
+                    <div class="timeline-content"><strong>125 consecutive clay court match wins—one of most dominant streaks in sports history</strong></div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1974-1989</div>
+                    <div class="timeline-content">Rivalry with Martina Navratilova defines women's tennis; they face each other 80 times</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1974-1986</div>
+                    <div class="timeline-content">Reaches at least one Grand Slam final for 13 consecutive years—remarkable consistency</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1989</div>
+                    <div class="timeline-content">Retires from professional tennis at age 34 with 18 Grand Slam titles</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2022</div>
+                    <div class="timeline-content"><strong>Diagnosed with ovarian cancer; undergoes surgery and chemotherapy; shares journey publicly to help others</strong></div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">Present</div>
+                    <div class="timeline-content">Cancer survivor, tennis commentator, advocate; continues inspiring millions</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Behind the Perfect Image</h2>
+
+            <p class="lead">Chris Evert's public image was flawless. She was poised, elegant, graceful—the perfect role model. But behind the scenes, she was struggling with the same insecurities and pressures that plague everyone.</p>
+
+            <p>She was engaged to tennis star Jimmy Connors in the 1970s. The engagement fell apart publicly, and the media frenzy was brutal. She married three times—each marriage ending in divorce. She faced intense scrutiny over her personal life, her relationships, her choices.</p>
+
+            <p>"People expected me to be perfect," Chris said. "Perfect tennis player, perfect daughter, perfect wife. But I wasn't perfect. I was human. And that was hard to accept."</p>
+
+            <p>She also battled with body image and self-worth. Despite being one of the most successful athletes in the world, she doubted herself constantly. She worried about being too thin, too muscular, too feminine, not feminine enough.</p>
+
+            <p>"I never felt good enough," she admitted. "No matter how much I won, I always felt like I was one loss away from being exposed as a fraud."</p>
+
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <div class="impact-number">18</div>
+                    <div class="impact-label">Grand Slam singles titles (tied 4th all-time)</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">157</div>
+                    <div class="impact-label">Career singles titles</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">1,309-146</div>
+                    <div class="impact-label">Career win-loss record (90% win rate)</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">125</div>
+                    <div class="impact-label">Consecutive clay court match wins</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">260</div>
+                    <div class="impact-label">Weeks ranked world #1</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">7</div>
+                    <div class="impact-label">French Open titles (record at the time)</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>The Fight of Her Life</h2>
+
+            <p class="lead">In January 2022, Chris Evert was diagnosed with Stage 1C ovarian cancer. She was 67 years old. And suddenly, the woman who had faced down the greatest tennis players in the world was facing the fight of her life.</p>
+
+            <p>Ovarian cancer is often called the "silent killer" because symptoms are subtle and easy to miss. Chris had been experiencing some minor abdominal discomfort, but nothing alarming. A routine checkup revealed the cancer.</p>
+
+            <p>She underwent surgery to remove the tumor, followed by chemotherapy. The treatment was brutal—nausea, fatigue, hair loss, pain. But Chris approached it the same way she approached tennis: with determination, discipline, and focus.</p>
+
+            <p>And she did something she had never done before: <span class="highlight">she went public with her diagnosis</span>. She shared her journey on social media and in interviews, hoping to encourage other women to get screened and to show that cancer doesn't have to be a death sentence.</p>
+
+            <p>"I spent my entire career hiding my emotions, hiding my struggles," Chris said. "But with this, I decided to be open. If my story can help even one person get screened and catch cancer early, it's worth it."</p>
+
+            <p>In November 2022, Chris announced that she was cancer-free. The treatment had worked. She had won the fight.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"I've won 18 Grand Slams. But beating cancer—that's my greatest victory."</p>
+                <p class="quote-author">— Chris Evert</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>The Ice That Melted</h2>
+
+            <p class="lead">Chris Evert spent decades being the Ice Maiden—controlled, composed, emotionless. But as she got older, the ice melted. And what emerged was a woman who was warm, vulnerable, and deeply human.</p>
+
+            <p>In retirement, Chris became a beloved tennis commentator. She shared insights, told stories, and revealed sides of herself she had never shown before. She laughed. She cried. She showed emotion.</p>
+
+            <p>"I spent so much of my life hiding," she said. "Now, I'm finally letting people see the real me. And it feels good."</p>
+
+            <p>Her legacy in tennis is secure. She's one of the greatest players ever. But her legacy as a person is just as important. She showed that you can be strong and vulnerable. That you can be successful and still struggle. That perfection is a myth.</p>
+
+            <p>Young tennis players today study Chris Evert's game—her baseline consistency, her tactical brilliance, her mental toughness. But they also learn from her journey—her battles with self-doubt, her openness about cancer, her evolution from Ice Maiden to human being.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"The Ice Maiden was a character I created to survive. But she wasn't me. The real me is messy, emotional, imperfect. And I'm okay with that now."</p>
+                <p class="quote-author">— Chris Evert</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
