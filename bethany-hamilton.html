@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bethany Hamilton - The story of how a 13-year-old girl lost her arm to a shark attack and became a professional surfer anyway">
+    <title>Bethany Hamilton - Soul Surfer | Athletic Players</title>
+    <style>
+        :root {
+            --primary-color: #e63946;
+            --secondary-color: #1d3557;
+            --accent-color: #f4a261;
+            --text-dark: #2b2d42;
+            --text-light: #8d99ae;
+            --background: #f8f9fa;
+            --background-subtle: #edf2f4;
+            --white: #ffffff;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+            --shadow-lg: 0 8px 24px rgba(0,0,0,0.15);
+            --shadow-xl: 0 16px 48px rgba(0,0,0,0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background: var(--background);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+            padding: 6rem 2rem 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://source.unsplash.com/1600x900/?woman,surfing,ocean,wave,hawaii,surf') center/cover;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: var(--white);
+            text-decoration: none;
+            margin-bottom: 2rem;
+            font-weight: 600;
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+
+        .back-link:hover {
+            opacity: 1;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+            font-weight: 300;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 2rem;
+            max-width: 800px;
+            margin: 3rem auto 0;
+        }
+
+        .hero-stat {
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .hero-stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.25rem;
+        }
+
+        .hero-stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+
+        /* Content */
+        .content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            font-weight: 800;
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .story-text {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .story-text.lead {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: var(--secondary-color);
+            line-height: 1.6;
+        }
+
+        .story-text strong {
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        /* Quote Box */
+        .quote-box {
+            background: linear-gradient(135deg, var(--background-subtle) 0%, var(--white) 100%);
+            border-left: 5px solid var(--primary-color);
+            padding: 2.5rem;
+            margin: 3rem 0;
+            border-radius: 0 12px 12px 0;
+            box-shadow: var(--shadow-md);
+        }
+
+        .quote-text {
+            font-size: 1.4rem;
+            font-style: italic;
+            color: var(--secondary-color);
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+        .quote-author {
+            margin-top: 1rem;
+            font-size: 1rem;
+            color: var(--text-light);
+            font-style: normal;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 3rem;
+            margin: 3rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--primary-color), var(--accent-color));
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2.5rem;
+            padding-left: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -3.5rem;
+            top: 0.5rem;
+            width: 16px;
+            height: 16px;
+            background: var(--primary-color);
+            border: 3px solid var(--white);
+            border-radius: 50%;
+            box-shadow: var(--shadow-md);
+        }
+
+        .timeline-year {
+            font-weight: 800;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-event {
+            font-size: 1.05rem;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        .stat-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+            text-align: center;
+            border-top: 4px solid var(--primary-color);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: var(--text-light);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Impact Cards */
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .impact-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+        }
+
+        .impact-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .impact-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .impact-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .impact-description {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 4rem 1.5rem 3rem;
+            }
+
+            .content {
+                padding: 3rem 1.5rem;
+            }
+
+            .hero-stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .timeline {
+                padding-left: 2rem;
+            }
+
+            .timeline-item {
+                padding-left: 1.5rem;
+            }
+
+            .quote-box {
+                padding: 1.5rem;
+            }
+
+            .quote-text {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .impact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-content">
+            <a href="index.html" class="back-link">← Back to Athletes</a>
+            <h1 class="hero-title">Bethany Hamilton</h1>
+            <p class="hero-subtitle">The Surfer Who Lost Her Arm and Found Her Purpose</p>
+
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="hero-stat-number">13</div>
+                    <div class="hero-stat-label">Age at Attack</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">26</div>
+                    <div class="hero-stat-label">Days to Return</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">1</div>
+                    <div class="hero-stat-label">Arm Needed</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">∞</div>
+                    <div class="hero-stat-label">Lives Inspired</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="content">
+        <section class="section">
+            <h2 class="section-title">Halloween Morning, 2003</h2>
+            <p class="story-text lead">October 31, 2003. A perfect morning for surfing off Tunnels Beach on Kauai's north shore. The water was crystal clear, the waves were gentle, and 13-year-old Bethany Hamilton was lying on her surfboard, her left arm dangling in the water, talking to her best friend Alana about their plans for the day.</p>
+
+            <p class="story-text">Then, in an instant, everything changed.</p>
+
+            <p class="story-text">A <strong>14-foot tiger shark</strong> attacked from below, its jaws closing around Bethany's left arm and a massive chunk of her surfboard. The entire attack lasted less than 15 seconds. When it was over, Bethany's left arm was gone—severed just below the shoulder.</p>
+
+            <p class="story-text">There was no pain at first, just shock. The water around her turned red. Her friends screamed. Alana's father, Holt, a lifeguard and first responder, immediately took control. He fashioned a tourniquet from a surf leash and got Bethany to shore.</p>
+
+            <p class="story-text">"I just remember looking at the water and seeing it all red," Bethany later recalled. "I thought, 'That's so weird.' And then I looked at my arm and there was nothing there."</p>
+
+            <p class="story-text">By the time they reached the beach, Bethany had lost over <strong>60% of her blood</strong>. She was going into hypovolemic shock. The ambulance ride to the hospital took 30 minutes—30 minutes where her life hung in the balance.</p>
+
+            <p class="story-text">When she arrived at Wilcox Memorial Hospital, doctors gave her a <strong>less than 10% chance of survival</strong>. Her father, Tom, was already there—coincidentally scheduled for knee surgery that morning. When he heard his daughter was coming in, he gave up his operating room for her.</p>
+
+            <p class="story-text">After seven hours of surgery, Bethany stabilized. She'd survive. But her left arm—and seemingly her surfing career—were gone forever.</p>
+        </section>
+
+        <div class="quote-box">
+            <p class="quote-text">I remember thinking, 'Well, that's weird. What am I going to do about this?' I wasn't thinking about surfing. I was just thinking about my arm. It's funny the things that go through your mind.</p>
+            <p class="quote-author">— Bethany Hamilton</p>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">The Girl Who Lived in the Ocean</h2>
+            <p class="story-text">Bethany wasn't just any surfer. Born on February 8, 1990, in Lihue, Hawaii, she had literally grown up in the ocean. Her parents, Tom and Cheri, were both surfers who had moved to Kauai for the waves. Bethany started surfing at age 5 and was winning competitions by age 8.</p>
+
+            <p class="story-text">By 13, she was already one of the top young surfers in Hawaii, sponsored by Rip Curl, with a promising professional career ahead of her. Surfing wasn't just what she did—it was who she was.</p>
+
+            <p class="story-text">And now, lying in a hospital bed with one arm, that identity seemed impossible.</p>
+
+            <p class="story-text">But Bethany had something else: unshakable faith. Raised in a Christian home, she believed God had a plan—even if she couldn't see it yet. While she was devastated, she wasn't defeated.</p>
+
+            <p class="story-text">"I asked 'Why?' a lot," she said. "But I never asked, 'Why me?' Because why not me? Why should I be spared when other people go through terrible things every day?"</p>
+        </section>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-year">1990</div>
+                <div class="timeline-event">Born in Lihue, Kauai, Hawaii. Raised by surfer parents in ocean culture.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">1995</div>
+                <div class="timeline-event">Started surfing at age 5. Immediately fell in love with the ocean.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">1998-2003</div>
+                <div class="timeline-event">Won multiple amateur surfing competitions. Earned Rip Curl sponsorship by age 13.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">Oct 31, 2003</div>
+                <div class="timeline-event">Attacked by 14-foot tiger shark. Lost left arm. Survived with less than 10% chance.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">Nov 26, 2003</div>
+                <div class="timeline-event">Returned to surfing just 26 days after attack. Rode her first wave with one arm.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2005</div>
+                <div class="timeline-event">Won first national title (NSSA National Championships) two years after attack.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2004-2007</div>
+                <div class="timeline-event">Published autobiography "Soul Surfer" which became #1 New York Times bestseller.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2011</div>
+                <div class="timeline-event">"Soul Surfer" movie released, starring AnnaSophia Robb. Inspired millions worldwide.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2013-Present</div>
+                <div class="timeline-event">Married Adam Dirks. Had four children. Continued professional surfing and motivational speaking.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2016</div>
+                <div class="timeline-event">Competed in first professional surfing event post-motherhood. Continues to inspire.</div>
+            </div>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">26 Days: The Return</h2>
+            <p class="story-text">Three weeks after the attack, Bethany's family took her to Thailand for a mission trip—something they'd planned before Halloween. Bethany wanted to go. She wanted to help people affected by poverty, to get perspective on her own situation.</p>
+
+            <p class="story-text">But what she really wanted was to surf again.</p>
+
+            <p class="story-text">On November 26, 2003—just <strong>26 days after losing her arm</strong>—Bethany paddled back into the ocean at the same beach where the attack happened. Tunnels Beach. The same break. The same water.</p>
+
+            <p class="story-text">Her family and friends gathered on the beach, terrified and amazed. Bethany paddled out with one arm, the stump of her left arm visible where it ended at her shoulder. She waited for a wave.</p>
+
+            <p class="story-text">And then she caught one.</p>
+
+            <p class="story-text">Popping up with one arm was nearly impossible. Everything about surfing is designed for two arms—paddling, balancing, popping up, turning. Bethany had to relearn it all. That first day, she fell. A lot. But she got up. She tried again. And again. And again.</p>
+
+            <p class="story-text">"It was frustrating at first," she said. "Everything I'd learned how to do, I had to relearn with one arm. But I wasn't going to let that stop me."</p>
+
+            <p class="story-text">Within months, she was competing again. Within two years, she won her first national title.</p>
+        </section>
+
+        <div class="quote-box">
+            <p class="quote-text">I don't need easy, I just need possible. And with God, all things are possible. I truly believed that. So I got back in the water.</p>
+            <p class="quote-author">— Bethany Hamilton</p>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">Relearning Everything</h2>
+            <p class="story-text">Surfing with one arm requires completely different technique. Bethany had to:</p>
+
+            <p class="story-text"><strong>Paddle differently.</strong> With only a right arm, she had to paddle in a figure-eight motion to keep the board straight. It was exhausting and inefficient, but it worked.</p>
+
+            <p class="story-text"><strong>Pop up differently.</strong> The traditional "pop-up" involves both hands pushing off the board. Bethany had to modify it, using her right hand and her legs to spring to her feet in one fluid motion.</p>
+
+            <p class="story-text"><strong>Balance differently.</strong> Without a left arm for counterbalance, she had to engage her core and use her legs more. Every turn, every cutback required total body awareness.</p>
+
+            <p class="story-text"><strong>Duck dive differently.</strong> To get through waves when paddling out, surfers "duck dive"—pushing the board underwater with both arms. Bethany had to develop a technique using just one arm and her shoulder.</p>
+
+            <p class="story-text">Her board shaper designed a custom board with a handle for her to grip with her teeth during duck dives. She tried it once and hated it. "I'm not going to surf with something in my mouth," she said. She figured it out without help.</p>
+
+            <p class="story-text">Two years after the attack, in 2005, Bethany won the <strong>NSSA National Championships</strong>. She'd beaten able-bodied surfers. Not in an adaptive category—in the regular competition.</p>
+
+            <p class="story-text">She proved it was possible. And she was just getting started.</p>
+        </section>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">26</div>
+                <div class="stat-label">Days to Return</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">2</div>
+                <div class="stat-label">Years to Title</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">20+</div>
+                <div class="stat-label">Years Pro Surfing</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">2M+</div>
+                <div class="stat-label">Books Sold</div>
+            </div>
+        </stats-grid>
+
+        <section class="section">
+            <h2 class="section-title">Soul Surfer: Sharing the Story</h2>
+            <p class="story-text">In 2004, just one year after the attack, Bethany published her autobiography, <strong>"Soul Surfer: A True Story of Faith, Family, and Fighting to Get Back on the Board."</strong></p>
+
+            <p class="story-text">The book became a #1 New York Times bestseller. Millions of people—many who had never heard of surfing—read about this teenage girl who refused to let a shark attack define her. Parents gave it to their kids. Amputees found hope in it. Athletes were inspired by it.</p>
+
+            <p class="story-text">In 2011, the book became a major motion picture starring AnnaSophia Robb as Bethany, with Helen Hunt and Dennis Quaid as her parents. The film grossed over $47 million and introduced Bethany's story to an even wider audience.</p>
+
+            <p class="story-text">But Bethany wasn't just a story. She was still competing, still pushing boundaries, still proving that limitation is a mindset.</p>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Professional Career and Motherhood</h2>
+            <p class="story-text">Bethany turned professional and competed on the World Surf League's qualifying series. She surfed in some of the most challenging conditions in the world—Pipeline, Teahupo'o, big wave contests that terrify even able-bodied surfers.</p>
+
+            <p class="story-text">In 2013, she married Adam Dirks, a youth minister. Many wondered if marriage would slow her down, if she'd retire from competitive surfing.</p>
+
+            <p class="story-text">Instead, she had four children and kept surfing.</p>
+
+            <p class="story-text">She surfed while pregnant. She surfed months after giving birth. She brought her kids to competitions. She showed the world that motherhood and athletic excellence aren't mutually exclusive—especially when you've already proven that losing an arm isn't a reason to quit.</p>
+
+            <p class="story-text">"People ask me all the time, 'How do you do it with one arm and kids?'" Bethany said. "And I always think, 'How do people do it with two arms and kids?' It's hard for everyone. You just figure it out."</p>
+        </section>
+
+        <div class="quote-box">
+            <p class="quote-text">Courage doesn't mean you don't get afraid. Courage means you don't let fear stop you. I was terrified to get back in the water. But I did it anyway. That's what courage is.</p>
+            <p class="quote-author">— Bethany Hamilton</p>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">Beyond Surfing: The Advocate</h2>
+            <p class="story-text">Bethany's impact extends far beyond surfing. She became a powerful advocate for people with disabilities, particularly limb differences. She visits hospitals, talks to amputees, and shows them that life doesn't end when you lose a limb—it just changes.</p>
+
+            <p class="story-text">She founded <strong>Friends of Bethany</strong>, a foundation that supports shark attack survivors and traumatic amputees. She's spoken to millions through her books, documentaries, and motivational speaking.</p>
+
+            <p class="story-text">She's partnered with prosthetic companies to help provide limbs to amputees who can't afford them. She's used her platform to advocate for better accessibility in sports and everyday life.</p>
+
+            <p class="story-text">And through it all, she's remained humble. She doesn't see herself as special—just as someone who refused to give up.</p>
+        </section>
+
+        <div class="impact-grid">
+            <div class="impact-card">
+                <span class="impact-icon">🏄‍♀️</span>
+                <h3 class="impact-title">Professional Surfer</h3>
+                <p class="impact-description">Returned to competitive surfing 26 days after shark attack. Won national titles and competed professionally with one arm for over 20 years.</p>
+            </div>
+            <div class="impact-card">
+                <span class="impact-icon">📚</span>
+                <h3 class="impact-title">Bestselling Author</h3>
+                <p class="impact-description">"Soul Surfer" became a #1 New York Times bestseller and major motion picture, inspiring millions worldwide with her story of resilience.</p>
+            </div>
+            <div class="impact-card">
+                <span class="impact-icon">💪</span>
+                <h3 class="impact-title">Disability Advocate</h3>
+                <p class="impact-description">Champions for amputees and people with limb differences. Founded Friends of Bethany to support shark attack survivors and traumatic amputees.</p>
+            </div>
+            <div class="impact-card">
+                <span class="impact-icon">🙏</span>
+                <h3 class="impact-title">Inspirational Speaker</h3>
+                <p class="impact-description">Traveled the world sharing her message of faith, courage, and perseverance. Spoken to millions about overcoming adversity.</p>
+            </div>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">The Shark Question</h2>
+            <p class="story-text">People always ask Bethany if she's afraid of sharks. If she still goes to Tunnels Beach. If she ever considered not surfing again.</p>
+
+            <p class="story-text">Her answer is always the same: "Fear is a choice."</p>
+
+            <p class="story-text">She still surfs at Tunnels Beach—the exact spot where she lost her arm. She surfs in murky water, at dawn, at dusk—all the times when sharks are most active. She doesn't surf recklessly, but she doesn't let fear control her.</p>
+
+            <p class="story-text">"The ocean is still my happy place," she said. "Sharks live there. That's just a fact. I could get attacked again. But I could also get hit by a car or struck by lightning. You can't live your life in fear of what might happen."</p>
+
+            <p class="story-text">She's never blamed the shark. "It was just doing what sharks do," she says. "I don't have any anger toward it. I'm actually grateful for what happened, because it gave me a platform to help people."</p>
+        </section>
+
+        <div class="quote-box">
+            <p class="quote-text">I wouldn't change what happened to me because then I wouldn't have this chance to help people. I've met so many people who have been through tough times, and if my story gives them hope, then it was all worth it.</p>
+            <p class="quote-author">— Bethany Hamilton</p>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">The Legacy of Courage</h2>
+            <p class="story-text">Bethany Hamilton is now in her 30s. She's a wife, a mother of four, a professional surfer, a bestselling author, and one of the most recognizable names in adaptive sports—even though she's never competed in an adaptive category.</p>
+
+            <p class="story-text">She proved that you don't need two arms to be a champion. You just need courage, determination, and the refusal to accept limitations that others place on you.</p>
+
+            <p class="story-text">Her story has inspired countless people facing their own "shark attacks"—cancer, accidents, disabilities, trauma. She shows them that survival isn't enough. You can thrive. You can compete. You can win.</p>
+
+            <p class="story-text">From that terrifying Halloween morning in 2003 to today, Bethany has lived by one simple principle: Don't let fear win. Get back in the water. Chase the waves. Live your life.</p>
+
+            <p class="story-text">Because if a 13-year-old girl can lose her arm to a shark and become a professional surfer anyway, what's stopping you?</p>
+        </section>
+
+        <div class="quote-box">
+            <p class="quote-text">I don't look at myself as a hero. I'm just a girl who loves to surf. I just happen to be missing an arm. That doesn't define me. What defines me is what I choose to do despite it.</p>
+            <p class="quote-author">— Bethany Hamilton</p>
+        </div>
+
+        <section class="section">
+            <p class="story-text" style="text-align: center; font-size: 1.2rem; color: var(--text-light); margin-top: 4rem;">
+                <strong>Bethany Hamilton:</strong> Shark attack survivor. Professional surfer. Mother of four. Bestselling author. Living proof that courage is stronger than fear.
+            </p>
+        </section>
+    </div>
+</body>
+</html>

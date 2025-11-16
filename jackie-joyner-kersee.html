@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jackie Joyner-Kersee - The story of how a girl from America's most dangerous city overcame asthma and poverty to become the greatest female athlete ever">
+    <title>Jackie Joyner-Kersee - The Greatest Ever | Athletic Players</title>
+    <style>
+        :root {
+            --primary-color: #e63946;
+            --secondary-color: #1d3557;
+            --accent-color: #f4a261;
+            --text-dark: #2b2d42;
+            --text-light: #8d99ae;
+            --background: #f8f9fa;
+            --background-subtle: #edf2f4;
+            --white: #ffffff;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+            --shadow-lg: 0 8px 24px rgba(0,0,0,0.15);
+            --shadow-xl: 0 16px 48px rgba(0,0,0,0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background: var(--background);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+            padding: 6rem 2rem 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://source.unsplash.com/1600x900/?woman,track,field,long,jump,heptathlon,athlete') center/cover;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: var(--white);
+            text-decoration: none;
+            margin-bottom: 2rem;
+            font-weight: 600;
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+
+        .back-link:hover {
+            opacity: 1;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+            font-weight: 300;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 2rem;
+            max-width: 800px;
+            margin: 3rem auto 0;
+        }
+
+        .hero-stat {
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .hero-stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.25rem;
+        }
+
+        .hero-stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+
+        /* Content */
+        .content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            font-weight: 800;
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .story-text {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .story-text.lead {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: var(--secondary-color);
+            line-height: 1.6;
+        }
+
+        .story-text strong {
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        /* Quote Box */
+        .quote-box {
+            background: linear-gradient(135deg, var(--background-subtle) 0%, var(--white) 100%);
+            border-left: 5px solid var(--primary-color);
+            padding: 2.5rem;
+            margin: 3rem 0;
+            border-radius: 0 12px 12px 0;
+            box-shadow: var(--shadow-md);
+        }
+
+        .quote-text {
+            font-size: 1.4rem;
+            font-style: italic;
+            color: var(--secondary-color);
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+        .quote-author {
+            margin-top: 1rem;
+            font-size: 1rem;
+            color: var(--text-light);
+            font-style: normal;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 3rem;
+            margin: 3rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--primary-color), var(--accent-color));
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2.5rem;
+            padding-left: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -3.5rem;
+            top: 0.5rem;
+            width: 16px;
+            height: 16px;
+            background: var(--primary-color);
+            border: 3px solid var(--white);
+            border-radius: 50%;
+            box-shadow: var(--shadow-md);
+        }
+
+        .timeline-year {
+            font-weight: 800;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-event {
+            font-size: 1.05rem;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        .stat-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+            text-align: center;
+            border-top: 4px solid var(--primary-color);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: var(--text-light);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Impact Cards */
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .impact-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+        }
+
+        .impact-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .impact-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .impact-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .impact-description {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 4rem 1.5rem 3rem;
+            }
+
+            .content {
+                padding: 3rem 1.5rem;
+            }
+
+            .hero-stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .timeline {
+                padding-left: 2rem;
+            }
+
+            .timeline-item {
+                padding-left: 1.5rem;
+            }
+
+            .quote-box {
+                padding: 1.5rem;
+            }
+
+            .quote-text {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .impact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-content">
+            <a href="index.html" class="back-link">← Back to Athletes</a>
+            <h1 class="hero-title">Jackie Joyner-Kersee</h1>
+            <p class="hero-subtitle">From East St. Louis to Olympus: The Greatest Female Athlete Ever</p>
+
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="hero-stat-number">3</div>
+                    <div class="hero-stat-label">Olympic Golds</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">6</div>
+                    <div class="hero-stat-label">Olympic Medals</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">7291</div>
+                    <div class="hero-stat-label">Heptathlon WR</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">#1</div>
+                    <div class="hero-stat-label">All-Time Female</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="content">
+        <section class="section">
+            <h2 class="section-title">The City That Shaped a Champion</h2>
+            <p class="story-text lead">East St. Louis, Illinois, in the 1960s and 70s was one of the most dangerous, impoverished cities in America. Murder rates among the highest in the nation. Unemployment over 25%. Schools crumbling. Entire neighborhoods abandoned. This is where Jacqueline Joyner was born on March 3, 1962.</p>
+
+            <p class="story-text">Her grandmother named her after <strong>Jacqueline Kennedy</strong>, predicting she would be "the first lady of something." That prediction would prove prophetic—Jackie would become the first lady of track and field, crowned by Sports Illustrated as the <strong>"Greatest Female Athlete of the 20th Century."</strong></p>
+
+            <p class="story-text">But that title came at a cost measured in struggle, sacrifice, and severe asthma attacks that nearly ended her career before it started.</p>
+
+            <p class="story-text">Jackie grew up in a house with no heat, where she and her siblings slept in their winter coats. Her father, Alfred, worked on the railroad and as a construction worker. Her mother, Mary, was a nurse's assistant. They worked constantly but never escaped poverty.</p>
+
+            <p class="story-text">"We were poor, but we were happy," Jackie remembered. "My parents taught us that hard work could overcome anything. They taught us to dream bigger than our circumstances."</p>
+
+            <p class="story-text">But East St. Louis was relentless. Gunshots were the soundtrack to childhood. Drugs and violence claimed friends and neighbors. The community center where Jackie first discovered track and field was her refuge—the only safe place in a dangerous world.</p>
+        </section>
+
+        <div class="quote-box">
+            <p class="quote-text">I learned early on that if you want something badly enough, you can't let your circumstances dictate your dreams. East St. Louis tried to tell me what I couldn't be. I decided to prove it wrong.</p>
+            <p class="quote-author">— Jackie Joyner-Kersee</p>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">Fighting for Every Breath: The Asthma Battle</h2>
+            <p class="story-text">From childhood, Jackie suffered from severe asthma. In a city where pollution from nearby factories choked the air, where her home had no proper ventilation, where stress and poverty compounded every health issue—asthma was a constant threat.</p>
+
+            <p class="story-text">She had her first major attack at age 18, collapsing during high school track practice. The attacks would continue throughout her career, sometimes mid-competition, her lungs seizing as she tried to breathe through events that required superhuman endurance.</p>
+
+            <p class="story-text">The <strong>heptathlon</strong>—her signature event—is perhaps the most grueling competition in track and field. Seven events over two days: 100m hurdles, high jump, shot put, 200m dash, long jump, javelin, and 800m run. It requires speed, power, technique, and endurance. All while Jackie's lungs struggled to keep up.</p>
+
+            <p class="story-text">"There were times I literally couldn't breathe," she said. "I'd be in the middle of the 800 meters—the final event—and my chest would tighten. But I'd think about where I came from, about my family, about all the people who said a girl from East St. Louis with asthma couldn't compete. And I'd push through."</p>
+
+            <p class="story-text">She kept inhalers everywhere. She trained her body to function on less oxygen. She learned to recognize the early signs of an attack and adjust mid-competition. She turned a disability into a test of willpower—and she passed every time.</p>
+        </section>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-year">1962</div>
+                <div class="timeline-event">Born in East St. Louis, Illinois. Named after Jackie Kennedy. Raised in extreme poverty.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">1975</div>
+                <div class="timeline-event">Started training at Mary Brown Community Center. Discovered track and field at age 12.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">1980-1984</div>
+                <div class="timeline-event">Attended UCLA on scholarship. Competed in basketball and track. Met coach Bob Kersee.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">1984</div>
+                <div class="timeline-event">Los Angeles Olympics: won silver in heptathlon, missing gold by 5 points. Devastated.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">1986</div>
+                <div class="timeline-event">Married coach Bob Kersee. Set heptathlon world record (7,148 points).</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">1988</div>
+                <div class="timeline-event">Seoul Olympics: WON GOLD in heptathlon and long jump. Set new heptathlon WR (7,291 points).</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">1992</div>
+                <div class="timeline-event">Barcelona Olympics: WON GOLD in heptathlon, bronze in long jump despite severe asthma attack.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">1996</div>
+                <div class="timeline-event">Atlanta Olympics: won bronze in long jump at age 34. Final Olympic competition.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">1998</div>
+                <div class="timeline-event">Retired from competition. Named Greatest Female Athlete of 20th Century by Sports Illustrated.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">1988-Present</div>
+                <div class="timeline-event">Founded Jackie Joyner-Kersee Foundation. Transformed East St. Louis community through youth sports and education.</div>
+            </div>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">UCLA and the Coach Who Changed Everything</h2>
+            <p class="story-text">In 1980, Jackie earned a basketball scholarship to UCLA. Basketball was her first love—she'd been a star in high school. But UCLA's track coach, <strong>Bob Kersee</strong>, saw something special in her during tryouts.</p>
+
+            <p class="story-text">"You should do track," he told her. "You could be one of the greatest ever."</p>
+
+            <p class="story-text">Jackie was skeptical. She was at UCLA to play basketball. But Bob was persistent. He saw her combination of speed, strength, and athleticism. He saw someone who could excel at everything—which made her perfect for the heptathlon.</p>
+
+            <p class="story-text">She started training with Bob while still playing basketball. The relationship was coach-athlete at first, but it evolved. Bob pushed her harder than anyone ever had. He believed in her more than she believed in herself. And slowly, Jackie fell in love—with track, and with Bob.</p>
+
+            <p class="story-text">In 1986, they married. Their relationship was controversial—some said it was inappropriate for a coach to marry his athlete. But they didn't care. Bob had seen the champion in Jackie when no one else did. And together, they would conquer the world.</p>
+        </section>
+
+        <div class="quote-box">
+            <p class="quote-text">Bob saw me not as I was, but as I could be. He pushed me beyond what I thought was possible. Every world record, every gold medal—they were ours together.</p>
+            <p class="quote-author">— Jackie Joyner-Kersee</p>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">1984: The Heartbreak That Fueled Greatness</h2>
+            <p class="story-text">At the 1984 Los Angeles Olympics, Jackie competed in the heptathlon—her first Olympics. She was 22 years old, relatively unknown, competing against the best in the world.</p>
+
+            <p class="story-text">She dominated the first six events. Going into the final event—the 800 meters—she had a comfortable lead. All she had to do was finish respectably and gold was hers.</p>
+
+            <p class="story-text">But in the 800m, she faltered. Whether from nerves, fatigue, or an asthma flare-up, she couldn't find her usual speed. Australia's Glynis Nunn ran the race of her life.</p>
+
+            <p class="story-text">When the points were tallied, Jackie had lost gold by <strong>5 points</strong>. Five points out of over 6,000. One of the smallest margins in Olympic history. She'd won silver—an incredible achievement for a first-time Olympian.</p>
+
+            <p class="story-text">But Jackie was crushed. "I felt like I'd let everyone down," she said. "My family, my coach, East St. Louis—everyone who believed in me. I cried for days."</p>
+
+            <p class="story-text">Bob told her: "You'll never lose another heptathlon. I promise you that."</p>
+
+            <p class="story-text">It was a promise they would keep.</p>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Seoul 1988: Redemption and Records</h2>
+            <p class="story-text">Four years after the heartbreak of Los Angeles, Jackie arrived in Seoul, South Korea, for the 1988 Olympics as the <strong>world record holder</strong> and overwhelming favorite. She'd set a new heptathlon world record of 7,215 points earlier that year.</p>
+
+            <p class="story-text">But favorites don't always win. The pressure was immense. This was her chance at redemption.</p>
+
+            <p class="story-text">From the first event—the 100m hurdles—Jackie was on fire. She won the hurdles. She soared in the high jump. She threw the shot put farther than she ever had. By the end of day one, she had a massive lead.</p>
+
+            <p class="story-text">Day two was more of the same. She blazed the 200m. She flew in the long jump. She hurled the javelin with power. And in the final event—the dreaded 800m where she'd lost gold four years earlier—she ran like her life depended on it.</p>
+
+            <p class="story-text">When she crossed the finish line, the scoreboard showed <strong>7,291 points</strong>—a new world record that would stand for decades. She'd won gold by over 400 points. It wasn't even close.</p>
+
+            <p class="story-text">But Jackie wasn't done. Days later, she competed in the <strong>long jump</strong>—a separate event from the heptathlon. She jumped 7.40 meters (24 feet, 3.5 inches), crushing the competition and winning a <strong>second gold medal</strong>.</p>
+
+            <p class="story-text">Two golds. One world record. Complete domination. The girl from East St. Louis was now the greatest female athlete in the world.</p>
+        </section>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">7291</div>
+                <div class="stat-label">Heptathlon WR</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">6</div>
+                <div class="stat-label">Olympic Medals</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">4</div>
+                <div class="stat-label">World Championships</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">24</div>
+                <div class="stat-label">Years Competed</div>
+            </div>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">Barcelona 1992: Asthma Attacks and Gold Medals</h2>
+            <p class="story-text">At the 1992 Barcelona Olympics, Jackie was 30 years old—ancient in track and field. She was defending her Olympic title, but her body was breaking down. The years of training, the asthma, the countless competitions—they were taking their toll.</p>
+
+            <p class="story-text">During the heptathlon, she suffered a severe asthma attack. Her chest tightened. She couldn't catch her breath. Medical staff rushed to her side. Many thought she'd have to withdraw.</p>
+
+            <p class="story-text">Jackie refused. "I came here to defend my title," she said. "I'm not quitting."</p>
+
+            <p class="story-text">She used her inhaler, caught her breath, and kept competing. Despite the attack, despite being 30, despite everything—she won <strong>gold again</strong>. She also won bronze in the long jump.</p>
+
+            <p class="story-text">It was her final Olympic heptathlon. She'd won back-to-back golds, never losing an Olympic or World Championship heptathlon after that silver in 1984. Bob's promise had been kept.</p>
+        </section>
+
+        <div class="quote-box">
+            <p class="quote-text">When I have an asthma attack, it feels like I'm drowning on dry land. But I learned that my mind is stronger than my lungs. You can push through anything if you have a reason. My reason was proving that East St. Louis could produce champions.</p>
+            <p class="quote-author">— Jackie Joyner-Kersee</p>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">The Foundation: Giving Back</h2>
+            <p class="story-text">Even at the height of her fame, Jackie never forgot where she came from. In 1988, while training for Seoul, she founded the <strong>Jackie Joyner-Kersee Foundation</strong> to provide youth sports, education, and leadership programs in East St. Louis.</p>
+
+            <p class="story-text">She built community centers, funded after-school programs, created scholarships. She wanted to give kids in East St. Louis the same opportunities she'd had—a safe place to play, coaches who believed in them, a chance to dream.</p>
+
+            <p class="story-text">"I escaped East St. Louis through sports," she said. "But I never wanted to escape the responsibility of helping the next generation. These are my people. This is my community. I owe it everything."</p>
+
+            <p class="story-text">Her foundation has helped thousands of children over the decades. Many have gone on to college on athletic scholarships. Some have become professional athletes. All have had a chance to see that their zip code doesn't define their future.</p>
+        </section>
+
+        <div class="impact-grid">
+            <div class="impact-card">
+                <span class="impact-icon">🥇</span>
+                <h3 class="impact-title">6 Olympic Medals</h3>
+                <p class="impact-description">3 golds, 1 silver, 2 bronzes across four Olympic Games. Dominated heptathlon for a decade, never losing at Olympics or Worlds after 1984.</p>
+            </div>
+            <div class="impact-card">
+                <span class="impact-icon">🏆</span>
+                <h3 class="impact-title">World Record Holder</h3>
+                <p class="impact-description">Set heptathlon world record of 7,291 points in 1988 that stood as the American record for decades. One of the greatest athletic achievements ever.</p>
+            </div>
+            <div class="impact-card">
+                <span class="impact-icon">👑</span>
+                <h3 class="impact-title">Greatest Female Athlete Ever</h3>
+                <p class="impact-description">Named by Sports Illustrated as the Greatest Female Athlete of the 20th Century, beating out legends from every sport.</p>
+            </div>
+            <div class="impact-card">
+                <span class="impact-icon">💪</span>
+                <h3 class="impact-title">Asthma Advocacy</h3>
+                <p class="impact-description">Proved athletes with asthma can compete at the highest level. Became spokesperson for asthma awareness and inspired millions with respiratory conditions.</p>
+            </div>
+            <div class="impact-card">
+                <span class="impact-icon">🏘️</span>
+                <h3 class="impact-title">Community Champion</h3>
+                <p class="impact-description">Founded Jackie Joyner-Kersee Foundation to transform East St. Louis through youth sports, education, and community development programs.</p>
+            </div>
+            <div class="impact-card">
+                <span class="impact-icon">🎓</span>
+                <h3 class="impact-title">Education Advocate</h3>
+                <p class="impact-description">Emphasized the importance of education alongside athletics. Helped thousands of youth from impoverished communities access college scholarships.</p>
+            </div>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">The Legacy: More Than Medals</h2>
+            <p class="story-text">When Jackie Joyner-Kersee retired in 1998, her legacy was already cemented. Sports Illustrated named her the <strong>Greatest Female Athlete of the 20th Century</strong>—ahead of Babe Didrikson Zaharias, Billie Jean King, and every other legendary female athlete of that era.</p>
+
+            <p class="story-text">But her impact goes beyond the medals and records. She showed that poverty isn't destiny. That asthma isn't a death sentence for athletic dreams. That a girl from East St. Louis can compete with—and beat—anyone in the world.</p>
+
+            <p class="story-text">She proved that greatness isn't about where you start—it's about how hard you're willing to work and how much you believe in yourself.</p>
+
+            <p class="story-text">Today, Jackie is in the National Track and Field Hall of Fame, the Olympic Hall of Fame, and the Women's Sports Foundation Hall of Fame. Her heptathlon world record stood for 36 years as the American record. Her story is taught in schools. Her foundation continues to change lives.</p>
+
+            <p class="story-text">And somewhere in East St. Louis, there's a little girl who looks at Jackie's story and thinks: "If she can do it, so can I."</p>
+
+            <p class="story-text">That's the real legacy. Not the medals. Not the records. The hope.</p>
+        </section>
+
+        <div class="quote-box">
+            <p class="quote-text">It's not about what you've been through. It's about what you do with it. I came from nothing. I had asthma. I faced every obstacle you can imagine. But I had a dream. And I refused to let anything stop me. If I can inspire just one person to believe in themselves, then everything was worth it.</p>
+            <p class="quote-author">— Jackie Joyner-Kersee</p>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">The First Lady of Track and Field</h2>
+            <p class="story-text">Jackie's grandmother was right. She did become "the first lady of something."</p>
+
+            <p class="story-text">Not through privilege or luck. Through grit. Through fighting for every breath, literally and figuratively. Through refusing to let poverty, asthma, or doubt stop her from becoming the greatest.</p>
+
+            <p class="story-text">From those crumbling streets of East St. Louis to the top of the Olympic podium. From a girl who couldn't afford heat in her home to the woman crowned the greatest female athlete of an entire century.</p>
+
+            <p class="story-text">Jackie Joyner-Kersee didn't just win. She transcended. She transformed. She proved that with enough determination, enough heart, and enough belief—anything is possible.</p>
+
+            <p class="story-text">She is the GOAT. And she earned every letter of that title.</p>
+        </section>
+
+        <div class="quote-box">
+            <p class="quote-text">I am the best. I just haven't played yet. That's what I told myself growing up in East St. Louis. And then I went out and proved it.</p>
+            <p class="quote-author">— Jackie Joyner-Kersee</p>
+        </div>
+
+        <section class="section">
+            <p class="story-text" style="text-align: center; font-size: 1.2rem; color: var(--text-light); margin-top: 4rem;">
+                <strong>Jackie Joyner-Kersee:</strong> 6 Olympic medals. World record holder. Greatest Female Athlete of the 20th Century. From East St. Louis to eternal greatness.
+            </p>
+        </section>
+    </div>
+</body>
+</html>
