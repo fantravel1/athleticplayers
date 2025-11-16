@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ronda Rousey - The story of how a girl who lost her father to suicide became the baddest woman on the planet and changed combat sports forever">
+    <title>Ronda Rousey - The Armbar Queen | Athletic Players</title>
+    <style>
+        :root {
+            --primary-color: #e63946;
+            --secondary-color: #1d3557;
+            --accent-color: #f4a261;
+            --text-dark: #2b2d42;
+            --text-light: #8d99ae;
+            --background: #f8f9fa;
+            --background-subtle: #edf2f4;
+            --white: #ffffff;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+            --shadow-lg: 0 8px 24px rgba(0,0,0,0.15);
+            --shadow-xl: 0 16px 48px rgba(0,0,0,0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background: var(--background);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+            padding: 6rem 2rem 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://source.unsplash.com/1600x900/?woman,mma,ufc,fighter,boxing,combat,sport') center/cover;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: var(--white);
+            text-decoration: none;
+            margin-bottom: 2rem;
+            font-weight: 600;
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+
+        .back-link:hover {
+            opacity: 1;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+            font-weight: 300;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 2rem;
+            max-width: 800px;
+            margin: 3rem auto 0;
+        }
+
+        .hero-stat {
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .hero-stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.25rem;
+        }
+
+        .hero-stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+
+        /* Content */
+        .content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            font-weight: 800;
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .story-text {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .story-text.lead {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: var(--secondary-color);
+            line-height: 1.6;
+        }
+
+        .story-text strong {
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        /* Quote Box */
+        .quote-box {
+            background: linear-gradient(135deg, var(--background-subtle) 0%, var(--white) 100%);
+            border-left: 5px solid var(--primary-color);
+            padding: 2.5rem;
+            margin: 3rem 0;
+            border-radius: 0 12px 12px 0;
+            box-shadow: var(--shadow-md);
+        }
+
+        .quote-text {
+            font-size: 1.4rem;
+            font-style: italic;
+            color: var(--secondary-color);
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+        .quote-author {
+            margin-top: 1rem;
+            font-size: 1rem;
+            color: var(--text-light);
+            font-style: normal;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 3rem;
+            margin: 3rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--primary-color), var(--accent-color));
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2.5rem;
+            padding-left: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -3.5rem;
+            top: 0.5rem;
+            width: 16px;
+            height: 16px;
+            background: var(--primary-color);
+            border: 3px solid var(--white);
+            border-radius: 50%;
+            box-shadow: var(--shadow-md);
+        }
+
+        .timeline-year {
+            font-weight: 800;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-event {
+            font-size: 1.05rem;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        .stat-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+            text-align: center;
+            border-top: 4px solid var(--primary-color);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: var(--text-light);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Impact Cards */
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .impact-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+        }
+
+        .impact-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .impact-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .impact-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .impact-description {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 4rem 1.5rem 3rem;
+            }
+
+            .content {
+                padding: 3rem 1.5rem;
+            }
+
+            .hero-stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .timeline {
+                padding-left: 2rem;
+            }
+
+            .timeline-item {
+                padding-left: 1.5rem;
+            }
+
+            .quote-box {
+                padding: 1.5rem;
+            }
+
+            .quote-text {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .impact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-content">
+            <a href="index.html" class="back-link">← Back to Athletes</a>
+            <h1 class="hero-title">Ronda Rousey</h1>
+            <p class="hero-subtitle">From Tragedy to Triumph: The Baddest Woman on the Planet</p>
+
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="hero-stat-number">12-2</div>
+                    <div class="hero-stat-label">UFC Record</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">1</div>
+                    <div class="hero-stat-label">Olympic Bronze (Judo)</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">1st</div>
+                    <div class="hero-stat-label">Woman in UFC</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">∞</div>
+                    <div class="hero-stat-label">Barriers Broken</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="content">
+        <section class="section">
+            <h2 class="section-title">The Day Everything Changed</h2>
+            <p class="story-text lead">Ronda Rousey was 8 years old when she came home to find paramedics carrying her father Ron out of the house. He'd broken his back in a sledding accident years earlier, endured dozens of surgeries, and lived in constant pain. That day in 1995, he'd decided he couldn't take it anymore.</p>
+
+            <p class="story-text">Ron Rousey took his own life. And Ronda's world shattered.</p>
+
+            <p class="story-text">"I was the one who found him," Ronda later revealed. "I saw what happened. I can't forget it. I never will."</p>
+
+            <p class="story-text">The trauma would define her childhood. She stopped speaking for months. Her mother AnnMaria—herself a world judo champion—didn't know how to help her daughter process the grief. The family struggled financially. They moved constantly. At times, they were homeless, living in their car.</p>
+
+            <p class="story-text">Ronda turned inward. She became angry, withdrawn, violent. She got into fights at school. She was suicidal herself at times. "I thought about it a lot," she said. "I thought about just ending it. Being with my dad."</p>
+
+            <p class="story-text">What saved her was judo. The mat was the only place where her rage had purpose.</p>
+        </section>
+
+        <div class="quote-box">
+            <p class="quote-text">For a really long time, I thought I was going to follow in my dad's footsteps. It took judo to save me. It gave me a reason to keep fighting—literally.</p>
+            <p class="quote-author">— Ronda Rousey</p>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">Olympic Bronze and Broken Dreams</h2>
+            <p class="story-text">Ronda started judo training seriously at age 11. Her mother AnnMaria had been the first American woman to win a World Judo Championship in 1984. Judo was in Ronda's blood.</p>
+
+            <p class="story-text">She was good. Really good. By her teens, she was competing internationally. At 17, she became the youngest judoka to qualify for the 2004 Athens Olympics. She didn't medal, but she learned.</p>
+
+            <p class="story-text">Four years later, at the 2008 Beijing Olympics, Ronda won bronze in the 70kg division. She became the first American woman to medal in Olympic judo in 12 years. She was 21 years old, a world-class athlete with her whole career ahead of her.</p>
+
+            <p class="story-text">Then the money ran out.</p>
+
+            <p class="story-text">Olympic judo doesn't pay. Ronda returned to the U.S. broke, living in her car again, working three jobs—bartending, waitressing, training fighters. She was an Olympic medalist sleeping in a Honda Accord. The American dream had failed her.</p>
+
+            <p class="story-text">"I thought about quitting," she said. "I thought, 'What's the point? I'm an Olympic medalist and I'm homeless.'"</p>
+        </section>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-year">1987</div>
+                <div class="timeline-event">Born in Riverside County, California. Mother AnnMaria was world judo champion.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">1995</div>
+                <div class="timeline-event">Father Ron committed suicide. Ronda found him. Trauma defined her childhood.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2004</div>
+                <div class="timeline-event">Competed at Athens Olympics at age 17. Youngest US judoka ever. Did not medal.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2008</div>
+                <div class="timeline-event">Won bronze medal in judo at Beijing Olympics. First US woman to medal in judo in 12 years.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2010</div>
+                <div class="timeline-event">Transitioned to MMA after Olympic judo career ended. Started fighting professionally.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2012</div>
+                <div class="timeline-event">Became first woman signed to UFC. Dana White had said women would "never" fight in UFC.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2013</div>
+                <div class="timeline-event">Became first UFC Women's Bantamweight Champion. Defended title 6 times.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2015</div>
+                <div class="timeline-event">Lost to Holly Holm via knockout. First professional loss. Fell into depression.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2016</div>
+                <div class="timeline-event">Lost to Amanda Nunes. Retired from MMA. Transitioned to WWE.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2018-Present</div>
+                <div class="timeline-event">WWE champion, actress, author, mother. Living proof you can rebuild after losing everything.</div>
+            </div>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">The UFC Gamble</h2>
+            <p class="story-text">In 2010, Ronda made a decision that would change combat sports forever: she transitioned to mixed martial arts (MMA).</p>
+
+            <p class="story-text">At the time, UFC President Dana White had famously said women would <strong>"never"</strong> fight in the UFC. Women's MMA was dismissed as unmarketable, boring, not violent enough. The men's sport was thriving; why risk it with women?</p>
+
+            <p class="story-text">Ronda didn't care what Dana White thought. She started fighting in smaller promotions—Strikeforce, King of the Cage. She was dominant. Her signature move was the <strong>armbar</strong>—a judo submission that she executed with such precision and speed that most fights ended in under a minute.</p>
+
+            <p class="story-text">She went 6-0 in Strikeforce, finishing every opponent. She became Strikeforce Women's Bantamweight Champion. And finally, Dana White couldn't ignore her anymore.</p>
+
+            <p class="story-text">In 2012, the UFC announced they were creating a women's division. Ronda Rousey would be the first woman to fight in the Octagon.</p>
+
+            <p class="story-text">"They said women would never be in the UFC," Ronda said. "I made them eat those words."</p>
+        </section>
+
+        <div class="quote-box">
+            <p class="quote-text">Everyone I've ever stepped in the Octagon with, I finish. That's not me being cocky. That's me being prepared.</p>
+            <p class="quote-author">— Ronda Rousey</p>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">Rowdy Ronda: The Champion</h2>
+            <p class="story-text">From 2013 to 2015, Ronda Rousey was unstoppable. She became the first UFC Women's Bantamweight Champion and defended her title six times. Her average fight time? <strong>Less than one minute</strong>.</p>
+
+            <p class="story-text">She finished fights so quickly that fans complained they didn't get their money's worth from pay-per-view. Her armbar was poetry in violence—grab the arm, twist, snap. Tap out or break. Fighters feared her.</p>
+
+            <p class="story-text">But Ronda was more than just a fighter. She became a crossover star. She appeared on magazine covers, talk shows, movies. She hosted Saturday Night Live. She was in Fast & Furious films. Sports Illustrated named her the most dominant athlete alive—ahead of LeBron James, Serena Williams, everyone.</p>
+
+            <p class="story-text">She proved Dana White spectacularly wrong. Women's MMA became the UFC's biggest draw. Ronda's fights sold out arenas. Her pay-per-view numbers rivaled the men. She was the highest-paid fighter in the UFC—male or female.</p>
+        </section>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">12-2</div>
+                <div class="stat-label">MMA Record</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">3</div>
+                <div class="stat-label">Title Defenses (UFC)</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">48 sec</div>
+                <div class="stat-label">Avg Fight Time (1st 3 UFC wins)</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">1st</div>
+                <div class="stat-label">Woman in UFC</div>
+            </div>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">The Fall: Holly Holm</h2>
+            <p class="story-text">November 15, 2015. UFC 193 in Melbourne, Australia. Ronda faced Holly Holm, a former boxing champion. Ronda was undefeated. Invincible. The betting favorite by a mile.</p>
+
+            <p class="story-text">Then, in the second round, Holly landed a head kick. Ronda went down. The referee stopped the fight. Knockout. Ronda's first professional loss.</p>
+
+            <p class="story-text">The world was shocked. But no one was more devastated than Ronda.</p>
+
+            <p class="story-text">"I was sitting in the medical room," she later revealed, "and I was down in the corner, and I was like, 'What am I anymore if I'm not this?' I was literally sitting there thinking about killing myself. In that exact second, I'm like, 'I'm nothing. I'm like, what do I do anymore? No one gives a shit about me anymore without this.'"</p>
+
+            <p class="story-text">She thought about her father. About that day in 1995. About how easy it would be to follow him.</p>
+
+            <p class="story-text">What stopped her? Her then-boyfriend Travis Browne. "I looked up and I saw my man Travis there," she said. "I looked up at him, and I was like, 'I need to have his babies. I need to stay alive.'"</p>
+        </section>
+
+        <div class="quote-box">
+            <p class="quote-text">I was really fucking sad after I lost. And I've never been that sad in my life. But you get sad so that you can appreciate being happy. You have to go through the bad to appreciate the good.</p>
+            <p class="quote-author">— Ronda Rousey</p>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">The Comeback That Wasn't</h2>
+            <p class="story-text">Ronda tried to come back. At UFC 207 in December 2016, she faced Amanda Nunes for the championship. The fight lasted 48 seconds. Nunes destroyed her. Knockout loss number two.</p>
+
+            <p class="story-text">Ronda never fought in MMA again. She was 29 years old. Her fighting career was over.</p>
+
+            <p class="story-text">"I felt like I had failed everyone," she said. "I felt like I'd let down every woman who believed in me. Every girl who wanted to fight because of me."</p>
+
+            <p class="story-text">She disappeared from public life. She struggled with concussion symptoms, depression, suicidal thoughts. The woman who had been the most famous athlete on Earth couldn't leave her house without having panic attacks.</p>
+
+            <p class="story-text">But slowly, she rebuilt. She transitioned to WWE, where her fighting background and charisma made her a star. She became WWE Raw Women's Champion. She acted in films. She wrote books. She got married and became a mother.</p>
+        </section>
+
+        <div class="impact-grid">
+            <div class="impact-card">
+                <span class="impact-icon">🥋</span>
+                <h3 class="impact-title">First Woman in UFC</h3>
+                <p class="impact-description">Proved Dana White wrong. Became first woman to fight in UFC and showed women's MMA could be the biggest draw in combat sports.</p>
+            </div>
+            <div class="impact-card">
+                <span class="impact-icon">🏅</span>
+                <h3 class="impact-title">Olympic Bronze Medalist</h3>
+                <p class="impact-description">First American woman to medal in Olympic judo in 12 years. Brought judo techniques to MMA with devastating effectiveness.</p>
+            </div>
+            <div class="impact-card">
+                <span class="impact-icon">💪</span>
+                <h3 class="impact-title">Dominated Division</h3>
+                <p class="impact-description">12 straight wins, finishing opponents in average of under 1 minute. Changed what people thought women fighters could do.</p>
+            </div>
+            <div class="impact-card">
+                <span class="impact-icon">🌟</span>
+                <h3 class="impact-title">Crossover Superstar</h3>
+                <p class="impact-description">Became Hollywood star, WWE champion, bestselling author. Proved female fighters could be mainstream celebrities.</p>
+            </div>
+            <div class="impact-card">
+                <span class="impact-icon">🧠</span>
+                <h3 class="impact-title">Mental Health Advocate</h3>
+                <p class="impact-description">Spoke openly about depression, suicidal thoughts, and trauma. Showed vulnerability doesn't mean weakness.</p>
+            </div>
+            <div class="impact-card">
+                <span class="impact-icon">👧</span>
+                <h3 class="impact-title">Inspired Generation</h3>
+                <p class="impact-description">Every woman fighting in UFC today owes Ronda. She kicked the door open and refused to leave until they let everyone else in too.</p>
+            </div>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">The Legacy: More Than Fighting</h2>
+            <p class="story-text">Ronda Rousey's fighting career ended at 29. But her impact will last forever.</p>
+
+            <p class="story-text">Before Ronda, women's MMA didn't exist in the UFC. After Ronda, women headline pay-per-views. They're the biggest stars. They get paid millions. Amanda Nunes, Valentina Shevchenko, Zhang Weili, Rose Namajunas—they all fight because Ronda proved it was possible.</p>
+
+            <p class="story-text">She didn't just break down barriers in combat sports. She redefined what female athletes could be—powerful, violent, dominant, unapologetic. She didn't try to be feminine in a way that made people comfortable. She was herself: brash, confident, fierce.</p>
+
+            <p class="story-text">"I'm not a woman fighting in a man's world," she said. "I'm just a fighter. And I'm the best at what I do."</p>
+        </section>
+
+        <div class="quote-box">
+            <p class="quote-text">I have this one term for the kind of woman my mother raised me to not be, and I call it a 'Do-Nothing Bitch.' A do-nothing bitch is someone who just tries to be pretty and be taken care of by someone else. That's why I think it's hilarious if my body looks masculine or something like that. There's nothing masculine about being competitive. There's nothing masculine about trying to be the best at everything you do.</p>
+            <p class="quote-author">— Ronda Rousey</p>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">From Tragedy to Triumph</h2>
+            <p class="story-text">Ronda Rousey's life has been defined by loss and comeback. Losing her father. Losing her home. Losing her invincibility. Losing her career.</p>
+
+            <p class="story-text">But she keeps getting back up. Because that's what fighters do.</p>
+
+            <p class="story-text">Today, she's a mother, a wife, a WWE star, an actress. She speaks openly about mental health, about suicidal thoughts, about the pressure of being perfect. She's not perfect. She never was. But she's real.</p>
+
+            <p class="story-text">And for every girl who's faced trauma, who's been told she's not feminine enough, who's been dismissed because she's a woman in a "man's world"—Ronda showed them you can be the baddest person on the planet and still be yourself.</p>
+        </section>
+
+        <div class="quote-box">
+            <p class="quote-text">I feel like if you're going to be one of those women who's going to do something that was traditionally only done by men, you have to be willing to get uncomfortable. You have to be willing to be called masculine. You have to be willing to be the bad guy.</p>
+            <p class="quote-author">— Ronda Rousey</p>
+        </div>
+
+        <section class="section">
+            <p class="story-text" style="text-align: center; font-size: 1.2rem; color: var(--text-light); margin-top: 4rem;">
+                <strong>Ronda Rousey:</strong> Olympic bronze medalist. First woman in UFC. 12-2 MMA record. The fighter who proved women belong in the Octagon. The baddest woman on the planet.
+            </p>
+        </section>
+    </div>
+</body>
+</html>

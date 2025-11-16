@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Wilma Rudolph - The story of how a girl who couldn't walk became the fastest woman in the world and won 3 Olympic golds">
+    <title>Wilma Rudolph - The Tornado | Athletic Players</title>
+    <style>
+        :root {
+            --primary-color: #e63946;
+            --secondary-color: #1d3557;
+            --accent-color: #f4a261;
+            --text-dark: #2b2d42;
+            --text-light: #8d99ae;
+            --background: #f8f9fa;
+            --background-subtle: #edf2f4;
+            --white: #ffffff;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+            --shadow-lg: 0 8px 24px rgba(0,0,0,0.15);
+            --shadow-xl: 0 16px 48px rgba(0,0,0,0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background: var(--background);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+            padding: 6rem 2rem 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://source.unsplash.com/1600x900/?woman,sprinting,track,running,speed,olympic,athlete') center/cover;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: var(--white);
+            text-decoration: none;
+            margin-bottom: 2rem;
+            font-weight: 600;
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+
+        .back-link:hover {
+            opacity: 1;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+            font-weight: 300;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 2rem;
+            max-width: 800px;
+            margin: 3rem auto 0;
+        }
+
+        .hero-stat {
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .hero-stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.25rem;
+        }
+
+        .hero-stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+
+        /* Content */
+        .content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            font-weight: 800;
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .story-text {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .story-text.lead {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: var(--secondary-color);
+            line-height: 1.6;
+        }
+
+        .story-text strong {
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        /* Quote Box */
+        .quote-box {
+            background: linear-gradient(135deg, var(--background-subtle) 0%, var(--white) 100%);
+            border-left: 5px solid var(--primary-color);
+            padding: 2.5rem;
+            margin: 3rem 0;
+            border-radius: 0 12px 12px 0;
+            box-shadow: var(--shadow-md);
+        }
+
+        .quote-text {
+            font-size: 1.4rem;
+            font-style: italic;
+            color: var(--secondary-color);
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+        .quote-author {
+            margin-top: 1rem;
+            font-size: 1rem;
+            color: var(--text-light);
+            font-style: normal;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 3rem;
+            margin: 3rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--primary-color), var(--accent-color));
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2.5rem;
+            padding-left: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -3.5rem;
+            top: 0.5rem;
+            width: 16px;
+            height: 16px;
+            background: var(--primary-color);
+            border: 3px solid var(--white);
+            border-radius: 50%;
+            box-shadow: var(--shadow-md);
+        }
+
+        .timeline-year {
+            font-weight: 800;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-event {
+            font-size: 1.05rem;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        .stat-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+            text-align: center;
+            border-top: 4px solid var(--primary-color);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: var(--text-light);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Impact Cards */
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .impact-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+        }
+
+        .impact-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .impact-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .impact-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .impact-description {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 4rem 1.5rem 3rem;
+            }
+
+            .content {
+                padding: 3rem 1.5rem;
+            }
+
+            .hero-stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .timeline {
+                padding-left: 2rem;
+            }
+
+            .timeline-item {
+                padding-left: 1.5rem;
+            }
+
+            .quote-box {
+                padding: 1.5rem;
+            }
+
+            .quote-text {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .impact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-content">
+            <a href="index.html" class="back-link">← Back to Athletes</a>
+            <h1 class="hero-title">Wilma Rudolph</h1>
+            <p class="hero-subtitle">The Girl Who Couldn't Walk Became the Fastest Woman Alive</p>
+
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="hero-stat-number">3</div>
+                    <div class="hero-stat-label">Olympic Golds (1960)</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">20th</div>
+                    <div class="hero-stat-label">of 22 Children</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">4</div>
+                    <div class="hero-stat-label">Age with Polio</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">∞</div>
+                    <div class="hero-stat-label">Barriers Broken</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="content">
+        <section class="section">
+            <h2 class="section-title">The Doctors Said She'd Never Walk</h2>
+            <p class="story-text lead">June 23, 1940. Clarksville, Tennessee. Wilma Glodean Rudolph was born two months premature, weighing just 4.5 pounds. The 20th of 22 children in a poor Black family in the segregated South. The doctors gave her little chance of survival.</p>
+
+            <p class="story-text">She survived. But at age 4, everything changed.</p>
+
+            <p class="story-text">Wilma contracted <strong>polio</strong>—a disease that paralyzed thousands of children in the 1940s. The virus attacked her nervous system, leaving her left leg paralyzed and twisted. She also battled scarlet fever, double pneumonia, and other illnesses that ravaged her small body.</p>
+
+            <p class="story-text">The white doctors in Clarksville refused to treat her because she was Black. Her mother, Blanche, traveled 50 miles each way—twice a week, for years—to take Wilma to Meharry Medical College, a Black hospital in Nashville, for treatments.</p>
+
+            <p class="story-text">The doctors fitted Wilma with a <strong>metal leg brace</strong> and an orthopedic shoe. They told her mother she would never walk normally. Wilma heard them. And she decided they were wrong.</p>
+
+            <p class="story-text">"My doctor told me I would never walk again," Wilma later said. "My mother told me I would. I believed my mother."</p>
+        </section>
+
+        <div class="quote-box">
+            <p class="quote-text">The doctors said I would never walk, but my mother said I would. So I believed my mother. I learned to walk again. I learned to run. And then I learned to fly.</p>
+            <p class="quote-author">— Wilma Rudolph</p>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">Fifty Miles, Twice a Week, For Years</h2>
+            <p class="story-text">Blanche Rudolph was a domestic worker who cleaned houses for white families. She had 22 children to care for. Money was scarce. Food was scarce. Hope should have been scarce.</p>
+
+            <p class="story-text">But Blanche refused to give up on her daughter.</p>
+
+            <p class="story-text">Twice a week, she took Wilma on a 100-mile round trip to Nashville for physical therapy. The treatments were painful. Wilma's siblings massaged her legs four times a day at home, following the doctor's instructions. The family couldn't afford to miss work or school to help Wilma, but they did anyway.</p>
+
+            <p class="story-text">For years, Wilma wore the leg brace. She watched other children run and play while she limped in heavy metal. At school, she was teased. Called "crippled." Told she was different, damaged, less than.</p>
+
+            <p class="story-text">But Wilma was stubborn. "I spent most of my time trying to figure out how to get the braces off," she said. At home, when no one was watching, she'd take them off and try to walk. She'd fall. She'd try again. Fall again. Try again.</p>
+
+            <p class="story-text">By age 9, she could walk short distances without the brace. By age 11, she shocked her doctors by walking into their office <strong>without the brace at all</strong>.</p>
+
+            <p class="story-text">By age 12, she was playing basketball.</p>
+        </section>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-year">1940</div>
+                <div class="timeline-event">Born premature in Clarksville, TN. 20th of 22 children. Weighed 4.5 pounds.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">1944</div>
+                <div class="timeline-event">Contracted polio at age 4. Left leg paralyzed. Wore metal leg brace and orthopedic shoe.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">1944-1952</div>
+                <div class="timeline-event">Mother traveled 100 miles round trip twice weekly for treatments. Family massaged her legs 4x daily.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">1952</div>
+                <div class="timeline-event">Removed leg brace permanently at age 12. Shocked doctors by walking unassisted.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">1952-1956</div>
+                <div class="timeline-event">Became basketball star at Burt High School. Scored 803 points in 25 games as sophomore.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">1956</div>
+                <div class="timeline-event">Melbourne Olympics at age 16: won bronze in 4x100m relay.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">1960</div>
+                <div class="timeline-event">Rome Olympics: WON 3 GOLD MEDALS (100m, 200m, 4x100m relay). First American woman ever.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">1960</div>
+                <div class="timeline-event">Became international superstar. Ticker-tape parade in New York. Met President Kennedy.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">1961</div>
+                <div class="timeline-event">Insisted on integrated homecoming celebration in Clarksville—first integrated event in city history.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">1962</div>
+                <div class="timeline-event">Retired from competition at age 22. Became educator and coach.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">1994</div>
+                <div class="timeline-event">Died of brain cancer at age 54. Legacy lives on in millions she inspired.</div>
+            </div>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">Basketball Star to Track Phenom</h2>
+            <p class="story-text">At Burt High School, Wilma became a basketball sensation. As a sophomore, she scored <strong>803 points in 25 games</strong>—an average of over 32 points per game in an era when that was unheard of.</p>
+
+            <p class="story-text">But it was track and field that would change her life.</p>
+
+            <p class="story-text">Tennessee State University track coach <strong>Ed Temple</strong> saw Wilma run during a basketball game and was stunned. "I've never seen anyone that fast," he said. He recruited her for Tennessee State's track team, known as the "Tigerbelles."</p>
+
+            <p class="story-text">At 16 years old, Wilma qualified for the <strong>1956 Melbourne Olympics</strong>. Just four years after removing her leg brace. She won a bronze medal in the 4x100m relay.</p>
+
+            <p class="story-text">But she wanted more. She wanted gold.</p>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Rome 1960: The Tornado</h2>
+            <p class="story-text">The 1960 Rome Olympics would become Wilma's coronation. At 20 years old, she was the fastest woman in the world and everyone knew it. The Italians called her <strong>"La Gazzella Nera"</strong>—the Black Gazelle. Others called her "The Tornado."</p>
+
+            <p class="story-text">She entered three events: the 100 meters, 200 meters, and 4x100 meter relay.</p>
+
+            <p class="story-text"><strong>100 meters:</strong> Wilma exploded out of the blocks and never looked back. She won in 11.0 seconds, tying the world record. GOLD.</p>
+
+            <p class="story-text"><strong>200 meters:</strong> Again, Wilma dominated. She won by nearly three meters—a massive margin in sprinting. GOLD.</p>
+
+            <p class="story-text"><strong>4x100m relay:</strong> This was supposed to be the hardest. The U.S. team had botched the baton pass in the semifinals but barely advanced. In the final, Wilma ran the anchor leg. When she grabbed the baton, she was behind. By the time she crossed the finish line, she'd passed everyone. The U.S. set a <strong>new world record</strong> of 44.5 seconds. GOLD.</p>
+
+            <p class="story-text">Wilma Rudolph became the <strong>first American woman to win three gold medals in a single Olympics</strong>. The girl who couldn't walk had just outrun the entire world.</p>
+        </section>
+
+        <div class="quote-box">
+            <p class="quote-text">When I was running, I had the sense of freedom, of running in the wind. I never forgot all the years when I was a little girl and not able to be involved. When I ran, I felt like a butterfly.</p>
+            <p class="quote-author">— Wilma Rudolph</p>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">3</div>
+                <div class="stat-label">Olympic Golds</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">1st</div>
+                <div class="stat-label">US Woman (3 golds)</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">11.0s</div>
+                <div class="stat-label">100m World Record</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">54</div>
+                <div class="stat-label">Age at Death (cancer)</div>
+            </div>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">Breaking Barriers Beyond the Track</h2>
+            <p class="story-text">Wilma returned home to a hero's welcome. There was a ticker-tape parade in New York City. She met President John F. Kennedy. She was on magazine covers worldwide. She was an international superstar.</p>
+
+            <p class="story-text">But when Clarksville, Tennessee, wanted to throw her a homecoming celebration, they planned to make it segregated—whites in one area, Blacks in another. This was the Jim Crow South in 1960.</p>
+
+            <p class="story-text">Wilma refused. "I won't attend unless it's integrated," she said. "I'll go somewhere else."</p>
+
+            <p class="story-text">The city backed down. Wilma's homecoming became the <strong>first integrated event in Clarksville's history</strong>. Black and white citizens sat together, ate together, celebrated together—all because a 20-year-old woman said "no" to racism.</p>
+
+            <p class="story-text">"That was my Olympic triumph," she later said. "The one that mattered most."</p>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Retiring at the Peak</h2>
+            <p class="story-text">In 1962, at just 22 years old, Wilma Rudolph retired from competitive track. She was at the peak of her powers, still the fastest woman alive. But she wanted more from life than running in circles.</p>
+
+            <p class="story-text">She became a teacher and a coach. She worked with inner-city youth. She founded the Wilma Rudolph Foundation to help underprivileged children access sports and education. She spoke at schools, encouraging kids—especially girls and Black children—to dream bigger than their circumstances.</p>
+
+            <p class="story-text">"Winning is great, sure," she said, "but if you are really going to do something in life, the secret is learning how to lose. Nobody goes undefeated all the time. If you can pick up after a crushing defeat and go on to win again, you are going to be a champion someday."</p>
+        </section>
+
+        <div class="impact-grid">
+            <div class="impact-card">
+                <span class="impact-icon">🏃‍♀️</span>
+                <h3 class="impact-title">First American Woman</h3>
+                <p class="impact-description">First American woman to win three gold medals in a single Olympics. Set the standard for track excellence for generations.</p>
+            </div>
+            <div class="impact-card">
+                <span class="impact-icon">💪</span>
+                <h3 class="impact-title">Overcame Polio</h3>
+                <p class="impact-description">Doctors said she'd never walk. She became the fastest woman in the world. Inspired millions with disabilities to pursue their dreams.</p>
+            </div>
+            <div class="impact-card">
+                <span class="impact-icon">✊</span>
+                <h3 class="impact-title">Civil Rights Pioneer</h3>
+                <p class="impact-description">Insisted on integrated homecoming celebration in 1960 Tennessee—first in city history. Used fame to fight segregation.</p>
+            </div>
+            <div class="impact-card">
+                <span class="impact-icon">🎓</span>
+                <h3 class="impact-title">Educator & Coach</h3>
+                <p class="impact-description">Dedicated post-track career to teaching and coaching underprivileged youth. Founded Wilma Rudolph Foundation.</p>
+            </div>
+            <div class="impact-card">
+                <span class="impact-icon">🌍</span>
+                <h3 class="impact-title">International Icon</h3>
+                <p class="impact-description">Became global symbol of perseverance and excellence. Showed the world what Black women could achieve.</p>
+            </div>
+            <div class="impact-card">
+                <span class="impact-icon">👧</span>
+                <h3 class="impact-title">Role Model for Girls</h3>
+                <p class="impact-description">Proved girls could be powerful, fast, and dominant in sports. Paved way for future generations of female athletes.</p>
+            </div>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">The Legacy: From Braces to Brilliance</h2>
+            <p class="story-text">On November 12, 1994, Wilma Rudolph died of brain cancer at age 54. It was far too young. But in her 54 years, she lived more than most people live in a century.</p>
+
+            <p class="story-text">From a premature baby who wasn't supposed to survive. To a polio victim who wasn't supposed to walk. To the fastest woman who ever lived.</p>
+
+            <p class="story-text">She proved that poverty doesn't determine potential. That polio doesn't mean powerless. That being Black and female in 1940s Tennessee doesn't limit how fast you can run or how high you can soar.</p>
+
+            <p class="story-text">Jackie Joyner-Kersee, Florence Griffith-Joyner, Marion Jones, Allyson Felix—every great American female sprinter stands on Wilma's shoulders. Every girl with leg braces who dreams of running looks to Wilma. Every athlete told "you can't" remembers Wilma.</p>
+
+            <p class="story-text">She was inducted into the U.S. Olympic Hall of Fame, the National Track and Field Hall of Fame, and the National Women's Hall of Fame. She received the National Sports Award. She was on a U.S. postage stamp. She was immortal.</p>
+
+            <p class="story-text">But her real legacy isn't the medals or the records. It's the hope. The belief that if Wilma Rudolph could overcome polio, poverty, and racism to become the fastest woman alive—then anything is possible.</p>
+        </section>
+
+        <div class="quote-box">
+            <p class="quote-text">I ran and ran and ran every day, and I acquired this sense of determination, this sense of spirit that I would never, never give up, no matter what else happened. That's what I learned from my mother. She taught all of us that if you want something and you work hard enough, you can have it.</p>
+            <p class="quote-author">— Wilma Rudolph</p>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">The Girl Who Learned to Fly</h2>
+            <p class="story-text">Wilma Rudolph's mother told her she would walk again. She did. Then she ran. Then she flew.</p>
+
+            <p class="story-text">From metal leg braces to Olympic gold medals. From "you'll never walk" to "fastest woman in the world." From segregated Tennessee to international superstar.</p>
+
+            <p class="story-text">She didn't just overcome adversity. She obliterated it. She didn't just break records. She broke barriers—physical, racial, and societal.</p>
+
+            <p class="story-text">Every time someone tells you that you can't do something because of where you're from, what you look like, or what limitations you have—remember Wilma.</p>
+
+            <p class="story-text">The girl who couldn't walk became the girl who couldn't be stopped.</p>
+        </section>
+
+        <div class="quote-box">
+            <p class="quote-text">Never underestimate the power of dreams and the influence of the human spirit. We are all the same in this notion: The potential for greatness lives within each of us.</p>
+            <p class="quote-author">— Wilma Rudolph</p>
+        </div>
+
+        <section class="section">
+            <p class="story-text" style="text-align: center; font-size: 1.2rem; color: var(--text-light); margin-top: 4rem;">
+                <strong>Wilma Rudolph:</strong> 3 Olympic golds. World record holder. First American woman to win 3 golds in single Olympics. From polio to podium. The Tornado who taught the world to fly.
+            </p>
+        </section>
+    </div>
+</body>
+</html>
