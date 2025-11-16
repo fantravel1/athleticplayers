@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Serena Williams - The story of how a girl from Compton became the greatest tennis player ever, survived near-death childbirth, and changed sports forever">
+    <title>Serena Williams - The GOAT from Compton | Athletic Players</title>
+    <style>
+        :root {
+            --primary-color: #e63946;
+            --secondary-color: #1d3557;
+            --accent-color: #f4a261;
+            --text-dark: #2b2d42;
+            --text-light: #8d99ae;
+            --background: #f8f9fa;
+            --background-subtle: #edf2f4;
+            --white: #ffffff;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+            --shadow-lg: 0 8px 24px rgba(0,0,0,0.15);
+            --shadow-xl: 0 16px 48px rgba(0,0,0,0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background: var(--background);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+            padding: 6rem 2rem 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://source.unsplash.com/1600x900/?serena,williams,tennis,champion,powerful,athlete') center/cover;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: var(--white);
+            text-decoration: none;
+            margin-bottom: 2rem;
+            font-weight: 600;
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+
+        .back-link:hover {
+            opacity: 1;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+            font-weight: 300;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 2rem;
+            max-width: 800px;
+            margin: 3rem auto 0;
+        }
+
+        .hero-stat {
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .hero-stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.25rem;
+        }
+
+        .hero-stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+
+        /* Content */
+        .content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            font-weight: 800;
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .story-text {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .story-text.lead {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: var(--secondary-color);
+            line-height: 1.6;
+        }
+
+        .story-text strong {
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        /* Quote Box */
+        .quote-box {
+            background: linear-gradient(135deg, var(--background-subtle) 0%, var(--white) 100%);
+            border-left: 5px solid var(--primary-color);
+            padding: 2.5rem;
+            margin: 3rem 0;
+            border-radius: 0 12px 12px 0;
+            box-shadow: var(--shadow-md);
+        }
+
+        .quote-text {
+            font-size: 1.4rem;
+            font-style: italic;
+            color: var(--secondary-color);
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+        .quote-author {
+            margin-top: 1rem;
+            font-size: 1rem;
+            color: var(--text-light);
+            font-style: normal;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 3rem;
+            margin: 3rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--primary-color), var(--accent-color));
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2.5rem;
+            padding-left: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -3.5rem;
+            top: 0.5rem;
+            width: 16px;
+            height: 16px;
+            background: var(--primary-color);
+            border: 3px solid var(--white);
+            border-radius: 50%;
+            box-shadow: var(--shadow-md);
+        }
+
+        .timeline-year {
+            font-weight: 800;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-event {
+            font-size: 1.05rem;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        .stat-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+            text-align: center;
+            border-top: 4px solid var(--primary-color);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: var(--text-light);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Impact Cards */
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .impact-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+        }
+
+        .impact-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .impact-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .impact-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .impact-description {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 4rem 1.5rem 3rem;
+            }
+
+            .content {
+                padding: 3rem 1.5rem;
+            }
+
+            .hero-stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .timeline {
+                padding-left: 2rem;
+            }
+
+            .timeline-item {
+                padding-left: 1.5rem;
+            }
+
+            .quote-box {
+                padding: 1.5rem;
+            }
+
+            .quote-text {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .impact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-content">
+            <a href="index.html" class="back-link">← Back to Athletes</a>
+            <h1 class="hero-title">Serena Williams</h1>
+            <p class="hero-subtitle">From Compton Courts to GOAT: The Queen Who Survived It All</p>
+
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="hero-stat-number">23</div>
+                    <div class="hero-stat-label">Grand Slam Singles</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">4</div>
+                    <div class="hero-stat-label">Olympic Golds</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">319</div>
+                    <div class="hero-stat-label">Weeks at #1</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">∞</div>
+                    <div class="hero-stat-label">Barriers Broken</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="content">
+        <section class="section">
+            <h2 class="section-title">The Day She Almost Died</h2>
+            <p class="story-text lead">September 1, 2017. Serena Williams had just given birth to her daughter Alexis Olympia via emergency C-section. She was one of the greatest athletes in history, but in that hospital room, she became another statistic: a Black woman fighting for her life because the medical system wouldn't listen.</p>
+
+            <p class="story-text">The day after giving birth, Serena felt short of breath. She had a history of <strong>pulmonary embolisms</strong>—blood clots in the lungs—and she knew the signs. She told the nurse: "I need a CT scan and a blood thinner. Now."</p>
+
+            <p class="story-text">The nurse thought she was confused from pain medication. A doctor performed an ultrasound on her legs instead—checking for clots in the wrong place. Serena insisted. "I told you, I need a CT scan of my lungs and a heparin drip."</p>
+
+            <p class="story-text">Finally, they listened. The CT scan revealed <strong>multiple blood clots in her lungs</strong>. Life-threatening. The heparin drip caused her C-section wound to burst. Emergency surgery revealed a hematoma—a massive collection of blood—in her abdomen. Then doctors found more issues that required another surgery.</p>
+
+            <p class="story-text">Serena spent the first six weeks of her daughter's life unable to get out of bed. The woman who had won 23 Grand Slam titles, who had dominated tennis for two decades, was nearly killed by the one thing she couldn't control: being a Black woman in America's healthcare system.</p>
+
+            <p class="story-text">Black women in the United States are <strong>3 to 4 times more likely</strong> to die from pregnancy-related complications than white women. It doesn't matter if you're rich, famous, or the greatest athlete alive. When you're Black, you have to fight to be heard—even when you're dying.</p>
+        </section>
+
+        <div class="quote-box">
+            <p class="quote-text">I almost died after giving birth to my daughter, Olympia. I had four surgeries. It all started when I noticed my breathing was off. I literally had to tell the nurse, 'I think I'm having a pulmonary embolism.' They were like, 'Are you sure?' I was like, 'I'm positive.'</p>
+            <p class="quote-author">— Serena Williams, Vogue (2018)</p>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">Compton: Where It All Started</h2>
+            <p class="story-text">Long before she was a global icon, Serena was a little girl hitting tennis balls on the cracked, glass-littered courts of <strong>Compton, California</strong>. This wasn't the typical path to tennis stardom. Compton was known for gangs, poverty, and violence—not country clubs and tennis academies.</p>
+
+            <p class="story-text">Her father, <strong>Richard Williams</strong>, had a plan. He'd written out a 78-page blueprint before Serena and Venus were even born, detailing how he would make his daughters champions. He taught himself tennis by watching instructional videos, then taught his daughters on public courts where gunshots sometimes interrupted practice.</p>
+
+            <p class="story-text">"We would practice and there would be shootings," Venus recalled. "We just wouldn't play that day. We'd go home."</p>
+
+            <p class="story-text">Richard was unconventional, controversial, and absolutely convinced his daughters would change the world. He made them practice for hours every day. He kept them out of junior tournaments, refusing to let them be exploited by a system that chewed up and spit out young players. He told anyone who would listen: "My daughters will be #1 and #2 in the world."</p>
+
+            <p class="story-text">People thought he was delusional. Turned out, he was a prophet.</p>
+        </section>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-year">1981</div>
+                <div class="timeline-event">Born in Saginaw, Michigan. Family moved to Compton, California when she was a toddler.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">1995</div>
+                <div class="timeline-event">Turned professional at age 14. Faced immediate skepticism and racism in predominantly white tennis world.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">1999</div>
+                <div class="timeline-event">Won first Grand Slam at US Open at age 17, defeating Martina Hingis.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2001</div>
+                <div class="timeline-event">Indian Wells incident: booed by crowd in racist attack. Boycotted tournament for 14 years.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2002-2003</div>
+                <div class="timeline-event">Won "Serena Slam"—all four Grand Slams consecutively. Dominated women's tennis.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2011</div>
+                <div class="timeline-event">Life-threatening pulmonary embolism nearly ended career. Six months off tour.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2017</div>
+                <div class="timeline-event">Won Australian Open while 8 weeks pregnant (didn't know yet). Last Grand Slam title.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">Sept 2017</div>
+                <div class="timeline-event">Nearly died from childbirth complications. Multiple surgeries. Daughter Olympia born.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2018-2019</div>
+                <div class="timeline-event">Reached four Grand Slam finals post-pregnancy but didn't win. Faced "catsuit ban" and body shaming.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2022</div>
+                <div class="timeline-event">Retired from professional tennis at US Open. Left as one of the greatest athletes in history.</div>
+            </div>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">Indian Wells: The Incident That Changed Everything</h2>
+            <p class="story-text">March 2001. The Indian Wells Masters in California. Serena was 19 years old and about to play her sister Venus in the semifinals. It should have been a celebration of two Black girls from Compton making it to the top of tennis.</p>
+
+            <p class="story-text">Instead, it became one of the most racist moments in modern tennis history.</p>
+
+            <p class="story-text">Venus had to withdraw from the semifinal due to injury, giving Serena a walkover to the final. Rumors swirled that Richard had "fixed" the match, that he decided which daughter would win. The tennis establishment, uncomfortable with the Williams family's success and Blackness, latched onto the conspiracy theory.</p>
+
+            <p class="story-text">When Serena walked onto the court for the final, the crowd <strong>booed her relentlessly</strong>. When Richard and Venus walked to their seats, the booing intensified. Racial slurs were shouted. One witness reported hearing the n-word. Serena was crying before the match even started.</p>
+
+            <p class="story-text">She won the match in straight sets. Through tears. Through boos. Through racism.</p>
+
+            <p class="story-text">"I remember saying to my agent, 'I don't know if I can do this,'" Venus later recalled. "I felt like I had just experienced the biggest loss of racism I've ever felt in my life."</p>
+
+            <p class="story-text">Serena boycotted Indian Wells for the next <strong>14 years</strong>. When she finally returned in 2015, she wrote in TIME Magazine: "It has been difficult for me to forget spending hours crying in the Indian Wells locker room after winning in 2001, driving back to Los Angeles feeling as if I had lost the biggest game ever—not a mere tennis game but a bigger fight for equality."</p>
+        </section>
+
+        <div class="quote-box">
+            <p class="quote-text">I don't think Indian Wells will ever leave me. I remember feeling unwelcome. I remember walking out on the court and hearing horrible, horrible things being said about Venus and my father. It's been 14 years since that incident, but it's just as fresh in my mind today as if it happened yesterday.</p>
+            <p class="quote-author">— Serena Williams, TIME Magazine (2015)</p>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">Dominance and Disrespect</h2>
+            <p class="story-text">By the mid-2000s, Serena was dominating tennis in a way few athletes have ever dominated any sport. She'd won multiple Grand Slams. She'd been #1 in the world. She was faster, stronger, more powerful than anyone else on tour.</p>
+
+            <p class="story-text">And yet, she faced constant criticism for things male athletes never dealt with:</p>
+
+            <p class="story-text"><strong>Her body.</strong> Tennis commentators said she was "too muscular," "too masculine," "built like a man." They questioned whether she was a woman. They criticized her curves, her power, her Blackness disguised as "athleticism" critiques.</p>
+
+            <p class="story-text">"I've had people look down on me, put me down because I didn't look like them," Serena said. "I look strong. I love it. But people have had a problem with that my entire career."</p>
+
+            <p class="story-text"><strong>Her emotion.</strong> When she argued with officials, she was called "aggressive" and "threatening." When Roger Federer or Rafael Nadal argued, they were "passionate" and "competitive." The double standard was glaring.</p>
+
+            <p class="story-text"><strong>Her success.</strong> Even as she won Grand Slam after Grand Slam, people diminished her achievements. "Weak era," they said. "No real competition." They said the same things about male champions who dominated their eras.</p>
+
+            <p class="story-text">Through it all, Serena kept winning. And winning. And winning.</p>
+        </section>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">23</div>
+                <div class="stat-label">Grand Slam Singles</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">73</div>
+                <div class="stat-label">WTA Titles</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">319</div>
+                <div class="stat-label">Weeks at #1</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">$94M</div>
+                <div class="stat-label">Prize Money (Record)</div>
+            </div>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">The Comeback That Never Was</h2>
+            <p class="story-text">After nearly dying in childbirth, Serena had one goal: win one more Grand Slam. Just one. To tie Margaret Court's record of 24. To cement her legacy as the greatest ever.</p>
+
+            <p class="story-text">She came back too soon, many said. Her body hadn't fully healed. She was 36, then 37, then 38 years old—ancient in tennis years. But she made it to <strong>four Grand Slam finals</strong> between 2018 and 2019.</p>
+
+            <p class="story-text">And lost all four.</p>
+
+            <p class="story-text">At the 2018 French Open, she wore a custom-designed black catsuit that helped with blood circulation—a medical necessity after her pulmonary embolism. The French Tennis Federation president called it disrespectful and <strong>banned the catsuit</strong>.</p>
+
+            <p class="story-text">At the 2018 US Open final, she argued with chair umpire Carlos Ramos after he gave her a coaching violation. The argument escalated. She called him a "thief" for stealing a point. She was penalized a game. She lost the match to Naomi Osaka, whose victory ceremony was marred by the controversy.</p>
+
+            <p class="story-text">Critics called Serena a sore loser, a bully, out of control. But what they didn't talk about was the double standard. The week before, male players had called umpires far worse—one called an umpire "corrupt"—without losing games.</p>
+
+            <p class="story-text">"I've seen other men call other umpires several things," Serena said through tears after the match. "I'm here fighting for women's rights and for women's equality and for all kinds of stuff. For me to say 'thief' and for him to take a game, it made me feel like it was a sexist remark."</p>
+
+            <p class="story-text">The 24th Grand Slam never came. But her legacy was already secured.</p>
+        </section>
+
+        <div class="quote-box">
+            <p class="quote-text">I've been called a lot of things. I've been called crazy, I've been called aggressive, I've been called too emotional, I've been called the Williams sister too many times. I am simply a woman who has battled and conquered and continued to do both regardless of the outcome.</p>
+            <p class="quote-author">— Serena Williams</p>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">Fighting for Equal Pay</h2>
+            <p class="story-text">Serena has been one of the loudest voices for equal pay in tennis and sports generally. For years, Grand Slam tournaments paid women less than men. The argument was always the same: men play best-of-five sets, women play best-of-three.</p>
+
+            <p class="story-text">Serena and Venus fought back. They lobbied. They spoke out. They threatened to boycott. And in 2007, <strong>Wimbledon finally agreed</strong> to pay women equally. The US Open, Australian Open, and French Open followed.</p>
+
+            <p class="story-text">But equal pay is about more than prize money. It's about respect. It's about being valued the same way male athletes are. And in that fight, there's still work to do.</p>
+
+            <p class="story-text">"We have to continue to dream big, and in the face of adversity, we must stand up for ourselves and each other," Serena wrote. "We must believe in ourselves. We must love ourselves."</p>
+        </section>
+
+        <div class="impact-grid">
+            <div class="impact-card">
+                <span class="impact-icon">🎾</span>
+                <h3 class="impact-title">23 Grand Slam Singles Titles</h3>
+                <p class="impact-description">Most Grand Slam singles titles in the Open Era. Dominated tennis for over two decades, winning across three different decades.</p>
+            </div>
+            <div class="impact-card">
+                <span class="impact-icon">💪</span>
+                <h3 class="impact-title">Redefined Athleticism</h3>
+                <p class="impact-description">Changed what people thought female athletes could look like. Celebrated strength, power, and the Black female body in a sport that had excluded both.</p>
+            </div>
+            <div class="impact-card">
+                <span class="impact-icon">💰</span>
+                <h3 class="impact-title">Equal Pay Champion</h3>
+                <p class="impact-description">Fought alongside Venus to secure equal pay at Grand Slams. Became highest-earning female athlete, proving women's sports have massive commercial value.</p>
+            </div>
+            <div class="impact-card">
+                <span class="impact-icon">🩺</span>
+                <h3 class="impact-title">Maternal Health Advocate</h3>
+                <p class="impact-description">Shared her near-death childbirth story to raise awareness about Black maternal mortality crisis in America.</p>
+            </div>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">The Retirement Match</h2>
+            <p class="story-text">In August 2022, Serena published an essay in Vogue titled "I'm retiring from tennis, but I'm not going anywhere." She called it "evolving away from tennis" rather than retiring—typical Serena, redefining things on her own terms.</p>
+
+            <p class="story-text">Her final tournament was the 2022 US Open. The same stadium where she'd won her first Grand Slam 23 years earlier. The crowd gave her standing ovations that lasted minutes. When she finally lost in the third round, the entire tennis world said goodbye to the greatest player they'd ever seen.</p>
+
+            <p class="story-text">She walked off the court in tears, waving to the crowd, her daughter Olympia watching from the stands. It was the end of an era.</p>
+
+            <p class="story-text">But Serena was right—she's not going anywhere. She's building a venture capital firm (Serena Ventures) that invests in companies founded by women and people of color. She's expanding her fashion line. She's raising her daughter. She's proving, once again, that she doesn't fit into anyone's box.</p>
+        </section>
+
+        <div class="quote-box">
+            <p class="quote-text">I'm terrible at goodbyes, the world's worst. But please know that I am more grateful for you than I can ever express in words. You have carried me to so many wins and so many trophies. I'm going to miss that version of me, that girl who played tennis. And I'm going to miss you.</p>
+            <p class="quote-author">— Serena Williams, US Open Farewell (2022)</p>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">The Girl from Compton</h2>
+            <p class="story-text">Serena Williams changed tennis. She changed sports. She changed what people thought Black women could achieve.</p>
+
+            <p class="story-text">She took a sport that was country clubs and privilege and made it hers. She dominated it. She revolutionized it. She forced it to evolve or be left behind.</p>
+
+            <p class="story-text">She faced racism, sexism, body shaming, and near-death experiences. She fought back every single time. She never apologized for being powerful, for being Black, for being herself.</p>
+
+            <p class="story-text">From those cracked courts in Compton to center court at Wimbledon, from a little girl with beads in her hair to the greatest of all time—Serena's journey is about more than tennis. It's about breaking down every barrier they put in front of you. It's about being so good they can't ignore you, so dominant they can't deny you.</p>
+
+            <p class="story-text">She is the GOAT. And she did it her way.</p>
+        </section>
+
+        <div class="quote-box">
+            <p class="quote-text">I really think a champion is defined not by their wins but by how they can recover when they fall. I have fallen several times. But each time, I've gotten up. And each time, I've gotten stronger. That's what makes me a champion.</p>
+            <p class="quote-author">— Serena Williams</p>
+        </div>
+
+        <section class="section">
+            <p class="story-text" style="text-align: center; font-size: 1.2rem; color: var(--text-light); margin-top: 4rem;">
+                <strong>Serena Williams:</strong> 23 Grand Slams. 4 Olympic golds. 319 weeks at #1. Childbirth survivor. Equal pay champion. The greatest tennis player who ever lived.
+            </p>
+        </section>
+    </div>
+</body>
+</html>
