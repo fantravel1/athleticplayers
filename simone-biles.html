@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Simone Biles - The greatest gymnast of all time. From foster care to Olympic gold, her story of resilience, courage, and mental health advocacy inspires millions worldwide.">
+    <meta name="keywords" content="Simone Biles, gymnastics, Olympic champion, mental health, foster care, GOAT, female athlete, inspiration">
+
+    <title>Simone Biles - The Greatest of All Time | Athletic Players</title>
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏃‍♀️</text></svg>">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1a56db;
+            --primary-dark: #0f3a8f;
+            --secondary-color: #e74c3c;
+            --accent-color: #f39c12;
+            --success-color: #10b981;
+            --text-dark: #1e293b;
+            --text-medium: #475569;
+            --text-light: #64748b;
+            --background: #ffffff;
+            --background-subtle: #f8fafc;
+            --border-color: #e2e8f0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background: var(--background-subtle);
+        }
+
+        /* Navigation */
+        .nav {
+            background: white;
+            padding: 1.5rem 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            gap: 0.75rem;
+        }
+
+        .nav-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path d="M0,60 Q300,0 600,60 T1200,60 L1200,0 L0,0 Z" fill="rgba(255,255,255,0.05)"/></svg>') repeat-x;
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .athlete-category {
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 600;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+
+        .athlete-title {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+            line-height: 1.1;
+        }
+
+        .athlete-subtitle {
+            font-size: clamp(1.25rem, 3vw, 1.75rem);
+            opacity: 0.95;
+            font-weight: 500;
+            margin-bottom: 2rem;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .hero-stat {
+            text-align: center;
+        }
+
+        .hero-stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-stat-label {
+            font-size: 0.875rem;
+            opacity: 0.9;
+        }
+
+        /* Content Sections */
+        .content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            border-radius: 2px;
+        }
+
+        .story-text {
+            font-size: 1.125rem;
+            line-height: 1.9;
+            color: var(--text-medium);
+            margin-bottom: 1.5rem;
+        }
+
+        .story-text.lead {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        .highlight {
+            background: linear-gradient(180deg, transparent 60%, #fef3c7 60%);
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        /* Quote Box */
+        .quote-box {
+            background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
+            padding: 2.5rem;
+            border-radius: 16px;
+            margin: 3rem 0;
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .quote-text {
+            font-size: 1.5rem;
+            font-style: italic;
+            line-height: 1.6;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .quote-text::before {
+            content: '"';
+            font-size: 3rem;
+            color: var(--primary-color);
+            font-weight: 700;
+            line-height: 0;
+        }
+
+        .quote-author {
+            font-weight: 700;
+            color: var(--text-dark);
+            font-size: 1rem;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.6rem;
+            top: 0.5rem;
+            width: 15px;
+            height: 15px;
+            background: white;
+            border: 3px solid var(--primary-color);
+            border-radius: 50%;
+        }
+
+        .timeline-year {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-description {
+            color: var(--text-medium);
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border: 2px solid var(--border-color);
+        }
+
+        .stat-value {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-medium);
+            font-weight: 600;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Impact Section */
+        .impact-grid {
+            display: grid;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .impact-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .impact-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .impact-icon {
+            font-size: 2rem;
+        }
+
+        .impact-description {
+            color: var(--text-medium);
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        /* Mobile Optimization */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 3rem 1.5rem;
+            }
+
+            .hero-stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+
+            .content {
+                padding: 3rem 1.5rem;
+            }
+
+            .quote-box {
+                padding: 2rem 1.5rem;
+            }
+
+            .quote-text {
+                font-size: 1.25rem;
+            }
+
+            .timeline {
+                padding-left: 1.5rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav {
+                padding: 1rem;
+            }
+
+            .nav-title {
+                font-size: 1rem;
+            }
+
+            .hero-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="back-link">← Back to Athletes</a>
+            <div class="nav-title">Athletic Players</div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="athlete-category">🏅 Gymnastics Legend | USA</div>
+            <h1 class="athlete-title">Simone Biles</h1>
+            <p class="athlete-subtitle">The Greatest Gymnast of All Time</p>
+
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="hero-stat-number">37</div>
+                    <div class="hero-stat-label">Olympic & World Medals</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">7</div>
+                    <div class="hero-stat-label">Olympic Medals</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">30</div>
+                    <div class="hero-stat-label">World Championships</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">6</div>
+                    <div class="hero-stat-label">Skills Named After Her</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="content">
+        <section class="section">
+            <h2 class="section-title">Against All Odds</h2>
+            <p class="story-text lead">
+                Before Simone Biles became the most decorated gymnast in history, before she redefined what's possible in her sport, she was a little girl in foster care, searching for stability in a world that had already shown her too much chaos.
+            </p>
+            <p class="story-text">
+                Born on March 14, 1997, in Columbus, Ohio, Simone's earliest years were marked by instability. Her biological mother struggled with drug and alcohol addiction, unable to care for Simone and her three siblings. By age three, Simone and her sister Adria were placed in foster care, bouncing between homes, never knowing if they'd have a place to sleep or food to eat.
+            </p>
+            <p class="story-text">
+                "I remember being hungry, scared," Simone would later recall. "But I also remember thinking this couldn't be all there was. There had to be something more."
+            </p>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">A Grandfather's Love</h2>
+            <p class="story-text">
+                In 2003, when Simone was six years old, <span class="highlight">her maternal grandfather, Ron Biles, and his wife Nellie made a life-changing decision</span>: they would adopt Simone and Adria, giving them the stable home they desperately needed. Ron and Nellie became Mom and Dad, providing not just a house, but a home filled with love, structure, and endless support.
+            </p>
+            <p class="story-text">
+                It was Ron and Nellie who noticed Simone's natural athleticism. During a daycare field trip to Bannon's Gymnastix in Houston, six-year-old Simone couldn't stop imitating the gymnasts she saw training. The coaches noticed her raw talent immediately—her power, her fearlessness, her ability to pick up skills that took other kids months to learn.
+            </p>
+            <p class="story-text">
+                "From the moment I stepped into that gym, I knew I was home," Simone says. "Not just because I loved gymnastics, but because I finally had a place where I belonged, where I could be myself, where hard work meant something."
+            </p>
+        </section>
+
+        <div class="quote-box">
+            <p class="quote-text">I'm not the next Usain Bolt or Michael Phelps. I'm the first Simone Biles.</p>
+            <p class="quote-author">— Simone Biles</p>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">Rising to Greatness</h2>
+            <p class="story-text">
+                Simone's ascent in gymnastics was meteoric. By age 16, she won her first all-around title at the 2013 World Championships. By 2016, she was the face of USA Gymnastics, heading to the Rio Olympics as the favorite in every event.
+            </p>
+            <p class="story-text">
+                Rio was a revelation. <span class="highlight">Simone won four gold medals and one bronze</span>, captivating the world not just with her gravity-defying skills—the triple-double, the double-double, elements so difficult they seemed to violate the laws of physics—but with her infectious joy and unshakeable confidence.
+            </p>
+            <p class="story-text">
+                She wasn't just winning. She was dominating in a way the sport had never seen. Her margins of victory weren't measured in tenths of points but in full points. While other gymnasts performed skills, Simone performed impossibilities.
+            </p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value">25</div>
+                    <div class="stat-label">World Championship Golds</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">4</div>
+                    <div class="stat-label">Rio Olympic Golds</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">19</div>
+                    <div class="stat-label">All-Around Titles</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">The Darkness Revealed</h2>
+            <p class="story-text">
+                But behind the medals and the smiles, <span class="highlight">Simone was carrying a secret pain</span> that hundreds of her teammates shared. In 2016, as she stood atop Olympic podiums, she was also a survivor of sexual abuse by Larry Nassar, the former USA Gymnastics team doctor who abused more than 265 young athletes under the guise of medical treatment.
+            </p>
+            <p class="story-text">
+                In 2018, Simone broke her silence. In a heart-wrenching statement on Twitter, she revealed that she too was among Nassar's victims. "For too long I've asked myself, 'Was I too naive? Was it my fault?' I now know the answers to those questions. No. No, it was not my fault. No, I will not and should not carry the guilt that belongs to Larry Nassar, USAG, and others."
+            </p>
+            <p class="story-text">
+                Speaking out required immense courage. Simone became an advocate not just for herself but for all survivors, demanding accountability from the institutions that failed to protect young athletes. She testified before Congress, her voice shaking but unwavering as she detailed the failures of USA Gymnastics, the FBI, and the Olympic Committee.
+            </p>
+            <p class="story-text">
+                "These are the moments that define us," she said. "Not the medals we win, but how we stand up when everything is trying to knock us down."
+            </p>
+        </section>
+
+        <div class="quote-box">
+            <p class="quote-text">I am more than my accomplishments and gymnastics which I never truly realized before.</p>
+            <p class="quote-author">— Simone Biles, Tokyo 2021</p>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">Tokyo: A Different Kind of Courage</h2>
+            <p class="story-text">
+                The Tokyo Olympics, delayed to 2021 by the COVID-19 pandemic, were supposed to be Simone's coronation. At 24, she was returning to cement her legacy as the greatest gymnast ever. The pressure was immense—the weight of a nation's expectations, the trauma of Nassar's abuse, the isolation of training during a pandemic.
+            </p>
+            <p class="story-text">
+                Then, in the middle of the team final, something went wrong. Simone lost her spatial awareness mid-air—a terrifying phenomenon gymnasts call "the twisties." She couldn't tell up from down, couldn't feel where her body was in space. Landing even the simplest skills became life-threateningly dangerous.
+            </p>
+            <p class="story-text">
+                And so, <span class="highlight">Simone made the most courageous decision of her career: she withdrew</span>. She stepped back from the competition, choosing her mental health and physical safety over medals and glory.
+            </p>
+            <p class="story-text">
+                The backlash was swift. Critics called her a quitter, questioned her toughness, said she let down her team and her country. But Simone stood firm. "I'm not having fun," she explained. "This Olympic Games, I wanted it to be for myself, but I came here and I felt like I was still doing it for other people. It just hurts my heart that doing what I love has been kind of taken away from me to please other people."
+            </p>
+            <p class="story-text">
+                What followed was a global conversation about mental health in sports, about the pressure we place on our athletes, about the humanity behind the medals. Simone's withdrawal became a watershed moment, giving permission to athletes everywhere to prioritize their wellbeing.
+            </p>
+            <p class="story-text">
+                Five days later, after working through the twisties in practice, Simone returned to compete on balance beam. She modified her routine to stay safe but still delivered a breathtaking performance, earning a bronze medal. The reception wasn't the thunderous applause for gold—it was something deeper: respect, admiration, love.
+            </p>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">The Comeback</h2>
+            <p class="story-text">
+                After Tokyo, many thought Simone was done with competitive gymnastics. She'd earned that right. But in 2023, at age 26, she shocked the world by announcing her return. Not because she had something to prove to anyone else, but because she loved the sport and wanted to do it on her own terms.
+            </p>
+            <p class="story-text">
+                At the 2023 World Championships in Antwerp, Simone reminded everyone why she's called the GOAT. She won four more gold medals, bringing her World Championship total to 23 golds and 30 medals overall—<span class="highlight">the most decorated gymnast in World Championships history</span>.
+            </p>
+            <p class="story-text">
+                She debuted yet another skill—the Biles II on vault, a Yurchenko double pike so difficult that no other woman has even attempted it in competition. When she performs, the arena holds its breath. When she lands, the roar is deafening.
+            </p>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Career Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">1997</div>
+                    <div class="timeline-title">Born in Columbus, Ohio</div>
+                    <div class="timeline-description">Entered foster care at age 3 due to mother's inability to care for her</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2003</div>
+                    <div class="timeline-title">Adopted by Grandparents</div>
+                    <div class="timeline-description">Ron and Nellie Biles adopt Simone and her sister, providing a stable home</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2003</div>
+                    <div class="timeline-title">Discovers Gymnastics</div>
+                    <div class="timeline-description">Begins training at Bannon's Gymnastix after a daycare field trip</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2013</div>
+                    <div class="timeline-title">First World Championship Gold</div>
+                    <div class="timeline-description">Wins all-around title at age 16, beginning her dominance</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2016</div>
+                    <div class="timeline-title">Rio Olympics Glory</div>
+                    <div class="timeline-description">Wins 4 gold medals and 1 bronze, becomes global superstar</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2018</div>
+                    <div class="timeline-title">Reveals Abuse Survival</div>
+                    <div class="timeline-description">Publicly discloses she was abused by Larry Nassar</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2021</div>
+                    <div class="timeline-title">Tokyo Olympics Mental Health Stand</div>
+                    <div class="timeline-description">Withdraws from events to prioritize mental health, wins bronze on beam</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2023</div>
+                    <div class="timeline-title">Triumphant Return</div>
+                    <div class="timeline-description">Returns to win 4 golds at World Championships, becomes most decorated gymnast ever</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Impact & Legacy</h2>
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <div class="impact-title">
+                        <span class="impact-icon">💪</span>
+                        Mental Health Advocacy
+                    </div>
+                    <div class="impact-description">
+                        Simone's openness about mental health struggles has revolutionized how we talk about athlete wellbeing. She's partnered with Cerebral, a mental health platform, and uses her platform to normalize therapy and mental health care. "It's okay to not be okay," she reminds us constantly.
+                    </div>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-title">
+                        <span class="impact-icon">⚖️</span>
+                        Survivor Advocate
+                    </div>
+                    <div class="impact-description">
+                        Through her testimony and advocacy, Simone has pushed for systemic change in how sports organizations handle abuse. She's demanded accountability from USA Gymnastics, the USOPC, and the FBI, becoming a voice for the voiceless and a champion for safer sports environments.
+                    </div>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-title">
+                        <span class="impact-icon">🌟</span>
+                        Redefining Greatness
+                    </div>
+                    <div class="impact-description">
+                        With six skills named after her—the Biles on floor (double layout with half twist), the Biles on beam (double-twisting double backflip dismount), and more—Simone hasn't just raised the bar in gymnastics, she's moved it to a different stratosphere. Her difficulty scores are often 2-3 points higher than her competitors.
+                    </div>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-title">
+                        <span class="impact-icon">🎓</span>
+                        Foster Care Champion
+                    </div>
+                    <div class="impact-description">
+                        Simone speaks openly about her experience in foster care and advocates for children in the system. She's a voice of hope for kids who feel forgotten, showing them that their circumstances don't define their potential. "My biological mom was suffering from drug and alcohol abuse. I'm glad she brought me into this world, but I also know that she wasn't capable of giving me the life I needed."
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="quote-box">
+            <p class="quote-text">I'd rather regret the risks that didn't work out than the chances I didn't take at all.</p>
+            <p class="quote-author">— Simone Biles</p>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">The GOAT Debate: Settled</h2>
+            <p class="story-text">
+                The numbers are staggering: 37 Olympic and World Championship medals (30 of them gold). More World all-around titles (6) than any gymnast in history. More World medals than any gymnast ever. Skills so difficult the sport's governing body has undervalued them to discourage others from attempting them and risking injury.
+            </p>
+            <p class="story-text">
+                But Simone's greatness transcends statistics. She's redefined what's possible, yes, but more importantly, she's redefined what it means to be a champion. She's shown us that strength isn't just physical—it's having the courage to say "I'm not okay" when the whole world expects perfection. It's standing up to institutions that failed you. It's coming back not because you have to, but because you want to.
+            </p>
+            <p class="story-text">
+                From a little girl in foster care to the greatest gymnast of all time, Simone Biles' journey is about more than medals. It's about resilience, about finding your voice, about the power of love and support, about the courage to prioritize yourself even when millions are watching.
+            </p>
+            <p class="story-text">
+                She wears a goat-shaped rhinestone pendant on her leotard—a playful nod to her GOAT (Greatest Of All Time) status. It's not arrogance. It's truth. And it's a reminder to all of us: no matter where we start, no matter what we've been through, we have the power to rewrite our stories, to soar higher than anyone thought possible, to be unapologetically ourselves.
+            </p>
+            <p class="story-text">
+                Simone Biles didn't just overcome adversity. She transformed it into fuel for greatness, proving that the greatest champions aren't just the ones who win the most—they're the ones who inspire us to believe in ourselves.
+            </p>
+        </section>
+    </div>
+
+    <footer style="background: #1e293b; color: white; padding: 3rem 2rem; text-align: center;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div style="font-size: 1.5rem; font-weight: 800; margin-bottom: 1rem;">🏃‍♀️ Athletic Players</div>
+            <p style="opacity: 0.9; margin-bottom: 2rem;">Celebrating the world's greatest female athletes</p>
+            <a href="index.html" style="color: white; text-decoration: none; font-weight: 600; opacity: 0.8;">← Back to All Athletes</a>
+            <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); opacity: 0.7; font-size: 0.875rem;">
+                © 2025 AthleticPlayers.com | Inspiring the next generation of champions
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
