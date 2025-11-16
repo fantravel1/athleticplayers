@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Naomi Osaka - The story of how a Grand Slam champion stepped away from tennis to save herself and changed the conversation about mental health in sports">
+    <title>Naomi Osaka - Breaking the Silence | Athletic Players</title>
+    <style>
+        :root {
+            --primary-color: #e63946;
+            --secondary-color: #1d3557;
+            --accent-color: #f4a261;
+            --text-dark: #2b2d42;
+            --text-light: #8d99ae;
+            --background: #f8f9fa;
+            --background-subtle: #edf2f4;
+            --white: #ffffff;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+            --shadow-lg: 0 8px 24px rgba(0,0,0,0.15);
+            --shadow-xl: 0 16px 48px rgba(0,0,0,0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background: var(--background);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+            padding: 6rem 2rem 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://source.unsplash.com/1600x900/?naomi,osaka,tennis,court,athlete,champion') center/cover;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: var(--white);
+            text-decoration: none;
+            margin-bottom: 2rem;
+            font-weight: 600;
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+
+        .back-link:hover {
+            opacity: 1;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+            font-weight: 300;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 2rem;
+            max-width: 800px;
+            margin: 3rem auto 0;
+        }
+
+        .hero-stat {
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .hero-stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.25rem;
+        }
+
+        .hero-stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+
+        /* Content */
+        .content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            font-weight: 800;
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .story-text {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .story-text.lead {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: var(--secondary-color);
+            line-height: 1.6;
+        }
+
+        .story-text strong {
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        /* Quote Box */
+        .quote-box {
+            background: linear-gradient(135deg, var(--background-subtle) 0%, var(--white) 100%);
+            border-left: 5px solid var(--primary-color);
+            padding: 2.5rem;
+            margin: 3rem 0;
+            border-radius: 0 12px 12px 0;
+            box-shadow: var(--shadow-md);
+        }
+
+        .quote-text {
+            font-size: 1.4rem;
+            font-style: italic;
+            color: var(--secondary-color);
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+        .quote-author {
+            margin-top: 1rem;
+            font-size: 1rem;
+            color: var(--text-light);
+            font-style: normal;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 3rem;
+            margin: 3rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--primary-color), var(--accent-color));
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2.5rem;
+            padding-left: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -3.5rem;
+            top: 0.5rem;
+            width: 16px;
+            height: 16px;
+            background: var(--primary-color);
+            border: 3px solid var(--white);
+            border-radius: 50%;
+            box-shadow: var(--shadow-md);
+        }
+
+        .timeline-year {
+            font-weight: 800;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-event {
+            font-size: 1.05rem;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        .stat-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+            text-align: center;
+            border-top: 4px solid var(--primary-color);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: var(--text-light);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Impact Cards */
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .impact-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+        }
+
+        .impact-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .impact-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .impact-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .impact-description {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Mask Section */
+        .mask-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+            padding: 2rem;
+            background: var(--background-subtle);
+            border-radius: 12px;
+        }
+
+        .mask-item {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .mask-name {
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .mask-description {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 4rem 1.5rem 3rem;
+            }
+
+            .content {
+                padding: 3rem 1.5rem;
+            }
+
+            .hero-stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .timeline {
+                padding-left: 2rem;
+            }
+
+            .timeline-item {
+                padding-left: 1.5rem;
+            }
+
+            .quote-box {
+                padding: 1.5rem;
+            }
+
+            .quote-text {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .impact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .mask-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-content">
+            <a href="index.html" class="back-link">← Back to Athletes</a>
+            <h1 class="hero-title">Naomi Osaka</h1>
+            <p class="hero-subtitle">Breaking the Silence: When the World's Best Quit to Save Herself</p>
+
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="hero-stat-number">4</div>
+                    <div class="hero-stat-label">Grand Slam Titles</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">#1</div>
+                    <div class="hero-stat-label">World Ranking</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">7</div>
+                    <div class="hero-stat-label">Masks Honoring Victims</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">∞</div>
+                    <div class="hero-stat-label">Lives Changed</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="content">
+        <section class="section">
+            <h2 class="section-title">The Announcement That Shook Tennis</h2>
+            <p class="story-text lead">On May 31, 2021, Naomi Osaka—four-time Grand Slam champion, world #2, the highest-paid female athlete in the world—withdrew from the French Open. The reason? She'd been fined $15,000 for skipping a press conference to protect her mental health. The tennis establishment threatened her with disqualification. So she quit.</p>
+
+            <p class="story-text">In her withdrawal statement posted on social media, Naomi revealed something that shocked millions: <strong>"I have suffered long bouts of depression since the US Open in 2018."</strong> Three years. Three years of smiling through press conferences while dying inside. Three years of winning Grand Slams while battling demons no one could see.</p>
+
+            <p class="story-text">"The truth is that I have suffered long bouts of depression since the US Open in 2018 and I have had a really hard time coping with that," she wrote. "Anyone that knows me knows I'm introverted, and anyone that has seen me at the tournaments will notice that I'm often wearing headphones as that helps dull my social anxiety."</p>
+
+            <p class="story-text">She was 23 years old. At the peak of her career. And she chose herself over the sport.</p>
+        </section>
+
+        <div class="quote-box">
+            <p class="quote-text">I think now the best thing for the tournament, the other players and my well-being is that I withdraw so that everyone can get back to focusing on the tennis going on in Paris. I never wanted to be a distraction.</p>
+            <p class="quote-author">— Naomi Osaka, May 2021</p>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">Between Two Worlds</h2>
+            <p class="story-text">To understand Naomi's story, you have to understand what it means to belong nowhere and everywhere at once.</p>
+
+            <p class="story-text">Born in Osaka, Japan, to a Japanese mother (Tamaki Osaka) and a Haitian father (Leonard François), Naomi was different from day one. In a country where racial homogeneity is the overwhelming norm, her brown skin and Haitian features made her stand out. At age 3, her family moved to the United States, settling in New York and later Florida.</p>
+
+            <p class="story-text">Growing up, she trained like the Williams sisters—her father coaching her on public courts, drilling the fundamentals, building a champion from scratch. But unlike the Williams sisters, Naomi didn't grow up in America's tennis system. She remained a Japanese citizen, trained primarily in the U.S., and spoke English as her first language.</p>
+
+            <p class="story-text">When she chose to represent <strong>Japan</strong> in international competition, she became a symbol—but not always a welcomed one. Japanese media loved her when she won but criticized her for not speaking fluent Japanese, for being "too American," for not conforming to Japanese cultural norms of humility and deference.</p>
+
+            <p class="story-text">"I've been told I'm not Japanese enough," she later said. "I've been told I don't look Japanese. But I was born here. This is my home too."</p>
+
+            <p class="story-text">At the same time, in predominantly white tennis circles, she was often the only Black or Asian face in the room. Too Japanese for America, too American for Japan, too Black for tennis—Naomi grew up navigating spaces where she never fully belonged.</p>
+        </section>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-year">1997</div>
+                <div class="timeline-event">Born in Osaka, Japan to Japanese mother and Haitian father.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2000</div>
+                <div class="timeline-event">Family moved to USA. Began training with father on public courts in New York.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2013</div>
+                <div class="timeline-event">Turned professional at age 15, representing Japan.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2018</div>
+                <div class="timeline-event">Won US Open, defeating Serena Williams in controversial final. Depression begins.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2019</div>
+                <div class="timeline-event">Won Australian Open, became first Asian player (man or woman) to be ranked #1.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2020</div>
+                <div class="timeline-event">Wore seven masks honoring Black victims of violence during US Open run. Won title.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2021</div>
+                <div class="timeline-event">Won Australian Open (4th Grand Slam). Lit Olympic cauldron at Tokyo Olympics.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">May 2021</div>
+                <div class="timeline-event">Withdrew from French Open citing mental health. Revealed three-year battle with depression.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2021-2023</div>
+                <div class="timeline-event">Took extended breaks from tennis for mental health. Became mother in 2023.</div>
+            </div>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">2018 US Open: The Win That Broke Her</h2>
+            <p class="story-text">September 8, 2018, should have been the greatest day of Naomi Osaka's life. At 20 years old, she defeated her childhood idol <strong>Serena Williams</strong> in the US Open final to win her first Grand Slam title. It should have been pure joy.</p>
+
+            <p class="story-text">Instead, it was a nightmare.</p>
+
+            <p class="story-text">During the match, Serena received multiple code violations from chair umpire Carlos Ramos, including a game penalty. Serena, believing she was being treated unfairly, argued vehemently. The crowd—largely pro-Serena—booed the officiating. The match descended into chaos.</p>
+
+            <p class="story-text">When Naomi won, the crowd <strong>booed through the trophy ceremony</strong>. Booed a 20-year-old who had just achieved her lifelong dream. Naomi stood on the court crying, her visor pulled down over her face, trying to hide her tears.</p>
+
+            <p class="story-text">"I'm sorry it had to end like this," Naomi said through sobs during her victory speech. She was <strong>apologizing for winning</strong>.</p>
+
+            <p class="story-text">Serena tried to comfort her, telling the crowd to stop booing, that Naomi deserved to celebrate. But the damage was done. What should have been Naomi's coronation became about everything but her excellence.</p>
+
+            <p class="story-text">That night marked the beginning of her depression. "I felt like I had to apologize for everything I did," she later revealed. "That feeling never really went away."</p>
+        </section>
+
+        <div class="quote-box">
+            <p class="quote-text">I know that everyone was cheering for Serena and I'm sorry it had to end like this. I just want to say thank you for watching the match.</p>
+            <p class="quote-author">— Naomi Osaka, US Open 2018 (through tears)</p>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">Seven Masks, Seven Names</h2>
+            <p class="story-text">Two years later, in August 2020, America was reeling. George Floyd. Breonna Taylor. Ahmaud Arbery. Elijah McClain. The names of Black Americans killed by police or vigilante violence dominated the news. Protests erupted nationwide.</p>
+
+            <p class="story-text">The US Open was being played in a COVID-19 bubble, with no fans. And Naomi Osaka arrived with a mission.</p>
+
+            <p class="story-text">For each match she played, she wore a different face mask, each bearing the name of a Black victim of violence:</p>
+        </section>
+
+        <div class="mask-grid">
+            <div class="mask-item">
+                <div class="mask-name">Breonna Taylor</div>
+                <div class="mask-description">Round 1</div>
+            </div>
+            <div class="mask-item">
+                <div class="mask-name">Elijah McClain</div>
+                <div class="mask-description">Round 2</div>
+            </div>
+            <div class="mask-item">
+                <div class="mask-name">Ahmaud Arbery</div>
+                <div class="mask-description">Round 3</div>
+            </div>
+            <div class="mask-item">
+                <div class="mask-name">Trayvon Martin</div>
+                <div class="mask-description">Round 4</div>
+            </div>
+            <div class="mask-item">
+                <div class="mask-name">George Floyd</div>
+                <div class="mask-description">Quarterfinal</div>
+            </div>
+            <div class="mask-item">
+                <div class="mask-name">Philando Castile</div>
+                <div class="mask-description">Semifinal</div>
+            </div>
+            <div class="mask-item">
+                <div class="mask-name">Tamir Rice</div>
+                <div class="mask-description">Final</div>
+            </div>
+        </div>
+
+        <section class="section">
+            <p class="story-text">When asked if she had more masks, Naomi replied: <strong>"I have seven. It's quite sad that seven masks isn't enough for the amount of names."</strong></p>
+
+            <p class="story-text">She won the tournament. All seven matches. All seven names seen by millions.</p>
+
+            <p class="story-text">For Naomi, it was personal. As a Black woman—half-Haitian, half-Japanese—she carried the weight of both identities. In Japan, she faced racism for her Blackness. In America, she was often seen as "foreign." The masks were her way of saying: I see you. I am you. Your names will not be forgotten.</p>
+
+            <p class="story-text">The statement was powerful, but it also took a toll. The pressure of representation, of activism, of being a symbol—it all compounded the anxiety and depression she'd been battling in silence.</p>
+        </section>
+
+        <div class="quote-box">
+            <p class="quote-text">Before I am an athlete, I am a Black woman. And as a Black woman, I feel as though there are much more important matters at hand that need immediate attention, rather than watching me play tennis.</p>
+            <p class="quote-author">— Naomi Osaka, August 2020</p>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">The Press Conference Battle</h2>
+            <p class="story-text">By 2021, Naomi had won four Grand Slam titles. She was ranked #2 in the world. She'd been named the <strong>highest-paid female athlete</strong> in the world by Forbes, earning over $55 million from prize money and endorsements.</p>
+
+            <p class="story-text">On paper, she had everything. In reality, she was drowning.</p>
+
+            <p class="story-text">Mandatory press conferences were her nightmare. Sitting in front of dozens of reporters, cameras flashing, questions flying—many of them insensitive, some outright hostile. For someone with severe social anxiety, it was torture.</p>
+
+            <p class="story-text">"I feel like the press conferences cause me a lot of anxiety," she explained. "Particularly when I haven't played well. I have seen clips of athletes breaking down after a loss in the press room. I find that really disturbing."</p>
+
+            <p class="story-text">Before the 2021 French Open, she announced she wouldn't do press conferences, offering to accept fines instead. The tennis establishment responded with fury. She was fined $15,000. The Grand Slam tournaments issued a joint statement threatening her with disqualification and suspension from future tournaments.</p>
+
+            <p class="story-text">The message was clear: Your mental health doesn't matter. Play and talk, or get out.</p>
+
+            <p class="story-text">So she got out.</p>
+        </section>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">4</div>
+                <div class="stat-label">Grand Slam Titles</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">7</div>
+                <div class="stat-label">WTA Titles</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">$55M</div>
+                <div class="stat-label">2021 Earnings</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">1st</div>
+                <div class="stat-label">Asian #1 Player</div>
+            </div>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">Tokyo 2021: Coming Home</h2>
+            <p class="story-text">Just two months after withdrawing from the French Open, Naomi stood in the Tokyo Olympic Stadium, holding the Olympic torch. In front of her home country, she <strong>lit the Olympic cauldron</strong>—one of the highest honors in sports.</p>
+
+            <p class="story-text">It was a moment of vindication. Japan, which had criticized her for years, was now celebrating her as the face of the Olympics. The shy, anxious girl who never felt Japanese enough was literally carrying the flame for her country.</p>
+
+            <p class="story-text">But the pressure was immense. Expectations were crushing. And Naomi, still healing, wasn't ready.</p>
+
+            <p class="story-text">She lost in the third round. It hurt, but she'd learned something more important than winning: it was okay to not be okay. It was okay to step back. It was okay to choose healing over medals.</p>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">The Ripple Effect</h2>
+            <p class="story-text">Naomi's French Open withdrawal didn't just change her life—it changed sports.</p>
+
+            <p class="story-text"><strong>Simone Biles</strong> withdrew from events at the Tokyo Olympics weeks later, citing mental health. She directly credited Naomi's courage for giving her permission to do the same.</p>
+
+            <p class="story-text"><strong>Michael Phelps</strong>, who had battled depression and suicidal thoughts, spoke publicly in support. "We're humans, not robots," he said. "We have feelings. We go through different emotions."</p>
+
+            <p class="story-text">Athletes across every sport began speaking up. The stigma around mental health in athletics, which had been ironclad for generations, began to crack.</p>
+
+            <p class="story-text">Organizations started rethinking mandatory media obligations. The tennis tours created new mental health resources. Conversations changed.</p>
+
+            <p class="story-text">Naomi lost a tournament, but she sparked a revolution.</p>
+        </section>
+
+        <div class="impact-grid">
+            <div class="impact-card">
+                <span class="impact-icon">🧠</span>
+                <h3 class="impact-title">Mental Health Pioneer</h3>
+                <p class="impact-description">Her public withdrawal from French Open 2021 sparked a global conversation about mental health in sports, giving athletes permission to prioritize well-being.</p>
+            </div>
+            <div class="impact-card">
+                <span class="impact-icon">✊🏾</span>
+                <h3 class="impact-title">Racial Justice Advocate</h3>
+                <p class="impact-description">Used her platform to honor Black victims of violence, wearing seven masks during 2020 US Open run, each bearing a name.</p>
+            </div>
+            <div class="impact-card">
+                <span class="impact-icon">🌏</span>
+                <h3 class="impact-title">Asian Representation</h3>
+                <p class="impact-description">First Asian player (male or female) to be ranked #1 in singles, breaking barriers in a predominantly white sport.</p>
+            </div>
+            <div class="impact-card">
+                <span class="impact-icon">🎾</span>
+                <h3 class="impact-title">Four-Time Grand Slam Champion</h3>
+                <p class="impact-description">Won US Open (2018, 2020) and Australian Open (2019, 2021) before age 24, establishing herself among tennis elite.</p>
+            </div>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">Finding Balance</h2>
+            <p class="story-text">Since that watershed moment in 2021, Naomi has stepped away from tennis multiple times. She's taken breaks. She's spoken openly about therapy. In 2023, she became a mother, welcoming a daughter with her partner, rapper Cordae.</p>
+
+            <p class="story-text">Her relationship with tennis is complicated now. She loves the game, but she refuses to sacrifice her sanity for it. Some critics say she's wasting her talent. Others say she's soft, that champions push through.</p>
+
+            <p class="story-text">But Naomi knows what they don't: there's no trophy worth your life.</p>
+
+            <p class="story-text">"I've learned that you can't pour from an empty cup," she said. "For so long, I was trying to be everything to everyone—the champion, the activist, the role model, the perfect Japanese ambassador, the perfect Black representative. I forgot to be Naomi."</p>
+
+            <p class="story-text">She's redefining what success looks like. Not just Grand Slams, but peace. Not just rankings, but joy. Not just winning, but living.</p>
+        </section>
+
+        <div class="quote-box">
+            <p class="quote-text">It's OK to not be OK. It's OK to go through ups and downs and all around. For me, I just want people to know that you can emerge on the other side and it's OK.</p>
+            <p class="quote-author">— Naomi Osaka</p>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">The Girl Who Said No</h2>
+            <p class="story-text">Naomi Osaka's story isn't finished. She's still young, still evolving, still figuring out who she is beyond the baseline.</p>
+
+            <p class="story-text">But her legacy is already cemented. She's the girl who said no. No to the press conference. No to the fines. No to the people telling her to just shut up and play. No to sacrificing her mental health for their entertainment.</p>
+
+            <p class="story-text">She proved that you can be at the top of your sport and still be struggling. That success and suffering aren't mutually exclusive. That walking away isn't weakness—sometimes it's the bravest thing you can do.</p>
+
+            <p class="story-text">For every young athlete watching, for every person battling depression in silence, for every person told they're "not enough" of one identity or another—Naomi showed them it's possible to choose yourself.</p>
+
+            <p class="story-text">She didn't just break barriers in tennis. She broke the silence around mental health. And in doing so, she changed the game forever.</p>
+        </section>
+
+        <div class="quote-box">
+            <p class="quote-text">I don't think I'll ever be that girl who's just happy to be here. I want to win. But I also want to be happy. And I'm learning that those two things don't have to be at war with each other.</p>
+            <p class="quote-author">— Naomi Osaka</p>
+        </div>
+
+        <section class="section">
+            <p class="story-text" style="text-align: center; font-size: 1.2rem; color: var(--text-light); margin-top: 4rem;">
+                <strong>Naomi Osaka:</strong> 4 Grand Slam titles. World #1. Activist. Mother. The champion who taught the world that mental health is more important than any trophy.
+            </p>
+        </section>
+    </div>
+</body>
+</html>
