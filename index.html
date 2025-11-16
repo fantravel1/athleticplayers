@@ -344,11 +344,36 @@
             text-align: center;
             box-shadow: var(--shadow-md);
             transition: all 0.3s ease;
+            position: relative;
         }
 
         .legend-card:hover {
             transform: translateY(-8px);
             box-shadow: var(--shadow-xl);
+        }
+
+        .legend-card.clickable {
+            cursor: pointer;
+        }
+
+        .legend-card.clickable::after {
+            content: '→ Read Full Story';
+            position: absolute;
+            bottom: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .legend-card.clickable:hover::after {
+            opacity: 1;
         }
 
         .legend-emoji {
@@ -407,6 +432,20 @@
             transform: translateY(-12px);
             box-shadow: var(--shadow-xl);
             border-color: var(--primary-color);
+        }
+
+        .athlete-card.clickable {
+            cursor: pointer;
+        }
+
+        .athlete-card.clickable .athlete-story::after {
+            content: '\A\A→ Read Full Story';
+            white-space: pre;
+            display: block;
+            margin-top: 1rem;
+            color: var(--primary-color);
+            font-weight: 700;
+            font-size: 0.9rem;
         }
 
         .athlete-image-wrapper {
@@ -959,7 +998,7 @@
                     <div class="legend-sport">Track & Field</div>
                     <p class="legend-achievement">Florence Griffith-Joyner's world records (10.49s, 21.34s) remain unbroken since 1988.</p>
                 </div>
-                <div class="legend-card">
+                <div class="legend-card clickable" onclick="window.location.href='simone-biles.html'">
                     <span class="legend-emoji">🥇</span>
                     <h3 class="legend-name">Simone Biles</h3>
                     <div class="legend-sport">Gymnastics</div>
@@ -1366,7 +1405,7 @@
                 </div>
             </article>
 
-            <article class="athlete-card" data-sport="marathon" data-badges="world-record" role="listitem">
+            <article class="athlete-card clickable" data-sport="marathon" data-badges="world-record" role="listitem" onclick="window.location.href='brigid-kosgei.html'">
                 <div class="athlete-image-wrapper">
                     <img src="https://source.unsplash.com/800x600/?woman,marathon,running,race,endurance,athlete" alt="Brigid Kosgei running marathon" class="athlete-image" loading="lazy">
                     <div class="badges">
@@ -1508,7 +1547,7 @@
                 </div>
             </article>
 
-            <article class="athlete-card" data-sport="wheelchair-racing" data-badges="paralympic world-record" role="listitem">
+            <article class="athlete-card clickable" data-sport="wheelchair-racing" data-badges="paralympic world-record" role="listitem" onclick="window.location.href='tatyana-mcfadden.html'">
                 <div class="athlete-image-wrapper">
                     <img src="https://source.unsplash.com/800x600/?woman,wheelchair,racing,track,athlete,paralympic,speed" alt="Tatyana McFadden wheelchair racing" class="athlete-image" loading="lazy">
                     <div class="badges">

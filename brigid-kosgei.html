@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Brigid Kosgei - From rural Kenya to world record holder. The marathon champion who ran into history with grit, determination, and unbreakable will.">
+    <meta name="keywords" content="Brigid Kosgei, marathon, world record, Kenya, running, female athlete, Chicago Marathon, endurance">
+
+    <title>Brigid Kosgei - Record Breaker | Athletic Players</title>
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏃‍♀️</text></svg>">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1a56db;
+            --primary-dark: #0f3a8f;
+            --secondary-color: #e74c3c;
+            --accent-color: #f39c12;
+            --success-color: #10b981;
+            --text-dark: #1e293b;
+            --text-medium: #475569;
+            --text-light: #64748b;
+            --background: #ffffff;
+            --background-subtle: #f8fafc;
+            --border-color: #e2e8f0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background: var(--background-subtle);
+        }
+
+        .nav {
+            background: white;
+            padding: 1.5rem 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            gap: 0.75rem;
+        }
+
+        .nav-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 4rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path d="M0,60 Q300,0 600,60 T1200,60 L1200,0 L0,0 Z" fill="rgba(255,255,255,0.05)"/></svg>') repeat-x;
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .athlete-category {
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 600;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+
+        .athlete-title {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+            line-height: 1.1;
+        }
+
+        .athlete-subtitle {
+            font-size: clamp(1.25rem, 3vw, 1.75rem);
+            opacity: 0.95;
+            font-weight: 500;
+            margin-bottom: 2rem;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .hero-stat {
+            text-align: center;
+        }
+
+        .hero-stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-stat-label {
+            font-size: 0.875rem;
+            opacity: 0.9;
+        }
+
+        .content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            border-radius: 2px;
+        }
+
+        .story-text {
+            font-size: 1.125rem;
+            line-height: 1.9;
+            color: var(--text-medium);
+            margin-bottom: 1.5rem;
+        }
+
+        .story-text.lead {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        .highlight {
+            background: linear-gradient(180deg, transparent 60%, #fef3c7 60%);
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .quote-box {
+            background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+            padding: 2.5rem;
+            border-radius: 16px;
+            margin: 3rem 0;
+            border-left: 5px solid var(--success-color);
+        }
+
+        .quote-text {
+            font-size: 1.5rem;
+            font-style: italic;
+            line-height: 1.6;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .quote-text::before {
+            content: '"';
+            font-size: 3rem;
+            color: var(--success-color);
+            font-weight: 700;
+            line-height: 0;
+        }
+
+        .quote-author {
+            font-weight: 700;
+            color: var(--text-dark);
+            font-size: 1rem;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, var(--success-color), var(--accent-color));
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.6rem;
+            top: 0.5rem;
+            width: 15px;
+            height: 15px;
+            background: white;
+            border: 3px solid var(--success-color);
+            border-radius: 50%;
+        }
+
+        .timeline-year {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--success-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-description {
+            color: var(--text-medium);
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border: 2px solid var(--border-color);
+        }
+
+        .stat-value {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--success-color);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-medium);
+            font-weight: 600;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .impact-grid {
+            display: grid;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .impact-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--success-color);
+        }
+
+        .impact-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .impact-icon {
+            font-size: 2rem;
+        }
+
+        .impact-description {
+            color: var(--text-medium);
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 3rem 1.5rem;
+            }
+
+            .hero-stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+
+            .content {
+                padding: 3rem 1.5rem;
+            }
+
+            .quote-box {
+                padding: 2rem 1.5rem;
+            }
+
+            .quote-text {
+                font-size: 1.25rem;
+            }
+
+            .timeline {
+                padding-left: 1.5rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav {
+                padding: 1rem;
+            }
+
+            .nav-title {
+                font-size: 1rem;
+            }
+
+            .hero-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="back-link">← Back to Athletes</a>
+            <div class="nav-title">Athletic Players</div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="athlete-category">🏃‍♀️ Marathon Legend | Kenya</div>
+            <h1 class="athlete-title">Brigid Kosgei</h1>
+            <p class="athlete-subtitle">The Woman Who Ran Into History</p>
+
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="hero-stat-number">2:14:04</div>
+                    <div class="hero-stat-label">World Record</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">6</div>
+                    <div class="hero-stat-label">Major Marathon Wins</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">1</div>
+                    <div class="hero-stat-label">Olympic Silver</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">81s</div>
+                    <div class="hero-stat-label">Record Margin</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="content">
+        <section class="section">
+            <h2 class="section-title">From Tiluet to the World</h2>
+            <p class="story-text lead">
+                In a small village in Kenya's Rift Valley, where running isn't just a sport but a way of life, a young girl watched the sun rise over endless hills and dreamed of running farther than anyone thought possible.
+            </p>
+            <p class="story-text">
+                Brigid Jepchirchir Kosgei was born on February 20, 1994, in Tiluet village, Keiyo District, Elgeyo-Marakwet County. This is Kenya's famous highland region, sitting at over 8,000 feet above sea level, where the thin air builds the lungs of champions and poverty tests the will of families.
+            </p>
+            <p class="story-text">
+                <span class="highlight">Brigid's childhood was marked by hardship</span>. Her family lived off subsistence farming, growing maize and vegetables on a small plot of land. There was no running water, no electricity for much of her youth. School meant a 10-kilometer walk each way—20 kilometers a day, barefoot through the hills.
+            </p>
+            <p class="story-text">
+                "I didn't know I was training," Brigid recalls with a smile. "I was just trying to get to school and back home before dark. But those hills, that distance—they built my legs, my lungs, my determination."
+            </p>
+            <p class="story-text">
+                As a teenager, Brigid watched Kenya's great runners on small TV screens in town—Catherine Ndereba, Tegla Loroupe, champions who proved Kenyan women could dominate marathons just as Kenyan men had. She watched their smooth strides and thought, "I can do that."
+            </p>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">The Sacrifice</h2>
+            <p class="story-text">
+                In rural Kenya, becoming a professional runner meant more than just talent—it meant sacrifice. Brigid's family couldn't afford to send her to the elite training camps where Kenya's best athletes refined their skills. They could barely afford food.
+            </p>
+            <p class="story-text">
+                But Brigid had something more valuable than money: <span class="highlight">she had determination</span>. At 16, she left home to join a running group, living in shared housing with other aspiring athletes. They woke at 4 AM to train in the cool highland air. They ran 200 kilometers a week. They ate simple meals—mostly ugali (maize porridge) and vegetables—because it's all they could afford.
+            </p>
+            <p class="story-text">
+                "My family needed me at home," Brigid explains. "But I also knew that if I could succeed in running, I could help them more than I ever could working the farm. So I left. It was the hardest decision of my life."
+            </p>
+            <p class="story-text">
+                Her coach, Patrick Sang (who also coached Eliud Kipchoge), saw something special in Brigid. Not just her physical gifts—the high VO2 max forged in thin air, the efficient stride, the mental toughness—but her hunger. She ran like someone who knew this was her only chance to change her life.
+            </p>
+        </section>
+
+        <div class="quote-box">
+            <p class="quote-text">When you grow up with nothing, every step forward feels like flying. I ran not just to win, but to prove that where you start doesn't determine where you finish.</p>
+            <p class="quote-author">— Brigid Kosgei</p>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">The Rise</h2>
+            <p class="story-text">
+                Brigid's early career was promising but not spectacular. She won races in Kenya, earned small prize money, sent most of it home to her family. In 2017, at age 23, she won her first major marathon—Chicago—in 2:20:22, a strong but not world-class time.
+            </p>
+            <p class="story-text">
+                But something changed after that victory. Brigid began to believe. Not just that she could win, but that she could be great. She intensified her training, refining her technique, building her endurance. She studied race tactics, learned how to read her competitors, developed the mental fortitude to push through the wall that stops most marathoners.
+            </p>
+            <p class="story-text">
+                In 2018, she won Chicago again, dropping her time to 2:18:35. In 2019, she won London in 2:18:20. She was getting faster, stronger, more consistent. But no one—not even Brigid—could have predicted what would happen on October 13, 2019.
+            </p>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">The Day History Fell</h2>
+            <p class="story-text">
+                October 13, 2019. Chicago Marathon. The temperature was perfect—cool, clear, a hint of wind. Brigid lined up at the start feeling different. "I felt light," she would later say. "Like I could fly."
+            </p>
+            <p class="story-text">
+                The race began at a blistering pace. By halfway, Brigid was 30 seconds ahead of world record pace. Observers thought she'd fade—that she'd pay for her aggressive start in the brutal final miles. They'd seen it before. The marathon always wins.
+            </p>
+            <p class="story-text">
+                But Brigid didn't fade. <span class="highlight">She accelerated</span>. Mile 20. Mile 22. Mile 24. She was pulling away from the ghost of Paula Radcliffe's 2:15:25 record, set in 2003—a mark so fast that many thought it might never fall.
+            </p>
+            <p class="story-text">
+                As Brigid turned onto Columbus Drive for the final stretch, the crowd erupted. They knew what was happening. History wasn't just in the making—it was sprinting toward them at sub-5:00 mile pace.
+            </p>
+            <p class="story-text">
+                When Brigid crossed the finish line, the clock read <span class="highlight">2:14:04</span>. Eighty-one seconds faster than the previous record. Not just broken—shattered. It was the largest margin of improvement in the women's marathon world record in 13 years.
+            </p>
+            <p class="story-text">
+                Brigid collapsed immediately, overwhelmed by what she'd just accomplished. When she finally stood, tears streaming down her face, she had redefined what was possible in women's marathon running.
+            </p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value">2:14:04</div>
+                    <div class="stat-label">World Record Time</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">5:10</div>
+                    <div class="stat-label">Per Mile Pace</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">81</div>
+                    <div class="stat-label">Seconds Faster</div>
+                </div>
+            </div>
+        </section>
+
+        <div class="quote-box">
+            <p class="quote-text">I knew the record was possible. I trained for it, I dreamed about it. But when it happened, it felt like I was watching someone else run. That girl flying down Columbus Drive—she was stronger than I ever knew I could be.</p>
+            <p class="quote-author">— Brigid Kosgei, Post-Race Interview</p>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">Understanding Greatness</h2>
+            <p class="story-text">
+                To understand how remarkable Brigid's record is, you need to understand the marathon. It's a race that punishes hubris, that breaks the unprepared, that demands respect. Paula Radcliffe's 2:15:25, set in 2003, stood for 16 years because it was so far ahead of its time.
+            </p>
+            <p class="story-text">
+                For context: Brigid ran 26.2 miles at an average pace of 5:10 per mile. She ran faster than most recreational runners can maintain for a single mile—and she did it 26 times in a row. Her splits were so consistent that race analysts called it "metronomic perfection."
+            </p>
+            <p class="story-text">
+                The marathon community erupted in celebration. Paula Radcliffe, whose record had fallen, was one of the first to congratulate Brigid, calling it "an amazing achievement." Fellow Kenyan runners celebrated in the streets of Eldoret and Iten. <span class="highlight">Brigid had elevated all of women's marathon running</span>.
+            </p>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Olympic Silver and Continued Excellence</h2>
+            <p class="story-text">
+                At the 2020 Tokyo Olympics (held in 2021), Brigid entered as the favorite. The marathon, held in brutal heat and humidity, was a war of attrition. Brigid pushed herself to the limit, fighting for gold down to the final kilometer.
+            </p>
+            <p class="story-text">
+                She finished with silver, just 16 seconds behind winner Peres Jepchirchir, another Kenyan. It was a bittersweet moment—so close to gold—but Brigid's grace in defeat showed her character. "Peres ran brilliantly," she said. "I gave everything I had. Some days the marathon gives, some days it takes."
+            </p>
+            <p class="story-text">
+                That's the marathon—unpredictable, humbling, always demanding more. But Brigid's world record still stands, a monument to what she accomplished on that perfect day in Chicago.
+            </p>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Career Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">1994</div>
+                    <div class="timeline-title">Born in Tiluet, Kenya</div>
+                    <div class="timeline-description">Grew up in Elgeyo-Marakwet County, Rift Valley Province</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2010</div>
+                    <div class="timeline-title">Begins Serious Training</div>
+                    <div class="timeline-description">Leaves home to join running camp, trains under Patrick Sang</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2017</div>
+                    <div class="timeline-title">First Major Marathon Win</div>
+                    <div class="timeline-description">Wins Chicago Marathon in 2:20:22</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2018</div>
+                    <div class="timeline-title">Chicago Victory #2</div>
+                    <div class="timeline-description">Defends Chicago title with 2:18:35</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2019</div>
+                    <div class="timeline-title">London Marathon Champion</div>
+                    <div class="timeline-description">Wins London in 2:18:20</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2019</div>
+                    <div class="timeline-title">World Record - Chicago</div>
+                    <div class="timeline-description">Runs 2:14:04, breaking 16-year-old world record by 81 seconds</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2021</div>
+                    <div class="timeline-title">Olympic Silver Medal</div>
+                    <div class="timeline-description">Wins silver at Tokyo Olympics marathon</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2023</div>
+                    <div class="timeline-title">Continued Excellence</div>
+                    <div class="timeline-description">Remains among world's top marathoners, defending her legacy</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Impact & Legacy</h2>
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <div class="impact-title">
+                        <span class="impact-icon">🌍</span>
+                        Redefining Limits
+                    </div>
+                    <div class="impact-description">
+                        Brigid's world record didn't just break Paula Radcliffe's mark—it redefined what's possible in women's marathon running. Her 2:14:04 showed that the 2:15 barrier, once thought nearly impossible for women, was just another milestone to surpass. She's inspired a new generation to dream bigger.
+                    </div>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-title">
+                        <span class="impact-icon">🇰🇪</span>
+                        Kenya's Pride
+                    </div>
+                    <div class="impact-description">
+                        Brigid represents the best of Kenyan running tradition—humble beginnings, relentless training, and world-class results. She's become a national hero in Kenya, inspiring young girls in the Rift Valley who see their own stories in hers. She proves that champions can come from anywhere.
+                    </div>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-title">
+                        <span class="impact-icon">💰</span>
+                        Changing Lives
+                    </div>
+                    <div class="impact-description">
+                        Brigid's success has transformed not just her life but her entire community. She's built homes for her family, supported young athletes, and invested in her village. Her story shows how sports can lift entire communities out of poverty, creating ripples of positive change.
+                    </div>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-title">
+                        <span class="impact-icon">🏃‍♀️</span>
+                        Marathon Evolution
+                    </div>
+                    <div class="impact-description">
+                        Brigid's record has sparked a new era in women's marathon running. Times that seemed impossible five years ago are now within reach. She's raised the bar so high that the entire sport has evolved, with training methods, race tactics, and athlete preparation all adapting to this new standard of excellence.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="quote-box">
+            <p class="quote-text">The marathon teaches you that limits are often just opinions. On October 13, 2019, I didn't just run fast—I showed every girl who ever doubted herself that impossible is just a word.</p>
+            <p class="quote-author">— Brigid Kosgei</p>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">Running Into Forever</h2>
+            <p class="story-text">
+                From a small village in Kenya's highlands to the streets of Chicago where history fell, Brigid Kosgei's journey embodies everything we love about sports—the underdog story, the relentless pursuit of excellence, the moment when preparation meets opportunity and magic happens.
+            </p>
+            <p class="story-text">
+                Her world record of 2:14:04 isn't just a time on a clock. It's a testament to what human beings can achieve when talent meets training, when sacrifice meets opportunity, when belief meets reality. It's proof that the girl running 20 kilometers to school barefoot had something inside her that couldn't be measured—a fire, a hunger, a dream that refused to die.
+            </p>
+            <p class="story-text">
+                <span class="highlight">Brigid didn't just break a record—she broke through barriers</span> of what we thought possible. She showed that the limits we accept are often just starting points for the next generation of champions.
+            </p>
+            <p class="story-text">
+                Today, young girls in Kenya's Rift Valley still wake up before dawn, still run miles to school, still dream of flying. And now, when they dream, they dream of running 2:14:04. They dream of being like Brigid.
+            </p>
+            <p class="story-text">
+                That's legacy. That's impact. That's what happens when you refuse to let your circumstances define your destiny, when you take the hills that were supposed to hold you back and transform them into the training ground for greatness.
+            </p>
+            <p class="story-text">
+                Brigid Kosgei ran into history on a cool October day in Chicago. But her real achievement isn't just the record—it's showing millions of girls that they can run into their own history, that their dreams are valid, that impossible is just a challenge waiting to be conquered.
+            </p>
+            <p class="story-text">
+                From Tiluet to the world record books, Brigid's journey reminds us: champions aren't born in privilege and comfort. They're forged in sacrifice and determination, in early morning runs and brutal training sessions, in the quiet certainty that today's struggle is tomorrow's triumph.
+            </p>
+            <p class="story-text">
+                The record may fall someday. Records always do. But Brigid Kosgei's legacy—that girl from the highlands who ran faster than anyone thought possible—that will live forever.
+            </p>
+        </section>
+    </div>
+
+    <footer style="background: #1e293b; color: white; padding: 3rem 2rem; text-align: center;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div style="font-size: 1.5rem; font-weight: 800; margin-bottom: 1rem;">🏃‍♀️ Athletic Players</div>
+            <p style="opacity: 0.9; margin-bottom: 2rem;">Celebrating the world's greatest female athletes</p>
+            <a href="index.html" style="color: white; text-decoration: none; font-weight: 600; opacity: 0.8;">← Back to All Athletes</a>
+            <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); opacity: 0.7; font-size: 0.875rem;">
+                © 2025 AthleticPlayers.com | Inspiring the next generation of champions
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
