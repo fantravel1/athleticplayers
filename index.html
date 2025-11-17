@@ -923,6 +923,57 @@
             outline: 2px solid var(--primary-color);
             outline-offset: 2px;
         }
+/* Emoji-based athlete image styling */
+.athlete-emoji-placeholder {
+    width: 100%;
+    aspect-ratio: 4/3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8rem;
+    background: linear-gradient(135deg, var(--card-gradient-start, #667eea) 0%, var(--card-gradient-end, #764ba2) 100%);
+    border-radius: 12px 12px 0 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.athlete-emoji-placeholder::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(10%, 10%); }
+}
+
+.athlete-emoji-placeholder .emoji {
+    position: relative;
+    z-index: 1;
+    filter: drop-shadow(0 4px 12px rgba(0,0,0,0.2));
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Sport-specific gradient colors */
+.gradient-gymnastics { --card-gradient-start: #f093fb; --card-gradient-end: #f5576c; }
+.gradient-tennis { --card-gradient-start: #4facfe; --card-gradient-end: #00f2fe; }
+.gradient-soccer { --card-gradient-start: #43e97b; --card-gradient-end: #38f9d7; }
+.gradient-track { --card-gradient-start: #fa709a; --card-gradient-end: #fee140; }
+.gradient-skating { --card-gradient-start: #a8edea; --card-gradient-end: #fed6e3; }
+.gradient-skiing { --card-gradient-start: #d299c2; --card-gradient-end: #fef9d7; }
+.gradient-basketball { --card-gradient-start: #f77062; --card-gradient-end: #fe5196; }
+.gradient-other { --card-gradient-start: #667eea; --card-gradient-end: #764ba2; }
     </style>
 </head>
 <body>
@@ -1178,7 +1229,7 @@
             <!-- FEATURED ATHLETE STORIES -->
             <article class="athlete-card clickable" data-sport="track-field" data-badges="olympic world-record" role="listitem" onclick="window.location.href='allyson-felix.html'">
                 <div class="athlete-image-wrapper">
-                    <img src="https://source.unsplash.com/800x600/?woman,track,sprinting,running,200m,athlete,olympic" alt="Allyson Felix sprinting" class="athlete-image" loading="lazy">
+                    <div class="athlete-emoji-placeholder gradient-track"><span class="emoji">🏃‍♀️</span></div>
                     <div class="badges">
                         <span class="badge olympic">🥇 Olympic</span>
                         <span class="badge world-record">⚡ Record</span>
@@ -1196,7 +1247,7 @@
 
             <article class="athlete-card clickable" data-sport="tennis" data-badges="champion" role="listitem" onclick="window.location.href='naomi-osaka.html'">
                 <div class="athlete-image-wrapper">
-                    <img src="https://source.unsplash.com/800x600/?woman,tennis,serve,court,champion,athlete,grand,slam" alt="Naomi Osaka playing tennis" class="athlete-image" loading="lazy">
+                    <div class="athlete-emoji-placeholder gradient-tennis"><span class="emoji">🎾</span></div>
                     <div class="badges">
                         <span class="badge champion">🏆 Champion</span>
                     </div>
@@ -1213,7 +1264,7 @@
 
             <article class="athlete-card clickable" data-sport="football" data-badges="olympic champion" role="listitem" onclick="window.location.href='megan-rapinoe.html'">
                 <div class="athlete-image-wrapper">
-                    <img src="https://source.unsplash.com/800x600/?woman,soccer,celebration,goal,world,cup,athlete" alt="Megan Rapinoe celebrating" class="athlete-image" loading="lazy">
+                    <div class="athlete-emoji-placeholder gradient-soccer"><span class="emoji">⚽</span></div>
                     <div class="badges">
                         <span class="badge olympic">🥇 Olympic</span>
                         <span class="badge champion">🏆 Champion</span>
@@ -1231,7 +1282,7 @@
 
             <article class="athlete-card clickable" data-sport="tennis" data-badges="champion" role="listitem" onclick="window.location.href='serena-williams.html'">
                 <div class="athlete-image-wrapper">
-                    <img src="https://source.unsplash.com/800x600/?serena,williams,tennis,powerful,champion,serve" alt="Serena Williams playing tennis" class="athlete-image" loading="lazy">
+                    <div class="athlete-emoji-placeholder gradient-tennis"><span class="emoji">🎾</span></div>
                     <div class="badges">
                         <span class="badge champion">🏆 Champion</span>
                     </div>
@@ -1248,7 +1299,7 @@
 
             <article class="athlete-card clickable" data-sport="surfing" data-badges="champion" role="listitem" onclick="window.location.href='bethany-hamilton.html'">
                 <div class="athlete-image-wrapper">
-                    <img src="https://source.unsplash.com/800x600/?woman,surfing,wave,hawaii,courage,ocean" alt="Bethany Hamilton surfing" class="athlete-image" loading="lazy">
+                    <div class="athlete-emoji-placeholder gradient-other"><span class="emoji">🏄‍♀️</span></div>
                     <div class="badges">
                         <span class="badge champion">🏆 Champion</span>
                     </div>
@@ -1265,7 +1316,7 @@
 
             <article class="athlete-card clickable" data-sport="track-field" data-badges="olympic world-record" role="listitem" onclick="window.location.href='jackie-joyner-kersee.html'">
                 <div class="athlete-image-wrapper">
-                    <img src="https://source.unsplash.com/800x600/?woman,track,field,long,jump,heptathlon,power" alt="Jackie Joyner-Kersee competing" class="athlete-image" loading="lazy">
+                    <div class="athlete-emoji-placeholder gradient-track"><span class="emoji">🏃‍♀️</span></div>
                     <div class="badges">
                         <span class="badge olympic">🥇 Olympic</span>
                         <span class="badge world-record">⚡ Record</span>
@@ -1283,7 +1334,7 @@
 
             <article class="athlete-card clickable" data-sport="track-field" data-badges="olympic champion" role="listitem" onclick="window.location.href='wilma-rudolph.html'">
                 <div class="athlete-image-wrapper">
-                    <img src="https://source.unsplash.com/800x600/?woman,sprinting,track,100m,olympic,champion,powerful" alt="Wilma Rudolph sprinting" class="athlete-image" loading="lazy">
+                    <div class="athlete-emoji-placeholder gradient-track"><span class="emoji">🏃‍♀️</span></div>
                     <div class="badges">
                         <span class="badge olympic">🥇 Olympic</span>
                         <span class="badge champion">🏆 Champion</span>
@@ -1301,7 +1352,7 @@
 
             <article class="athlete-card clickable" data-sport="mma" data-badges="champion" role="listitem" onclick="window.location.href='ronda-rousey.html'">
                 <div class="athlete-image-wrapper">
-                    <img src="https://source.unsplash.com/800x600/?woman,mma,ufc,fighter,combat,powerful,champion" alt="Ronda Rousey in UFC" class="athlete-image" loading="lazy">
+                    <div class="athlete-emoji-placeholder gradient-other"><span class="emoji">🥋</span></div>
                     <div class="badges">
                         <span class="badge champion">🏆 Champion</span>
                     </div>
@@ -1318,7 +1369,7 @@
 
             <article class="athlete-card clickable" data-sport="marathon" data-badges="champion" role="listitem" onclick="window.location.href='kathrine-switzer.html'">
                 <div class="athlete-image-wrapper">
-                    <img src="https://source.unsplash.com/800x600/?woman,marathon,boston,running,determination,historic" alt="Kathrine Switzer running marathon" class="athlete-image" loading="lazy">
+                    <div class="athlete-emoji-placeholder gradient-track"><span class="emoji">🏃‍♀️</span></div>
                     <div class="badges">
                         <span class="badge champion">🏆 Champion</span>
                     </div>
@@ -1335,7 +1386,7 @@
 
             <article class="athlete-card clickable" data-sport="tennis" data-badges="champion" role="listitem" onclick="window.location.href='billie-jean-king.html'">
                 <div class="athlete-image-wrapper">
-                    <img src="https://source.unsplash.com/800x600/?tennis,champion,wimbledon,victory,historic,legend" alt="Billie Jean King playing tennis" class="athlete-image" loading="lazy">
+                    <div class="athlete-emoji-placeholder gradient-tennis"><span class="emoji">🎾</span></div>
                     <div class="badges">
                         <span class="badge champion">🏆 Champion</span>
                     </div>
@@ -1352,7 +1403,7 @@
 
             <article class="athlete-card clickable" data-sport="tennis" data-badges="champion" role="listitem" onclick="window.location.href='venus-williams.html'">
                 <div class="athlete-image-wrapper">
-                    <img src="https://source.unsplash.com/800x600/?venus,williams,tennis,wimbledon,powerful,serve" alt="Venus Williams playing tennis" class="athlete-image" loading="lazy">
+                    <div class="athlete-emoji-placeholder gradient-tennis"><span class="emoji">🎾</span></div>
                     <div class="badges">
                         <span class="badge champion">🏆 Champion</span>
                     </div>
@@ -1369,7 +1420,7 @@
 
             <article class="athlete-card clickable" data-sport="tennis" data-badges="champion" role="listitem" onclick="window.location.href='monica-seles.html'">
                 <div class="athlete-image-wrapper">
-                    <img src="https://source.unsplash.com/800x600/?tennis,champion,powerful,athlete,court,determination" alt="Monica Seles playing tennis" class="athlete-image" loading="lazy">
+                    <div class="athlete-emoji-placeholder gradient-tennis"><span class="emoji">🎾</span></div>
                     <div class="badges">
                         <span class="badge champion">🏆 Champion</span>
                     </div>
@@ -1616,7 +1667,7 @@
 
             <article class="athlete-card clickable" data-sport="marathon" data-badges="world-record" role="listitem" onclick="window.location.href='brigid-kosgei.html'">
                 <div class="athlete-image-wrapper">
-                    <img src="https://source.unsplash.com/800x600/?woman,marathon,running,race,endurance,athlete" alt="Brigid Kosgei running marathon" class="athlete-image" loading="lazy">
+                    <div class="athlete-emoji-placeholder gradient-track"><span class="emoji">🏃‍♀️</span></div>
                     <div class="badges">
                         <span class="badge world-record">⚡ Record</span>
                     </div>
@@ -1758,7 +1809,7 @@
 
             <article class="athlete-card clickable" data-sport="wheelchair-racing" data-badges="paralympic world-record" role="listitem" onclick="window.location.href='tatyana-mcfadden.html'">
                 <div class="athlete-image-wrapper">
-                    <img src="https://source.unsplash.com/800x600/?woman,wheelchair,racing,track,athlete,paralympic,speed" alt="Tatyana McFadden wheelchair racing" class="athlete-image" loading="lazy">
+                    <div class="athlete-emoji-placeholder gradient-other"><span class="emoji">♿</span></div>
                     <div class="badges">
                         <span class="badge paralympic">🏅 Paralympic</span>
                         <span class="badge world-record">⚡ Record</span>
@@ -1777,7 +1828,7 @@
             <!-- GYMNASTICS LEGENDS -->
             <article class="athlete-card clickable" data-sport="gymnastics" data-badges="olympic champion" role="listitem" onclick="window.location.href='nadia-comaneci.html'">
                 <div class="athlete-image-wrapper">
-                    <img src="https://source.unsplash.com/800x600/?gymnastics,woman,olympic,champion,athlete" alt="Nadia Comăneci" class="athlete-image" loading="lazy">
+                    <div class="athlete-emoji-placeholder gradient-gymnastics"><span class="emoji">🤸‍♀️</span></div>
                     <div class="badges">
                         <span class="badge olympic">🥇 Olympic</span>
                         <span class="badge champion">🏆 Champion</span>
@@ -1795,7 +1846,7 @@
 
             <article class="athlete-card clickable" data-sport="gymnastics" data-badges="olympic" role="listitem" onclick="window.location.href='gabby-douglas.html'">
                 <div class="athlete-image-wrapper">
-                    <img src="https://source.unsplash.com/800x600/?gymnastics,woman,olympic,athlete,champion" alt="Gabby Douglas" class="athlete-image" loading="lazy">
+                    <div class="athlete-emoji-placeholder gradient-gymnastics"><span class="emoji">🤸‍♀️</span></div>
                     <div class="badges">
                         <span class="badge olympic">🥇 Olympic</span>
                     </div>
@@ -1812,7 +1863,7 @@
 
             <article class="athlete-card clickable" data-sport="gymnastics" data-badges="olympic" role="listitem" onclick="window.location.href='kerri-strug.html'">
                 <div class="athlete-image-wrapper">
-                    <img src="https://source.unsplash.com/800x600/?gymnastics,vault,woman,olympic,courage" alt="Kerri Strug" class="athlete-image" loading="lazy">
+                    <div class="athlete-emoji-placeholder gradient-gymnastics"><span class="emoji">🤸‍♀️</span></div>
                     <div class="badges">
                         <span class="badge olympic">🥇 Olympic</span>
                     </div>
@@ -1829,7 +1880,7 @@
 
             <article class="athlete-card clickable" data-sport="gymnastics" data-badges="olympic" role="listitem" onclick="window.location.href='mary-lou-retton.html'">
                 <div class="athlete-image-wrapper">
-                    <img src="https://source.unsplash.com/800x600/?gymnastics,woman,vault,olympic,champion" alt="Mary Lou Retton" class="athlete-image" loading="lazy">
+                    <div class="athlete-emoji-placeholder gradient-gymnastics"><span class="emoji">🤸‍♀️</span></div>
                     <div class="badges">
                         <span class="badge olympic">🥇 Olympic</span>
                     </div>
@@ -1847,7 +1898,7 @@
             <!-- TENNIS LEGENDS -->
             <article class="athlete-card clickable" data-sport="tennis" data-badges="champion" role="listitem" onclick="window.location.href='martina-navratilova.html'">
                 <div class="athlete-image-wrapper">
-                    <img src="https://source.unsplash.com/800x600/?tennis,woman,champion,serve,athlete" alt="Martina Navratilova" class="athlete-image" loading="lazy">
+                    <div class="athlete-emoji-placeholder gradient-tennis"><span class="emoji">🎾</span></div>
                     <div class="badges">
                         <span class="badge champion">🏆 Champion</span>
                     </div>
@@ -1864,7 +1915,7 @@
 
             <article class="athlete-card clickable" data-sport="tennis" data-badges="champion" role="listitem" onclick="window.location.href='steffi-graf.html'">
                 <div class="athlete-image-wrapper">
-                    <img src="https://source.unsplash.com/800x600/?tennis,woman,champion,forehand,athlete" alt="Steffi Graf" class="athlete-image" loading="lazy">
+                    <div class="athlete-emoji-placeholder gradient-tennis"><span class="emoji">🎾</span></div>
                     <div class="badges">
                         <span class="badge champion">🏆 Champion</span>
                         <span class="badge olympic">🥇 Olympic</span>
@@ -1882,7 +1933,7 @@
 
             <article class="athlete-card clickable" data-sport="tennis" data-badges="champion" role="listitem" onclick="window.location.href='chris-evert.html'">
                 <div class="athlete-image-wrapper">
-                    <img src="https://source.unsplash.com/800x600/?tennis,woman,baseline,athlete,champion" alt="Chris Evert" class="athlete-image" loading="lazy">
+                    <div class="athlete-emoji-placeholder gradient-tennis"><span class="emoji">🎾</span></div>
                     <div class="badges">
                         <span class="badge champion">🏆 Champion</span>
                     </div>
@@ -1899,7 +1950,7 @@
 
             <article class="athlete-card clickable" data-sport="tennis" data-badges="champion" role="listitem" onclick="window.location.href='althea-gibson.html'">
                 <div class="athlete-image-wrapper">
-                    <img src="https://source.unsplash.com/800x600/?tennis,woman,serve,athlete,champion" alt="Althea Gibson" class="athlete-image" loading="lazy">
+                    <div class="athlete-emoji-placeholder gradient-tennis"><span class="emoji">🎾</span></div>
                     <div class="badges">
                         <span class="badge champion">🏆 Champion</span>
                     </div>
@@ -1917,7 +1968,7 @@
             <!-- SOCCER LEGENDS -->
             <article class="athlete-card clickable" data-sport="football" data-badges="champion" role="listitem" onclick="window.location.href='mia-hamm.html'">
                 <div class="athlete-image-wrapper">
-                    <img src="https://source.unsplash.com/800x600/?soccer,woman,athlete,champion,football" alt="Mia Hamm" class="athlete-image" loading="lazy">
+                    <div class="athlete-emoji-placeholder gradient-soccer"><span class="emoji">⚽</span></div>
                     <div class="badges">
                         <span class="badge champion">🏆 Champion</span>
                         <span class="badge olympic">🥇 Olympic</span>
@@ -1935,7 +1986,7 @@
 
             <article class="athlete-card clickable" data-sport="football" data-badges="champion" role="listitem" onclick="window.location.href='abby-wambach.html'">
                 <div class="athlete-image-wrapper">
-                    <img src="https://source.unsplash.com/800x600/?soccer,woman,header,athlete,champion" alt="Abby Wambach" class="athlete-image" loading="lazy">
+                    <div class="athlete-emoji-placeholder gradient-soccer"><span class="emoji">⚽</span></div>
                     <div class="badges">
                         <span class="badge champion">🏆 Champion</span>
                         <span class="badge olympic">🥇 Olympic</span>
@@ -1953,7 +2004,7 @@
 
             <article class="athlete-card clickable" data-sport="football" data-badges="champion" role="listitem" onclick="window.location.href='julie-foudy.html'">
                 <div class="athlete-image-wrapper">
-                    <img src="https://source.unsplash.com/800x600/?soccer,woman,captain,athlete,leader" alt="Julie Foudy" class="athlete-image" loading="lazy">
+                    <div class="athlete-emoji-placeholder gradient-soccer"><span class="emoji">⚽</span></div>
                     <div class="badges">
                         <span class="badge champion">🏆 Champion</span>
                         <span class="badge olympic">🥇 Olympic</span>
@@ -1971,7 +2022,7 @@
 
             <article class="athlete-card clickable" data-sport="football" data-badges="olympic" role="listitem" onclick="window.location.href='hope-solo.html'">
                 <div class="athlete-image-wrapper">
-                    <img src="https://source.unsplash.com/800x600/?soccer,goalkeeper,woman,athlete,save" alt="Hope Solo" class="athlete-image" loading="lazy">
+                    <div class="athlete-emoji-placeholder gradient-soccer"><span class="emoji">🧤</span></div>
                     <div class="badges">
                         <span class="badge olympic">🥇 Olympic</span>
                     </div>
@@ -1989,7 +2040,7 @@
             <!-- TRACK & FIELD LEGENDS -->
             <article class="athlete-card clickable" data-sport="track-field" data-badges="olympic world-record" role="listitem" onclick="window.location.href='florence-griffith-joyner.html'">
                 <div class="athlete-image-wrapper">
-                    <img src="https://source.unsplash.com/800x600/?woman,sprinting,track,speed,athlete" alt="Florence Griffith-Joyner" class="athlete-image" loading="lazy">
+                    <div class="athlete-emoji-placeholder gradient-track"><span class="emoji">🏃‍♀️</span></div>
                     <div class="badges">
                         <span class="badge olympic">🥇 Olympic</span>
                         <span class="badge world-record">⚡ Record</span>
@@ -2008,7 +2059,7 @@
             <!-- FIGURE SKATING LEGENDS -->
             <article class="athlete-card clickable" data-sport="figure-skating" data-badges="champion" role="listitem" onclick="window.location.href='michelle-kwan.html'">
                 <div class="athlete-image-wrapper">
-                    <img src="https://source.unsplash.com/800x600/?figure,skating,woman,ice,athlete" alt="Michelle Kwan" class="athlete-image" loading="lazy">
+                    <div class="athlete-emoji-placeholder gradient-skating"><span class="emoji">⛸️</span></div>
                     <div class="badges">
                         <span class="badge champion">🏆 Champion</span>
                     </div>
@@ -2025,7 +2076,7 @@
 
             <article class="athlete-card clickable" data-sport="figure-skating" data-badges="olympic" role="listitem" onclick="window.location.href='kristi-yamaguchi.html'">
                 <div class="athlete-image-wrapper">
-                    <img src="https://source.unsplash.com/800x600/?figure,skating,woman,ice,champion" alt="Kristi Yamaguchi" class="athlete-image" loading="lazy">
+                    <div class="athlete-emoji-placeholder gradient-skating"><span class="emoji">⛸️</span></div>
                     <div class="badges">
                         <span class="badge olympic">🥇 Olympic</span>
                     </div>
@@ -2042,7 +2093,7 @@
 
             <article class="athlete-card clickable" data-sport="figure-skating" data-badges="olympic" role="listitem" onclick="window.location.href='nancy-kerrigan.html'">
                 <div class="athlete-image-wrapper">
-                    <img src="https://source.unsplash.com/800x600/?figure,skating,woman,ice,athlete" alt="Nancy Kerrigan" class="athlete-image" loading="lazy">
+                    <div class="athlete-emoji-placeholder gradient-skating"><span class="emoji">⛸️</span></div>
                     <div class="badges">
                         <span class="badge olympic">🥇 Olympic</span>
                     </div>
@@ -2059,7 +2110,7 @@
 
             <article class="athlete-card clickable" data-sport="figure-skating" data-badges="olympic" role="listitem" onclick="window.location.href='peggy-fleming.html'">
                 <div class="athlete-image-wrapper">
-                    <img src="https://source.unsplash.com/800x600/?figure,skating,woman,grace,olympic" alt="Peggy Fleming" class="athlete-image" loading="lazy">
+                    <div class="athlete-emoji-placeholder gradient-skating"><span class="emoji">⛸️</span></div>
                     <div class="badges">
                         <span class="badge olympic">🥇 Olympic</span>
                     </div>
@@ -2076,7 +2127,7 @@
 
             <article class="athlete-card clickable" data-sport="figure-skating" data-badges="olympic" role="listitem" onclick="window.location.href='dorothy-hamill.html'">
                 <div class="athlete-image-wrapper">
-                    <img src="https://source.unsplash.com/800x600/?figure,skating,woman,spin,athlete" alt="Dorothy Hamill" class="athlete-image" loading="lazy">
+                    <div class="athlete-emoji-placeholder gradient-skating"><span class="emoji">⛸️</span></div>
                     <div class="badges">
                         <span class="badge olympic">🥇 Olympic</span>
                     </div>
@@ -2094,7 +2145,7 @@
             <!-- SKIING LEGENDS -->
             <article class="athlete-card clickable" data-sport="skiing" data-badges="olympic" role="listitem" onclick="window.location.href='picabo-street.html'">
                 <div class="athlete-image-wrapper">
-                    <img src="https://source.unsplash.com/800x600/?skiing,woman,alpine,athlete,speed" alt="Picabo Street" class="athlete-image" loading="lazy">
+                    <div class="athlete-emoji-placeholder gradient-skiing"><span class="emoji">⛷️</span></div>
                     <div class="badges">
                         <span class="badge olympic">🥇 Olympic</span>
                     </div>
@@ -2111,7 +2162,7 @@
 
             <article class="athlete-card clickable" data-sport="skiing" data-badges="olympic" role="listitem" onclick="window.location.href='bonnie-blair.html'">
                 <div class="athlete-image-wrapper">
-                    <img src="https://source.unsplash.com/800x600/?speed,skating,woman,ice,athlete" alt="Bonnie Blair" class="athlete-image" loading="lazy">
+                    <div class="athlete-emoji-placeholder gradient-skiing"><span class="emoji">⛸️</span></div>
                     <div class="badges">
                         <span class="badge olympic">🥇 Olympic</span>
                     </div>
@@ -2128,7 +2179,7 @@
 
             <article class="athlete-card clickable" data-sport="skiing" data-badges="champion" role="listitem" onclick="window.location.href='lindsey-vonn.html'">
                 <div class="athlete-image-wrapper">
-                    <img src="https://source.unsplash.com/800x600/?skiing,woman,downhill,athlete,speed" alt="Lindsey Vonn" class="athlete-image" loading="lazy">
+                    <div class="athlete-emoji-placeholder gradient-skiing"><span class="emoji">⛷️</span></div>
                     <div class="badges">
                         <span class="badge champion">🏆 Champion</span>
                     </div>
@@ -2146,7 +2197,7 @@
             <!-- BASKETBALL LEGENDS -->
             <article class="athlete-card clickable" data-sport="basketball" data-badges="olympic" role="listitem" onclick="window.location.href='lisa-leslie.html'">
                 <div class="athlete-image-wrapper">
-                    <img src="https://source.unsplash.com/800x600/?basketball,woman,dunk,athlete,wnba" alt="Lisa Leslie" class="athlete-image" loading="lazy">
+                    <div class="athlete-emoji-placeholder gradient-basketball"><span class="emoji">🏀</span></div>
                     <div class="badges">
                         <span class="badge olympic">🥇 Olympic</span>
                     </div>
@@ -2163,7 +2214,7 @@
 
             <article class="athlete-card clickable" data-sport="basketball" data-badges="champion" role="listitem" onclick="window.location.href='sheryl-swoopes.html'">
                 <div class="athlete-image-wrapper">
-                    <img src="https://source.unsplash.com/800x600/?basketball,woman,athlete,wnba,champion" alt="Sheryl Swoopes" class="athlete-image" loading="lazy">
+                    <div class="athlete-emoji-placeholder gradient-basketball"><span class="emoji">🏀</span></div>
                     <div class="badges">
                         <span class="badge champion">🏆 Champion</span>
                     </div>
@@ -2180,7 +2231,7 @@
 
             <article class="athlete-card clickable" data-sport="basketball" data-badges="champion" role="listitem" onclick="window.location.href='pat-summitt.html'">
                 <div class="athlete-image-wrapper">
-                    <img src="https://source.unsplash.com/800x600/?basketball,coach,woman,leader,champion" alt="Pat Summitt" class="athlete-image" loading="lazy">
+                    <div class="athlete-emoji-placeholder gradient-basketball"><span class="emoji">🏀</span></div>
                     <div class="badges">
                         <span class="badge champion">🏆 Champion</span>
                     </div>
@@ -2198,7 +2249,7 @@
             <!-- OTHER SPORTS LEGENDS -->
             <article class="athlete-card clickable" data-sport="ballet" data-badges="champion" role="listitem" onclick="window.location.href='misty-copeland.html'">
                 <div class="athlete-image-wrapper">
-                    <img src="https://source.unsplash.com/800x600/?ballet,woman,dancer,athlete,grace" alt="Misty Copeland" class="athlete-image" loading="lazy">
+                    <div class="athlete-emoji-placeholder gradient-other"><span class="emoji">🩰</span></div>
                     <div class="badges">
                         <span class="badge champion">🏆 Champion</span>
                     </div>
@@ -2215,7 +2266,7 @@
 
             <article class="athlete-card clickable" data-sport="fencing" data-badges="olympic" role="listitem" onclick="window.location.href='ibtihaj-muhammad.html'">
                 <div class="athlete-image-wrapper">
-                    <img src="https://source.unsplash.com/800x600/?fencing,woman,athlete,olympic,sport" alt="Ibtihaj Muhammad" class="athlete-image" loading="lazy">
+                    <div class="athlete-emoji-placeholder gradient-other"><span class="emoji">🤺</span></div>
                     <div class="badges">
                         <span class="badge olympic">🥇 Olympic</span>
                     </div>
@@ -2232,7 +2283,7 @@
 
             <article class="athlete-card clickable" data-sport="boxing" data-badges="champion" role="listitem" onclick="window.location.href='laila-ali.html'">
                 <div class="athlete-image-wrapper">
-                    <img src="https://source.unsplash.com/800x600/?boxing,woman,athlete,champion,fighter" alt="Laila Ali" class="athlete-image" loading="lazy">
+                    <div class="athlete-emoji-placeholder gradient-other"><span class="emoji">🥊</span></div>
                     <div class="badges">
                         <span class="badge champion">🏆 Champion</span>
                     </div>
@@ -2249,7 +2300,7 @@
 
             <article class="athlete-card clickable" data-sport="racing" data-badges="champion" role="listitem" onclick="window.location.href='danica-patrick.html'">
                 <div class="athlete-image-wrapper">
-                    <img src="https://source.unsplash.com/800x600/?racing,woman,driver,athlete,speed" alt="Danica Patrick" class="athlete-image" loading="lazy">
+                    <div class="athlete-emoji-placeholder gradient-other"><span class="emoji">🏎️</span></div>
                     <div class="badges">
                         <span class="badge champion">🏆 Champion</span>
                     </div>
@@ -2266,7 +2317,7 @@
 
             <article class="athlete-card clickable" data-sport="swimming" data-badges="champion" role="listitem" onclick="window.location.href='diana-nyad.html'">
                 <div class="athlete-image-wrapper">
-                    <img src="https://source.unsplash.com/800x600/?swimming,woman,ocean,athlete,endurance" alt="Diana Nyad" class="athlete-image" loading="lazy">
+                    <div class="athlete-emoji-placeholder gradient-other"><span class="emoji">🏊‍♀️</span></div>
                     <div class="badges">
                         <span class="badge champion">🏆 Champion</span>
                     </div>
@@ -2283,7 +2334,7 @@
 
             <article class="athlete-card clickable" data-sport="multi-sport" data-badges="champion" role="listitem" onclick="window.location.href='babe-didrikson-zaharias.html'">
                 <div class="athlete-image-wrapper">
-                    <img src="https://source.unsplash.com/800x600/?athletics,woman,athlete,champion,sport" alt="Babe Didrikson Zaharias" class="athlete-image" loading="lazy">
+                    <div class="athlete-emoji-placeholder gradient-other"><span class="emoji">🏅</span></div>
                     <div class="badges">
                         <span class="badge champion">🏆 Champion</span>
                         <span class="badge olympic">🥇 Olympic</span>
@@ -2301,7 +2352,7 @@
 
             <article class="athlete-card clickable" data-sport="golf" data-badges="champion" role="listitem" onclick="window.location.href='annika-sorenstam.html'">
                 <div class="athlete-image-wrapper">
-                    <img src="https://source.unsplash.com/800x600/?golf,woman,athlete,champion,swing" alt="Annika Sorenstam" class="athlete-image" loading="lazy">
+                    <div class="athlete-emoji-placeholder gradient-other"><span class="emoji">⛳</span></div>
                     <div class="badges">
                         <span class="badge champion">🏆 Champion</span>
                     </div>
@@ -2318,7 +2369,7 @@
 
             <article class="athlete-card clickable" data-sport="golf" data-badges="champion" role="listitem" onclick="window.location.href='nancy-lopez.html'">
                 <div class="athlete-image-wrapper">
-                    <img src="https://source.unsplash.com/800x600/?golf,woman,athlete,champion,putt" alt="Nancy Lopez" class="athlete-image" loading="lazy">
+                    <div class="athlete-emoji-placeholder gradient-other"><span class="emoji">⛳</span></div>
                     <div class="badges">
                         <span class="badge champion">🏆 Champion</span>
                     </div>
@@ -2335,7 +2386,7 @@
 
             <article class="athlete-card clickable" data-sport="hockey" data-badges="olympic" role="listitem" onclick="window.location.href='cammi-granato.html'">
                 <div class="athlete-image-wrapper">
-                    <img src="https://source.unsplash.com/800x600/?hockey,woman,ice,athlete,olympic" alt="Cammi Granato" class="athlete-image" loading="lazy">
+                    <div class="athlete-emoji-placeholder gradient-other"><span class="emoji">🏒</span></div>
                     <div class="badges">
                         <span class="badge olympic">🥇 Olympic</span>
                     </div>
