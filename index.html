@@ -1069,6 +1069,139 @@
             <p>Celebrating extraordinary female athletes from every corner of the globe who inspire us with their strength, perseverance, and passion for sport.</p>
         </section>
 
+        <!-- Surprise Me Button -->
+        <div class="surprise-me-container">
+            <button id="surpriseMeBtn" class="surprise-me-btn" onclick="surpriseMe()">
+                <span class="surprise-icon">🎲</span>
+                <span class="surprise-text">Surprise Me!</span>
+                <span class="surprise-subtext">Discover a random athlete</span>
+            </button>
+        </div>
+
+        <style>
+        .surprise-me-container {
+            max-width: 1200px;
+            margin: 0 auto 4rem;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .surprise-me-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            border: none;
+            border-radius: 50px;
+            padding: 1.5rem 3rem;
+            color: white;
+            font-size: 1.3rem;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+            transition: all 0.3s ease;
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .surprise-me-btn::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+            transform: rotate(45deg);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .surprise-me-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.5);
+        }
+
+        .surprise-me-btn:active {
+            transform: translateY(-2px) scale(1.02);
+        }
+
+        .surprise-icon {
+            font-size: 2.5rem;
+            animation: spin 2s ease-in-out infinite;
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes spin {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-10deg); }
+            75% { transform: rotate(10deg); }
+        }
+
+        .surprise-text {
+            font-size: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .surprise-subtext {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            font-weight: 400;
+            position: relative;
+            z-index: 1;
+        }
+
+        @media (max-width: 768px) {
+            .surprise-me-btn {
+                padding: 1.25rem 2.5rem;
+                font-size: 1.1rem;
+            }
+            
+            .surprise-icon {
+                font-size: 2rem;
+            }
+            
+            .surprise-text {
+                font-size: 1.3rem;
+            }
+        }
+        </style>
+
+        <script>
+        function surpriseMe() {
+            const athletes = [
+                'allyson-felix.html', 'wilma-rudolph.html', 'florence-griffith-joyner.html',
+                'simone-biles.html', 'nadia-comaneci.html', 'gabby-douglas.html', 'kerri-strug.html', 'mary-lou-retton.html',
+                'serena-williams.html', 'venus-williams.html', 'naomi-osaka.html', 'billie-jean-king.html', 'monica-seles.html',
+                'martina-navratilova.html', 'steffi-graf.html', 'chris-evert.html', 'althea-gibson.html',
+                'megan-rapinoe.html', 'mia-hamm.html', 'abby-wambach.html', 'julie-foudy.html', 'hope-solo.html',
+                'jackie-joyner-kersee.html', 'kathrine-switzer.html', 'brigid-kosgei.html',
+                'michelle-kwan.html', 'kristi-yamaguchi.html', 'nancy-kerrigan.html', 'peggy-fleming.html', 'dorothy-hamill.html',
+                'picabo-street.html', 'bonnie-blair.html', 'lindsey-vonn.html',
+                'lisa-leslie.html', 'sheryl-swoopes.html', 'pat-summitt.html',
+                'misty-copeland.html', 'ibtihaj-muhammad.html', 'laila-ali.html', 'ronda-rousey.html',
+                'danica-patrick.html', 'diana-nyad.html', 'babe-didrikson-zaharias.html', 'tatyana-mcfadden.html',
+                'bethany-hamilton.html', 'annika-sorenstam.html', 'nancy-lopez.html', 'cammi-granato.html'
+            ];
+            
+            const randomAthlete = athletes[Math.floor(Math.random() * athletes.length)];
+            
+            // Add fun animation before redirect
+            const btn = document.getElementById('surpriseMeBtn');
+            btn.style.animation = 'spin 0.5s ease-out';
+            
+            setTimeout(() => {
+                window.location.href = randomAthlete;
+            }, 300);
+        }
+        </script>
         <div class="athletes-grid" id="athletesGrid" role="list">
             <!-- Original 9 Athletes with Your Images -->
             <article class="athlete-card" data-sport="track-field" data-badges="champion" role="listitem">
