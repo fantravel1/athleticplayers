@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Althea Gibson - The Barrier-Breaking Tennis Champion</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2E7D32;
+            --secondary-color: #6A1B9A;
+            --accent-color: #FFD700;
+            --text-dark: #1a1a1a;
+            --text-light: #ffffff;
+            --background: #f8f9fa;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--background);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #2E7D32 0%, #6A1B9A 50%, #FFD700 100%);
+            color: var(--text-light);
+            padding: 120px 20px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1554068865-24cecd4e34b8?w=1200') center/cover;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            line-height: 1.1;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 60px auto 0;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            display: block;
+            margin-bottom: 10px;
+            color: var(--accent-color);
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .section {
+            margin-bottom: 80px;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+
+        .lead {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        .quote-box {
+            background: linear-gradient(135deg, #2E7D32 0%, #6A1B9A 100%);
+            color: var(--text-light);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+            border-left: 5px solid var(--accent-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .quote-text {
+            font-size: 1.4rem;
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .quote-author {
+            font-size: 1.1rem;
+            text-align: right;
+            opacity: 0.9;
+            font-weight: 600;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 50px;
+            margin: 40px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(180deg, var(--primary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+            padding-left: 30px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -54px;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            background: var(--accent-color);
+            border: 4px solid var(--background);
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px var(--primary-color);
+        }
+
+        .timeline-year {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .timeline-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .impact-card {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--primary-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .impact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .impact-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .impact-label {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background: white;
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .back-link:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-2px);
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, rgba(46, 125, 50, 0.1) 0%, rgba(255, 215, 0, 0.1) 100%);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .container {
+                padding: 40px 20px;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .quote-text {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Althea Gibson</h1>
+            <p class="subtitle">The First Black Tennis Champion Who Shattered the Color Barrier</p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">11</span>
+                    <span class="stat-label">Grand Slam Titles</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">First</span>
+                    <span class="stat-label">Black Grand Slam Champion</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">1957</span>
+                    <span class="stat-label">Wimbledon Champion</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">Pioneer</span>
+                    <span class="stat-label">Who Changed Tennis Forever</span>
+                </div>
+            </div>
+
+            <a href="index.html" class="back-link">← Back to Athletes</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <section class="section">
+            <h2>From Harlem Streets to Wimbledon</h2>
+
+            <p class="lead">Althea Gibson was born in South Carolina in 1927, but she grew up on the streets of Harlem in New York City. She was tough, rebellious, and gifted with extraordinary athletic talent. And she would become the Jackie Robinson of tennis.</p>
+
+            <p>Althea's childhood was rough. Her family was poor. She skipped school constantly. She got into fights. She played stickball and basketball in the streets. Tennis was not on her radar.</p>
+
+            <p>But when she was about 13, someone gave her a tennis racket. She started playing paddle tennis on 143rd Street in Harlem. She was a natural. Fast, powerful, fearless.</p>
+
+            <p>Within a few years, she was winning local tournaments. But there was a massive problem: tennis in the 1940s was almost entirely segregated. Black players weren't allowed in most tournaments. They certainly weren't welcome at Wimbledon or the U.S. Nationals.</p>
+
+            <p>Althea Gibson didn't care about what was "allowed." She was going to play tennis at the highest level—and nobody was going to stop her.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"I always wanted to be somebody. If I made it, it's half because I was game enough to take a lot of punishment along the way and half because there were a lot of people who cared enough to help me."</p>
+                <p class="quote-author">— Althea Gibson</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Breaking Through the Barrier</h2>
+
+            <p class="lead">In 1950, Althea Gibson became the first Black player to compete in the U.S. National Championships (now the U.S. Open). She lost in the second round. But she had broken the color barrier.</p>
+
+            <p>The tennis establishment didn't welcome her. She faced racist taunts, hostile crowds, and clubs that wouldn't let her use their facilities. She traveled to tournaments where she couldn't stay in the same hotels as white players.</p>
+
+            <p>But Althea kept winning. In 1951, she became the <span class="highlight">first Black player to compete at Wimbledon</span>. Again, she faced discrimination and hostility. Again, she persevered.</p>
+
+            <p>For the next several years, Althea struggled to break through at the Grand Slam level. She would win matches, advance deep into tournaments, but couldn't quite capture a major title. Critics said she wasn't good enough. That she didn't belong.</p>
+
+            <p>Althea proved them all wrong.</p>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">1927</div>
+                    <div class="timeline-content">Born in Silver, South Carolina; grows up in Harlem, New York</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1950</div>
+                    <div class="timeline-content">First Black player to compete in U.S. National Championships</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1951</div>
+                    <div class="timeline-content">First Black player to compete at Wimbledon</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1956</div>
+                    <div class="timeline-content">Wins French Open—first Grand Slam title</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1957</div>
+                    <div class="timeline-content">Wins Wimbledon and U.S. Nationals—dominant season</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1958</div>
+                    <div class="timeline-content">Wins Wimbledon and U.S. Nationals again—back-to-back titles</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">1971</div>
+                    <div class="timeline-content">Inducted into International Tennis Hall of Fame</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2003</div>
+                    <div class="timeline-content">Dies at age 76, leaving legacy that transformed tennis</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>1956-1958: Dominance</h2>
+
+            <p class="lead">In 1956, at age 28, Althea Gibson finally broke through. She won the French Open—becoming the first Black player to win a Grand Slam singles title. The barrier was finally, completely shattered.</p>
+
+            <p>But she was just getting started.</p>
+
+            <p>In 1957, Althea won <span class="highlight">Wimbledon</span>—the most prestigious tournament in tennis. When she received the trophy from Queen Elizabeth II, it was a moment that transcended sports. A Black woman from the streets of Harlem was being honored by British royalty on the world's most famous tennis court.</p>
+
+            <p>Later that year, she won the U.S. Nationals. Two Grand Slam titles in one year. Undeniable dominance.</p>
+
+            <p>In 1958, she did it again. Wimbledon champion. U.S. Nationals champion. Back-to-back titles at tennis's biggest stages. She finished her career with <span class="highlight">11 Grand Slam titles</span>—five singles, five doubles, and one mixed doubles.</p>
+
+            <p>Althea Gibson had gone from unwanted outsider to the best female tennis player in the world.</p>
+        </section>
+
+        <section class="section">
+            <h2>Beyond Tennis</h2>
+
+            <p class="lead">After dominating tennis, Althea Gibson did something almost unheard of: she walked away. At age 31, at the peak of her powers, she retired from amateur tennis.</p>
+
+            <p>Why? Because there was no professional women's tennis tour in 1958. There was no money. She had conquered tennis, but she couldn't make a living playing it.</p>
+
+            <p>So Althea tried other things. She played professional golf—becoming the first Black woman on the LPGA tour. She sang and recorded albums. She acted in movies. She coached tennis. She worked for the New Jersey Department of Recreation.</p>
+
+            <p>But financial security eluded her. Despite her historic achievements, Althea struggled financially for most of her life. Unlike today's tennis stars who earn millions, Althea barely made ends meet.</p>
+
+            <p>In the 1990s, when her health was failing and she couldn't afford medical care, fellow tennis legend Billie Jean King organized fundraising efforts to help her. It was a sad irony: the woman who opened doors for everyone who came after her was nearly forgotten in her time of need.</p>
+
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <div class="impact-number">First</div>
+                    <div class="impact-label">Black player to win a Grand Slam (French Open 1956)</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">11</div>
+                    <div class="impact-label">Grand Slam titles (singles, doubles, mixed)</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">2x</div>
+                    <div class="impact-label">Wimbledon champion (1957, 1958)</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">2x</div>
+                    <div class="impact-label">U.S. Nationals champion (1957, 1958)</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">Pioneer</div>
+                    <div class="impact-label">First Black woman on LPGA tour</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">Trailblazer</div>
+                    <div class="impact-label">Opened tennis to Venus, Serena, and all who followed</div>
+                </div>
+            </impact-grid>
+        </section>
+
+        <section class="section">
+            <h2>The Legacy: Paving the Way</h2>
+
+            <p class="lead">Althea Gibson died in 2003 at age 76. She didn't die rich. She didn't die famous in the way modern athletes are famous. But she died knowing she had changed history.</p>
+
+            <p>Without Althea Gibson, there is no Arthur Ashe. No Venus Williams. No Serena Williams. No Sloane Stephens, Coco Gauff, or Naomi Osaka. She broke down the door so others could walk through.</p>
+
+            <p>Serena Williams, who has won 23 Grand Slam titles, has said repeatedly that everything she accomplished was possible because of Althea Gibson. "I am standing on her shoulders," Serena said.</p>
+
+            <p>Althea didn't just break the color barrier in tennis. She shattered it. She proved that Black players belonged at Wimbledon, at the U.S. Open, at the pinnacle of the sport. She endured racism, poverty, and discrimination—and she won anyway.</p>
+
+            <p>In 2019, a statue of Althea Gibson was unveiled at the U.S. Open. It stands as a permanent reminder that before Venus and Serena, before Arthur Ashe, there was Althea. The girl from Harlem who refused to be denied.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"In the field of sports you are more or less accepted for what you do rather than what you are."</p>
+                <p class="quote-author">— Althea Gibson</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>The Unsung Hero</h2>
+
+            <p class="lead">Althea Gibson's story is one of triumph. But it's also a story of injustice. She changed tennis forever, yet she never received the financial rewards or lasting recognition she deserved.</p>
+
+            <p>She opened doors that others walked through to wealth and fame. But she herself struggled to pay bills. She was a champion who couldn't afford healthcare in her final years.</p>
+
+            <p>That's the bitter truth about being a pioneer. You break down walls so others can thrive. But you pay the price.</p>
+
+            <p>Althea Gibson paid that price with grace, dignity, and courage. She never complained. She never demanded recognition. She just played tennis—and she played it better than anyone.</p>
+
+            <p>From the streets of Harlem to the lawns of Wimbledon. From being banned to being champion. From being unwanted to being unstoppable.</p>
+
+            <p>Althea Gibson didn't just play tennis. She changed the world.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"No matter what accomplishments you make, somebody helped you."</p>
+                <p class="quote-author">— Althea Gibson</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nancy Lopez - The Latina Trailblazer Who Transformed Golf</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --primary-color: #E65100; --secondary-color: #1B5E20; --accent-color: #FFD700; --text-dark: #1a1a1a; --text-light: #ffffff; --background: #f8f9fa; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; line-height: 1.6; color: var(--text-dark); background: var(--background); }
+        .hero { background: linear-gradient(135deg, #E65100 0%, #1B5E20 50%, #FFD700 100%); color: var(--text-light); padding: 120px 20px 80px; text-align: center; position: relative; overflow: hidden; }
+        .hero-content { position: relative; z-index: 1; max-width: 900px; margin: 0 auto; }
+        h1 { font-size: 4rem; font-weight: 800; margin-bottom: 20px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); line-height: 1.1; }
+        .subtitle { font-size: 1.5rem; margin-bottom: 40px; opacity: 0.95; font-weight: 300; }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; max-width: 1200px; margin: 60px auto 0; }
+        .stat-card { background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(10px); padding: 30px; border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.2); }
+        .stat-number { font-size: 3rem; font-weight: 800; display: block; margin-bottom: 10px; color: var(--accent-color); }
+        .stat-label { font-size: 1rem; opacity: 0.9; text-transform: uppercase; letter-spacing: 1px; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 80px 20px; }
+        .section { margin-bottom: 80px; }
+        h2 { font-size: 2.5rem; margin-bottom: 30px; color: var(--primary-color); position: relative; padding-bottom: 15px; }
+        h2::after { content: ''; position: absolute; bottom: 0; left: 0; width: 80px; height: 4px; background: linear-gradient(90deg, var(--primary-color), var(--accent-color)); border-radius: 2px; }
+        .lead { font-size: 1.3rem; font-weight: 600; color: var(--text-dark); margin-bottom: 25px; line-height: 1.6; }
+        p { font-size: 1.1rem; margin-bottom: 20px; color: #333; line-height: 1.8; }
+        .quote-box { background: linear-gradient(135deg, #E65100 0%, #1B5E20 100%); color: var(--text-light); padding: 40px; border-radius: 15px; margin: 40px 0; border-left: 5px solid var(--accent-color); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .quote-text { font-size: 1.4rem; font-style: italic; line-height: 1.6; margin-bottom: 15px; }
+        .quote-author { font-size: 1.1rem; text-align: right; opacity: 0.9; font-weight: 600; }
+        .back-link { display: inline-block; margin-top: 20px; padding: 12px 30px; background: white; color: var(--primary-color); text-decoration: none; border-radius: 25px; font-weight: 600; transition: all 0.3s ease; border: 2px solid rgba(255,255,255,0.3); }
+        .back-link:hover { background: rgba(255,255,255,0.25); transform: translateY(-2px); }
+        .highlight { background: linear-gradient(120deg, rgba(230, 81, 0, 0.1) 0%, rgba(255, 215, 0, 0.1) 100%); padding: 3px 8px; border-radius: 4px; font-weight: 600; }
+        @media (max-width: 768px) { h1 { font-size: 2.5rem; } .subtitle { font-size: 1.2rem; } .stats-grid { grid-template-columns: 1fr; gap: 20px; } .container { padding: 40px 20px; } h2 { font-size: 2rem; } .quote-text { font-size: 1.2rem; } }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Nancy Lopez</h1>
+            <p class="subtitle">The Latina Legend Who Opened Golf to Everyone</p>
+            <div class="stats-grid">
+                <div class="stat-card"><span class="stat-number">48</span><span class="stat-label">LPGA Tour Wins</span></div>
+                <div class="stat-card"><span class="stat-number">3</span><span class="stat-label">Major Championships</span></div>
+                <div class="stat-card"><span class="stat-number">1978</span><span class="stat-label">Rookie of the Year & MVP</span></div>
+                <div class="stat-card"><span class="stat-number">Pioneer</span><span class="stat-label">For Latina Athletes</span></div>
+            </div>
+            <a href="index.html" class="back-link">← Back to Athletes</a>
+        </div>
+    </div>
+    <div class="container">
+        <section class="section">
+            <h2>The Rookie Who Dominated</h2>
+            <p class="lead">Nancy Lopez burst onto the LPGA Tour in 1978 with one of the greatest rookie seasons ever. She won <span class="highlight">nine tournaments</span> in her first full season—including five consecutive wins. She was Rookie of the Year AND Player of the Year.</p>
+            <p>Nancy grew up in Roswell, New Mexico, the daughter of Mexican-American parents. Her father, Domingo, taught her to golf and worked multiple jobs to support her dream. Golf was expensive and exclusive—and Nancy was often the only Latina on the course.</p>
+            <p>But Nancy's smile, grace, and incredible talent made her beloved. She became the face of women's golf in the late 1970s and 1980s, winning 48 LPGA tournaments and three major championships.</p>
+            <div class="quote-box">
+                <p class="quote-text">"My father taught me that golf was about more than winning. It was about representing my family and my community with pride."</p>
+                <p class="quote-author">— Nancy Lopez</p>
+            </div>
+        </section>
+        <section class="section">
+            <h2>Opening Doors</h2>
+            <p class="lead">Nancy Lopez showed young Latina girls that they belonged in golf. She proved that you didn't need to come from country clubs or privilege to succeed. You just needed talent, work ethic, and heart.</p>
+            <p>She was inducted into the World Golf Hall of Fame in 1987—one of the youngest inductees ever. She continued competing into her 50s, showing that excellence endures.</p>
+            <p>Nancy Lopez didn't just win tournaments. She changed who could dream of playing professional golf. She opened doors that had been closed for generations.</p>
+            <div class="quote-box">
+                <p class="quote-text">"I played for every girl who was told golf wasn't for them. I played to prove them wrong."</p>
+                <p class="quote-author">— Nancy Lopez</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
