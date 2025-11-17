@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lisa Leslie - The WNBA Pioneer Who Dunked and Dominated</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary-color: #E91E63;
+            --secondary-color: #6A1B9A;
+            --accent-color: #FFD700;
+            --text-dark: #1a1a1a;
+            --text-light: #ffffff;
+            --background: #f8f9fa;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--background);
+        }
+        .hero {
+            background: linear-gradient(135deg, #E91E63 0%, #6A1B9A 50%, #FFD700 100%);
+            color: var(--text-light);
+            padding: 120px 20px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            line-height: 1.1;
+        }
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 60px auto 0;
+        }
+        .stat-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            display: block;
+            margin-bottom: 10px;
+            color: var(--accent-color);
+        }
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+        .section {
+            margin-bottom: 80px;
+        }
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 15px;
+        }
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+        .lead {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #333;
+            line-height: 1.8;
+        }
+        .quote-box {
+            background: linear-gradient(135deg, #E91E63 0%, #6A1B9A 100%);
+            color: var(--text-light);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+            border-left: 5px solid var(--accent-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .quote-text {
+            font-size: 1.4rem;
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        .quote-author {
+            font-size: 1.1rem;
+            text-align: right;
+            opacity: 0.9;
+            font-weight: 600;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background: white;
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+        .back-link:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-2px);
+        }
+        .highlight {
+            background: linear-gradient(120deg, rgba(233, 30, 99, 0.1) 0%, rgba(255, 215, 0, 0.1) 100%);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .subtitle { font-size: 1.2rem; }
+            .stats-grid { grid-template-columns: 1fr; gap: 20px; }
+            .container { padding: 40px 20px; }
+            h2 { font-size: 2rem; }
+            .quote-text { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Lisa Leslie</h1>
+            <p class="subtitle">The WNBA Pioneer Who Changed Women's Basketball Forever</p>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">4</span>
+                    <span class="stat-label">Olympic Gold Medals</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">First</span>
+                    <span class="stat-label">WNBA Dunk</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">3x</span>
+                    <span class="stat-label">WNBA MVP</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">Legend</span>
+                    <span class="stat-label">Hall of Famer</span>
+                </div>
+            </div>
+            <a href="index.html" class="back-link">← Back to Athletes</a>
+        </div>
+    </div>
+    <div class="container">
+        <section class="section">
+            <h2>The First Dunk</h2>
+            <p class="lead">On July 30, 2002, Lisa Leslie made history. At 6'5", she rose above the rim and threw down a dunk—becoming the <span class="highlight">first woman to dunk in a WNBA game</span>. The crowd erupted. Women's basketball would never be the same.</p>
+            <p>But Lisa was already a legend before that dunk. She won four Olympic gold medals (1996, 2000, 2004, 2008). She was a three-time WNBA MVP. She led the Los Angeles Sparks to two WNBA championships.</p>
+            <p>At USC, Lisa was a dominant force—scoring 2,414 points and winning two National Player of the Year awards. When the WNBA launched in 1997, Lisa was one of its founding stars. She played her entire 12-year career with the Sparks, retiring in 2009 as one of the greatest to ever play.</p>
+            <div class="quote-box">
+                <p class="quote-text">"I didn't set out to dunk in a game. I just wanted to dominate. The dunk was a symbol of what women's basketball could be."</p>
+                <p class="quote-author">— Lisa Leslie</p>
+            </div>
+        </section>
+        <section class="section">
+            <h2>The Legacy of Excellence</h2>
+            <p class="lead">Lisa Leslie proved that women's basketball deserved respect, investment, and attention. She showed young girls that they could be powerful, athletic, and dominant.</p>
+            <p>She was inducted into the Basketball Hall of Fame in 2015 and the Women's Basketball Hall of Fame in 2015. She paved the way for stars like Candace Parker, Breanna Stewart, and A'ja Wilson.</p>
+            <p>Lisa didn't just play basketball. She elevated it. She showed the world what women's basketball could be—and inspired millions to dream bigger.</p>
+            <div class="quote-box">
+                <p class="quote-text">"I wanted to be great. Not just good. Great. And I worked every single day to get there."</p>
+                <p class="quote-author">— Lisa Leslie</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

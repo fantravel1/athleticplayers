@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abby Wambach - The Greatest Goal Scorer in Soccer History</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #DC143C;
+            --secondary-color: #003DA5;
+            --accent-color: #FFD700;
+            --text-dark: #1a1a1a;
+            --text-light: #ffffff;
+            --background: #f8f9fa;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--background);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #DC143C 0%, #003DA5 50%, #FFD700 100%);
+            color: var(--text-light);
+            padding: 120px 20px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=1200') center/cover;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            line-height: 1.1;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 60px auto 0;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            display: block;
+            margin-bottom: 10px;
+            color: var(--accent-color);
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .section {
+            margin-bottom: 80px;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+
+        .lead {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        .quote-box {
+            background: linear-gradient(135deg, #DC143C 0%, #003DA5 100%);
+            color: var(--text-light);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+            border-left: 5px solid var(--accent-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .quote-text {
+            font-size: 1.4rem;
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .quote-author {
+            font-size: 1.1rem;
+            text-align: right;
+            opacity: 0.9;
+            font-weight: 600;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 50px;
+            margin: 40px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(180deg, var(--primary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+            padding-left: 30px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -54px;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            background: var(--accent-color);
+            border: 4px solid var(--background);
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px var(--primary-color);
+        }
+
+        .timeline-year {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .timeline-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .impact-card {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--primary-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .impact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .impact-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .impact-label {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background: white;
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .back-link:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-2px);
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, rgba(220, 20, 60, 0.1) 0%, rgba(255, 215, 0, 0.1) 100%);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .container {
+                padding: 40px 20px;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .quote-text {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Abby Wambach</h1>
+            <p class="subtitle">The Greatest Goal Scorer in International Soccer History</p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">184</span>
+                    <span class="stat-label">International Goals</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">2</span>
+                    <span class="stat-label">Olympic Gold Medals</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">World Cup</span>
+                    <span class="stat-label">Champion 2015</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">Legend</span>
+                    <span class="stat-label">Clutch Performer</span>
+                </div>
+            </div>
+
+            <a href="index.html" class="back-link">← Back to Athletes</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <section class="section">
+            <h2>The Header Queen</h2>
+
+            <p class="lead">At 5'11", Abby Wambach was a physical force in women's soccer. With her powerful headers, relentless attacking, and clutch goals, she became the greatest goal scorer—male or female—in international soccer history.</p>
+
+            <p>Abby grew up in Rochester, New York, the youngest of seven children. Her older siblings were all athletic, and Abby had to fight for everything—playing time, attention, respect. She developed a competitive fire that never dimmed.</p>
+
+            <p>By high school, she was dominating. At the University of Florida, she became a two-time All-American. In 2001, at age 21, she made her debut with the U.S. Women's National Team.</p>
+
+            <p>Over the next 14 years, Abby Wambach would score <span class="highlight">184 international goals</span>—more than any player in history at the time. More than Mia Hamm. More than Cristiano Ronaldo. More than Pelé.</p>
+
+            <p>She became known for her headers—powerful, perfectly-timed leaps where she'd outmuscle defenders and slam the ball into the net. Goalkeepers feared her. Defenders couldn't stop her. Fans adored her.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"I don't just want to be the best female soccer player. I want to be the best soccer player, period."</p>
+                <p class="quote-author">— Abby Wambach</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>The Heartbreak of 2011</h2>
+
+            <p class="lead">Despite her incredible goal-scoring record, Abby Wambach's career was defined by one missing piece: a World Cup championship. And the 2011 Women's World Cup in Germany would provide both her greatest moment and her most crushing defeat.</p>
+
+            <p>In the quarterfinals against Brazil, the U.S. was down 2-1 in extra time. The game was in stoppage time—literally the final seconds. The U.S. was about to be eliminated.</p>
+
+            <p>Then Megan Rapinoe sent a cross from the left wing. Abby Wambach rose above the defenders and headed the ball into the net. Goal! <span class="highlight">122nd minute equalizer</span>. One of the greatest goals in U.S. soccer history.</p>
+
+            <p>The U.S. won the penalty shootout. Abby had saved their World Cup dreams.</p>
+
+            <p>The U.S. advanced to the final against Japan. They led 1-0. Then 2-1. Twice they had the lead. Twice Japan equalized. The game went to penalties. And the U.S. lost.</p>
+
+            <p>Abby Wambach collapsed on the field in tears. She had given everything and come up short. The World Cup championship—the one trophy that eluded her—would have to wait another four years.</p>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">1980</div>
+                    <div class="timeline-content">Born in Rochester, New York—youngest of seven children</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2001</div>
+                    <div class="timeline-content">Makes U.S. Women's National Team debut at age 21</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2004</div>
+                    <div class="timeline-content">Wins Olympic gold medal in Athens</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2007</div>
+                    <div class="timeline-content">Finishes 3rd at World Cup in China</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2011</div>
+                    <div class="timeline-content">Iconic 122nd-minute header against Brazil—but heartbreak in final</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2012</div>
+                    <div class="timeline-content">Wins Olympic gold in London</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2013</div>
+                    <div class="timeline-content">Surpasses Mia Hamm to become all-time leading goal scorer (men or women)</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2015</div>
+                    <div class="timeline-content">Finally wins World Cup championship—retires on top</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Breaking the Record</h2>
+
+            <p class="lead">In 2013, Abby Wambach did something no soccer player had ever done. She broke Mia Hamm's record of 158 international goals—a record many thought would stand forever.</p>
+
+            <p>When Abby scored her 159th goal against South Korea, Mia Hamm was there to celebrate with her. The torch had been passed from one legend to another.</p>
+
+            <p>Abby didn't stop there. She kept scoring. And scoring. And scoring. By the time she retired, she had <span class="highlight">184 goals</span>—26 more than Mia Hamm.</p>
+
+            <p>For context: Cristiano Ronaldo, one of the greatest male players ever, took until 2021 to surpass Abby's record. She set a standard that stood for years.</p>
+        </section>
+
+        <section class="section">
+            <h2>2015: The Missing Piece</h2>
+
+            <p class="lead">Abby Wambach was 35 years old in 2015. She knew it was her last chance at a World Cup. Her body was breaking down. She was no longer a starter. But she was still Abby Wambach—and she still wanted that championship.</p>
+
+            <p>The 2015 Women's World Cup in Canada was different. Abby came off the bench. She scored one goal the entire tournament. She wasn't the star anymore. But she was still a leader.</p>
+
+            <p>In the final against Japan—the team that had broken her heart four years earlier—the U.S. dominated. They won 5-2. Abby Wambach was a <span class="highlight">World Cup champion</span>.</p>
+
+            <p>After the final whistle, Abby dropped to her knees and sobbed. Fourteen years. Two Olympic golds. World record goal scorer. And finally, a World Cup trophy.</p>
+
+            <p>Three months later, Abby announced her retirement. She had nothing left to prove.</p>
+
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <div class="impact-number">184</div>
+                    <div class="impact-label">International goals—most in history (men or women at time of retirement)</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">2</div>
+                    <div class="impact-label">Olympic gold medals (2004, 2012)</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">1</div>
+                    <div class="impact-label">World Cup championship (2015)</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">256</div>
+                    <div class="impact-label">International caps over 14 years</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">FIFA</div>
+                    <div class="impact-label">World Player of the Year (2012)</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-number">Icon</div>
+                    <div class="impact-label">Clutch goals and fearless leadership</div>
+                </div>
+            </impact-grid>
+        </section>
+
+        <section class="section">
+            <h2>Beyond the Field</h2>
+
+            <p class="lead">Abby Wambach retired as a soccer legend. But her most important work was just beginning.</p>
+
+            <p>She came out as gay in 2013, becoming one of the most prominent LGBTQ+ athletes in sports. She married soccer player Sarah Huffman in 2013 (they later divorced), and then author Glennon Doyle in 2017.</p>
+
+            <p>She struggled with alcoholism and prescription drug addiction after retirement—and she was honest about it. She got arrested for DUI in 2016. She publicly acknowledged her addiction and went to treatment.</p>
+
+            <p>Then she became a powerful advocate for addiction recovery, LGBTQ+ rights, and women's equality. She wrote books, including the bestseller "Wolfpack," where she challenged women to reject old rules and create new ones.</p>
+
+            <p>She fought for equal pay in soccer—joining the lawsuit against U.S. Soccer that eventually led to equal compensation for men's and women's players. She used her platform to advocate for change.</p>
+
+            <p>Abby Wambach didn't just score goals. She broke barriers, told hard truths, and showed that champions aren't perfect—they're human.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"We have to teach our girls that they can reach as high as humanly possible. We have to teach them they belong in the White House, the board room, everywhere."</p>
+                <p class="quote-author">— Abby Wambach</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>The Legacy of the Goal Scorer</h2>
+
+            <p class="lead">Abby Wambach's legacy is measured in goals, but her impact extends far beyond the scoreboard. She showed that women's sports deserved respect, investment, and equal treatment.</p>
+
+            <p>She proved that you could be gay, fierce, and unapologetically yourself—and still be a national hero. She showed that admitting addiction and seeking help wasn't weakness, but courage.</p>
+
+            <p>She fought for the next generation of players to earn equal pay and equal respect. She challenged old norms about what female athletes should be and how they should act.</p>
+
+            <p>Young girls watching Abby Wambach didn't just see goals. They saw power. They saw leadership. They saw someone who refused to shrink or apologize for taking up space.</p>
+
+            <p>184 goals. 2 Olympic golds. 1 World Cup. But Abby Wambach's real legacy is teaching women to be wolves in a world that wants them to be sheep.</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"Forget being fearless. Be a wolf. Embrace your fear. Unleash it. Let it fuel you."</p>
+                <p class="quote-author">— Abby Wambach</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
